@@ -2,7 +2,7 @@
   "compilerOptions": {
     "baseUrl": "./",
     "paths": {
-      "react-native-ui-kit": ["./src/index"]
+      "@amalgama/react-native-ui-kit": ["./src/index"]
     },
     "allowUnreachableCode": false,
     "allowUnusedLabels": false,
@@ -18,10 +18,12 @@
     "noImplicitUseStrict": false,
     "noStrictGenericChecks": false,
     "noUnusedLocals": true,
+    "allowSyntheticDefaultImports": true,
     "noUnusedParameters": true,
     "resolveJsonModule": true,
     "skipLibCheck": true,
     "strict": true,
     "target": "esnext"
-  }
+  },
+  "exclude": ["node_modules", "tests"]
 }
