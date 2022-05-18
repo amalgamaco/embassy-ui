@@ -18,9 +18,21 @@ export default class Theme {
 
 	get palette() { return this._palette; }
 	get colorMode() { return this._colorMode; }
+	get statusBarStyle() {
+		return this._colorMode === 'light'
+			? 'dark-content'
+			: 'light-content';
+	}
 
 	color( name: PaletteColor ) {
 		const { colorMode } = this;
 		return this._palette.colorFor( name, { colorMode } );
+	}
+
+	switchColorMode( colorMode: ColorMode ): Theme {
+		return new Theme( {
+			palette: this._palette,
+			colorMode
+		} );
 	}
 }
