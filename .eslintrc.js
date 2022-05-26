@@ -35,6 +35,12 @@ module.exports = {
 			'extends': [
 				'plugin:@typescript-eslint/recommended-requiring-type-checking'
 			]
+		},
+		{
+			'files': [ 'example/**/*' ],
+			'rules': {
+				'import/no-extraneous-dependencies': 'off'
+			}
 		}
 	],
 	'ignorePatterns': [ 'dist/**/*' ],

@@ -1,31 +1,25 @@
 import * as React from 'react';
 
-import { StyleSheet, View, Text } from 'react-native';
-import { multiply } from '@amalgama/react-native-ui-kit';
+import { SafeAreaView, StyleSheet } from 'react-native';
+import { ThemeProvider } from '@amalgama/react-native-ui-kit';
+
+import TextExamples from './components/TextExamples';
+
+const styles = StyleSheet.create( {
+	container: {
+		flex: 1,
+		alignItems: 'flex-start',
+		justifyContent: 'flex-start',
+		marginHorizontal: 16
+	}
+} );
 
 export default function App() {
-  const [result, setResult] = React.useState<number | undefined>();
-
-  React.useEffect(() => {
-    multiply(3, 7).then(setResult);
-  }, []);
-
-  return (
-    <View style={styles.container}>
-      <Text>Result: {result}</Text>
-    </View>
-  );
+	return (
+		<ThemeProvider>
+			<SafeAreaView style={styles.container}>
+				<TextExamples />
+			</SafeAreaView>
+		</ThemeProvider>
+	);
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-  box: {
-    width: 60,
-    height: 60,
-    marginVertical: 20,
-  },
-});
