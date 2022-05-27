@@ -1,6 +1,8 @@
 import type Palette from '../palette/Palette';
 import type { ColorMode } from '../types';
 import type { PaletteColor } from '../palette/types';
+import StyleProps from '../styles/StyleProps';
+import type { ComponentProps, Style } from '../styles/types';
 
 interface ThemeConstructorParams {
 	palette: Palette,
@@ -24,7 +26,7 @@ export default class Theme {
 			: 'light-content';
 	}
 
-	color( name: PaletteColor ) {
+	color( name: PaletteColor ): string | undefined {
 		const { colorMode } = this;
 		return this._palette.colorFor( name, { colorMode } );
 	}
@@ -34,5 +36,9 @@ export default class Theme {
 			palette: this._palette,
 			colorMode
 		} );
+	}
+
+	styleForProps( props: ComponentProps ): Style {
+		return new StyleProps( { props, transformer: this } ).style;
 	}
 }

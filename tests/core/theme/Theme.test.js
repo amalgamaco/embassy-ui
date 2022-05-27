@@ -71,4 +71,95 @@ describe( 'Theme', () => {
 			} );
 		} );
 	} );
+
+	describe( 'swithcColorMode', () => {
+		// eslint-disable-next-line no-undef
+		pending( 'Add tests for swithcColorMode, it was tested in the hooks tests but it should be tested here aswell' );
+	} );
+
+	describe( 'styleForProps', () => {
+		describe( 'for color properties', () => {
+			const props = {
+				color: 'primary.300',
+				tintColor: 'neutral',
+				backgroundColor: 'primary.100',
+				bg: 'primary.900',
+				bgColor: 'primary.500',
+				background: 'neutral'
+			};
+
+			const expectedStyle = {
+				color: {
+					color: '#a066e8'
+				},
+				tintColor: {
+					tintColor: '#000000'
+				},
+				backgroundColor: {
+					backgroundColor: '#d7bff4'
+				},
+				bg: {
+					backgroundColor: '#2200C1'
+				},
+				bgColor: {
+					backgroundColor: '#7101dc'
+				},
+				background: {
+					backgroundColor: '#000000'
+				}
+			};
+
+			it( 'translate the props correctly', () => {
+				const theme = createTheme();
+
+				Object.keys( props ).forEach( ( prop ) => {
+					expect( theme.styleForProps( { [ prop ]: props[ prop ] } ) ).toEqual(
+						expectedStyle[ prop ]
+					);
+				} );
+			} );
+
+			it( 'translate the props correctly for dark color mode', () => {
+				const theme = createTheme( { colorMode: 'dark' } );
+
+				expect( theme.styleForProps( {
+					color: 'primary.300',
+					tintColor: 'primary.100',
+					bgColor: 'neutral'
+				} ) ).toEqual( {
+					color: '#aaffee',
+					tintColor: '#d7bff4',
+					backgroundColor: '#ffffff'
+				} );
+			} );
+
+			it( 'skips props that doens\'t exists', () => {
+				const theme = createTheme();
+
+				expect( theme.styleForProps( {
+					color: 'primary.300',
+					tintColor: 'primary.100',
+					bgColor: 'neutral',
+					noExisting: 'none'
+				} ) ).toEqual( {
+					color: '#a066e8',
+					tintColor: '#d7bff4',
+					backgroundColor: '#000000'
+				} );
+			} );
+
+			it( 'skip props with invalid values', () => {
+				const theme = createTheme();
+
+				expect( theme.styleForProps( {
+					color: 'primary.300',
+					tintColor: 'primary.100',
+					bgColor: 'neutral-200'
+				} ) ).toEqual( {
+					color: '#a066e8',
+					tintColor: '#d7bff4'
+				} );
+			} );
+		} );
+	} );
 } );
