@@ -61,4 +61,10 @@ type AllProps<T extends StlyePropsMapping> = {
 		: unknown;
 };
 
+export type VariantType<
+  Component extends keyof IThemeConfig['components']
+> = 'variants' extends keyof IThemeConfig['components'][Component]
+  ? keyof IThemeConfig['components'][Component]['variants'] | ( string & {} )
+  : unknown;
+
 export type StyledProps = AllProps<StlyePropsMapping>;

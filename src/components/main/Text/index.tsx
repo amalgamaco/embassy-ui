@@ -4,7 +4,7 @@ import useStyleFromPropsResolver from '../../../hooks/useStyleFromPropsResolver'
 import type { ITextProps } from './types';
 
 const Text = ( { children, ...props }: ITextProps ) => {
-	const [ style, restProps ] = useStyleFromPropsResolver( props );
+	const [ style, restProps ] = useStyleFromPropsResolver( 'Text', props );
 
 	return (
 		<RNText style={style} {...restProps} >
