@@ -11,10 +11,17 @@ import type {
 } from '../typography/types';
 import type Components from '../components/Components';
 import type { ComponentName, VariantName } from '../components/types';
+import type Layout from '../layout/Layout';
+import type {
+	BorderWidth,
+	BorderWidthAlias,
+	Radius, RadiusAlias, Size, SizeAlias, Spacing, SpacingAlias
+} from '../layout/types';
 
 interface ThemeConstructorParams {
 	palette: Palette,
 	typography: Typography,
+	layout: Layout,
 	components: Components,
 	colorMode?: ColorMode
 }
@@ -22,22 +29,28 @@ interface ThemeConstructorParams {
 export default class Theme {
 	private _palette: Palette;
 	private _typography: Typography;
+	private _layout: Layout;
 	private _components: Components;
 	private _colorMode: ColorMode;
 
 	constructor( {
-		palette, typography, components, colorMode = 'light'
+		palette, typography, layout, components,
+		colorMode = 'light'
 	}: ThemeConstructorParams ) {
 		this._palette = palette;
 		this._typography = typography;
+		this._layout = layout;
 		this._components = components;
 		this._colorMode = colorMode;
 	}
 
 	get palette() { return this._palette; }
 	get typography() { return this._typography; }
+	get layout() { return this._layout; }
 	get components() { return this._components; }
+
 	get colorMode() { return this._colorMode; }
+
 	get statusBarStyle() {
 		return this._colorMode === 'light'
 			? 'dark-content'
@@ -74,6 +87,24 @@ export default class Theme {
 		return this._typography.fontSize( alias );
 	}
 
+	// Layout (delegation)
+	borderWidth( alias: BorderWidthAlias ): BorderWidth | undefined {
+		return this._layout.borderWidth( alias );
+	}
+
+	spacing( alias: SpacingAlias ): Spacing | undefined {
+		return this._layout.spacing( alias );
+	}
+
+	size( alias: SizeAlias ): Size | undefined {
+		return this._layout.size( alias );
+	}
+
+	radius( alias: RadiusAlias ): Radius | undefined {
+		return this._layout.radius( alias );
+	}
+
+	// Style Props
 	defaultPropsFor( componentName: ComponentName ) {
 		return this._components.defaultPropsFor( componentName );
 	}
@@ -86,6 +117,7 @@ export default class Theme {
 		return new Theme( {
 			palette: this._palette,
 			typography: this._typography,
+			layout: this._layout,
 			components: this._components,
 			colorMode
 		} );
@@ -99,6 +131,7 @@ export default class Theme {
 		return {
 			colorMode: this.colorMode,
 			palette: this._palette.config,
+			layout: this._layout.config,
 			components: this._components.config,
 			typography: this._typography.config
 		};

@@ -1,4 +1,5 @@
 import Components from '../../../src/core/components/Components';
+import Layout from '../../../src/core/layout/Layout';
 import Palette from '../../../src/core/palette/Palette';
 
 import Theme from '../../../src/core/theme/Theme';
@@ -86,6 +87,54 @@ const typography = new Typography( {
 	}
 } );
 
+const layout = new Layout( {
+	borderWidths: {
+		'0': 0,
+		'1': '1px',
+		'2': '2px',
+		'4': '4px',
+		'8': '8px'
+	},
+	spacings: {
+		'0': 0,
+		'0.5': 2,
+		'1': 4,
+		'1.5': 6,
+		'2': 8,
+		'2.5': 10,
+		'3': 12,
+		'3.5': 14,
+		'4': 16,
+		'5': 20,
+		'6': 24,
+		'7': 28,
+		'8': 32,
+		'9': 36,
+		'10': 40
+	},
+	sizes: {
+		'3xs': 224,
+		'2xs': 256,
+		'xs': 320,
+		'sm': 384,
+		'md': 448,
+		'lg': 512,
+		'xl': 576,
+		'2xl': 672
+	},
+	radius: {
+		'none': 0,
+		'xs': 2,
+		'sm': 4,
+		'md': 6,
+		'lg': 8,
+		'xl': 12,
+		'2xl': 16,
+		'3xl': 24,
+		'full': 9999
+	}
+} );
+
 const components = new Components( {
 	Text: {
 		defaultProps: {
@@ -113,6 +162,7 @@ describe( 'Theme', () => {
 		new Theme( {
 			palette,
 			typography,
+			layout,
 			components,
 			colorMode
 		} )
@@ -136,8 +186,16 @@ describe( 'Theme', () => {
 	describe( 'typography', () => {
 		const theme = createTheme();
 
-		it( 'returns the theme\'s typography', () => {
+		it( 'returns the theme\'s typography config', () => {
 			expect( theme.typography ).toEqual( typography );
+		} );
+	} );
+
+	describe( 'layout', () => {
+		const theme = createTheme();
+
+		it( 'returns the theme\'s layout config', () => {
+			expect( theme.layout ).toEqual( layout );
 		} );
 	} );
 
@@ -189,6 +247,7 @@ describe( 'Theme', () => {
 			expect( theme.config ).toEqual( {
 				colorMode: theme.colorMode,
 				palette: theme.palette.config,
+				layout: theme.layout.config,
 				components: theme.components.config,
 				typography: theme.typography.config
 			} );
