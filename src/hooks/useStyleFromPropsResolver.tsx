@@ -1,5 +1,6 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import type { ComponentName } from 'src/core/components/types';
-import { STYLE_PROPS_MAPPING } from '../core/styles/consts';
+import { STYLE_PROPS_MAPPING } from '../core/styles/propsMapping';
 import { useTheme } from '../core/theme/hooks';
 
 const getStylePropsAndRestProps = ( props: any ) => Object

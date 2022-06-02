@@ -1,4 +1,4 @@
-import { STYLE_PROPS_MAPPING } from './consts';
+import { STYLE_PROPS_MAPPING } from './propsMapping';
 import type {
 	ComponentProps, PropMap, PropName, PropsMappingDict,
 	PropValue, Style, StylePropValue, Transformer, TransformerMethod

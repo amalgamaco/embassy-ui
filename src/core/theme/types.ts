@@ -3,7 +3,7 @@
 /* eslint-disable @typescript-eslint/ban-types */
 import type { Properties as CSSProperties } from 'csstype';
 import type { ImageStyle, TextStyle, ViewStyle } from 'react-native';
-import type { StlyePropsMapping } from '../styles/consts';
+import type { StlyePropsMapping } from '../styles/propsMapping';
 import type { Leaves } from '../types';
 import type { config } from './defaultTheme';
 

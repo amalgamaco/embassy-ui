@@ -1,4 +1,8 @@
 import type {
+	BorderWidth, BorderWidthAlias, Radius, RadiusAlias,
+	Spacing, SpacingAlias
+} from '../layout/types';
+import type {
 	FontFamilyVariant, FontSize, FontSizeAlias, FontWeight,
 	FontWeightAlias, LetterSpacing, LetterSpacingAlias,
 	LineHeight, LineHeightAlias
@@ -12,7 +16,11 @@ export interface Transformer {
 	letterSpacing: ( alias: LetterSpacingAlias ) => LetterSpacing | undefined,
 	lineHeight: ( alias: LineHeightAlias ) => LineHeight | undefined,
 	fontWeight: ( alias: FontWeightAlias ) => FontWeight | undefined,
-	fontSize: ( alias: FontSizeAlias ) => FontSize | undefined
+	fontSize: ( alias: FontSizeAlias ) => FontSize | undefined,
+	borderWidth( alias: BorderWidthAlias ): BorderWidth | undefined,
+	spacing( alias: SpacingAlias ): Spacing | undefined,
+	// size( alias: SizeAlias ): Size | undefined,
+	radius( alias: RadiusAlias ): Radius | undefined
 }
 
 export type TransformerMethodName = keyof Transformer;

@@ -5,6 +5,9 @@ import Palette from '../../../src/core/palette/Palette';
 import Theme from '../../../src/core/theme/Theme';
 import Typography from '../../../src/core/typography/Typography';
 
+import borderPropMapping from '../../../src/core/styles/propsMapping/border';
+import spacingPropMapping from '../../../src/core/styles/propsMapping/spacing';
+
 const palette = new Palette(
 	{
 		base: {
@@ -459,6 +462,78 @@ describe( 'Theme', () => {
 					);
 				} );
 			} );
+		} );
+
+		describe( 'for border properties', () => {
+			const theme = createTheme();
+
+			describe( 'that use the borderWidth scale', () => {
+				const props = Object
+					.keys( borderPropMapping )
+					.filter( prop => borderPropMapping[ prop ].scale === 'borderWidths' );
+
+				const propValue = '2';
+				const expectedValue = '2px';
+
+				props.forEach( prop => describe( prop, () => {
+					it( 'returns the correct value', () => {
+						expect( theme.styleForProps( { [ prop ]: propValue } ) ).toEqual( {
+							[ borderPropMapping[ prop ].property ]: expectedValue
+						} );
+					} );
+				} ) );
+			} );
+
+			describe( 'that use the palette scale', () => {
+				const props = Object
+					.keys( borderPropMapping )
+					.filter( prop => borderPropMapping[ prop ].scale === 'palette' );
+
+				const propValue = 'primary.300';
+				const expectedValue = '#a066e8';
+
+				props.forEach( prop => describe( prop, () => {
+					it( 'returns the correct value', () => {
+						expect( theme.styleForProps( { [ prop ]: propValue } ) ).toEqual( {
+							[ borderPropMapping[ prop ].property ]: expectedValue
+						} );
+					} );
+				} ) );
+			} );
+
+			describe( 'that use the radius scale', () => {
+				const props = Object
+					.keys( borderPropMapping )
+					.filter( prop => borderPropMapping[ prop ].scale === 'radius' );
+
+				const propValue = 'xl';
+				const expectedValue = 12;
+
+				props.forEach( prop => describe( prop, () => {
+					it( 'returns the correct value', () => {
+						expect( theme.styleForProps( { [ prop ]: propValue } ) ).toEqual( {
+							[ borderPropMapping[ prop ].property ]: expectedValue
+						} );
+					} );
+				} ) );
+			} );
+		} );
+
+		describe( 'for spacing properties', () => {
+			const theme = createTheme();
+
+			const props = Object.keys( spacingPropMapping );
+
+			const propValue = 5;
+			const expectedValue = 20;
+
+			props.forEach( prop => describe( prop, () => {
+				it( 'returns the correct value', () => {
+					expect( theme.styleForProps( { [ prop ]: propValue } ) ).toEqual( {
+						[ spacingPropMapping[ prop ].property ]: expectedValue
+					} );
+				} );
+			} ) );
 		} );
 	} );
 } );

@@ -15,7 +15,7 @@ import type Layout from '../layout/Layout';
 import type {
 	BorderWidth,
 	BorderWidthAlias,
-	Radius, RadiusAlias, Size, SizeAlias, Spacing, SpacingAlias
+	Radius, RadiusAlias, Spacing, SpacingAlias
 } from '../layout/types';
 
 interface ThemeConstructorParams {
@@ -96,9 +96,11 @@ export default class Theme {
 		return this._layout.spacing( alias );
 	}
 
-	size( alias: SizeAlias ): Size | undefined {
-		return this._layout.size( alias );
-	}
+	// Fixme: Check if sizes config and methods are needed or not.
+	// Remove all size related code in case they are not needed.
+	// size( alias: SizeAlias ): Size | undefined {
+	// 	return this._layout.size( alias );
+	// }
 
 	radius( alias: RadiusAlias ): Radius | undefined {
 		return this._layout.radius( alias );
