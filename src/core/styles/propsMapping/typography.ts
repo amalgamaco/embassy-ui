@@ -4,7 +4,8 @@ import type { ComponentProps, PropValue, Transformer } from '../types';
 export default {
 	font: {
 		property: 'fontFamily',
-		scale: 'typography.fonts',
+		category: 'typography',
+		scale: 'fonts',
 		transformerMethod: (
 			value: PropValue,
 			transformer: Transformer,

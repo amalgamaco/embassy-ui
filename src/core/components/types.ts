@@ -1,6 +1,6 @@
 import type { StyledProps } from '../theme/types';
 
-export type ComponentName = 'Text';
+export type ComponentName = 'Text' | 'Box';
 export type VariantName = string;
 export type ComponentConfig = Partial<{
 	defaultProps: StyledProps,

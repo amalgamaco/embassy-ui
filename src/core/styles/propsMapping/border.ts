@@ -51,10 +51,6 @@ export default {
 		scale: 'palette',
 		transformerMethod: 'color'
 	},
-	borderTopStyle: {
-		property: 'borderTopStyle',
-		scale: 'borderStyles'
-	},
 	borderBottomWidth: {
 		property: 'borderBottomWidth',
 		category: 'layout',
