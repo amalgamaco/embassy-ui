@@ -59,31 +59,30 @@ export default {
 		scale: 'spacings',
 		transformerMethod: 'spacing'
 	},
-	// marginX: {
-	// 	properties: [ 'marginLeft', 'marginRight' ],
-	// 	category: 'layout',
-	// 	scale: 'spacings',
-	// 	transformerMethod: 'spacing'
-	// },
-	// mx: {
-	// 	properties: [ 'marginLeft', 'marginRight' ],
-	// 	category: 'layout',
-	// 	scale: 'spacings',
-	// 	transformerMethod: 'spacing'
-	// },
-	// marginY: {
-	// 	properties: [ 'marginTop', 'marginBottom' ],
-	// 	category: 'layout',
-	// 	scale: 'spacings',
-	// 	transformerMethod: 'spacing'
-	// },
-	// my: {
-	// 	properties: [ 'marginTop', 'marginBottom' ],
-	// 	category: 'layout',
-	// 	scale: 'spacings',
-	// 	transformerMethod: 'spacing'
-	// },
-
+	marginX: {
+		property: 'marginHorizontal',
+		category: 'layout',
+		scale: 'spacings',
+		transformerMethod: 'spacing'
+	},
+	mx: {
+		property: 'marginHorizontal',
+		category: 'layout',
+		scale: 'spacings',
+		transformerMethod: 'spacing'
+	},
+	marginY: {
+		property: 'marginVertical',
+		category: 'layout',
+		scale: 'spacings',
+		transformerMethod: 'spacing'
+	},
+	my: {
+		property: 'marginVertical',
+		category: 'layout',
+		scale: 'spacings',
+		transformerMethod: 'spacing'
+	},
 	padding: {
 		property: 'padding',
 		category: 'layout',
@@ -144,26 +143,30 @@ export default {
 		scale: 'spacings',
 		transformerMethod: 'spacing'
 	},
-	// paddingX: {
-	// 	properties: [ 'paddingLeft', 'paddingRight' ],
-	// 	category: 'layout',
-	// 	scale: 'spacing'
-	// },
-	// px: {
-	// 	properties: [ 'paddingLeft', 'paddingRight' ],
-	// 	category: 'layout',
-	// 	scale: 'spacing'
-	// },
-	// paddingY: {
-	// 	properties: [ 'paddingTop', 'paddingBottom' ],
-	// 	category: 'layout',
-	// 	scale: 'spacing'
-	// },
-	// py: {
-	// 	properties: [ 'paddingTop', 'paddingBottom' ],
-	// 	category: 'layout',
-	// 	scale: 'spacing'
-	// },
+	paddingX: {
+		property: 'paddingHorizontal',
+		category: 'layout',
+		scale: 'spacings',
+		transformerMethod: 'spacing'
+	},
+	px: {
+		property: 'paddingHorizontal',
+		category: 'layout',
+		scale: 'spacings',
+		transformerMethod: 'spacing'
+	},
+	paddingY: {
+		property: 'paddingVertical',
+		category: 'layout',
+		scale: 'spacings',
+		transformerMethod: 'spacing'
+	},
+	py: {
+		property: 'paddingVertical',
+		category: 'layout',
+		scale: 'spacings',
+		transformerMethod: 'spacing'
+	},
 	gap: {
 		property: 'gap',
 		category: 'layout',
