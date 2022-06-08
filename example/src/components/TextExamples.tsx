@@ -1,13 +1,11 @@
 import * as React from 'react';
 
 import { StyleSheet, View } from 'react-native';
-import { Text } from '@amalgama/react-native-ui-kit';
+import { Text, VStack } from '@amalgama/react-native-ui-kit';
 
 const styles = StyleSheet.create( {
 	container: {
-		flex: 1,
-		alignItems: 'flex-start',
-		justifyContent: 'flex-start',
+		width: '100%',
 		marginBottom: 20
 	},
 	separator: {
@@ -24,7 +22,7 @@ const styles = StyleSheet.create( {
 } );
 
 const TextExamples = () => (
-	<View style={styles.container}>
+	<VStack style={styles.container}>
 		<Text variant="h1" bgColor="primary.200">Text Component</Text>
 		<View style={styles.vspace} />
 		<Text variant="sh1" color="primary.800">Variants</Text>
@@ -55,7 +53,7 @@ const TextExamples = () => (
 			<Text fontStyle="italic" fontSize="2xs" color="dark">Other text</Text>
 		</Text>
 		<Text fontSize="4xl" lineHeight="4xl" color="success.400" fontWeight="medium">Text!</Text>
-	</View>
+	</VStack>
 );
 
 export default TextExamples;
