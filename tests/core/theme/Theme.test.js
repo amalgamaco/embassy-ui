@@ -1,5 +1,6 @@
 import Palette from '../../../src/core/palette/Palette';
 import Theme from '../../../src/core/theme/Theme';
+import Typography from '../../../src/core/typography/Typography';
 
 const palette = new Palette(
 	{
@@ -27,10 +28,63 @@ const palette = new Palette(
 	}
 );
 
+const typography = new Typography( {
+	letterSpacings: {
+		'xs': -0.8,
+		'sm': 0.4,
+		'md': 0,
+		'lg': 0.4,
+		'xl': 0.8
+	},
+	lineHeights: {
+		'xs': 18,
+		'sm': 20,
+		'md': 22,
+		'lg': 24,
+		'xl': 28
+	},
+	fontWeights: {
+		hairline: 100,
+		thin: 200,
+		light: 300,
+		normal: 400,
+		medium: 500,
+		semibold: 600,
+		bold: 700,
+		extrabold: 800,
+		black: 900
+	},
+	fontSizes: {
+		'xs': 12,
+		'sm': 14,
+		'md': 16,
+		'lg': 18,
+		'xl': 20,
+		'2xl': 24
+	},
+	fonts: {
+		'Font1': {
+			400: {
+				normal: 'Font1-Regular',
+				italic: 'Font1-RegularItalic'
+			},
+			500: {
+				normal: 'Font1-Bold'
+			}
+		},
+		'Font2': {
+			400: {
+				normal: 'Font2-Regultar'
+			}
+		}
+	}
+} );
+
 describe( 'Theme', () => {
 	const createTheme = ( { colorMode = 'light' } = {} ) => (
 		new Theme( {
 			palette,
+			typography,
 			colorMode
 		} )
 	);
@@ -47,6 +101,14 @@ describe( 'Theme', () => {
 
 		it( 'returns the theme\'s palette', () => {
 			expect( theme.palette ).toEqual( palette );
+		} );
+	} );
+
+	describe( 'typography', () => {
+		const theme = createTheme();
+
+		it( 'returns the theme\'s typography', () => {
+			expect( theme.typography ).toEqual( typography );
 		} );
 	} );
 
