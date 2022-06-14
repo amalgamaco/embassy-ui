@@ -143,6 +143,18 @@ describe( 'Theme', () => {
 		pending( 'Add tests for swithcColorMode, it was tested in the hooks tests but it should be tested here aswell' );
 	} );
 
+	describe( 'config', () => {
+		const theme = createTheme();
+
+		it( 'returns the theme\'s config', () => {
+			expect( theme.config ).toEqual( {
+				colorMode: theme.colorMode,
+				palette: theme.palette.config,
+				typography: theme.typography.config
+			} );
+		} );
+	} );
+
 	describe( 'styleForProps', () => {
 		describe( 'for color properties', () => {
 			const props = {

@@ -77,4 +77,12 @@ export default class Theme {
 	styleForProps( props: ComponentProps ): Style {
 		return new StyleProps( { props, transformer: this } ).style;
 	}
+
+	get config() {
+		return {
+			colorMode: this.colorMode,
+			palette: this._palette.config,
+			typography: this._typography.config
+		};
+	}
 }

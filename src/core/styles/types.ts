@@ -31,6 +31,8 @@ export type Style = Record<StylePropName, StylePropValue>
 
 export type PropMap = {
 	property: StylePropName,
+	category?: string,
+	scale?: string,
 	transformerMethod?: TransformerMethod
 };
 export type PropsMappingDict = Record<PropName, PropMap>;

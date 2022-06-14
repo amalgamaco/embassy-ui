@@ -8,7 +8,7 @@ export type LineHeight = string | number;
 export type LineHeightAlias = string;
 type LineHeightsConfig = Record<LineHeightAlias, LineHeight>
 
-export type FontWeight = 100 | 200 | 300 | 400 | 500 | 600 | 700 | 800 | 900 | 'normal' | 'bold' | 'lighter' | 'bolder';
+export type FontWeight = number;
 export type FontWeightAlias = string;
 type FontWeightsConfig = Record<FontWeightAlias, FontWeight>
 

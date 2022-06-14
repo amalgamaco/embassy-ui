@@ -1,6 +1,6 @@
 import Palette from '../../../src/core/palette/Palette';
 
-const colorsConfig = {
+const config = {
 	base: {
 		primary: {
 			900: '#2200C1',
@@ -25,11 +25,11 @@ const colorsConfig = {
 };
 
 describe( 'Palette', () => {
-	const palette = new Palette( colorsConfig );
+	const palette = new Palette( config );
 
-	describe( 'colors', () => {
-		it( 'returns the palette\'s colors definition', () => {
-			expect( palette.colors ).toEqual( colorsConfig );
+	describe( 'config', () => {
+		it( 'returns the palette\'s config', () => {
+			expect( palette.config ).toEqual( config );
 		} );
 	} );
 

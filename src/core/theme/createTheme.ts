@@ -1,11 +1,11 @@
 import Palette from '../palette/Palette';
 import Theme from './Theme';
-import type { PaletteColorsConfig } from '../palette/types';
+import type { PaletteConfig } from '../palette/types';
 import type { TypographyConfig } from '../typography/types';
 import Typography from '../typography/Typography';
 
 type CreateThemeProps = {
-	palette: PaletteColorsConfig,
+	palette: PaletteConfig,
 	typography: TypographyConfig
 }
 

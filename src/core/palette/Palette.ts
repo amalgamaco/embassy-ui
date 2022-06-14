@@ -1,15 +1,15 @@
 import type { ColorMode } from '../types';
-import type { PaletteColor, PaletteColorsConfig, PaletteColorsConfigKey } from './types';
+import type { PaletteColor, PaletteConfig, PaletteConfigKey } from './types';
 import { getColor } from './utils';
 
 export default class Palette {
-	private _colors: PaletteColorsConfig;
+	private _config: PaletteConfig;
 
-	constructor( colors: PaletteColorsConfig ) {
-		this._colors = colors;
+	constructor( config: PaletteConfig ) {
+		this._config = config;
 	}
 
-	get colors() { return this._colors; }
+	get config() { return this._config; }
 
 	colorFor(
 		name: PaletteColor,
@@ -20,8 +20,8 @@ export default class Palette {
 	}
 
 	private getColor(
-		{ name, configKey }: { name: PaletteColor, configKey: PaletteColorsConfigKey }
+		{ name, configKey }: { name: PaletteColor, configKey: PaletteConfigKey }
 	): string | undefined {
-		return getColor( name, this._colors[ configKey ] );
+		return getColor( name, this._config[ configKey ] );
 	}
 }
