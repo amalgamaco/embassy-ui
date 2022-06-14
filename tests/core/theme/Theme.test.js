@@ -157,6 +157,26 @@ const components = new Components( {
 				fontWeight: 'normal'
 			}
 		}
+	},
+	Button: {
+		defaultProps: {
+			rounded: 'md',
+			bg: 'white',
+			__label: {
+				fontSize: '2xl',
+				lineHeight: 'md',
+				fontWeight: 'normal',
+				color: 'black'
+			}
+		},
+		variants: {
+			primary: {
+				bg: 'primary.600',
+				__label: {
+					color: 'white'
+				}
+			}
+		}
 	}
 } );
 
@@ -240,6 +260,38 @@ describe( 'Theme', () => {
 		it( 'returns the props for the given component variant', () => {
 			const theme = createTheme();
 			expect( theme.variantPropsFor( 'Text', 'h1' ) ).toEqual( components.config.Text?.variants?.h1 );
+		} );
+	} );
+
+	describe( 'resolvePropsFor', () => {
+		it( 'returns the props for the given component mergin the default props, the variant props and the passedProps', () => {
+			const theme = createTheme();
+			expect(
+				theme.resolvePropsFor(
+					'Button',
+					{
+						passedProps: {
+							padding: 'md',
+							margin: 'sm',
+							__label: {
+								fontWeight: 'bold'
+							}
+						},
+						variant: 'primary'
+					}
+				)
+			).toEqual( {
+				rounded: 'md',
+				bg: 'primary.600',
+				padding: 'md',
+				margin: 'sm',
+				__label: {
+					fontSize: '2xl',
+					lineHeight: 'md',
+					fontWeight: 'bold',
+					color: 'white'
+				}
+			} );
 		} );
 	} );
 
