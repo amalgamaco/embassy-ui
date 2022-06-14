@@ -70,6 +70,10 @@ const typography = new Typography( {
 			},
 			500: {
 				normal: 'Font1-Bold'
+			},
+			600: {
+				normal: 'Font1-SemiBold',
+				italic: 'Font1-SemiBoldItalic'
 			}
 		},
 		'Font2': {
@@ -220,6 +224,128 @@ describe( 'Theme', () => {
 				} ) ).toEqual( {
 					color: '#a066e8',
 					tintColor: '#d7bff4'
+				} );
+			} );
+		} );
+
+		describe( 'for typography properties', () => {
+			const theme = createTheme();
+
+			describe( 'font', () => {
+				it( 'returns the correct font with default fontWeight and fontStyle when there are not specified', () => {
+					const props = { font: 'Font1' };
+
+					expect( theme.styleForProps( props ) ).toEqual( {
+						fontFamily: 'Font1-Regular'
+					} );
+				} );
+
+				it( 'returns the correct font when specifing fontWeight and fontStyle', () => {
+					const props = { font: 'Font1', fontWeight: 'semibold', fontStyle: 'italic' };
+
+					expect( theme.styleForProps( props ) ).toEqual( {
+						fontFamily: 'Font1-SemiBoldItalic',
+						fontWeight: 600,
+						fontStyle: 'italic'
+					} );
+				} );
+
+				it( 'returns the correct font when specifing only fontWeight', () => {
+					const props = { font: 'Font1', fontWeight: 'medium' };
+
+					expect( theme.styleForProps( props ) ).toEqual( {
+						fontFamily: 'Font1-Bold',
+						fontWeight: 500
+					} );
+				} );
+
+				it( 'returns the correct font when specifing only fontStyle', () => {
+					const props = { font: 'Font1', fontStyle: 'italic' };
+
+					expect( theme.styleForProps( props ) ).toEqual( {
+						fontFamily: 'Font1-RegularItalic',
+						fontStyle: 'italic'
+					} );
+				} );
+			} );
+
+			describe( 'fontSize', () => {
+				it( 'returns the correct value', () => {
+					expect( theme.styleForProps( { fontSize: 'lg' } ) ).toEqual(
+						{ fontSize: 18 }
+					);
+				} );
+			} );
+
+			describe( 'fontWeight', () => {
+				it( 'returns the correct value', () => {
+					expect( theme.styleForProps( { fontWeight: 'bold' } ) ).toEqual(
+						{ fontWeight: 700 }
+					);
+				} );
+			} );
+
+			describe( 'letterSpacing', () => {
+				it( 'returns the correct value', () => {
+					expect( theme.styleForProps( { letterSpacing: 'xs' } ) ).toEqual(
+						{ letterSpacing: -0.8 }
+					);
+				} );
+			} );
+
+			describe( 'lineHeight', () => {
+				it( 'returns the correct value', () => {
+					expect( theme.styleForProps( { lineHeight: 'xl' } ) ).toEqual(
+						{ lineHeight: 28 }
+					);
+				} );
+			} );
+
+			describe( 'textAlign', () => {
+				it( 'returns the correct value', () => {
+					expect( theme.styleForProps( { textAlign: 'center' } ) ).toEqual(
+						{ textAlign: 'center' }
+					);
+				} );
+			} );
+
+			describe( 'fontStyle', () => {
+				it( 'returns the correct value', () => {
+					expect( theme.styleForProps( { fontStyle: 'italic' } ) ).toEqual(
+						{ fontStyle: 'italic' }
+					);
+				} );
+			} );
+
+			describe( 'textTransform', () => {
+				it( 'returns the correct value', () => {
+					expect( theme.styleForProps( { textTransform: 'uppercase' } ) ).toEqual(
+						{ textTransform: 'uppercase' }
+					);
+				} );
+			} );
+
+			describe( 'textDecoration', () => {
+				it( 'returns the correct value', () => {
+					expect( theme.styleForProps( { textDecoration: 'underline' } ) ).toEqual(
+						{ textDecorationLine: 'underline' }
+					);
+				} );
+			} );
+
+			describe( 'txtDecor', () => {
+				it( 'returns the correct value', () => {
+					expect( theme.styleForProps( { txtDecor: 'underline' } ) ).toEqual(
+						{ textDecorationLine: 'underline' }
+					);
+				} );
+			} );
+
+			describe( 'textDecorationLine', () => {
+				it( 'returns the correct value', () => {
+					expect( theme.styleForProps( { textDecorationLine: 'underline' } ) ).toEqual(
+						{ textDecorationLine: 'underline' }
+					);
 				} );
 			} );
 		} );

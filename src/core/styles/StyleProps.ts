@@ -53,8 +53,15 @@ export default class StyleProps {
 	}
 
 	private transformProperty(
-		value: PropValue, transformerMethod: TransformerMethod
+		value: PropValue,
+		transformerMethod: TransformerMethod | undefined
 	): StylePropValue | undefined {
+		if ( !transformerMethod ) { return value; }
+
+		if ( typeof transformerMethod === 'function' ) {
+			return transformerMethod( value, this.transformer, this.props );
+		}
+
 		// eslint-disable-next-line @typescript-eslint/ban-ts-comment
 		// @ts-ignore
 		return this.transformer[ transformerMethod ]( value );
