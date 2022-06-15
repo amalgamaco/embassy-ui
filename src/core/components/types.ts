@@ -1,7 +1,7 @@
 import type { ComponentStyledProps } from '../theme/types';
 import type { ElementType } from '../types';
 
-export type ComponentName = 'Text' | 'Box' | 'Stack' | 'Button';
+export type ComponentName = 'Text' | 'Box' | 'Stack' | 'Button' | 'Pressable';
 export type VariantName = string;
 export type ComponentConfig<C extends ComponentName> = Partial<{
 	defaultProps: ComponentStyledProps<C>,
