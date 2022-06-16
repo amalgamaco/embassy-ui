@@ -93,7 +93,7 @@ describe( 'Text', () => {
 		);
 
 		expect( getByTestId( 'test-text' ) ).toHaveStyle( {
-			letterSpacing: 0.4
+			letterSpacing: 0.15
 		} );
 	} );
 
@@ -104,7 +104,7 @@ describe( 'Text', () => {
 		);
 
 		expect( getByTestId( 'test-text' ) ).toHaveStyle( {
-			color: '#8a3fe2'
+			color: '#999AB8'
 		} );
 	} );
 
@@ -115,7 +115,7 @@ describe( 'Text', () => {
 		);
 
 		expect( getByTestId( 'test-text' ) ).toHaveStyle( {
-			backgroundColor: '#8a3fe2'
+			backgroundColor: '#999AB8'
 		} );
 	} );
 

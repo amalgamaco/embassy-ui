@@ -38,7 +38,7 @@
 		</dict>
 	</dict>
 	<key>NSLocationWhenInUseUsageDescription</key>
-	<string></string>
+	<string/>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>
 	<key>UIRequiredDeviceCapabilities</key>
@@ -53,5 +53,35 @@
 	</array>
 	<key>UIViewControllerBasedStatusBarAppearance</key>
 	<false/>
+	<key>UIAppFonts</key>
+	<array>
+		<string>Epilogue-Black.ttf</string>
+		<string>Epilogue-BlackItalic.ttf</string>
+		<string>Epilogue-Bold.ttf</string>
+		<string>Epilogue-BoldItalic.ttf</string>
+		<string>Epilogue-ExtraBold.ttf</string>
+		<string>Epilogue-ExtraBoldItalic.ttf</string>
+		<string>Epilogue-ExtraLight.ttf</string>
+		<string>Epilogue-ExtraLightItalic.ttf</string>
+		<string>Epilogue-Italic.ttf</string>
+		<string>Epilogue-Light.ttf</string>
+		<string>Epilogue-LightItalic.ttf</string>
+		<string>Epilogue-Medium.ttf</string>
+		<string>Epilogue-MediumItalic.ttf</string>
+		<string>Epilogue-Regular.ttf</string>
+		<string>Epilogue-SemiBold.ttf</string>
+		<string>Epilogue-SemiBoldItalic.ttf</string>
+		<string>Epilogue-Thin.ttf</string>
+		<string>Epilogue-ThinItalic.ttf</string>
+		<string>Inter-Black.ttf</string>
+		<string>Inter-Bold.ttf</string>
+		<string>Inter-ExtraBold.ttf</string>
+		<string>Inter-ExtraLight.ttf</string>
+		<string>Inter-Light.ttf</string>
+		<string>Inter-Medium.ttf</string>
+		<string>Inter-Regular.ttf</string>
+		<string>Inter-SemiBold.ttf</string>
+		<string>Inter-Thin.ttf</string>
+	</array>
 </dict>
 </plist>
