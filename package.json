@@ -88,6 +88,7 @@
     ],
     "collectCoverage": true,
     "coverageDirectory": "<rootDir>/reports/coverage",
+    "coveragePathIgnorePatterns": [ "tests/support" ],
     "coverageReporters": [
       "json",
       "lcov",

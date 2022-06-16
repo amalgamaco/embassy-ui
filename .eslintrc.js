@@ -41,6 +41,12 @@ module.exports = {
 			'rules': {
 				'import/no-extraneous-dependencies': 'off'
 			}
+		},
+		{
+			'files': [ 'tests/**/*' ],
+			'rules': {
+				'@typescript-eslint/no-var-requires': 'off'
+			}
 		}
 	],
 	'ignorePatterns': [ 'dist/**/*' ],
