@@ -9,26 +9,34 @@ import type {
 	FontWeight, FontWeightAlias, LetterSpacing,
 	LetterSpacingAlias, LineHeight, LineHeightAlias
 } from '../typography/types';
+import type Components from '../components/Components';
+import type { ComponentName, VariantName } from '../components/types';
 
 interface ThemeConstructorParams {
 	palette: Palette,
 	typography: Typography,
+	components: Components,
 	colorMode?: ColorMode
 }
 
 export default class Theme {
 	private _palette: Palette;
 	private _typography: Typography;
+	private _components: Components;
 	private _colorMode: ColorMode;
 
-	constructor( { palette, typography, colorMode = 'light' }: ThemeConstructorParams ) {
+	constructor( {
+		palette, typography, components, colorMode = 'light'
+	}: ThemeConstructorParams ) {
 		this._palette = palette;
 		this._typography = typography;
+		this._components = components;
 		this._colorMode = colorMode;
 	}
 
 	get palette() { return this._palette; }
 	get typography() { return this._typography; }
+	get components() { return this._components; }
 	get colorMode() { return this._colorMode; }
 	get statusBarStyle() {
 		return this._colorMode === 'light'
@@ -66,10 +74,19 @@ export default class Theme {
 		return this._typography.fontSize( alias );
 	}
 
+	defaultPropsFor( componentName: ComponentName ) {
+		return this._components.defaultPropsFor( componentName );
+	}
+
+	variantPropsFor( componentName: ComponentName, variantName: VariantName ) {
+		return this._components.variantPropsFor( componentName, variantName );
+	}
+
 	switchColorMode( colorMode: ColorMode ): Theme {
 		return new Theme( {
 			palette: this._palette,
 			typography: this._typography,
+			components: this._components,
 			colorMode
 		} );
 	}
@@ -82,6 +99,7 @@ export default class Theme {
 		return {
 			colorMode: this.colorMode,
 			palette: this._palette.config,
+			components: this._components.config,
 			typography: this._typography.config
 		};
 	}

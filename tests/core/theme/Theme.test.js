@@ -1,4 +1,6 @@
+import Components from '../../../src/core/components/Components';
 import Palette from '../../../src/core/palette/Palette';
+
 import Theme from '../../../src/core/theme/Theme';
 import Typography from '../../../src/core/typography/Typography';
 
@@ -44,15 +46,15 @@ const typography = new Typography( {
 		'xl': 28
 	},
 	fontWeights: {
-		hairline: 100,
-		thin: 200,
-		light: 300,
-		normal: 400,
-		medium: 500,
-		semibold: 600,
-		bold: 700,
-		extrabold: 800,
-		black: 900
+		hairline: '100',
+		thin: '200',
+		light: '300',
+		normal: '400',
+		medium: '500',
+		semibold: '600',
+		bold: '700',
+		extrabold: '800',
+		black: '900'
 	},
 	fontSizes: {
 		'xs': 12,
@@ -84,18 +86,41 @@ const typography = new Typography( {
 	}
 } );
 
+const components = new Components( {
+	Text: {
+		defaultProps: {
+			fontSize: 'xl',
+			lineHeight: 'md',
+			fontWeight: 'normal'
+		},
+		variants: {
+			'h1': {
+				fontSize: '4xl',
+				lineHeight: '2xl',
+				fontWeight: 'bold'
+			},
+			'body': {
+				fontSize: '2xl',
+				lineHeight: 'md',
+				fontWeight: 'normal'
+			}
+		}
+	}
+} );
+
 describe( 'Theme', () => {
 	const createTheme = ( { colorMode = 'light' } = {} ) => (
 		new Theme( {
 			palette,
 			typography,
+			components,
 			colorMode
 		} )
 	);
 
 	describe( 'constructor', () => {
 		it( 'by default sets the color mode to light', () => {
-			const theme = new Theme( { palette } );
+			const theme = new Theme( { palette, typography, components } );
 			expect( theme.colorMode ).toEqual( 'light' );
 		} );
 	} );
@@ -143,6 +168,20 @@ describe( 'Theme', () => {
 		pending( 'Add tests for swithcColorMode, it was tested in the hooks tests but it should be tested here aswell' );
 	} );
 
+	describe( 'defaultPropsFor', () => {
+		it( 'returns the default props for the given component', () => {
+			const theme = createTheme();
+			expect( theme.defaultPropsFor( 'Text' ) ).toEqual( components.config.Text?.defaultProps );
+		} );
+	} );
+
+	describe( 'variantPropsFor', () => {
+		it( 'returns the props for the given component variant', () => {
+			const theme = createTheme();
+			expect( theme.variantPropsFor( 'Text', 'h1' ) ).toEqual( components.config.Text?.variants?.h1 );
+		} );
+	} );
+
 	describe( 'config', () => {
 		const theme = createTheme();
 
@@ -150,6 +189,7 @@ describe( 'Theme', () => {
 			expect( theme.config ).toEqual( {
 				colorMode: theme.colorMode,
 				palette: theme.palette.config,
+				components: theme.components.config,
 				typography: theme.typography.config
 			} );
 		} );
@@ -257,7 +297,7 @@ describe( 'Theme', () => {
 
 					expect( theme.styleForProps( props ) ).toEqual( {
 						fontFamily: 'Font1-SemiBoldItalic',
-						fontWeight: 600,
+						fontWeight: '600',
 						fontStyle: 'italic'
 					} );
 				} );
@@ -267,7 +307,7 @@ describe( 'Theme', () => {
 
 					expect( theme.styleForProps( props ) ).toEqual( {
 						fontFamily: 'Font1-Bold',
-						fontWeight: 500
+						fontWeight: '500'
 					} );
 				} );
 
@@ -292,7 +332,7 @@ describe( 'Theme', () => {
 			describe( 'fontWeight', () => {
 				it( 'returns the correct value', () => {
 					expect( theme.styleForProps( { fontWeight: 'bold' } ) ).toEqual(
-						{ fontWeight: 700 }
+						{ fontWeight: '700' }
 					);
 				} );
 			} );
