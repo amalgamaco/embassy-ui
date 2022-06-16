@@ -23,7 +23,7 @@
   ],
   "scripts": {
     "test": "NODE_ENV=test JEST_JUNIT_OUTPUT_DIR=reports TZ=UTC jest",
-    "lint": "eslint src/ tests/",
+    "lint": "eslint src/ tests/ example/",
     "typescript": "tsc --noEmit",
     "prepare": "bob build",
     "release": "release-it",

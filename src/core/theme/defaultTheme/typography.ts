@@ -1,4 +1,4 @@
-export default {
+const typography = {
 	letterSpacings: {
 		'xs': -0.8,
 		'sm': 0.4,
@@ -20,15 +20,15 @@ export default {
 		'5xl': 64
 	},
 	fontWeights: {
-		hairline: 100,
-		thin: 200,
-		light: 300,
-		normal: 400,
-		medium: 500,
-		semibold: 600,
-		bold: 700,
-		extrabold: 800,
-		black: 900
+		hairline: '100',
+		thin: '200',
+		light: '300',
+		normal: '400',
+		medium: '500',
+		semibold: '600',
+		bold: '700',
+		extrabold: '800',
+		black: '900'
 	},
 	fonts: {
 		'Epilogue': {
@@ -116,3 +116,11 @@ export default {
 		'9xl': 128
 	}
 };
+
+export type IFont = keyof typeof typography.fonts;
+export type IFontSize = keyof typeof typography.fontSizes;
+export type IFontWeight = keyof typeof typography.fontWeights;
+export type ILetterSpacing = keyof typeof typography.letterSpacings;
+export type ILineHeight = keyof typeof typography.lineHeights;
+
+export default typography;

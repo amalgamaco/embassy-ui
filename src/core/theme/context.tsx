@@ -2,6 +2,7 @@ import React, { useCallback, useState } from 'react';
 import { StatusBar } from 'react-native';
 import type { ColorMode } from '../types';
 import type Theme from './Theme';
+import defaultTheme from './defaultTheme';
 
 type ThemeContextValue = {
 	theme: Theme,
@@ -10,13 +11,13 @@ type ThemeContextValue = {
 
 type ThemeProviderProps = {
 	children: React.ReactNode,
-	theme: Theme
+	theme?: Theme
 }
 
 export const ThemeContext = React.createContext<ThemeContextValue | undefined>( undefined );
 
 export const ThemeProvider = ( { children, theme: initialTheme }: ThemeProviderProps ) => {
-	const [ theme, setTheme ] = useState( initialTheme );
+	const [ theme, setTheme ] = useState( initialTheme || defaultTheme );
 
 	const switchColorMode = useCallback( ( colorMode: ColorMode ) => {
 		setTheme( theme.switchColorMode( colorMode ) );
