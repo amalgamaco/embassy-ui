@@ -7,7 +7,8 @@ const styles = StyleSheet.create( {
 	container: {
 		flex: 1,
 		alignItems: 'flex-start',
-		justifyContent: 'flex-start'
+		justifyContent: 'flex-start',
+		marginBottom: 20
 	},
 	separator: {
 		height: 1,
@@ -53,7 +54,7 @@ const TextExamples = () => (
 			Text
 			<Text fontStyle="italic" fontSize="2xs" color="dark">Other text</Text>
 		</Text>
-		<Text fontSize="4xl" color="success.400" fontWeight="medium">Text!</Text>
+		<Text fontSize="4xl" lineHeight="4xl" color="success.400" fontWeight="medium">Text!</Text>
 	</View>
 );
 
