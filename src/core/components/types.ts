@@ -12,7 +12,7 @@ export type ComponentsConfig = Partial<{
 }>;
 
 const PSEUDO_PROPS_CONFIG = {
-	'Button': [ '__label' ]
+	'Button': [ '__label', '__stack' ]
 } as const;
 
 type PseudoPropsConfig = typeof PSEUDO_PROPS_CONFIG;

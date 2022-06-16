@@ -4,6 +4,7 @@ export { default as createTheme } from './core/theme/createTheme';
 export { ThemeProvider, ThemeConsumer } from './core/theme/context';
 export {
 	Box,
+	Button,
 	HStack,
 	VStack,
 	Text

@@ -1,10 +1,11 @@
 import * as React from 'react';
 
 import { SafeAreaView, ScrollView, StyleSheet } from 'react-native';
-import { ThemeProvider } from '@amalgama/react-native-ui-kit';
+import { ThemeProvider, VStack } from '@amalgama/react-native-ui-kit';
 
 import TextExamples from './components/TextExamples';
 import BoxExamples from './components/BoxExamples';
+import ButtonExamples from './components/ButtonExamples';
 
 const styles = StyleSheet.create( {
 	container: {
@@ -24,8 +25,11 @@ export default function App() {
 		<ThemeProvider>
 			<SafeAreaView style={styles.container}>
 				<ScrollView contentContainerStyle={styles.scroll}>
-					<TextExamples />
-					<BoxExamples />
+					<VStack>
+						<TextExamples />
+						<BoxExamples />
+						<ButtonExamples />
+					</VStack>
 				</ScrollView>
 			</SafeAreaView>
 		</ThemeProvider>

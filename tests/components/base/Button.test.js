@@ -2,20 +2,20 @@ import React from 'react';
 import { render } from '@testing-library/react-native';
 import WithThemeProvider from '../../support/withThemeProvider';
 
-import Pressable from '../../../src/components/main/Pressable';
+import Button from '../../../src/components/main/Button';
 import Text from '../../../src/components/main/Text';
 
 const { itBehavesLike } = require( '../../support/sharedExamples' );
 
-describe( 'Pressable', () => {
+describe( 'Button', () => {
 	const renderComponent = ( children, props ) => render(
-		<Pressable testID="test-pressable" {...props} >{children}</Pressable>,
+		<Button testID="test-button" {...props} >{children}</Button>,
 		{ wrapper: WithThemeProvider }
 	);
 
 	it( 'contains the passed children', () => {
 		const { getByTestId } = renderComponent( <Text>Test!</Text> );
-		expect( getByTestId( 'test-pressable' ) ).toHaveTextContent( 'Test!' );
+		expect( getByTestId( 'test-button' ) ).toHaveTextContent( 'Test!' );
 	} );
 
 	itBehavesLike(
@@ -25,7 +25,7 @@ describe( 'Pressable', () => {
 				<Text>Test!</Text>,
 				props
 			),
-			testId: 'test-pressable'
+			testId: 'test-button'
 		}
 	);
 
@@ -36,7 +36,10 @@ describe( 'Pressable', () => {
 				<Text>Test!</Text>,
 				props
 			),
-			testId: 'test-pressable'
+			testId: 'test-button',
+			// FIXME: Handle several props translating to the same property
+			// with different values
+			omitProps: [ 'borderRadius', 'backgroundColor' ]
 		}
 	);
 } );
