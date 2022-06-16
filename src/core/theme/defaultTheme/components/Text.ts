@@ -2,8 +2,7 @@ export default {
 	defaultProps: {
 		font: 'Inter',
 		fontSize: 'md',
-		fontWeight: 'normal',
-		lineHeight: 'md'
+		fontWeight: 'normal'
 	},
 	variants: {
 		'headline-1': {

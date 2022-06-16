@@ -1,3 +1,4 @@
+import type { ComponentName } from 'src/core/components/types';
 import { STYLE_PROPS_MAPPING } from '../core/styles/consts';
 import { useTheme } from '../core/theme/hooks';
 
@@ -22,15 +23,24 @@ const getStylePropsAndRestProps = ( props: any ) => Object
 		}
 	);
 
-const useStyleFromPropsResolver = ( {
-	style: styleProp,
-	...props
-}: any ) => {
+const useStyleFromPropsResolver = (
+	componentName: ComponentName,
+	{
+		style: styleProp,
+		...props
+	}: any
+) => {
 	const theme = useTheme();
 
 	// TODO: Use useMemo to optimize style re-calculation.
 	const { styleProps, restProps } = getStylePropsAndRestProps( props );
-	const styleFromPRops = theme?.styleForProps( styleProps );
+	const defaultProps = theme?.defaultPropsFor( componentName ) || {};
+	const variantProps = theme?.variantPropsFor( componentName, restProps.variant ) || {};
+	const styleFromPRops = theme?.styleForProps( {
+		...defaultProps,
+		...variantProps,
+		...styleProps
+	} );
 	const style = { ...styleFromPRops, ...styleProp };
 
 	return [ style, restProps ];
