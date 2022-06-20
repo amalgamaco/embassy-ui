@@ -167,6 +167,9 @@ const components = new Components( {
 				lineHeight: 'md',
 				fontWeight: 'normal',
 				color: 'black'
+			},
+			__pressed: {
+				opacity: 0.7
 			}
 		},
 		variants: {
@@ -270,11 +273,15 @@ describe( 'Theme', () => {
 				theme.resolvePropsFor(
 					'Button',
 					{
-						passedProps: {
-							padding: 'md',
-							margin: 'sm',
+						padding: 'md',
+						margin: 'sm',
+						__label: {
+							fontWeight: 'bold'
+						},
+						__pressed: {
+							bg: 'primary.400',
 							__label: {
-								fontWeight: 'bold'
+								color: 'black'
 							}
 						},
 						variant: 'primary'
@@ -290,6 +297,44 @@ describe( 'Theme', () => {
 					lineHeight: 'md',
 					fontWeight: 'bold',
 					color: 'white'
+				}
+			} );
+		} );
+
+		it( 'handles state props correctly for the active states', () => {
+			const theme = createTheme();
+			expect(
+				theme.resolvePropsFor(
+					'Button',
+					{
+						padding: 'md',
+						margin: 'sm',
+						__label: {
+							fontWeight: 'bold'
+						},
+						__pressed: {
+							bg: 'primary.400',
+							__label: {
+								color: 'black'
+							}
+						},
+						variant: 'primary'
+					},
+					{
+						isPressed: true
+					}
+				)
+			).toEqual( {
+				rounded: 'md',
+				bg: 'primary.400',
+				padding: 'md',
+				margin: 'sm',
+				opacity: 0.7,
+				__label: {
+					fontSize: '2xl',
+					lineHeight: 'md',
+					fontWeight: 'bold',
+					color: 'black'
 				}
 			} );
 		} );

@@ -3,7 +3,9 @@
 /* eslint-disable @typescript-eslint/ban-types */
 import type { Properties as CSSProperties } from 'csstype';
 import type { ImageStyle, TextStyle, ViewStyle } from 'react-native';
-import type { ComponentName, ComponentPseudoProps } from '../components/types';
+import type {
+	ComponentName, ComponentPseudoProps, ComponentStateProp
+} from '../components/types';
 import type { StlyePropsMapping } from '../styles/propsMapping';
 import type { Leaves } from '../types';
 import type { config } from './defaultTheme';
@@ -71,13 +73,25 @@ export type VariantType<
 export type StyledProps = AllProps<StlyePropsMapping>;
 
 type PseudoPropStyledProps<C extends ComponentName> =
-	Record<ComponentPseudoProps<C>, StyledProps>;
+	Partial<Record<ComponentPseudoProps<C>, StyledProps>>;
 
-export type ComponentStyledProps<C extends ComponentName> = {
+export type StyledPropsWithPseudoProps<C extends ComponentName> = {
 	[K in ( keyof StyledProps | keyof PseudoPropStyledProps<C> )]?:
 		K extends keyof StyledProps
 			? StyledProps[K]
 			: K extends keyof PseudoPropStyledProps<C>
 			? PseudoPropStyledProps<C>[K]
+			: never
+};
+
+export type ComponentStateProps<C extends ComponentName> =
+	Partial<Record<ComponentStateProp, StyledPropsWithPseudoProps<C>>>;
+
+export type ComponentStyledProps<C extends ComponentName> = {
+	[K in ( keyof StyledPropsWithPseudoProps<C> | keyof ComponentStateProps<C> )]?:
+		K extends keyof StyledPropsWithPseudoProps<C>
+			? StyledPropsWithPseudoProps<C>[K]
+			: K extends ComponentStateProp
+			? ComponentStateProps<C>[K]
 			: never
 };

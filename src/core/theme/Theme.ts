@@ -1,5 +1,3 @@
-import { merge } from 'lodash';
-
 import type Palette from '../palette/Palette';
 import type { ColorMode } from '../types';
 import type { PaletteColor } from '../palette/types';
@@ -12,14 +10,15 @@ import type {
 	LetterSpacingAlias, LineHeight, LineHeightAlias
 } from '../typography/types';
 import type Components from '../components/Components';
-import type { ComponentName, VariantName } from '../components/types';
+import type {
+	ComponentName, ComponentState, PropsWithVariant, VariantName
+} from '../components/types';
 import type Layout from '../layout/Layout';
 import type {
 	BorderWidth,
 	BorderWidthAlias,
 	Radius, RadiusAlias, Spacing, SpacingAlias
 } from '../layout/types';
-import type { StyledProps } from './types';
 
 interface ThemeConstructorParams {
 	palette: Palette,
@@ -142,14 +141,10 @@ export default class Theme {
 
 	resolvePropsFor(
 		componentName: ComponentName,
-		{ passedProps = {}, variant }: { passedProps?: StyledProps, variant?: VariantName }
+		props: PropsWithVariant,
+		state?: ComponentState
 	) {
-		const defaultProps = this.defaultPropsFor( componentName ) || {};
-		const variantProps = (
-			variant ? this.variantPropsFor( componentName, variant ) : undefined
-		) || {};
-
-		return merge( {}, defaultProps, variantProps, passedProps );
+		return this._components.resolvePropsFor( componentName, props, state );
 	}
 
 	// Style
