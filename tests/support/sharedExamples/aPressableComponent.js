@@ -4,6 +4,8 @@ module.exports = ( { renderComponent, testId } ) => {
 	describe( 'handle pressable events', () => {
 		const events = [
 			[ 'onPress', 'press' ],
+			[ 'onPressIn', 'pressIn' ],
+			[ 'onPressOut', 'pressOut' ],
 			[ 'onLongPress', 'longPress' ],
 			[ 'onHover', 'hover' ]
 			// FIXME: blur and focus events are not working

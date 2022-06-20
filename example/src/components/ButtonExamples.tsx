@@ -36,6 +36,11 @@ const ButtonExamples = () => (
 			<Button variant="danger" onPress={onButtonPressed}>Danger</Button>
 			<Button variant="success" onPress={onButtonPressed}>Success</Button>
 		</HStack>
+		<Text variant="sh1" color="primary.800">Disabled</Text>
+		<View style={styles.separator} />
+		<Button variant="primary" disabled onPress={onButtonPressed}>Primary Disabled</Button>
+		<Button variant="secondary" disabled onPress={onButtonPressed}>Secondary Disabled</Button>
+		<Button variant="primary" __disabled={{ bg: 'error.100' }} disabled onPress={onButtonPressed}>Primary Disabled</Button>
 	</VStack>
 );
 

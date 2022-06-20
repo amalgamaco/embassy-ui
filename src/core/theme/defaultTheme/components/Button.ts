@@ -14,6 +14,12 @@ export default {
 			flex: 1,
 			color: 'black',
 			textAlign: 'center' as const
+		},
+		__disabled: {
+			opacity: 0.7
+		},
+		__pressed: {
+			opacity: 0.7
 		}
 	},
 	variants: {
