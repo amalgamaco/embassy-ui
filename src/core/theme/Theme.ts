@@ -108,17 +108,6 @@ export default class Theme {
 		return this._layout.radius( alias );
 	}
 
-	// Color mode
-	switchColorMode( colorMode: ColorMode ): Theme {
-		return new Theme( {
-			palette: this._palette,
-			typography: this._typography,
-			layout: this._layout,
-			components: this._components,
-			colorMode
-		} );
-	}
-
 	// Config
 	get config() {
 		return {

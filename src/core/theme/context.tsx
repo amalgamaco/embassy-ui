@@ -1,8 +1,10 @@
-import React, { useCallback, useState } from 'react';
+import React, { useCallback, useMemo, useState } from 'react';
 import { StatusBar } from 'react-native';
 import type { ColorMode } from '../types';
-import type Theme from './Theme';
 import defaultTheme from './defaultTheme';
+import type { IThemeConfig } from './types';
+import createTheme from './createTheme';
+import type Theme from './Theme';
 
 type ThemeContextValue = {
 	theme: Theme,
@@ -11,17 +13,27 @@ type ThemeContextValue = {
 
 type ThemeProviderProps = {
 	children: React.ReactNode,
-	theme?: Theme
+	theme?: IThemeConfig,
+	colorMode?: ColorMode
 }
 
 export const ThemeContext = React.createContext<ThemeContextValue | undefined>( undefined );
 
-export const ThemeProvider = ( { children, theme: initialTheme }: ThemeProviderProps ) => {
-	const [ theme, setTheme ] = useState( initialTheme || defaultTheme );
+export const ThemeProvider = ( {
+	children,
+	theme: initialTheme,
+	colorMode: initialColorMode = 'light'
+}: ThemeProviderProps ) => {
+	const themeConfig = initialTheme || defaultTheme;
+	const [ colorMode, setColorMode ] = useState( initialColorMode );
 
-	const switchColorMode = useCallback( ( colorMode: ColorMode ) => {
-		setTheme( theme.switchColorMode( colorMode ) );
-	}, [ theme, setTheme ] );
+	const theme: Theme = useMemo( () => createTheme(
+		{ ...themeConfig, colorMode }
+	), [ themeConfig, colorMode ] );
+
+	const switchColorMode = useCallback( ( selectedColorMode: ColorMode ) => {
+		setColorMode( selectedColorMode );
+	}, [ setColorMode ] );
 
 	return (
 		<ThemeContext.Provider value={{ theme, switchColorMode }}>
