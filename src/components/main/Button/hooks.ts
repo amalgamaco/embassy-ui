@@ -1,5 +1,5 @@
-import { useCallback, useMemo, useState } from 'react';
-import type { GestureResponderEvent } from 'react-native';
+import { useMemo } from 'react';
+import useIsPressed from '../../hooks/useIsPressed';
 import { useTheme } from '../../../core/theme/hooks';
 import type { IButtonProps } from './types';
 
@@ -7,18 +7,7 @@ export const useButtonPropsResolver = ( props: Omit<IButtonProps, 'children'> ) 
 	const theme = useTheme();
 
 	const { disabled } = props;
-	const [ isPressed, setIsPressed ] = useState( false );
-
-	// TODO: Move isPressed logic to its own hook
-	const onPressIn = useCallback( ( event: GestureResponderEvent ) => {
-		setIsPressed( true );
-		props.onPressIn?.( event );
-	}, [ setIsPressed, props.onPressIn ] );
-
-	const onPressOut = useCallback( ( event: GestureResponderEvent ) => {
-		setIsPressed( false );
-		props.onPressOut?.( event );
-	}, [ setIsPressed, props.onPressOut ] );
+	const { isPressed, onPressIn, onPressOut } = useIsPressed( props );
 
 	const state = useMemo( () => ( {
 		isDisabled: disabled || false,
