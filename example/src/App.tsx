@@ -6,6 +6,7 @@ import { ThemeProvider, VStack, extendThemeConfig } from '@amalgama/react-native
 import TextExamples from './components/TextExamples';
 import BoxExamples from './components/BoxExamples';
 import ButtonExamples from './components/ButtonExamples';
+import IconExamples from './components/IconExamples';
 
 const styles = StyleSheet.create( {
 	container: {
@@ -68,6 +69,7 @@ export default function App() {
 						<TextExamples />
 						<BoxExamples />
 						<ButtonExamples />
+						<IconExamples />
 					</VStack>
 				</ScrollView>
 			</SafeAreaView>

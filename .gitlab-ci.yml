@@ -34,7 +34,7 @@ yarn:
   cache:
     untracked: true
   script:
-    - yarn install
+    - yarn
   tags:
     - docker
   artifacts:
@@ -47,7 +47,7 @@ run_linter:
     untracked: true
     policy: pull
   script:
-    - yarn install
+    - yarn
     - yarn lint --no-error-on-unmatched-pattern
   tags:
     - docker
@@ -58,7 +58,7 @@ run_unit_tests:
     untracked: true
     policy: pull
   script:
-    - yarn install
+    - yarn
     - yarn test --ci --forceExit --passWithNoTests --detectOpenHandles
   tags:
     - docker
