@@ -1,11 +1,12 @@
 import type { ComponentStyledProps, StyledProps } from '../theme/types';
 import type { ElementType, ValueOf } from '../types';
 
-export type ComponentName = 'Text' | 'Box' | 'Stack' | 'Button' | 'Pressable';
+export type ComponentName = 'Text' | 'Box' | 'Stack' | 'Button' | 'Pressable' | 'Icon';
 export type VariantName = string;
 export type ComponentConfig<C extends ComponentName> = Partial<{
 	defaultProps: ComponentStyledProps<C>,
 	variants: Record<VariantName, ComponentStyledProps<C>>
+	sizes?: Record<string, string | number>
 }>;
 export type ComponentsConfig = Partial<{
 	[ C in ComponentName ]: ComponentConfig<C>

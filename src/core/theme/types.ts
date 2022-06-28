@@ -70,6 +70,12 @@ export type VariantType<
   ? keyof IThemeConfig['components'][Component]['variants'] | ( string & {} )
   : unknown;
 
+export type ComponentSizeType<
+  Component extends keyof IThemeConfig['components']
+> = 'sizes' extends keyof IThemeConfig['components'][Component]
+? keyof IThemeConfig['components'][Component]['sizes'] | ( string & {} ) | number
+: never;
+
 export type StyledProps = AllProps<StlyePropsMapping>;
 
 type PseudoPropStyledProps<C extends ComponentName> =
@@ -88,11 +94,16 @@ export type ComponentStateProps<C extends ComponentName> =
 	Partial<Record<ComponentStateProp, StyledPropsWithPseudoProps<C>>>;
 
 export type ComponentStyledProps<C extends ComponentName> = {
-	[K in ( keyof StyledPropsWithPseudoProps<C> | keyof ComponentStateProps<C> )]?:
+	[K in ( keyof StyledPropsWithPseudoProps<C> | keyof ComponentStateProps<C>
+		| 'size' )]?:
 		K extends keyof StyledPropsWithPseudoProps<C>
 			? StyledPropsWithPseudoProps<C>[K]
 			: K extends ComponentStateProp
 			? ComponentStateProps<C>[K]
+			: K extends 'size'
+			? C extends keyof IThemeConfig['components']
+				? ComponentSizeType<C>
+				: never
 			: never
 };
 
