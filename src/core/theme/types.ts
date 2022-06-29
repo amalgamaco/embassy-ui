@@ -4,6 +4,7 @@
 import type { Properties as CSSProperties } from 'csstype';
 import type { ImageStyle, TextStyle, ViewStyle } from 'react-native';
 import type {
+	ComponentCustomProps,
 	ComponentName, ComponentPseudoProps, ComponentStateProp
 } from '../components/types';
 import type { StlyePropsMapping } from '../styles/propsMapping';
@@ -94,12 +95,17 @@ export type ComponentStateProps<C extends ComponentName> =
 	Partial<Record<ComponentStateProp, StyledPropsWithPseudoProps<C>>>;
 
 export type ComponentStyledProps<C extends ComponentName> = {
-	[K in ( keyof StyledPropsWithPseudoProps<C> | keyof ComponentStateProps<C>
+	[K in (
+		keyof StyledPropsWithPseudoProps<C>
+		| keyof ComponentStateProps<C>
+		| keyof ComponentCustomProps<C>
 		| 'size' )]?:
 		K extends keyof StyledPropsWithPseudoProps<C>
 			? StyledPropsWithPseudoProps<C>[K]
 			: K extends ComponentStateProp
 			? ComponentStateProps<C>[K]
+			: K extends keyof ComponentCustomProps<C>
+			? ComponentCustomProps<C>[K]
 			: K extends 'size'
 			? C extends keyof IThemeConfig['components']
 				? ComponentSizeType<C>

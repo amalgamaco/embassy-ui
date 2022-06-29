@@ -164,13 +164,13 @@ const IconExamples = () => (
 		<Text variant="sh1" color="primary.800">Sizes</Text>
 		<View style={styles.separator} />
 		<HStack space={2}>
-			<Icon name="heart" color="information.100" size="xs" as={FontAwesome} />
-			<Icon name="heart" color="success.200" size="sm" as={FontAwesome} />
-			<Icon name="heart" color="success.300" size="md" as={FontAwesome} />
-			<Icon name="heart" color="accent.400" size="lg" as={FontAwesome} />
-			<Icon name="heart" color="error.500" size="xl" as={FontAwesome} />
-			<Icon name="heart" color="success.600" size="2xl" as={FontAwesome} />
-			<Icon name="heart" color="error.700" size="3xl" as={FontAwesome} />
+			<Icon name="heart" color="information.100" size="xs" />
+			<Icon name="heart" color="success.200" size="sm" />
+			<Icon name="heart" color="success.300" size="md" />
+			<Icon name="heart" color="accent.400" size="lg" />
+			<Icon name="heart" color="error.500" size="xl" />
+			<Icon name="heart" color="success.600" size="2xl" />
+			<Icon name="heart" color="error.700" size="3xl" />
 		</HStack>
 	</VStack>
 );

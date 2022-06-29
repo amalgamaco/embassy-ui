@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/ban-types */
 import type { ComponentStyledProps, StyledProps } from '../theme/types';
 import type { ElementType, ValueOf } from '../types';
 
@@ -34,3 +35,9 @@ export const COMPONENT_STATE_PROPS_MAP = {
 export type ComponentStateKey = keyof typeof COMPONENT_STATE_PROPS_MAP;
 export type ComponentStateProp = ValueOf<typeof COMPONENT_STATE_PROPS_MAP>;
 export type ComponentState = Partial<Record<ComponentStateKey, boolean>>;
+
+export interface IconCustomProps { as?: any }
+
+export type ComponentCustomProps<C extends ComponentName> = C extends 'Icon'
+	? IconCustomProps
+	: {};

@@ -2,6 +2,7 @@ import * as React from 'react';
 
 import { SafeAreaView, ScrollView, StyleSheet } from 'react-native';
 import { ThemeProvider, VStack, extendThemeConfig } from '@amalgama/react-native-ui-kit';
+import FontAwesomeIcon from 'react-native-vector-icons/FontAwesome';
 
 import TextExamples from './components/TextExamples';
 import BoxExamples from './components/BoxExamples';
@@ -48,6 +49,11 @@ const customTheme = extendThemeConfig( {
 						color: 'primary.700'
 					}
 				}
+			}
+		},
+		Icon: {
+			defaultProps: {
+				as: FontAwesomeIcon
 			}
 		}
 	}

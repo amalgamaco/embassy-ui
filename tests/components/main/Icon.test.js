@@ -1,7 +1,9 @@
 import React from 'react';
 import { render } from '@testing-library/react-native';
 import { View } from 'react-native';
+import { ThemeProvider } from '../../../src/core/theme/context';
 import WithThemeProvider from '../../support/withThemeProvider';
+import extendThemeConfig from '../../../src/core/theme/extendThemeConfig';
 
 import Icon from '../../../src/components/main/Icon';
 
@@ -10,6 +12,17 @@ const { itBehavesLike } = require( '../../support/sharedExamples' );
 const FakeBaseIcon = props => (
 	<View {...props} />
 );
+
+const hideConsoleErrors = ( callback ) => {
+	/* eslint-disable no-console */
+	const originalConsoleError = console.error;
+	console.error = jest.fn();
+
+	callback();
+
+	console.error = originalConsoleError;
+	/* eslint-enable no-console */
+};
 
 describe( 'Icon', () => {
 	const renderComponent = props => render(
@@ -34,6 +47,36 @@ describe( 'Icon', () => {
 
 		expect( getByTestId( 'test-icon' ) ).toHaveProp( 'color', '#999AB8' );
 	} );
+
+	it( 'renders normally when the `as` prop is not provided but there is a default prop for it', () => {
+		const theme = extendThemeConfig( {
+			components: {
+				Icon: {
+					defaultProps: {
+						as: FakeBaseIcon
+					}
+				}
+			}
+		} );
+
+		const { getByTestId } = render(
+			<ThemeProvider theme={theme}>
+				<Icon name="test" testID="test-icon" />
+			</ThemeProvider>
+		);
+
+		expect( getByTestId( 'test-icon' ) ).toHaveProp( 'name', 'test' );
+	} );
+
+	it( 'throws an error when the `as` prop is not provided and there is not default prop for it', () => hideConsoleErrors(
+		() => {
+			expect( () => render( <Icon name="test" /> ) )
+				.toThrow(
+					'The `as` prop is required for the Icon component. You must supply it in the component '
+					+ 'props or in the Theme config as the component\'s default props.'
+				);
+		} )
+	);
 
 	itBehavesLike(
 		'aStyledSystemComponent',
