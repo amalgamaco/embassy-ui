@@ -1,23 +1,18 @@
 import React from 'react';
-import useSpacedChildren from '../../../hooks/useSpacedChildren';
-import { useTheme } from '../../../core/theme/hooks';
+import { useComponentPropsResolver, useSpacedChildren } from '../../../hooks';
 import Box from '../Box';
 import type { IStackProps } from './types';
 
 const Stack = ( {
 	children,
-	direction: directionProp,
-	space,
-	reversed = false,
 	...props
 }: IStackProps ) => {
-	const theme = useTheme();
-
-	const defaultProps = {
-		...{ direction: 'column', reversed: false },
-		...( theme?.defaultPropsFor( 'Stack' ) || {} )
-	};
-	const direction = directionProp || defaultProps.direction;
+	const {
+		space,
+		direction,
+		reversed,
+		...restProps
+	} = useComponentPropsResolver( 'Stack', props ) as Omit<IStackProps, 'children'>;
 
 	const flexDirection = (
 		reversed ? `${direction}-reverse` : direction
@@ -31,7 +26,7 @@ const Stack = ( {
 		<Box
 			flex={1}
 			alignContent='stretch'
-			{...props}
+			{...restProps}
 			flexDirection={flexDirection}
 		>
 			{spacedChildren}
