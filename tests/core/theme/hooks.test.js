@@ -1,38 +1,34 @@
 import React, { useEffect } from 'react';
 import { render } from '@testing-library/react-native';
 import { Text } from 'react-native';
-import Palette from '../../../src/core/palette/Palette';
-import Theme from '../../../src/core/theme/Theme';
 import { ThemeProvider } from '../../../src/core/theme/context';
 import { useTheme, useThemeColorModeSwtich } from '../../../src/core/theme/hooks';
 
-const defaultTheme = new Theme( {
-	palette: new Palette(
-		{
-			base: {
-				primary: {
-					900: '#2200C1',
-					800: '#4600c8',
-					700: '#5700ce',
-					600: '#6700d6',
-					500: '#7101dc',
-					400: '#8a3fe2',
-					300: '#a066e8',
-					200: '#bc94ee',
-					100: '#d7bff4',
-					50: '#f0e5fb'
-				},
-				neutral: '#000000'
+const defaultTheme = {
+	palette: {
+		base: {
+			primary: {
+				900: '#2200C1',
+				800: '#4600c8',
+				700: '#5700ce',
+				600: '#6700d6',
+				500: '#7101dc',
+				400: '#8a3fe2',
+				300: '#a066e8',
+				200: '#bc94ee',
+				100: '#d7bff4',
+				50: '#f0e5fb'
 			},
-			dark: {
-				primary: {
-					300: '#aaffee'
-				},
-				neutral: '#ffffff'
-			}
+			neutral: '#000000'
+		},
+		dark: {
+			primary: {
+				300: '#aaffee'
+			},
+			neutral: '#ffffff'
 		}
-	)
-} );
+	}
+};
 
 const renderWithProvider = ( ui, { providerProps, ...renderOptions } = {} ) => render(
 	<ThemeProvider theme={defaultTheme} {...providerProps}>{ui}</ThemeProvider>,

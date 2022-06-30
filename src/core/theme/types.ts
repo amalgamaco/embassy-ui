@@ -8,9 +8,9 @@ import type {
 } from '../components/types';
 import type { StlyePropsMapping } from '../styles/propsMapping';
 import type { Leaves } from '../types';
-import type { config } from './defaultTheme';
+import type defaultTheme from './defaultTheme';
 
-export type ThemeConfig = typeof config;
+export type ThemeConfig = typeof defaultTheme;
 export interface ICustomThemeConfig {}
 export interface IThemeConfig extends ICustomThemeConfig,
 	Omit<ThemeConfig, keyof ICustomThemeConfig> {}
