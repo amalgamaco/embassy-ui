@@ -28,5 +28,8 @@ export default {
 		property: 'backgroundColor',
 		scale: 'palette',
 		transformerMethod: 'color'
+	},
+	opacity: {
+		property: 'opacity'
 	}
 } as const;

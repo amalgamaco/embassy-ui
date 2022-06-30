@@ -6,7 +6,7 @@ const lineHeightPropValues = [ 'lg', 24 ];
 const fontWeightPropValues = [ 'bold', '700' ];
 const fontSizePropValues = [ 'xs', 12 ];
 const fontPropValues = [ 'Epilogue', 'Epilogue-Regular' ];
-const borderWidthPropValues = [ '4', '4px' ];
+const borderWidthPropValues = [ '4', 4 ];
 const spacingPropValues = [ '16', 64 ];
 const radiusPropValues = [ 'lg', 8 ];
 
@@ -32,11 +32,11 @@ const getExpectedStyleForProp = ( prop ) => {
 	return { propValue, expectedStyle };
 };
 
-module.exports = ( { renderComponent, testId } ) => {
+module.exports = ( { renderComponent, testId, omitProps = [] } ) => {
 	describe( 'is a styled component', () => {
 		const propsWithScale = Object
 			.keys( STYLE_PROPS_MAPPING )
-			.filter( prop => !!STYLE_PROPS_MAPPING[ prop ].scale );
+			.filter( prop => !!STYLE_PROPS_MAPPING[ prop ].scale && !omitProps.includes( prop ) );
 
 		it.each( propsWithScale )(
 			'translates the prop %s to the correct style',
