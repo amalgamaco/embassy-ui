@@ -1,17 +1,18 @@
+import type { ReactElement } from 'react';
 import type { ComponentStyledProps, VariantType } from '../../../core/components/types';
 import type { IPressableProps } from '../Pressable/types';
-import type { IHStackProps } from '../Stack/types';
+import type { IIconProps } from '../Icon/types';
 import type { ITextProps } from '../Text/types';
 
-export interface IButtonProps extends Omit<IPressableProps, 'size'>,
+export type IButtonIconProps = Omit<IIconProps, 'name'>;
+
+export interface IButtonProps extends Omit<IPressableProps, 'children' | 'size'>,
 	ComponentStyledProps<'Button'>
 {
-	label?: string,
+	children: ITextProps['children'],
 
-	__label?: ITextProps,
-	__stack?: IHStackProps,
+	leftIcon?: ReactElement<IButtonIconProps>,
+	rightIcon?: ReactElement<IButtonIconProps>,
 
-	variant?: VariantType<'Button'>,
-
-	children?: ITextProps[ 'children' ]
+	variant?: VariantType<'Button'>
 }

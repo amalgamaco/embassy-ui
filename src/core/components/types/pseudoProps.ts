@@ -20,6 +20,8 @@ import type { ComponentName } from './common';
 interface IButtonPseudoProps {
 	__label: ComponentBaseStyledProps<'Text'>,
 	__stack: ComponentBaseStyledProps<'Stack'>
+	__leftIcon: ComponentBaseStyledProps<'Icon'>
+	__rightIcon: ComponentBaseStyledProps<'Icon'>
 }
 
 // Pseudoprops config for all components

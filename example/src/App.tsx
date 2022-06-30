@@ -3,6 +3,7 @@ import * as React from 'react';
 import { SafeAreaView, ScrollView, StyleSheet } from 'react-native';
 import { ThemeProvider, VStack, extendThemeConfig } from '@amalgama/react-native-ui-kit';
 import FontAwesomeIcon from 'react-native-vector-icons/FontAwesome';
+import IoniconsIcon from 'react-native-vector-icons/Ionicons';
 
 import TextExamples from './components/TextExamples';
 import BoxExamples from './components/BoxExamples';
@@ -47,6 +48,12 @@ const customTheme = extendThemeConfig( {
 					borderColor: 'accent.600',
 					__label: {
 						color: 'primary.700'
+					},
+					__leftIcon: {
+						as: IoniconsIcon
+					},
+					__rightIcon: {
+						as: IoniconsIcon
 					}
 				}
 			}

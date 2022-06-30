@@ -1,5 +1,5 @@
 import type React from 'react';
-import type { ColorValue } from 'react-native';
+import type { ViewProps, ColorValue } from 'react-native';
 import type { ComponentStyledProps } from '../../../core/components/types';
 
 interface AsComponentProps {
@@ -11,7 +11,7 @@ interface AsComponentProps {
 export type AsComponent = React.ComponentClass<AsComponentProps>
 	| React.FunctionComponent<AsComponentProps>;
 
-export interface IIconProps extends ComponentStyledProps<'Icon'> {
+export interface IIconProps extends ViewProps, ComponentStyledProps<'Icon'> {
 	// The name of the icon. It should be a valid name for
 	// the base icon component set as the `as` prop.
 	name: string,
