@@ -32,11 +32,8 @@ const ButtonExamples = () => (
 		<View style={styles.separator} />
 		<Button variant="primary" onPress={onButtonPressed}>Primary</Button>
 		<Button variant="secondary" onPress={onButtonPressed}>Secondary</Button>
-		<Button variant="awesome" onPress={onButtonPressed}>Awesome</Button>
-		<HStack space="1">
-			<Button variant="danger" onPress={onButtonPressed}>Danger</Button>
-			<Button variant="success" onPress={onButtonPressed}>Success</Button>
-		</HStack>
+		<Button variant="priority" onPress={onButtonPressed}>Priority</Button>
+		<Button variant="custom" onPress={onButtonPressed}>Custom</Button>
 		<Text variant="sh1" color="primary.800">Icons</Text>
 		<View style={styles.separator} />
 		<Button
@@ -48,39 +45,46 @@ const ButtonExamples = () => (
 		</Button>
 		<Button
 			variant="secondary"
-			rightIcon={<Icon name="shower"/>}
+			rightIcon={<Icon name="gitlab"/>}
 			onPress={onButtonPressed}
 		>
 			Secondary
 		</Button>
 		<Button
-			variant="danger"
-			__leftIcon={{ color: 'accent.100' }}
-			leftIcon={<Icon name="gitlab"/>}
+			variant="priority"
+			leftIcon={<Icon name="close"/>}
 			onPress={onButtonPressed}
 		>
-			Danger
+			Priority
 		</Button>
 		<Button
-			variant="success"
-			rightIcon={<Icon name="microchip"/>}
-			onPress={onButtonPressed}
-		>
-			Success
-		</Button>
-		<Button
-			variant="awesome"
+			variant="custom"
+			__leftIcon={{ color: 'success.800' }}
+			__rightIcon={{ color: 'error.700' }}
 			leftIcon={<Icon name="bus-outline"/>}
 			rightIcon={<Icon name="flask"/>}
 			onPress={onButtonPressed}
 		>
-			Awesome
+			Custom
 		</Button>
 		<Text variant="sh1" color="primary.800">Disabled</Text>
 		<View style={styles.separator} />
 		<Button variant="primary" disabled onPress={onButtonPressed}>Primary Disabled</Button>
 		<Button variant="secondary" disabled onPress={onButtonPressed}>Secondary Disabled</Button>
-		<Button variant="primary" __disabled={{ bg: 'error.100' }} disabled onPress={onButtonPressed}>Primary Disabled</Button>
+		<Button
+			variant="primary"
+			__disabled={{ bg: 'error.100', borderColor: 'error.100' }}
+			disabled
+			onPress={onButtonPressed}
+		>
+			Primary with custom disabled bg
+		</Button>
+		<Text variant="sh1" color="primary.800">Horizontal group</Text>
+		<View style={styles.separator} />
+		<HStack space="10">
+			<Button variant="secondary" onPress={onButtonPressed}>Cancel</Button>
+			<Button variant="priority" onPress={onButtonPressed}>Delete</Button>
+		</HStack>
 	</VStack>
 );
 
