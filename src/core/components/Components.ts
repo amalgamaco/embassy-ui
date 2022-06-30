@@ -1,4 +1,4 @@
-import type { StyledProps } from '../theme/types';
+import type { ComponentStyledProps } from '../theme/types';
 import type { ComponentsConfig, ComponentName, VariantName } from './types';
 
 export default class Components {
@@ -10,13 +10,16 @@ export default class Components {
 
 	get config() { return this._config; }
 
-	defaultPropsFor( componentName: ComponentName ): StyledProps | undefined {
+	defaultPropsFor<C extends ComponentName>(
+		componentName: C
+	): ComponentStyledProps<C> | undefined {
 		return this._config[ componentName ]?.defaultProps;
 	}
 
-	variantPropsFor(
-		componentName: ComponentName, variantName: VariantName
-	): StyledProps | undefined {
+	variantPropsFor<C extends ComponentName>(
+		componentName: C,
+		variantName: VariantName
+	): ComponentStyledProps<C> | undefined {
 		return this._config[ componentName ]?.variants?.[ variantName ];
 	}
 }

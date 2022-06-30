@@ -3,6 +3,7 @@
 /* eslint-disable @typescript-eslint/ban-types */
 import type { Properties as CSSProperties } from 'csstype';
 import type { ImageStyle, TextStyle, ViewStyle } from 'react-native';
+import type { ComponentName, ComponentPseudoProps } from '../components/types';
 import type { StlyePropsMapping } from '../styles/propsMapping';
 import type { Leaves } from '../types';
 import type { config } from './defaultTheme';
@@ -68,3 +69,15 @@ export type VariantType<
   : unknown;
 
 export type StyledProps = AllProps<StlyePropsMapping>;
+
+type PseudoPropStyledProps<C extends ComponentName> =
+	Record<ComponentPseudoProps<C>, StyledProps>;
+
+export type ComponentStyledProps<C extends ComponentName> = {
+	[K in ( keyof StyledProps | keyof PseudoPropStyledProps<C> )]?:
+		K extends keyof StyledProps
+			? StyledProps[K]
+			: K extends keyof PseudoPropStyledProps<C>
+			? PseudoPropStyledProps<C>[K]
+			: never
+};

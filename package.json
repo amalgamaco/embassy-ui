@@ -53,6 +53,7 @@
     "@testing-library/jest-native": "^4.0.4",
     "@testing-library/react-native": "^9.1.0",
     "@types/jest": "^26.0.0",
+    "@types/lodash": "^4.14.182",
     "@types/react": "^18.0.9",
     "@types/react-native": "^0.67.7",
     "@typescript-eslint/eslint-plugin": "^5.23.0",
@@ -88,7 +89,9 @@
     ],
     "collectCoverage": true,
     "coverageDirectory": "<rootDir>/reports/coverage",
-    "coveragePathIgnorePatterns": [ "tests/support" ],
+    "coveragePathIgnorePatterns": [
+      "tests/support"
+    ],
     "coverageReporters": [
       "json",
       "lcov",
@@ -154,5 +157,8 @@
         }
       ]
     ]
+  },
+  "dependencies": {
+    "lodash": "^4.17.21"
   }
 }

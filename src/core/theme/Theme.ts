@@ -1,3 +1,5 @@
+import { merge } from 'lodash';
+
 import type Palette from '../palette/Palette';
 import type { ColorMode } from '../types';
 import type { PaletteColor } from '../palette/types';
@@ -17,6 +19,7 @@ import type {
 	BorderWidthAlias,
 	Radius, RadiusAlias, Spacing, SpacingAlias
 } from '../layout/types';
+import type { StyledProps } from './types';
 
 interface ThemeConstructorParams {
 	palette: Palette,
@@ -106,15 +109,7 @@ export default class Theme {
 		return this._layout.radius( alias );
 	}
 
-	// Style Props
-	defaultPropsFor( componentName: ComponentName ) {
-		return this._components.defaultPropsFor( componentName );
-	}
-
-	variantPropsFor( componentName: ComponentName, variantName: VariantName ) {
-		return this._components.variantPropsFor( componentName, variantName );
-	}
-
+	// Color mode
 	switchColorMode( colorMode: ColorMode ): Theme {
 		return new Theme( {
 			palette: this._palette,
@@ -125,10 +120,7 @@ export default class Theme {
 		} );
 	}
 
-	styleForProps( props: ComponentProps ): Style {
-		return new StyleProps( { props, transformer: this } ).style;
-	}
-
+	// Config
 	get config() {
 		return {
 			colorMode: this.colorMode,
@@ -137,5 +129,31 @@ export default class Theme {
 			components: this._components.config,
 			typography: this._typography.config
 		};
+	}
+
+	// Props resolution
+	defaultPropsFor( componentName: ComponentName ) {
+		return this._components.defaultPropsFor( componentName );
+	}
+
+	variantPropsFor( componentName: ComponentName, variantName: VariantName ) {
+		return this._components.variantPropsFor( componentName, variantName );
+	}
+
+	resolvePropsFor(
+		componentName: ComponentName,
+		{ passedProps = {}, variant }: { passedProps?: StyledProps, variant?: VariantName }
+	) {
+		const defaultProps = this.defaultPropsFor( componentName ) || {};
+		const variantProps = (
+			variant ? this.variantPropsFor( componentName, variant ) : undefined
+		) || {};
+
+		return merge( {}, defaultProps, variantProps, passedProps );
+	}
+
+	// Style
+	styleForProps( props: ComponentProps ): Style {
+		return new StyleProps( { props, transformer: this } ).style;
 	}
 }
