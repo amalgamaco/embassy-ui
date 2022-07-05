@@ -32,6 +32,7 @@ const ButtonExamples = () => (
 		<View style={styles.separator} />
 		<Button variant="primary" onPress={onButtonPressed}>Primary</Button>
 		<Button variant="secondary" onPress={onButtonPressed}>Secondary</Button>
+		<Button variant="awesome" onPress={onButtonPressed}>Awesome</Button>
 		<HStack space="1">
 			<Button variant="danger" onPress={onButtonPressed}>Danger</Button>
 			<Button variant="success" onPress={onButtonPressed}>Success</Button>
