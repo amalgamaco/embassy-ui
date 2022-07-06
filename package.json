@@ -23,13 +23,14 @@
   ],
   "scripts": {
     "test": "NODE_ENV=test JEST_JUNIT_OUTPUT_DIR=reports TZ=UTC jest",
-    "lint": "eslint src/ tests/ example/",
+    "lint": "eslint src/ tests/ example/ web_example/",
     "typescript": "tsc --noEmit",
     "prepare": "bob build",
     "release": "release-it",
     "example": "yarn --cwd example",
+    "web_example": "yarn --cwd web_example",
     "pods": "cd example && pod-install --quiet",
-    "bootstrap": "yarn example && yarn && yarn pods"
+    "bootstrap": "yarn example && yarn web_example && yarn && yarn pods"
   },
   "keywords": [
     "react-native",
