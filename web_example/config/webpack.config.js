@@ -46,7 +46,8 @@ const babelRuntimeRegenerator = require.resolve( '@babel/runtime/regenerator', {
 const shouldInlineRuntimeChunk = process.env.INLINE_RUNTIME_CHUNK !== 'false';
 
 const emitErrorsAsWarnings = process.env.ESLINT_NO_DEV_ERRORS === 'true';
-const disableESLintPlugin = process.env.DISABLE_ESLINT_PLUGIN === 'true';
+// Force disabling eslint since it's not loading the correct config
+const disableESLintPlugin = true; // process.env.DISABLE_ESLINT_PLUGIN === 'true';
 
 const imageInlineSizeLimit = parseInt(
 	process.env.IMAGE_INLINE_SIZE_LIMIT || '10000'
@@ -306,7 +307,23 @@ module.exports = function ( webpackEnv ) {
 			alias: {
 				// Support React Native Web
 				// https://www.smashingmagazine.com/2016/08/a-glimpse-into-the-future-with-react-native-for-web/
-				'react-native': 'react-native-web',
+				// 'react-native': 'react-native-web',
+				// Transform all direct `react-native` imports to `react-native-web`
+				'react-native$': path.resolve(
+					__dirname,
+					'..',
+					'node_modules',
+					'react-native-web'
+				 ),
+				 '@amalgama/react-native-ui-kit': path.resolve(__dirname, '..', '..', 'src' ),
+				 'react': path.resolve(__dirname, '..', 'node_modules', 'react'),
+				 'react-dom': path.resolve(__dirname, '..', 'node_modules', 'react-dom'),
+				 'react-native-web': path.resolve(
+					__dirname,
+					'..',
+					'node_modules',
+					'react-native-web'
+				 ),
 				// Allows for better profiling with ReactDevTools
 				...( isEnvProductionProfile && {
 					'react-dom$': 'react-dom/profiling',
@@ -320,14 +337,14 @@ module.exports = function ( webpackEnv ) {
 				// To fix this, we prevent you from importing files out of src/ -- if you'd like to,
 				// please link the files into your node_modules/ and let module-resolution kick in.
 				// Make sure your source files are compiled, as they will not be processed in any way.
-				new ModuleScopePlugin( paths.appSrc, [
-					paths.appPackageJson,
-					reactRefreshRuntimeEntry,
-					reactRefreshWebpackPluginRuntimeEntry,
-					babelRuntimeEntry,
-					babelRuntimeEntryHelpers,
-					babelRuntimeRegenerator
-				] )
+				// new ModuleScopePlugin( paths.appSrc, [
+				// 	paths.appPackageJson,
+				// 	reactRefreshRuntimeEntry,
+				// 	reactRefreshWebpackPluginRuntimeEntry,
+				// 	babelRuntimeEntry,
+				// 	babelRuntimeEntryHelpers,
+				// 	babelRuntimeRegenerator
+				// ] )
 			]
 		},
 		module: {
@@ -399,7 +416,7 @@ module.exports = function ( webpackEnv ) {
 						// The preset includes JSX, Flow, TypeScript, and some ESnext features.
 						{
 							test: /\.(js|mjs|jsx|ts|tsx)$/,
-							include: paths.appSrc,
+							// include: paths.appSrc,
 							loader: require.resolve( 'babel-loader' ),
 							options: {
 								customize: require.resolve(
@@ -730,14 +747,14 @@ module.exports = function ( webpackEnv ) {
         	// ESLint class options
         	cwd: paths.appPath,
         	resolvePluginsRelativeTo: __dirname,
-        	baseConfig: {
-        		extends: [ require.resolve( 'eslint-config-react-app/base' ) ],
-        		rules: {
-        			...( !hasJsxRuntime && {
-        				'react/react-in-jsx-scope': 'error'
-        			} )
-        		}
-        	}
+        	// baseConfig: {
+        	// 	extends: [ require.resolve( 'eslint-config-react-app/base' ) ],
+        	// 	rules: {
+        	// 		...( !hasJsxRuntime && {
+        	// 			'react/react-in-jsx-scope': 'error'
+        	// 		} )
+        	// 	}
+        	// }
         } )
 		].filter( Boolean ),
 		// Turn off performance processing because we utilize

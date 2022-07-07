@@ -38,7 +38,7 @@ module.exports = {
 			]
 		},
 		{
-			'files': [ 'example/**/*' ],
+			'files': [ 'example/**/*', 'web_example/**/*' ],
 			'rules': {
 				'import/no-extraneous-dependencies': 'off'
 			}
