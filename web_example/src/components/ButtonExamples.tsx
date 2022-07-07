@@ -2,7 +2,7 @@ import * as React from 'react';
 
 import { StyleSheet, View } from 'react-native';
 import {
-	Button, HStack, Text, VStack
+	Button, HStack, Icon, Text, VStack
 } from '@amalgama/react-native-ui-kit';
 
 const styles = StyleSheet.create( {
@@ -34,6 +34,39 @@ const ButtonExamples = () => (
 		<Button variant="secondary" onPress={onButtonPressed}>Secondary</Button>
 		<Button variant="priority" onPress={onButtonPressed}>Priority</Button>
 		<Button variant="custom" onPress={onButtonPressed}>Custom</Button>
+		<Text variant="sh1" color="primary.800">Icons</Text>
+		<View style={styles.separator} />
+		<Button
+			variant="primary"
+			leftIcon={<Icon name="plus"/>}
+			onPress={onButtonPressed}
+		>
+			Primary
+		</Button>
+		<Button
+			variant="secondary"
+			rightIcon={<Icon name="gitlab"/>}
+			onPress={onButtonPressed}
+		>
+			Secondary
+		</Button>
+		<Button
+			variant="priority"
+			leftIcon={<Icon name="close"/>}
+			onPress={onButtonPressed}
+		>
+			Priority
+		</Button>
+		<Button
+			variant="custom"
+			__leftIcon={{ color: 'success.800' }}
+			__rightIcon={{ color: 'error.700' }}
+			leftIcon={<Icon name="bus-outline"/>}
+			rightIcon={<Icon name="flask"/>}
+			onPress={onButtonPressed}
+		>
+			Custom
+		</Button>
 		<Text variant="sh1" color="primary.800">Disabled</Text>
 		<View style={styles.separator} />
 		<Button variant="primary" disabled onPress={onButtonPressed}>Primary Disabled</Button>

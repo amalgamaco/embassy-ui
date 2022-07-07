@@ -9,7 +9,8 @@ interface AsComponentProps {
 }
 
 export type AsComponent = React.ComponentClass<AsComponentProps>
-	| React.FunctionComponent<AsComponentProps>;
+	| React.FunctionComponent<AsComponentProps>
+	| any;
 
 export interface IIconProps extends ViewProps, ComponentStyledProps<'Icon'> {
 	// The name of the icon. It should be a valid name for

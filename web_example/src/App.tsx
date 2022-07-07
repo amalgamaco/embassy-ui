@@ -4,9 +4,13 @@ import {
 	ThemeProvider, Box, VStack, extendThemeConfig
 } from '@amalgama/react-native-ui-kit';
 
+import FontAwesome from 'react-native-vector-icons/FontAwesome';
+import IoniconsIcon from 'react-native-vector-icons/Ionicons';
+
 import TextExamples from './components/TextExamples';
 import BoxExamples from './components/BoxExamples';
 import ButtonExamples from './components/ButtonExamples';
+import IconExamples from './components/IconExamples';
 
 const customTheme = extendThemeConfig( {
 	palette: {
@@ -61,8 +65,19 @@ const customTheme = extendThemeConfig( {
 					borderColor: 'accent.600',
 					__label: {
 						color: 'primary.700'
+					},
+					__leftIcon: {
+						as: IoniconsIcon
+					},
+					__rightIcon: {
+						as: IoniconsIcon
 					}
 				}
+			}
+		},
+		Icon: {
+			defaultProps: {
+				as: FontAwesome
 			}
 		}
 	}
@@ -76,6 +91,7 @@ export default function App() {
 					<TextExamples />
 					<BoxExamples />
 					<ButtonExamples />
+					<IconExamples />
 				</VStack>
 			</Box>
 		</ThemeProvider>
