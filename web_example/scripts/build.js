@@ -2,6 +2,13 @@
 process.env.BABEL_ENV = 'production';
 process.env.NODE_ENV = 'production';
 
+const paths = require( '../config/paths' );
+
+// We require that you explicitly set browsers and do not fall back to
+// browserslist defaults.
+const { checkBrowsers } = require( 'react-dev-utils/browsersHelper' );
+const configFactory = require( '../config/webpack.config' );
+
 // Makes the script crash on unhandled rejections instead of silently
 // ignoring them. In the future, promise rejections that are not handled will
 // terminate the Node.js process with a non-zero exit code.
@@ -43,12 +50,6 @@ const writeStatsJson = argv.indexOf( '--stats' ) !== -1;
 
 // Generate configuration
 const config = configFactory( 'production' );
-
-// We require that you explicitly set browsers and do not fall back to
-// browserslist defaults.
-const { checkBrowsers } = require( 'react-dev-utils/browsersHelper' );
-const paths = require( '../config/paths' );
-const configFactory = require( '../config/webpack.config' );
 
 checkBrowsers( paths.appPath, isInteractive )
 	.then( () =>
