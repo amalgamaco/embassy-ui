@@ -1,11 +1,13 @@
+/* eslint-disable @typescript-eslint/ban-types */
 import type { ComponentStyledProps, StyledProps } from '../theme/types';
 import type { ElementType, ValueOf } from '../types';
 
-export type ComponentName = 'Text' | 'Box' | 'Stack' | 'Button' | 'Pressable';
+export type ComponentName = 'Text' | 'Box' | 'Stack' | 'Button' | 'Pressable' | 'Icon';
 export type VariantName = string;
 export type ComponentConfig<C extends ComponentName> = Partial<{
 	defaultProps: ComponentStyledProps<C>,
 	variants: Record<VariantName, ComponentStyledProps<C>>
+	sizes?: Record<string, string | number>
 }>;
 export type ComponentsConfig = Partial<{
 	[ C in ComponentName ]: ComponentConfig<C>
@@ -33,3 +35,9 @@ export const COMPONENT_STATE_PROPS_MAP = {
 export type ComponentStateKey = keyof typeof COMPONENT_STATE_PROPS_MAP;
 export type ComponentStateProp = ValueOf<typeof COMPONENT_STATE_PROPS_MAP>;
 export type ComponentState = Partial<Record<ComponentStateKey, boolean>>;
+
+export interface IconCustomProps { as?: any }
+
+export type ComponentCustomProps<C extends ComponentName> = C extends 'Icon'
+	? IconCustomProps
+	: {};

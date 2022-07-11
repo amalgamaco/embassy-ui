@@ -6,6 +6,7 @@ export {
 	Box,
 	Button,
 	HStack,
+	Icon,
 	VStack,
 	Text
 } from './components';

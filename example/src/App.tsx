@@ -2,10 +2,12 @@ import * as React from 'react';
 
 import { SafeAreaView, ScrollView, StyleSheet } from 'react-native';
 import { ThemeProvider, VStack, extendThemeConfig } from '@amalgama/react-native-ui-kit';
+import FontAwesomeIcon from 'react-native-vector-icons/FontAwesome';
 
 import TextExamples from './components/TextExamples';
 import BoxExamples from './components/BoxExamples';
 import ButtonExamples from './components/ButtonExamples';
+import IconExamples from './components/IconExamples';
 
 const styles = StyleSheet.create( {
 	container: {
@@ -48,6 +50,11 @@ const customTheme = extendThemeConfig( {
 					}
 				}
 			}
+		},
+		Icon: {
+			defaultProps: {
+				as: FontAwesomeIcon
+			}
 		}
 	}
 } as const );
@@ -68,6 +75,7 @@ export default function App() {
 						<TextExamples />
 						<BoxExamples />
 						<ButtonExamples />
+						<IconExamples />
 					</VStack>
 				</ScrollView>
 			</SafeAreaView>

@@ -46,6 +46,13 @@ export default class Components {
 		return this.configFor( componentName )?.variants?.[ variantName ];
 	}
 
+	sizeFor<C extends ComponentName>(
+		componentName: C,
+		alias: string | number
+	): string | number | undefined {
+		return this.configFor( componentName )?.sizes?.[ alias ];
+	}
+
 	// eslint-disable-next-line class-methods-use-this
 	private applyStateProps<C extends ComponentName>(
 		props: ComponentStyledProps<C>,
