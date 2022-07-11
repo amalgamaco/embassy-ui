@@ -1,9 +1,11 @@
 import { merge } from 'lodash';
-import type { ComponentStyledProps } from '../theme/types';
-import {
+import type {
 	ComponentsConfig, ComponentName, VariantName, ComponentState,
-	ComponentConfig, PropsWithVariant, COMPONENT_STATE_PROPS_MAP, ComponentStateKey
+	ComponentConfig, PropsWithVariant, ComponentStateKey,
+	ComponentStyledProps
 } from './types';
+
+import { COMPONENT_STATE_PROPS_MAP } from './types/state';
 
 export default class Components {
 	private _config: ComponentsConfig;

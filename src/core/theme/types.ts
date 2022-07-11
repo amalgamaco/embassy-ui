@@ -3,10 +3,6 @@
 /* eslint-disable @typescript-eslint/ban-types */
 import type { Properties as CSSProperties } from 'csstype';
 import type { ImageStyle, TextStyle, ViewStyle } from 'react-native';
-import type {
-	ComponentCustomProps,
-	ComponentName, ComponentPseudoProps, ComponentStateProp
-} from '../components/types';
 import type { StlyePropsMapping } from '../styles/propsMapping';
 import type { Leaves } from '../types';
 import type defaultTheme from './defaultTheme';
@@ -65,57 +61,4 @@ type AllProps<T extends StlyePropsMapping> = {
 		: unknown;
 };
 
-export type VariantType<
-  Component extends keyof IThemeConfig['components']
-> = 'variants' extends keyof IThemeConfig['components'][Component]
-  ? keyof IThemeConfig['components'][Component]['variants'] | ( string & {} )
-  : unknown;
-
-export type ComponentSizeType<
-  Component extends keyof IThemeConfig['components']
-> = 'sizes' extends keyof IThemeConfig['components'][Component]
-? keyof IThemeConfig['components'][Component]['sizes'] | ( string & {} ) | number
-: never;
-
 export type StyledProps = AllProps<StlyePropsMapping>;
-
-type PseudoPropStyledProps<C extends ComponentName> =
-	Partial<Record<ComponentPseudoProps<C>, StyledProps>>;
-
-export type StyledPropsWithPseudoProps<C extends ComponentName> = {
-	[K in ( keyof StyledProps | keyof PseudoPropStyledProps<C> )]?:
-		K extends keyof StyledProps
-			? StyledProps[K]
-			: K extends keyof PseudoPropStyledProps<C>
-			? PseudoPropStyledProps<C>[K]
-			: never
-};
-
-export type ComponentStateProps<C extends ComponentName> =
-	Partial<Record<ComponentStateProp, StyledPropsWithPseudoProps<C>>>;
-
-export type ComponentStyledProps<C extends ComponentName> = {
-	[K in (
-		keyof StyledPropsWithPseudoProps<C>
-		| keyof ComponentStateProps<C>
-		| keyof ComponentCustomProps<C>
-		| 'size' )]?:
-		K extends keyof StyledPropsWithPseudoProps<C>
-			? StyledPropsWithPseudoProps<C>[K]
-			: K extends ComponentStateProp
-			? ComponentStateProps<C>[K]
-			: K extends keyof ComponentCustomProps<C>
-			? ComponentCustomProps<C>[K]
-			: K extends 'size'
-			? C extends keyof IThemeConfig['components']
-				? ComponentSizeType<C>
-				: never
-			: never
-};
-
-export type RecursivePartial<T> = {
-	[P in keyof T]?:
-		T[P] extends ( infer U )[] ? RecursivePartial<U>[] :
-		T[P] extends object ? RecursivePartial<T[P]> :
-		T[P];
- };

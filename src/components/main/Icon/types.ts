@@ -1,6 +1,6 @@
 import type React from 'react';
 import type { ColorValue } from 'react-native';
-import type { ComponentStyledProps } from '../../../core/theme/types';
+import type { ComponentStyledProps } from '../../../core/components/types';
 
 interface AsComponentProps {
 	name: string,
