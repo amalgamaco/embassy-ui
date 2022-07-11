@@ -7,11 +7,21 @@
 import type { ComponentName } from './common';
 
 // Icon
-interface IconCustomProps { as?: any }
+interface IconCustomProps {
+	as?: any
+}
+
+// Stack
+interface StackCustomProps {
+	space?: string | number
+	direction?: string
+	reversed?: boolean
+}
 
 // Pseudoprops config for all components
 interface ComponentsCustomPropsConfig {
-	Icon: IconCustomProps
+	Icon: IconCustomProps,
+	Stack: StackCustomProps
 }
 
 // Template type to get pseudoprops for a given component

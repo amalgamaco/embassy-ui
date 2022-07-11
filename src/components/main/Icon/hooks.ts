@@ -1,6 +1,5 @@
-import { useMemo } from 'react';
 import { useTheme } from '../../../core/theme/hooks';
-import useStyleFromPropsResolver from '../../../hooks/useStyleFromPropsResolver';
+import { useComponentPropsResolver, useStyleFromPropsResolver } from '../../../hooks';
 import type { AsComponent, IIconProps } from './types';
 
 export const useIconPropsResolver = ( props: Omit<IIconProps, 'name'> ) => {
@@ -11,9 +10,7 @@ export const useIconPropsResolver = ( props: Omit<IIconProps, 'name'> ) => {
 		size: sizeProp,
 		color: colorProp,
 		...resolvedProps
-	} = useMemo<Omit<IIconProps, 'name'>>( () => (
-		theme?.resolvePropsFor( 'Icon', props ) || {}
-	), [ theme, props ] );
+	} = useComponentPropsResolver( 'Icon', props ) as Omit<IIconProps, 'name'>;
 
 	const size = sizeProp ? theme?.sizeFor( 'Icon', sizeProp ) : undefined;
 	const color = colorProp ? theme?.color( colorProp ) : undefined;

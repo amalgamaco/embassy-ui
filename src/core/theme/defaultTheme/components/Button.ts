@@ -8,12 +8,20 @@ export default {
 		padding: '3',
 		width: '100%',
 		__stack: {
-			width: '100%'
+			width: '100%',
+			justifyContent: 'center',
+			alignItems: 'center'
 		},
 		__label: {
-			flex: 1,
 			color: 'black',
+			mx: 2,
 			textAlign: 'center' as const
+		},
+		__leftIcon: {
+			size: 'sm'
+		},
+		__rightIcon: {
+			size: 'sm'
 		},
 		__disabled: {
 			opacity: 0.7
@@ -32,6 +40,12 @@ export default {
 				fontSize: 'md',
 				lineHeight: 'md',
 				letterSpacing: '2xl'
+			},
+			__leftIcon: {
+				color: 'white'
+			},
+			__rightIcon: {
+				color: 'white'
 			}
 		},
 		secondary: {
@@ -44,6 +58,12 @@ export default {
 				fontSize: 'md',
 				lineHeight: 'md',
 				letterSpacing: '2xl'
+			},
+			__leftIcon: {
+				color: 'primary.200'
+			},
+			__rightIcon: {
+				color: 'primary.200'
 			}
 		},
 		danger: {
@@ -55,6 +75,12 @@ export default {
 				fontSize: 'md',
 				lineHeight: 'md',
 				letterSpacing: '2xl'
+			},
+			__leftIcon: {
+				color: 'white'
+			},
+			__rightIcon: {
+				color: 'white'
 			}
 		},
 		success: {
@@ -66,6 +92,12 @@ export default {
 				fontSize: 'md',
 				lineHeight: 'md',
 				letterSpacing: '2xl'
+			},
+			__leftIcon: {
+				color: 'white'
+			},
+			__rightIcon: {
+				color: 'white'
 			}
 		}
 	}
