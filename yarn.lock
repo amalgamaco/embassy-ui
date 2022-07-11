@@ -2014,7 +2014,7 @@
   resolved "https://registry.yarnpkg.com/@types/prop-types/-/prop-types-15.7.5.tgz#5f19d2b85a98e9558036f6a3cacc8819420f05cf"
   integrity sha512-JCB8C6SnDoQf0cNycqd/35A7MjcnK+ZTqE7judS6o7utxUCg6imJg3QK2qzHKszlTjcj2cn+NwMB2i96ubpj7w==
 
-"@types/react-native@^0.65":
+"@types/react-native@0.65":
   version "0.65.23"
   resolved "https://registry.yarnpkg.com/@types/react-native/-/react-native-0.65.23.tgz#f7bde3ff0e92c6bf77c65c84f11c34a5f1d20c74"
   integrity sha512-opq1oSShsQKxFIjzxo8ahoAZvpICIIAfCnZ4G+oGtfrwJ4M+s3c3O7flXblMWpoTYLuVpI4qzdDsIMb+4gXD5Q==
