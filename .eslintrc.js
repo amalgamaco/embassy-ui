@@ -38,9 +38,17 @@ module.exports = {
 			]
 		},
 		{
-			'files': [ 'example/**/*', 'web_example/**/*' ],
+			'files': [ 'example/**/*', 'web_example/**/*', 'docs/**/*' ],
 			'rules': {
 				'import/no-extraneous-dependencies': 'off'
+			}
+		},
+		{
+			'files': [ 'docs/**/*' ],
+			'rules': {
+				'import/no-unresolved': 'off',
+				'global-require': 'off',
+				'@typescript-eslint/no-var-requires': 'off'
 			}
 		},
 		{
