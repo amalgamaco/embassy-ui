@@ -26,7 +26,7 @@ import { Button } from '@amalgama/react-native-ui-kit';
 	</Button>
 </CodePreview>
 
-```tsx
+```jsx
 <Button variant="primary" margin="3" onPress={() => {window.alert( 'Clicked!' );}}>
 	Click!
 </Button>
