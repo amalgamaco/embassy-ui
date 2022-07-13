@@ -102,7 +102,7 @@ pages:
   - yarn
   - cd docs
   - yarn install
-  - yarn build
+  - BASE_URL="/packages/npm/react-native-ui-kit/" yarn build
   - mv ./build ../public
   artifacts:
     paths:

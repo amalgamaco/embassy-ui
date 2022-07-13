@@ -25,12 +25,6 @@ async function linkLibraryPlugin() {
 				},
 				module: {
 					rules: [
-						// Process react-native-vector-icons fonts
-						{
-							test: /\.ttf$/,
-							loader: 'url-loader',
-							include: path.resolve( __dirname, '../../node_modules/react-native-vector-icons' )
-						},
 						// Process react-native-vector-icons through babel in oder to work
 						{
 							test: /\.(js|jsx|ts|tsx)$/,

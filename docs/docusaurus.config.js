@@ -10,7 +10,7 @@ const config = {
 	title: 'Amalgama\'s UI Kit',
 	tagline: 'A components library to help users build Design Systems.',
 	url: 'https://amalgama.pages.amalgama.co',
-	baseUrl: '/packages/npm/react-native-ui-kit/',
+	baseUrl: process.env.BASE_URL || '/',
 	onBrokenLinks: 'throw',
 	onBrokenMarkdownLinks: 'warn',
 	favicon: 'img/favicon.ico',
@@ -83,6 +83,11 @@ const config = {
 					{
 						label: 'Figma',
 						href: 'https://www.figma.com/file/X7a5bxxsP6hXXpNEzpMhoj/Design-System-RRSS',
+						position: 'right'
+					},
+					{
+						label: 'Example App',
+						href: 'https://ui-kit.amalgama.co',
 						position: 'right'
 					},
 					{
