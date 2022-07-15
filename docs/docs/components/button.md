@@ -36,7 +36,7 @@ import { Button } from '@amalgama/react-native-ui-kit';
 
 ### variant
 
-The variant style to use, available values are: `primary`, `secondary`, `priority` y  `success`. You can add more variants changing extending the theme configuration for this component.
+The variant style to use, available values are: `primary`, `secondary`, `priority` y  `success`. You can add more variants extending the theme configuration for this component.
 
 <CodePreview alignItems="stretch">
 	<HStack space="3">
