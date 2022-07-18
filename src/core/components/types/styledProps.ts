@@ -9,7 +9,7 @@
 //    + size prop (optional but available to all) (size)
 //    + Pseudo props defined for C (__label, __icon, etc)
 //    + State props (__disabled, __pressed, etc)
-import type { IThemeConfig, StyledProps } from 'src/core/theme/types';
+import type { IThemeConfig, StyledProps } from '../../theme/types';
 import type { ComponentName } from './common';
 import type { ComponentCustomProps } from './customProps';
 import type { ComponentPseudoProps } from './pseudoProps';

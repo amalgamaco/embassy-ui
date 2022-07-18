@@ -1,4 +1,5 @@
 module.exports = {
+	'root': true,
 	'env': {
 		'browser': true,
 		'es2021': true,
@@ -37,7 +38,7 @@ module.exports = {
 			]
 		},
 		{
-			'files': [ 'example/**/*' ],
+			'files': [ 'example/**/*', 'web_example/**/*' ],
 			'rules': {
 				'import/no-extraneous-dependencies': 'off'
 			}

@@ -3,7 +3,17 @@ import useIsPressed from '../../hooks/useIsPressed';
 import { useComponentPropsResolver } from '../../../hooks';
 import type { IButtonProps } from './types';
 
-export const useButtonPropsResolver = ( props: Omit<IButtonProps, 'children' | 'leftIcon' | 'rightIcon'> ) => {
+interface IUseButtonPropsResolverReturnType {
+	labelProps: IButtonProps[ '__label' ],
+	stackProps: IButtonProps[ '__stack' ],
+	leftIconProps: IButtonProps[ '__leftIcon' ],
+	rightIconProps: IButtonProps[ '__rightIcon' ],
+	containerProps: Omit<IButtonProps, 'leftIcon' | 'rightIcon' | '__label' | '__rightIcon' | '__leftIcon' | '__stack'>
+}
+
+export const useButtonPropsResolver = (
+	props: Omit<IButtonProps, 'children' | 'leftIcon' | 'rightIcon'>
+): IUseButtonPropsResolverReturnType => {
 	const { disabled } = props;
 	const { isPressed, onPressIn, onPressOut } = useIsPressed( props );
 
