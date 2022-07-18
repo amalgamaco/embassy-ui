@@ -43,7 +43,7 @@ const customTheme = extendThemeConfig( {
 	components: {
 		Button: {
 			variants: {
-				awesome: {
+				custom: {
 					bg: 'accent.400',
 					borderColor: 'accent.600',
 					__label: {

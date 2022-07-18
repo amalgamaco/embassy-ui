@@ -5,7 +5,7 @@ export default {
 		borderColor: 'black',
 		borderWidth: '2',
 		rounded: '2xl',
-		padding: '3',
+		padding: '3.5',
 		width: '100%',
 		__stack: {
 			width: '100%',
@@ -32,55 +32,90 @@ export default {
 	},
 	variants: {
 		primary: {
-			bg: 'primary.200',
-			borderWidth: '0',
+			bg: 'primary.900',
+			borderColor: 'primary.900',
 			__label: {
 				color: 'white',
 				fontWeight: 'bold',
-				fontSize: 'md',
-				lineHeight: 'md',
-				letterSpacing: '2xl'
+				fontSize: 'sm',
+				lineHeight: 'sm'
 			},
 			__leftIcon: {
 				color: 'white'
 			},
 			__rightIcon: {
 				color: 'white'
+			},
+			__pressed: {
+				opacity: 1,
+				bg: 'primary.800',
+				borderColor: 'primary.800'
+			},
+			__disabled: {
+				opacity: 1,
+				bg: 'primary.400',
+				borderColor: 'primary.400'
 			}
 		},
 		secondary: {
 			bg: 'white',
 			borderWidth: '2',
-			borderColor: 'primary.200',
+			borderColor: 'primary.900',
 			__label: {
-				color: 'primary.200',
+				color: 'primary.900',
 				fontWeight: 'bold',
-				fontSize: 'md',
-				lineHeight: 'md',
-				letterSpacing: '2xl'
+				fontSize: 'sm',
+				lineHeight: 'sm'
 			},
 			__leftIcon: {
-				color: 'primary.200'
+				color: 'primary.900'
 			},
 			__rightIcon: {
-				color: 'primary.200'
+				color: 'primary.900'
+			},
+			__pressed: {
+				opacity: 1,
+				bg: 'primary.10'
+			},
+			__disabled: {
+				opacity: 1,
+				bg: 'white',
+				borderColor: 'primary.400',
+				__label: {
+					color: 'primary.400'
+				},
+				__leftIcon: {
+					color: 'primary.400'
+				},
+				__rightIcon: {
+					color: 'primary.400'
+				}
 			}
 		},
-		danger: {
-			bg: 'error.700',
-			borderWidth: '0',
+		priority: {
+			bg: 'error.900',
+			borderWidth: 'error.900',
 			__label: {
 				color: 'white',
 				fontWeight: 'bold',
-				fontSize: 'md',
-				lineHeight: 'md',
-				letterSpacing: '2xl'
+				fontSize: 'sm',
+				lineHeight: 'sm'
 			},
 			__leftIcon: {
 				color: 'white'
 			},
 			__rightIcon: {
 				color: 'white'
+			},
+			__pressed: {
+				opacity: 1,
+				bg: 'error.700',
+				borderColor: 'error.700'
+			},
+			__disabled: {
+				opacity: 1,
+				bg: 'error.400',
+				borderColor: 'error.400'
 			}
 		},
 		success: {
