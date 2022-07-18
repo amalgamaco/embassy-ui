@@ -27,6 +27,7 @@ stages:
   - build
   - lint
   - test
+  - docs
   - sonar
 
 yarn:
@@ -94,3 +95,17 @@ upload_to_sonar:
     - develop
   dependencies:
     - run_unit_tests
+
+pages:
+  stage: docs
+  script:
+  - yarn
+  - cd docs
+  - yarn install
+  - yarn build
+  - mv ./build ../public
+  artifacts:
+    paths:
+    - public
+  only:
+    - master
