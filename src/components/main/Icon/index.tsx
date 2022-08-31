@@ -1,5 +1,7 @@
 import React, { memo, forwardRef } from 'react';
-import CustomCircle from '../../../Assets/Icons/CustomCircle';
+import IndeterminatedIcon from '../../../Assets/Icons/IndeterminatedIcon';
+import UncheckedIcon from '../../../Assets/Icons/UncheckedIcon';
+import CheckedIcon from '../../../Assets/Icons/CheckedIcon';
 import { useIconPropsResolver } from './hooks';
 import type { AsComponent, IIconProps } from './types';
 
@@ -8,7 +10,9 @@ interface CUSTOM_ICONS_TYPE {
 }
 
 const CUSTOM_ICONS = Object.freeze( {
-	customcircle: CustomCircle
+	customcheckedbox: CheckedIcon,
+	customuncheckedbox: UncheckedIcon,
+	customindeterminatedbox: IndeterminatedIcon
 } ) as CUSTOM_ICONS_TYPE;
 
 const Icon = ( {
@@ -27,8 +31,8 @@ const Icon = ( {
 		return (
 			<Illustration
 				color={color}
-				size={size}
-				style={style}
+				height={size}
+				width={size}
 				{...restProps}
 			/>
 		);
