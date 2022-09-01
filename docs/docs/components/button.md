@@ -3,7 +3,7 @@ import CodePreview from '@site/src/components/CodePreview';
 
 # Button
 
-Buttons allow user to trigger actions o events with a single tap.
+Buttons allow user to trigger actions or events with a single tap.
 
 ## Import
 
