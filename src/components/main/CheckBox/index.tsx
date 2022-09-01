@@ -1,23 +1,23 @@
 import React from 'react';
 import Icon from '../Icon';
 import Pressable from '../Pressable';
-import { useCheckBoxPropsResolver } from './hooks';
-import type { ICheckBoxProps } from './types';
+import { useCheckboxPropsResolver } from './hooks';
+import type { ICheckboxProps } from './types';
 
-const CheckBox = ( {
+const Checkbox = ( {
 	isSelected = false,
 	isIndeterminated = false,
 	...props
-}: ICheckBoxProps ) => {
-	const { icon, iconProps, containerProps } = useCheckBoxPropsResolver( {
+}: ICheckboxProps ) => {
+	const { iconProps, containerProps } = useCheckboxPropsResolver( {
 		isIndeterminated, isSelected, ...props
 	} );
 
 	return (
 		<Pressable {...containerProps}>
-			<Icon name={icon} {...containerProps} {...iconProps}></Icon>
+			<Icon {...iconProps}></Icon>
 		</Pressable>
 	);
 };
 
-export default CheckBox;
+export default Checkbox;

@@ -5,18 +5,16 @@ export default {
 		justifyContent: 'center',
 		alignItems: 'center',
 		rounded: 'full',
-		__icon: {
-		},
 		__selected: {
-			color: 'secondary.900',
+			__icon: { color: 'secondary.900' },
 			borderColor: 'secondary.900'
 		},
 		__unselected: {
-			color: 'neutral.800',
+			__icon: { color: 'neutral.800' },
 			borderColor: 'neutral.800'
 		},
 		__indeterminate: {
-			color: 'secondary.900',
+			__icon: { color: 'secondary.900' },
 			borderColor: 'secondary.900'
 		},
 		__disabled: {
@@ -31,6 +29,7 @@ export default {
 		__focus: {
 			bg: 'secondary.10',
 			borderWidth: '1'
-		}
+		},
+		__icon: { }
 	}
 };

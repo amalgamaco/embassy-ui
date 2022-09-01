@@ -1,7 +1,7 @@
 import * as React from 'react';
 
 import { StyleSheet, View } from 'react-native';
-import { CheckBox, Text, VStack } from '@amalgama/react-native-ui-kit';
+import { Text, VStack } from '@amalgama/react-native-ui-kit';
 
 const styles = StyleSheet.create( {
 	container: {
@@ -23,7 +23,6 @@ const styles = StyleSheet.create( {
 
 const TextExamples = () => (
 	<VStack style={styles.container}>
-		<CheckBox style={{ marginVertical: 10 }}></CheckBox>
 		<Text variant="h1" bgColor="primary.200">Text Component</Text>
 		<View style={styles.vspace} />
 		<Text variant="sh1" color="primary.800">Variants</Text>

@@ -11,5 +11,5 @@ export {
 	IconButton,
 	VStack,
 	Text,
-	CheckBox
+	Checkbox
 } from './components';

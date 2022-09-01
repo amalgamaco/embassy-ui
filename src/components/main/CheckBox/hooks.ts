@@ -2,12 +2,12 @@ import { useMemo } from 'react';
 import useIsPressed from '../../hooks/useIsPressed';
 import { useComponentPropsResolver } from '../../../hooks';
 import useIsSelected from '../../hooks/useIsSelected';
-import type { ICheckBoxProps } from './types';
+import type { ICheckboxProps } from './types';
+import type { IIconProps } from '../Icon/types';
 
-interface IUseCheckBoxPropsResolverReturnType {
-	iconProps: ICheckBoxProps['__icon'],
-    containerProps: Omit<ICheckBoxProps, '__icon'>
-	icon: string
+interface IUseCheckboxPropsResolverReturnType {
+	iconProps: IIconProps,
+    containerProps: Omit<ICheckboxProps, '__icon'>
 }
 
 // Poner esto en otro lado
@@ -17,12 +17,12 @@ const selectIcon = ( isIndeterminated: boolean, isSelected: boolean ): string =>
 	return 'customuncheckedbox';
 };
 
-export const useCheckBoxPropsResolver = ( {
+export const useCheckboxPropsResolver = ( {
 	isSelected: isSelectedProp = false,
 	isIndeterminated: isIndeterminatedProp = false,
 	...props
-} : ICheckBoxProps
-): IUseCheckBoxPropsResolverReturnType => {
+} : ICheckboxProps
+): IUseCheckboxPropsResolverReturnType => {
 	const { disabled } = props;
 
 	const {
@@ -41,16 +41,16 @@ export const useCheckBoxPropsResolver = ( {
 		isPressed
 	} ), [ isSelected, isIndeterminated, disabled, isPressed ] );
 
-	const icon = selectIcon( isIndeterminated, isSelected );
+	const name = selectIcon( isIndeterminated, isSelected );
 
 	const {
 		__icon: iconProps,
 		...containerProps
-	} = useComponentPropsResolver( 'CheckBox', props, state ) as ICheckBoxProps;
+	} = useComponentPropsResolver( 'Checkbox', props, state ) as ICheckboxProps;
 
 	containerProps.onPress = onPress;
 	containerProps.onPressIn = onPressIn;
 	containerProps.onPressOut = onPressOut;
 
-	return { icon, iconProps, containerProps };
+	return { iconProps: { ...iconProps, name }, containerProps };
 };
