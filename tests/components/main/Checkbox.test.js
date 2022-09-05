@@ -23,9 +23,9 @@ const customTheme = extendThemeConfig( {
 } );
 
 describe( 'Checkbox', () => {
-	const renderComponent = ( { isIndeterminated, props } = {} ) => render(
+	const renderComponent = ( { isIndeterminated, isSelected, props } = {} ) => render(
 		<ThemeProvider theme={customTheme}>
-			<Checkbox isIndeterminated={isIndeterminated} {...props} testID="test-checkbox" />
+			<Checkbox isIndeterminated={isIndeterminated} isSelected={isSelected} {...props} testID="test-checkbox" />
 		</ThemeProvider>
 	);
 
@@ -35,8 +35,7 @@ describe( 'Checkbox', () => {
 	} );
 
 	it( 'applies the __selected styles when it is selected', () => {
-		const { getByTestId } = renderComponent();
-		fireEvent.press( getByTestId( 'test-checkbox' ) );
+		const { getByTestId } = renderComponent( { isSelected: true } );
 		expect( getByTestId( 'test-checkbox' ) ).toHaveStyle( { borderColor: '#4F80FF' } );
 	} );
 

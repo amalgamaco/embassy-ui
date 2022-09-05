@@ -1,4 +1,5 @@
 import * as React from 'react';
+import { useState } from 'react';
 
 import { StyleSheet, View } from 'react-native';
 import {
@@ -23,42 +24,56 @@ const styles = StyleSheet.create( {
 	}
 } );
 
-const TextExamples = () => (
-	<VStack style={styles.container}>
-		<Text variant="h1" bgColor="primary.200">Checkbox Component</Text>
-		<View style={styles.vspace} />
-		<Text variant="sh1" color="primary.800">Enabled</Text>
-		<View style={styles.separator} />
+const CheckboxExamples = () => {
+	const [ isSelected, setIsSelected ] = useState( false );
+	const [ isIndeterminated, setIsIndeterminated ] = useState( false );
 
-		<HStack>
-			<Checkbox></Checkbox>
-			<Checkbox isSelected></Checkbox>
-			<Checkbox isIndeterminated></Checkbox>
-		</HStack>
+	const onChange = () => {
+		if ( isIndeterminated ) {
+			setIsIndeterminated( false );
+		} else if ( isSelected ) {
+			setIsIndeterminated( true );
+			setIsSelected( false );
+		} else {
+			setIsSelected( true );
+		}
+	};
 
-		<View style={styles.vspace} />
-		<Text variant="sh1" color="primary.800">Disabled</Text>
-		<View style={styles.separator} />
+	return (
+		<VStack style={styles.container}>
+			<Text variant="h1" bgColor="primary.200">Checkbox Component</Text>
+			<View style={styles.vspace} />
+			<Text variant="sh1" color="primary.800">Enabled</Text>
+			<View style={styles.separator} />
 
-		<HStack>
-			<Checkbox disabled></Checkbox>
-			<Checkbox disabled isSelected></Checkbox>
-			<Checkbox disabled isIndeterminated></Checkbox>
-		</HStack>
+			<HStack>
+				<Checkbox />
+				<Checkbox isSelected />
+				<Checkbox isIndeterminated />
+			</HStack>
 
-		<View style={styles.vspace} />
-		<Text variant="sh1" color="primary.800">Sizes and colors</Text>
-		<View style={styles.separator} />
+			<View style={styles.vspace} />
+			<Text variant="sh1" color="primary.800">Disabled</Text>
+			<View style={styles.separator} />
 
-		<HStack space={'3'} marginX={'3'}>
-			<Checkbox __icon={{ size: 'xl' }} __unselected={{ __icon: { color: 'error.700' } }}></Checkbox>
-			<Checkbox isSelected __icon={{ size: 'lg' }} __selected={{ __icon: { color: 'success.500' } }}></Checkbox>
-			<Checkbox isIndeterminated __icon={{ size: 'md' }} __indeterminate={{ __icon: { color: 'warning.400' } }}></Checkbox>
-		</HStack>
+			<HStack>
+				<Checkbox disabled />
+				<Checkbox disabled isSelected />
+				<Checkbox disabled isIndeterminated />
+			</HStack>
 
-		<View style={styles.vspace} />
+			<View style={styles.vspace} />
+			<Text variant="sh1" color="primary.800">On Change</Text>
+			<View style={styles.separator} />
 
-	</VStack>
-);
+			<HStack>
+				<Checkbox isSelected={isSelected} isIndeterminated={isIndeterminated} onChange={onChange}/>
+			</HStack>
 
-export default TextExamples;
+			<View style={styles.vspace} />
+
+		</VStack>
+	);
+};
+
+export default CheckboxExamples;
