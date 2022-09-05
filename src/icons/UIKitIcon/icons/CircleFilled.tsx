@@ -1,8 +1,8 @@
 import React from 'react';
 import Svg, { Circle } from 'react-native-svg';
-import type { SvgIconProps } from './SvgIconProps';
+import type { SvgIconProps } from './types';
 
-function FilledRadioButton( { width, height, color } :SvgIconProps ) {
+const CircleFilled = ( { width, height, color } :SvgIconProps ) => {
 	const svgProps = {
 		width,
 		height,
@@ -17,5 +17,6 @@ function FilledRadioButton( { width, height, color } :SvgIconProps ) {
 		</Svg>
 
 	);
-}
-export default FilledRadioButton;
+};
+
+export default CircleFilled;
