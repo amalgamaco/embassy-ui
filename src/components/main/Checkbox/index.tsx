@@ -9,13 +9,19 @@ const Checkbox = ( {
 	isIndeterminated = false,
 	onChange = undefined,
 	...props
-}: ICheckboxProps ) => {
+}: Omit<ICheckboxProps, 'onPress' | 'onPressIn' | 'onPressOut'> ) => {
 	const { iconProps, containerProps } = useCheckboxPropsResolver( {
 		isIndeterminated, isSelected, onChange, ...props
 	} );
-
 	return (
-		<Pressable {...containerProps}>
+		<Pressable {...containerProps}
+			accessible
+			accessibilityRole='checkbox'
+			accessibilityState={{
+				checked: isIndeterminated ? 'mixed' : isSelected,
+				disabled: props.disabled || false
+			}}
+		>
 			<Icon {...iconProps}></Icon>
 		</Pressable>
 	);
