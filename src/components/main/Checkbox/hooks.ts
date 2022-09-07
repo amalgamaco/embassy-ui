@@ -1,4 +1,6 @@
 import { useMemo } from 'react';
+import useIsFocused from '../../hooks/useIsFocused';
+import useIsHovered from '../../hooks/useIsHovered';
 import useIsPressed from '../../hooks/useIsPressed';
 import { useComponentPropsResolver } from '../../../hooks';
 import type { ICheckboxProps } from './types';
@@ -26,14 +28,19 @@ export const useCheckboxPropsResolver = ( {
 	const { disabled } = props;
 
 	const { isPressed, onPressIn, onPressOut } = useIsPressed( props );
+	// Ver si pasarle props
+	const { isHovered, onHoverIn, onHoverOut } = useIsHovered();
+	const { isFocused, onFocus, onBlur } = useIsFocused();
 
 	const state = useMemo( () => ( {
 		isSelected,
 		isUnselected: !isSelected,
 		isIndeterminated,
 		isDisabled: disabled || false,
-		isPressed
-	} ), [ isSelected, isIndeterminated, disabled, isPressed ] );
+		isPressed,
+		isHovered,
+		isFocused
+	} ), [ isSelected, isIndeterminated, disabled, isPressed, isHovered, isFocused ] );
 
 	const name = selectIcon( isIndeterminated, isSelected );
 
@@ -45,6 +52,10 @@ export const useCheckboxPropsResolver = ( {
 	if ( onChange ) containerProps.onPress = onChange;
 	containerProps.onPressIn = onPressIn;
 	containerProps.onPressOut = onPressOut;
+	containerProps.onHoverIn = onHoverIn;
+	containerProps.onHoverOut = onHoverOut;
+	containerProps.onFocus = onFocus;
+	containerProps.onBlur = onBlur;
 
 	return { iconProps: { ...iconProps, name }, containerProps };
 };

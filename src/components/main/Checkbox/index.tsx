@@ -15,6 +15,7 @@ const Checkbox = ( {
 	} );
 	return (
 		<Pressable {...containerProps}
+		// Ver si ponerlo en un accessibility props
 			accessible
 			accessibilityRole='checkbox'
 			accessibilityState={{
