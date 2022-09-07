@@ -1,4 +1,5 @@
 import React from 'react';
+import UIKitIcon from '../../../icons/UIKitIcon';
 import Icon from '../Icon';
 import Pressable from '../Pressable';
 import { useCheckboxPropsResolver } from './hooks';
@@ -15,7 +16,6 @@ const Checkbox = ( {
 	} );
 	return (
 		<Pressable {...containerProps}
-		// Ver si ponerlo en un accessibility props
 			accessible
 			accessibilityRole='checkbox'
 			accessibilityState={{
@@ -23,7 +23,7 @@ const Checkbox = ( {
 				disabled: props.disabled || false
 			}}
 		>
-			<Icon {...iconProps}></Icon>
+			<Icon as={UIKitIcon} {...iconProps} />
 		</Pressable>
 	);
 };

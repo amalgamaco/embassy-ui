@@ -13,9 +13,9 @@ interface IUseCheckboxPropsResolverReturnType {
 
 // Poner esto en otro lado
 const selectIcon = ( isIndeterminated: boolean, isSelected: boolean ): string => {
-	if ( isIndeterminated ) return 'customindeterminatedbox';
-	if ( isSelected ) return 'customcheckedbox';
-	return 'customuncheckedbox';
+	if ( isIndeterminated ) return 'box-indeterminated';
+	if ( isSelected ) return 'box-checked';
+	return 'box-unchecked';
 };
 
 export const useCheckboxPropsResolver = ( {
@@ -28,7 +28,6 @@ export const useCheckboxPropsResolver = ( {
 	const { disabled } = props;
 
 	const { isPressed, onPressIn, onPressOut } = useIsPressed( props );
-	// Ver si pasarle props
 	const { isHovered, onHoverIn, onHoverOut } = useIsHovered();
 	const { isFocused, onFocus, onBlur } = useIsFocused();
 

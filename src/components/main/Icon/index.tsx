@@ -1,19 +1,6 @@
 import React, { memo, forwardRef } from 'react';
-import IndeterminatedIcon from '../../../Assets/Icons/IndeterminatedIcon';
-import UncheckedIcon from '../../../Assets/Icons/UncheckedIcon';
-import CheckedIcon from '../../../Assets/Icons/CheckedIcon';
 import { useIconPropsResolver } from './hooks';
-import type { AsComponent, IIconProps } from './types';
-
-interface CUSTOM_ICONS_TYPE {
-	[key: string]: AsComponent;
-}
-
-const CUSTOM_ICONS = Object.freeze( {
-	customcheckedbox: CheckedIcon,
-	customuncheckedbox: UncheckedIcon,
-	customindeterminatedbox: IndeterminatedIcon
-} ) as CUSTOM_ICONS_TYPE;
+import type { IIconProps } from './types';
 
 const Icon = ( {
 	name, ...props
@@ -25,18 +12,6 @@ const Icon = ( {
 		style,
 		restProps
 	} = useIconPropsResolver( props );
-
-	if ( name.includes( 'custom' ) ) {
-		const Illustration = CUSTOM_ICONS[ name.toLowerCase() ];
-		return (
-			<Illustration
-				color={color}
-				height={size}
-				width={size}
-				{...restProps}
-			/>
-		);
-	}
 
 	return (
 		<BaseIconComponent
