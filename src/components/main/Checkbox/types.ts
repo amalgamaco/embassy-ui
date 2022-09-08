@@ -1,17 +1,18 @@
-import type { GestureResponderEvent, NativeSyntheticEvent, TargetedEvent } from 'react-native';
+import type { GestureResponderEvent, PressableProps } from 'react-native';
 import type { ComponentStyledProps } from '../../../core/components/types';
 
 export interface ICheckboxProps extends ComponentStyledProps<'Checkbox'>
 {
-	onPress?: ( ( event: GestureResponderEvent ) => void ),
-	onPressIn?: ( ( event: GestureResponderEvent ) => void ),
-	onPressOut?: ( ( event: GestureResponderEvent ) => void ),
+	onPress?: PressableProps['onPress'],
+	onPressOut?: PressableProps['onPressOut'],
+	onPressIn?: PressableProps['onPressIn'],
+    onFocus?: PressableProps['onFocus'],
+    onBlur?: PressableProps['onBlur'],
+    onChange?: PressableProps['onPress'],
     onHoverIn?: ( ( event: GestureResponderEvent ) => void ),
     onHoverOut?: ( ( event: GestureResponderEvent ) => void ),
-    onFocus?: ( ( event: NativeSyntheticEvent<TargetedEvent> ) => void ),
-    onBlur?: ( ( event: NativeSyntheticEvent<TargetedEvent> ) => void ),
+    outlineStyle?: string,
     disabled?: boolean,
     isSelected?: boolean,
     isIndeterminated?: boolean,
-    onChange?: ( ( event: GestureResponderEvent ) => void )
 }

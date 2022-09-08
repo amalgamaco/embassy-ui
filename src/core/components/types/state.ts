@@ -27,7 +27,6 @@ export const COMPONENT_STATE_PROPS_MAP = {
 	'isPressed': '__pressed',
 	'isDisabled': '__disabled',
 	'isSelected': '__selected',
-	'isUnselected': '__unselected',
 	'isIndeterminated': '__indeterminate',
 	'isHovered': '__hover',
 	'isFocused': '__focus'

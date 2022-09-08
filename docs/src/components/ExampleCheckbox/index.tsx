@@ -1,7 +1,7 @@
 import { Checkbox } from '@amalgama/react-native-ui-kit';
 import React, { useState } from 'react';
 
-const DynamicCheckbox = () => {
+const ExampleCheckbox = () => {
 	const [ isSelected, setSelected ] = useState( false );
 	return (
 		<Checkbox
@@ -11,4 +11,4 @@ const DynamicCheckbox = () => {
 	);
 };
 
-export default DynamicCheckbox;
+export default ExampleCheckbox;

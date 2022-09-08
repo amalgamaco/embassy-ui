@@ -1,6 +1,6 @@
 import { Checkbox, HStack } from '@amalgama/react-native-ui-kit'
 import CodePreview from '@site/src/components/CodePreview';
-import DynamicCheckbox from '@site/src/components/DynamicCheckbox';
+import ExampleCheckbox from '@site/src/components/ExampleCheckbox';
 import { useState } from 'react'
 
 
@@ -16,7 +16,7 @@ import { Checkbox } from '@amalgama/react-native-ui-kit';
 
 ## Examples
 <CodePreview>
-    <DynamicCheckbox />
+    <ExampleCheckbox />
 </CodePreview>
 
 ```jsx

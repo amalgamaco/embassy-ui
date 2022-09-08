@@ -63,6 +63,18 @@ const CheckboxExamples = () => {
 			</HStack>
 
 			<View style={styles.vspace} />
+			<Text variant="sh1" color="primary.800">On Focus</Text>
+			<View style={styles.separator} />
+
+			<HStack>
+				<Checkbox isSelected
+					__focus={{
+						bg: 'secondary.10',
+						borderWidth: '1'
+					}} />
+			</HStack>
+
+			<View style={styles.vspace} />
 			<Text variant="sh1" color="primary.800">On Change</Text>
 			<View style={styles.separator} />
 

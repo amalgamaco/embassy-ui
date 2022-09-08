@@ -11,7 +11,6 @@ interface IUseCheckboxPropsResolverReturnType {
     containerProps: Omit<ICheckboxProps, '__icon'>
 }
 
-// Poner esto en otro lado
 const selectIcon = ( isIndeterminated: boolean, isSelected: boolean ): string => {
 	if ( isIndeterminated ) return 'box-indeterminated';
 	if ( isSelected ) return 'box-checked';
@@ -21,7 +20,7 @@ const selectIcon = ( isIndeterminated: boolean, isSelected: boolean ): string =>
 export const useCheckboxPropsResolver = ( {
 	isSelected = false,
 	isIndeterminated = false,
-	onChange = undefined,
+	onChange,
 	...props
 } : ICheckboxProps
 ): IUseCheckboxPropsResolverReturnType => {
@@ -33,7 +32,6 @@ export const useCheckboxPropsResolver = ( {
 
 	const state = useMemo( () => ( {
 		isSelected,
-		isUnselected: !isSelected,
 		isIndeterminated,
 		isDisabled: disabled || false,
 		isPressed,
@@ -48,7 +46,7 @@ export const useCheckboxPropsResolver = ( {
 		...containerProps
 	} = useComponentPropsResolver( 'Checkbox', props, state ) as ICheckboxProps;
 
-	if ( onChange ) containerProps.onPress = onChange;
+	containerProps.onPress = onChange;
 	containerProps.onPressIn = onPressIn;
 	containerProps.onPressOut = onPressOut;
 	containerProps.onHoverIn = onHoverIn;

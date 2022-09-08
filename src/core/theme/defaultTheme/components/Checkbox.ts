@@ -5,13 +5,12 @@ export default {
 		justifyContent: 'center',
 		alignItems: 'center',
 		rounded: 'full',
+		outlineStyle: 'none',
+		borderColor: 'neutral.800',
+		__icon: { color: 'neutral.800' },
 		__selected: {
 			__icon: { color: 'secondary.900' },
 			borderColor: 'secondary.900'
-		},
-		__unselected: {
-			__icon: { color: 'neutral.800' },
-			borderColor: 'neutral.800'
 		},
 		__indeterminate: {
 			__icon: { color: 'secondary.900' },
@@ -25,12 +24,6 @@ export default {
 		},
 		__hover: {
 			bg: 'secondary.10'
-		},
-		__focus: {
-			bg: 'secondary.10',
-			borderWidth: '5',
-			borderColor: 'secondary.900'
-		},
-		__icon: { }
+		}
 	}
 };
