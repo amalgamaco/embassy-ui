@@ -29,10 +29,15 @@ interface IIconButtonPseudoProps {
 	__icon: ComponentBaseStyledProps<'Box'>
 }
 
+interface ICheckboxPseudoProps {
+	__icon: ComponentBaseStyledProps<'Icon'>
+}
+
 // Pseudoprops config for all components
 interface ComponentsPseudoPropsConfig {
 	Button: IButtonPseudoProps,
 	IconButton: IIconButtonPseudoProps
+	Checkbox: ICheckboxPseudoProps
 }
 
 // Template type to get pseudoprops for a given component

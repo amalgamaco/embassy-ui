@@ -84,6 +84,9 @@ export default {
 		scale: 'palette',
 		transformerMethod: 'color'
 	},
+	outlineStyle: {
+		property: 'outlineStyle'
+	},
 	rounded: {
 		property: 'borderRadius',
 		category: 'layout',

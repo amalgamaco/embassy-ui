@@ -1,5 +1,7 @@
 import React from 'react';
-import { CircleOutilned, CircleFilled } from './icons';
+import {
+	CircleOutilned, CircleFilled, BoxChecked, BoxUnchecked, BoxIndeterminated
+} from './icons';
 import type { AsComponent, IIconProps } from '../../components/main/Icon/types';
 import IconNotFoundError from './IconNotFoundError';
 
@@ -9,7 +11,10 @@ interface IconsMap {
 
 const PACKAGE_ICONS = Object.freeze( {
 	'circle': CircleOutilned,
-	'circle-filled': CircleFilled
+	'circle-filled': CircleFilled,
+	'box-checked': BoxChecked,
+	'box-unchecked': BoxUnchecked,
+	'box-indeterminated': BoxIndeterminated
 } ) as IconsMap;
 
 const UIKitIcon = ( {

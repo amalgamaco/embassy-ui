@@ -10,6 +10,7 @@ import BoxExamples from './components/BoxExamples';
 import ButtonExamples from './components/ButtonExamples';
 import IconExamples from './components/IconExamples';
 import IconButtonExamples from './components/IconButtonExamples';
+import CheckboxExamples from './components/CheckboxExamples';
 
 const styles = StyleSheet.create( {
 	container: {
@@ -85,6 +86,7 @@ export default function App() {
 						<ButtonExamples />
 						<IconExamples />
 						<IconButtonExamples />
+						<CheckboxExamples />
 					</VStack>
 				</ScrollView>
 			</SafeAreaView>

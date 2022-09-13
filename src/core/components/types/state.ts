@@ -25,7 +25,11 @@ import type { ValueOf } from '../../types';
 
 export const COMPONENT_STATE_PROPS_MAP = {
 	'isPressed': '__pressed',
-	'isDisabled': '__disabled'
+	'isDisabled': '__disabled',
+	'isSelected': '__selected',
+	'isIndeterminated': '__indeterminate',
+	'isHovered': '__hover',
+	'isFocused': '__focus'
 } as const;
 
 export type ComponentStateKey = keyof typeof COMPONENT_STATE_PROPS_MAP;
