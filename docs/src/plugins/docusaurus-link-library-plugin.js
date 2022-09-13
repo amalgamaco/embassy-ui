@@ -14,6 +14,7 @@ async function linkLibraryPlugin() {
 						// node_modules/ folder.
 						'react': path.resolve( __dirname, '..', '..', 'node_modules', 'react' ),
 						'react-dom': path.resolve( __dirname, '..', '..', 'node_modules', 'react-dom' ),
+						'react-native-svg': 'react-native-svg-web',
 						'react-native-web': path.resolve(
 							__dirname,
 							'..',
