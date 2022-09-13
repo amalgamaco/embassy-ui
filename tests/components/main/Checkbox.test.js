@@ -34,7 +34,7 @@ const accessibilityTest = ( {
 };
 
 describe( 'Checkbox', () => {
-	const renderComponent = ( { isIndeterminated, isSelected, props } = {} ) => render(
+	const renderComponent = ( { isIndeterminated, isSelected, ...props } = {} ) => render(
 		<ThemeProvider theme={customTheme}>
 			<Checkbox
 				testID="test-checkbox"
@@ -64,7 +64,7 @@ describe( 'Checkbox', () => {
 	} );
 
 	it( 'applies the __disabled styles when it is disabled', () => {
-		const { getByTestId } = renderComponent( { props: { disabled: true } } );
+		const { getByTestId } = renderComponent( { disabled: true } );
 		expect( getByTestId( 'test-checkbox' ) ).toHaveStyle( { opacity: 0.7 } );
 		accessibilityTest( { getByTestId, disabled: true } );
 	} );
@@ -74,5 +74,10 @@ describe( 'Checkbox', () => {
 		fireEvent( getByTestId( 'test-checkbox' ), 'pressIn' );
 		expect( getByTestId( 'test-checkbox' ) ).toHaveStyle( { backgroundColor: '#EDF2FF' } );
 		accessibilityTest( { getByTestId } );
+	} );
+
+	it( 'shows the custom icon', () => {
+		const { getByTestId } = renderComponent( { uncheckedIcon: TestIcon() } );
+		expect( getByTestId( 'test-icon' ) ).toHaveTextContent( 'test' );
 	} );
 } );

@@ -1,6 +1,5 @@
 import * as React from 'react';
 import { useState } from 'react';
-
 import { StyleSheet, View } from 'react-native';
 import {
 	Checkbox, VStack, Text, HStack
