@@ -24,9 +24,15 @@ interface IButtonPseudoProps {
 	__rightIcon: ComponentBaseStyledProps<'Icon'>
 }
 
+// IconButton pseudoprops
+interface IIconButtonPseudoProps {
+	__icon: ComponentBaseStyledProps<'Box'>
+}
+
 // Pseudoprops config for all components
 interface ComponentsPseudoPropsConfig {
-	Button: IButtonPseudoProps
+	Button: IButtonPseudoProps,
+	IconButton: IIconButtonPseudoProps
 }
 
 // Template type to get pseudoprops for a given component

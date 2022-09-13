@@ -11,6 +11,7 @@ import TextExamples from './components/TextExamples';
 import BoxExamples from './components/BoxExamples';
 import ButtonExamples from './components/ButtonExamples';
 import IconExamples from './components/IconExamples';
+import IconButtonExamples from './components/IconButtonExamples';
 
 const customTheme = extendThemeConfig( {
 	palette: {
@@ -92,6 +93,7 @@ export default function App() {
 					<BoxExamples />
 					<ButtonExamples />
 					<IconExamples />
+					<IconButtonExamples />
 				</VStack>
 			</Box>
 		</ThemeProvider>
