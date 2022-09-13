@@ -15,4 +15,7 @@ export interface ICheckboxProps extends ComponentStyledProps<'Checkbox'>
     disabled?: boolean,
     isSelected?: boolean,
     isIndeterminated?: boolean,
+    checkedIcon?: JSX.Element,
+    uncheckedIcon?: JSX.Element,
+    indeterminatedIcon?: JSX.Element
 }

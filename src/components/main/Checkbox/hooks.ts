@@ -7,20 +7,13 @@ import type { ICheckboxProps } from './types';
 import type { IIconProps } from '../Icon/types';
 
 interface IUseCheckboxPropsResolverReturnType {
-	iconProps: IIconProps,
+	iconProps: Omit<IIconProps, 'name'>,
     containerProps: Omit<ICheckboxProps, '__icon'>
 }
-
-const selectIcon = ( isIndeterminated: boolean, isSelected: boolean ): string => {
-	if ( isIndeterminated ) return 'box-indeterminated';
-	if ( isSelected ) return 'box-checked';
-	return 'box-unchecked';
-};
 
 export const useCheckboxPropsResolver = ( {
 	isSelected = false,
 	isIndeterminated = false,
-	onChange,
 	...props
 } : ICheckboxProps
 ): IUseCheckboxPropsResolverReturnType => {
@@ -39,14 +32,12 @@ export const useCheckboxPropsResolver = ( {
 		isFocused
 	} ), [ isSelected, isIndeterminated, disabled, isPressed, isHovered, isFocused ] );
 
-	const name = selectIcon( isIndeterminated, isSelected );
-
 	const {
 		__icon: iconProps,
 		...containerProps
 	} = useComponentPropsResolver( 'Checkbox', props, state ) as ICheckboxProps;
 
-	containerProps.onPress = onChange;
+	containerProps.onPress = props.onChange;
 	containerProps.onPressIn = onPressIn;
 	containerProps.onPressOut = onPressOut;
 	containerProps.onHoverIn = onHoverIn;
@@ -54,5 +45,5 @@ export const useCheckboxPropsResolver = ( {
 	containerProps.onFocus = onFocus;
 	containerProps.onBlur = onBlur;
 
-	return { iconProps: { ...iconProps, name }, containerProps };
+	return { iconProps: { ...iconProps }, containerProps };
 };
