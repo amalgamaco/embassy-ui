@@ -11,6 +11,11 @@ interface IconCustomProps {
 	as?: any
 }
 
+// IconButton
+interface IconButtonCustomProps {
+	as?: any
+}
+
 // Stack
 interface StackCustomProps {
 	space?: string | number
@@ -21,6 +26,7 @@ interface StackCustomProps {
 // Pseudoprops config for all components
 interface ComponentsCustomPropsConfig {
 	Icon: IconCustomProps,
+	IconButton: IconButtonCustomProps,
 	Stack: StackCustomProps
 }
 

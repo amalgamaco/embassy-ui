@@ -8,6 +8,7 @@ export {
 	Button,
 	HStack,
 	Icon,
+	IconButton,
 	VStack,
 	Text
 } from './components';
