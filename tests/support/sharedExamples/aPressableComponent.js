@@ -7,7 +7,8 @@ module.exports = ( { renderComponent, testId } ) => {
 			[ 'onPressIn', 'pressIn' ],
 			[ 'onPressOut', 'pressOut' ],
 			[ 'onLongPress', 'longPress' ],
-			[ 'onHover', 'hover' ]
+			[ 'onHoverIn', 'hoverIn' ],
+			[ 'onHoverOut', 'hoverOut' ]
 			// FIXME: blur and focus events are not working
 			// [ 'onFocus', 'focus' ],
 			// [ 'onBlur', 'blur' ]

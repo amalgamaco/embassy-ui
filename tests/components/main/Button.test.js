@@ -68,6 +68,17 @@ describe( 'Button', () => {
 	);
 
 	itBehavesLike(
+		'aStyledPressableComponent',
+		{
+			renderComponent: props => renderComponent(
+				<Text>Test!</Text>,
+				props
+			),
+			testId: 'test-button'
+		}
+	);
+
+	itBehavesLike(
 		'aStyledSystemComponent',
 		{
 			renderComponent: props => renderComponent(

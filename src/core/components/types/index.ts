@@ -3,7 +3,7 @@ export type { ComponentConfig, ComponentsConfig } from './config';
 export type { ComponentCustomProps } from './customProps';
 export type { ComponentPseudoProps } from './pseudoProps';
 export type {
-	ComponentState, ComponentStateKey, ComponentStateProp
+	ComponentState, ComponentStateKey, ComponentStateProp, IHoverableComponent
 } from './state';
 export type {
 	ComponentBaseStyledProps, ComponentBaseStyledPropsWithPseudoProps,

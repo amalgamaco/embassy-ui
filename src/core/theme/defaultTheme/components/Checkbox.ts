@@ -12,7 +12,7 @@ export default {
 			__icon: { color: 'secondary.900' },
 			borderColor: 'secondary.900'
 		},
-		__indeterminate: {
+		__indeterminated: {
 			__icon: { color: 'secondary.900' },
 			borderColor: 'secondary.900'
 		},
@@ -22,7 +22,7 @@ export default {
 		__pressed: {
 			bg: 'secondary.10'
 		},
-		__hover: {
+		__hovered: {
 			bg: 'secondary.10'
 		}
 	}

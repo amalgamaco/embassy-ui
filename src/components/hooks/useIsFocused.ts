@@ -1,13 +1,24 @@
 import { useCallback, useState } from 'react';
+import type { PressableProps, NativeSyntheticEvent, TargetedEvent } from 'react-native';
 
-const useIsFocused = () => {
+interface IUseIsFocusedState {
+	onFocus?: PressableProps[ 'onFocus' ],
+	onBlur?: PressableProps[ 'onBlur' ]
+}
+
+const useIsFocused = ( {
+	onFocus: onFocusProp,
+	onBlur: onBlurProp
+}: IUseIsFocusedState ) => {
 	const [ isFocused, setIsFocused ] = useState( false );
 
-	const onFocus = useCallback( () => {
+	const onFocus = useCallback( ( event: NativeSyntheticEvent<TargetedEvent> ) => {
+		onFocusProp?.( event );
 		setIsFocused( true );
 	}, [ setIsFocused ] );
 
-	const onBlur = useCallback( () => {
+	const onBlur = useCallback( ( event: NativeSyntheticEvent<TargetedEvent> ) => {
+		onBlurProp?.( event );
 		setIsFocused( false );
 	}, [ setIsFocused ] );
 

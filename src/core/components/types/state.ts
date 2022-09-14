@@ -21,17 +21,23 @@
 // 		}
 // 	},
 // }
+import type { GestureResponderEvent } from 'react-native';
 import type { ValueOf } from '../../types';
 
 export const COMPONENT_STATE_PROPS_MAP = {
 	'isPressed': '__pressed',
 	'isDisabled': '__disabled',
 	'isSelected': '__selected',
-	'isIndeterminated': '__indeterminate',
-	'isHovered': '__hover',
-	'isFocused': '__focus'
+	'isIndeterminated': '__indeterminated',
+	'isHovered': '__hovered',
+	'isFocused': '__focused'
 } as const;
 
 export type ComponentStateKey = keyof typeof COMPONENT_STATE_PROPS_MAP;
 export type ComponentStateProp = ValueOf<typeof COMPONENT_STATE_PROPS_MAP>;
 export type ComponentState = Partial<Record<ComponentStateKey, boolean>>;
+
+export type IHoverableComponent = {
+	onHoverIn?: ( ( event: GestureResponderEvent ) => void ),
+	onHoverOut?: ( ( event: GestureResponderEvent ) => void )
+}

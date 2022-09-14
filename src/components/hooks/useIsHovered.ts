@@ -1,13 +1,25 @@
 import { useCallback, useState } from 'react';
+import type { GestureResponderEvent } from 'react-native';
+import type { IHoverableComponent } from '../../core/components/types';
 
-const useIsHovered = () => {
+interface IUseIsHoveredState {
+	onHoverIn?: IHoverableComponent[ 'onHoverIn' ],
+	onHoverOut?: IHoverableComponent[ 'onHoverOut' ]
+}
+
+const useIsHovered = ( {
+	onHoverIn: onHoverInProp,
+	onHoverOut: onHoverOutProp
+}: IUseIsHoveredState ) => {
 	const [ isHovered, setIsHovered ] = useState( false );
 
-	const onHoverIn = useCallback( () => {
+	const onHoverIn = useCallback( ( event: GestureResponderEvent ) => {
+		onHoverInProp?.( event );
 		setIsHovered( true );
 	}, [ setIsHovered ] );
 
-	const onHoverOut = useCallback( () => {
+	const onHoverOut = useCallback( ( event: GestureResponderEvent ) => {
+		onHoverOutProp?.( event );
 		setIsHovered( false );
 	}, [ setIsHovered ] );
 

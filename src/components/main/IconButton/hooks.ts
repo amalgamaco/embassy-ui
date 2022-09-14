@@ -1,16 +1,22 @@
 import { useMemo } from 'react';
-import useIsPressed from '../../hooks/useIsPressed';
 import { useComponentPropsResolver } from '../../../hooks';
 import type { IIconButtonProps } from './types';
+import useIsPressed from '../../hooks/useIsPressed';
+import useIsFocused from '../../hooks/useIsFocused';
+import useIsHovered from '../../hooks/useIsHovered';
 
 export const useIconButtonPropsResolver = ( props: Omit<IIconButtonProps, 'name'> ) => {
 	const { disabled } = props;
 	const { isPressed, onPressIn, onPressOut } = useIsPressed( props );
+	const { isHovered, onHoverIn, onHoverOut } = useIsHovered( props );
+	const { isFocused, onFocus, onBlur } = useIsFocused( props );
 
 	const state = useMemo( () => ( {
 		isDisabled: disabled || false,
-		isPressed
-	} ), [ disabled, isPressed ] );
+		isPressed,
+		isHovered,
+		isFocused
+	} ), [ disabled, isPressed, isHovered, isFocused ] );
 
 	const {
 		as,
@@ -26,6 +32,10 @@ export const useIconButtonPropsResolver = ( props: Omit<IIconButtonProps, 'name'
 
 	containerProps.onPressIn = onPressIn;
 	containerProps.onPressOut = onPressOut;
+	containerProps.onHoverIn = onHoverIn;
+	containerProps.onHoverOut = onHoverOut;
+	containerProps.onFocus = onFocus;
+	containerProps.onBlur = onBlur;
 
 	return { iconProps, containerProps };
 };

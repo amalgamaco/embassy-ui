@@ -18,10 +18,9 @@ export const useCheckboxPropsResolver = ( {
 } : ICheckboxProps
 ): IUseCheckboxPropsResolverReturnType => {
 	const { disabled } = props;
-
 	const { isPressed, onPressIn, onPressOut } = useIsPressed( props );
-	const { isHovered, onHoverIn, onHoverOut } = useIsHovered();
-	const { isFocused, onFocus, onBlur } = useIsFocused();
+	const { isHovered, onHoverIn, onHoverOut } = useIsHovered( props );
+	const { isFocused, onFocus, onBlur } = useIsFocused( props );
 
 	const state = useMemo( () => ( {
 		isSelected,

@@ -60,4 +60,12 @@ describe( 'IconButton', () => {
 			testId: 'test-button'
 		}
 	);
+
+	itBehavesLike(
+		'aStyledPressableComponent',
+		{
+			renderComponent: props => renderComponent( props ),
+			testId: 'test-button'
+		}
+	);
 } );

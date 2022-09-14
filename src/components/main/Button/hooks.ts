@@ -1,5 +1,5 @@
 import { useMemo } from 'react';
-import useIsPressed from '../../hooks/useIsPressed';
+import { useIsPressed, useIsFocused, useIsHovered } from '../../hooks';
 import { useComponentPropsResolver } from '../../../hooks';
 import type { IButtonProps } from './types';
 
@@ -16,11 +16,15 @@ export const useButtonPropsResolver = (
 ): IUseButtonPropsResolverReturnType => {
 	const { disabled } = props;
 	const { isPressed, onPressIn, onPressOut } = useIsPressed( props );
+	const { isHovered, onHoverIn, onHoverOut } = useIsHovered( props );
+	const { isFocused, onFocus, onBlur } = useIsFocused( props );
 
 	const state = useMemo( () => ( {
 		isDisabled: disabled || false,
-		isPressed
-	} ), [ disabled, isPressed ] );
+		isPressed,
+		isHovered,
+		isFocused
+	} ), [ disabled, isPressed, isHovered, isFocused ] );
 
 	const {
 		__label: labelProps,
@@ -32,6 +36,10 @@ export const useButtonPropsResolver = (
 
 	containerProps.onPressIn = onPressIn;
 	containerProps.onPressOut = onPressOut;
+	containerProps.onHoverIn = onHoverIn;
+	containerProps.onHoverOut = onHoverOut;
+	containerProps.onFocus = onFocus;
+	containerProps.onBlur = onBlur;
 
 	return {
 		containerProps,

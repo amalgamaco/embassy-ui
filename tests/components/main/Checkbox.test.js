@@ -1,8 +1,10 @@
-import { fireEvent, render } from '@testing-library/react-native';
+import { render } from '@testing-library/react-native';
 import React from 'react';
 import {
 	Checkbox, extendThemeConfig, Icon, Text, ThemeProvider
 } from '../../../src';
+
+const { itBehavesLike } = require( '../../support/sharedExamples' );
 
 const FakeBaseIcon = ( { name, testID, ...props } ) => (
 	<Text testID={testID} {...props}>{name}</Text>
@@ -57,7 +59,7 @@ describe( 'Checkbox', () => {
 		accessibilityTest( { getByTestId, checked: true } );
 	} );
 
-	it( 'applies the __indeterminate styles when it is indeterminated', () => {
+	it( 'applies the __indeterminated styles when it is indeterminated', () => {
 		const { getByTestId } = renderComponent( { isIndeterminated: true } );
 		expect( getByTestId( 'test-checkbox' ) ).toHaveStyle( { borderColor: '#4F80FF' } );
 		accessibilityTest( { getByTestId, checked: 'mixed' } );
@@ -69,15 +71,16 @@ describe( 'Checkbox', () => {
 		accessibilityTest( { getByTestId, disabled: true } );
 	} );
 
-	it( 'applies the __pressed styles when it is pressed', () => {
-		const { getByTestId } = renderComponent();
-		fireEvent( getByTestId( 'test-checkbox' ), 'pressIn' );
-		expect( getByTestId( 'test-checkbox' ) ).toHaveStyle( { backgroundColor: '#EDF2FF' } );
-		accessibilityTest( { getByTestId } );
-	} );
-
 	it( 'shows the custom icon', () => {
 		const { getByTestId } = renderComponent( { uncheckedIcon: TestIcon() } );
 		expect( getByTestId( 'test-icon' ) ).toHaveTextContent( 'test' );
 	} );
+
+	itBehavesLike(
+		'aStyledPressableComponent',
+		{
+			renderComponent: props => renderComponent( props ),
+			testId: 'test-checkbox'
+		}
+	);
 } );
