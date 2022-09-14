@@ -1,6 +1,7 @@
 export default {
 	defaultProps: {
-		size: 'md'
+		size: 'md',
+		textAlign: 'center' as const
 	},
 	sizes: {
 		'xs': 14,

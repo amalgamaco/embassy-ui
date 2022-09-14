@@ -28,6 +28,13 @@ export const useIconPropsResolver = ( props: Omit<IIconProps, 'name'> ) => {
 		);
 	}
 
+	if ( size ) {
+		style.fontSize = style.fontSize || size;
+		style.width = style.width || size;
+		style.height = style.height || size;
+		style.lineHeight = style.lineHeight || size;
+	}
+
 	return {
 		BaseIconComponent, size, color, style, restProps
 	};
