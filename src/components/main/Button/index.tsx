@@ -32,7 +32,12 @@ const Button = ( {
 	const rightIcon = cloneIconWithProps( rightIconProp, rightIconProps || {} );
 
 	return (
-		<Pressable {...containerProps}>
+		<Pressable
+			accessible
+			accessibilityRole='button'
+			accessibilityState={{ disabled: props.disabled || false }}
+			{...containerProps}
+		>
 			<HStack {...stackProps}>
 				{leftIcon}
 				<Text {...labelProps}>

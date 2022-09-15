@@ -38,14 +38,14 @@ const Checkbox = ( {
 		indeterminatedIcon );
 
 	return (
-		<Pressable {...containerProps}
-		// Ver si ponerlo en un accessibility props
+		<Pressable
 			accessible
 			accessibilityRole='checkbox'
 			accessibilityState={{
 				checked: isIndeterminated ? 'mixed' : isSelected,
 				disabled: props.disabled || false
 			}}
+			{...containerProps}
 		>
 			{cloneElement( icon, iconProps )}
 		</Pressable>

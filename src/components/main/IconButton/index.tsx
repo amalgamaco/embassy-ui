@@ -10,7 +10,12 @@ const IconButton = ( { name, ...props }: IIconButtonProps ) => {
 	} = useIconButtonPropsResolver( props );
 
 	return (
-		<Pressable {...containerProps}>
+		<Pressable
+			accessible
+			accessibilityRole='button'
+			accessibilityState={{ disabled: props.disabled || false }}
+			{...containerProps}
+		>
 			<Icon name={name} {...iconProps} />
 		</Pressable>
 	);
