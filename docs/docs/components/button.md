@@ -47,6 +47,27 @@ The variant style to use, available values are: `primary`, `secondary`, `priorit
 	</HStack>
 </CodePreview>
 
+### onPress
+
+Called when the button is pressed.
+
+<CodePreview>
+	<Button variant="primary" margin="3" width="300px" onPress={() => {window.alert( 'Clicked!' );}}>
+		Click me!
+	</Button>
+</CodePreview>
+
+```tsx
+<Button
+	variant="primary"
+	onPress={() => {window.alert( 'Clicked!' );}}
+	margin="3"
+	width="300px"
+>
+	Click me!
+</Button>
+```
+
 ### disabled
 
 If the button is disabled or not. Boolean. 

@@ -34,10 +34,25 @@ const customTheme = extendThemeConfig( {
 			}
 		}
 	},
+	palette: {
+		base: {
+			hover: '#0000003D'
+		}
+	},
 	components: {
 		Icon: {
 			defaultProps: {
 				as: FontAwesome
+			}
+		},
+		IconButton: {
+			defaultProps: {
+				color: 'black',
+				rounded: 'full',
+				padding: '2',
+				__hovered: {
+					bg: 'hover'
+				}
 			}
 		}
 	}
