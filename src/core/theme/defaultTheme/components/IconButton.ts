@@ -1,6 +1,9 @@
 export default {
 	defaultProps: {
 		size: 'md',
+		__disabled: {
+			opacity: 0.3
+		},
 		__pressed: {
 			opacity: 0.7
 		}
