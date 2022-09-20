@@ -13,6 +13,7 @@ import IconButtonExamples from './components/IconButtonExamples';
 import CheckboxExamples from './components/CheckboxExamples';
 import RadioExamples from './components/RadioExamples';
 import FormControlExamples from './components/FormControlExamples';
+import TextInputExamples from './components/TextInputExamples';
 
 const styles = StyleSheet.create( {
 	container: {
@@ -91,6 +92,7 @@ export default function App() {
 						<CheckboxExamples />
 						<RadioExamples/>
 						<FormControlExamples />
+						<TextInputExamples />
 					</VStack>
 				</ScrollView>
 			</SafeAreaView>
