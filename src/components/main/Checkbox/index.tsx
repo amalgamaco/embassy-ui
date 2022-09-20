@@ -25,7 +25,7 @@ const Checkbox = ( {
 	uncheckedIcon = defaultUncheckedIcon,
 	indeterminatedIcon = defaultIndeterminatedIcon,
 	...props
-}: Omit<ICheckboxProps, 'onPress' | 'onPressIn' | 'onPressOut'> ) => {
+}: ICheckboxProps ) => {
 	const { iconProps, containerProps } = useCheckboxPropsResolver( {
 		isIndeterminated, isSelected, ...props
 	} );

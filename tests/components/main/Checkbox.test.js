@@ -77,6 +77,14 @@ describe( 'Checkbox', () => {
 	} );
 
 	itBehavesLike(
+		'aPressableComponent',
+		{
+			renderComponent: props => renderComponent( props ),
+			testId: 'test-checkbox'
+		}
+	);
+
+	itBehavesLike(
 		'aStyledPressableComponent',
 		{
 			renderComponent: props => renderComponent( props ),

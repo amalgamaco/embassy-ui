@@ -17,7 +17,7 @@ import { Checkbox } from '@amalgama/react-native-ui-kit';
 ## Examples
 <CodePreview>
     <ExampleCheckbox />
-</CodePreview>
+</CodePreview> 
 
 ```jsx
 import { Checkbox } from '@amalgama/react-native-ui-kit';
@@ -28,7 +28,7 @@ const App = () => {
 	return (
 		<Checkbox
 			isSelected={ isSelected }
-			onChange={ () => { setSelected( !isSelected ); } }
+			onPress={ () => { setSelected( !isSelected ); } }
 		/>
 	);
 };
@@ -76,7 +76,7 @@ If the checkbox is disabled or not.
     </HStack>
 </CodePreview>
 
-### onChange
+### onPress
 Invoked when the checkbox is pressed.
 
 | TYPE     | REQUIRED |
@@ -84,11 +84,11 @@ Invoked when the checkbox is pressed.
 | function | No       |
 
 <CodePreview>
-    <Checkbox onChange={ () => { window.alert( 'The checkbox was pressed!' ) } }/>
+    <Checkbox onPress={ () => { window.alert( 'The checkbox was pressed!' ) } }/>
 </CodePreview>
 
 ```jsx
-<Checkbox onChange={ () => { window.alert( 'The checkbox was pressed!' ) } }/>
+<Checkbox onPress={ () => { window.alert( 'The checkbox was pressed!' ) } }/>
 ```
 
 ## Accessibility props

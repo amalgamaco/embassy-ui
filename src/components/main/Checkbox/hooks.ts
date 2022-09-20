@@ -36,7 +36,7 @@ export const useCheckboxPropsResolver = ( {
 		...containerProps
 	} = useComponentPropsResolver( 'Checkbox', props, state ) as ICheckboxProps;
 
-	containerProps.onPress = props.onChange;
+	containerProps.onPress = props.onPress;
 	containerProps.onPressIn = onPressIn;
 	containerProps.onPressOut = onPressOut;
 	containerProps.onHoverIn = onHoverIn;

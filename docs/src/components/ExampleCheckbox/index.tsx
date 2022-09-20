@@ -6,7 +6,7 @@ const ExampleCheckbox = () => {
 	return (
 		<Checkbox
 			isSelected={ isSelected }
-			onChange={ () => { setSelected( !isSelected ); } }
+			onPress={ () => { setSelected( !isSelected ); } }
 		/>
 	);
 };

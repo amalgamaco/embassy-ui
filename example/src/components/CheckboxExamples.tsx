@@ -28,7 +28,7 @@ const CheckboxExamples = () => {
 	const [ isSelected, setIsSelected ] = useState( false );
 	const [ isIndeterminated, setIsIndeterminated ] = useState( false );
 
-	const onChange = () => {
+	const onPressed = () => {
 		if ( isIndeterminated ) {
 			setIsIndeterminated( false );
 		} else if ( isSelected ) {
@@ -67,7 +67,7 @@ const CheckboxExamples = () => {
 			<View style={styles.separator} />
 
 			<HStack>
-				<Checkbox isSelected={isSelected} isIndeterminated={isIndeterminated} onChange={onChange}/>
+				<Checkbox isSelected={isSelected} isIndeterminated={isIndeterminated} onPress={onPressed}/>
 			</HStack>
 
 			<View style={styles.vspace} />

@@ -8,7 +8,6 @@ export interface ICheckboxProps extends ComponentStyledProps<'Checkbox'>
 	onPressIn?: PressableProps['onPressIn'],
     onFocus?: PressableProps['onFocus'],
     onBlur?: PressableProps['onBlur'],
-    onChange?: PressableProps['onPress'],
     onHoverIn?: ( ( event: GestureResponderEvent ) => void ),
     onHoverOut?: ( ( event: GestureResponderEvent ) => void ),
     outlineStyle?: string,
