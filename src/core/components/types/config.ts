@@ -24,7 +24,7 @@ import type { ComponentName, VariantName } from './common';
 
 export type ComponentConfig<C extends ComponentName> = Partial<{
 	defaultProps: ComponentStyledProps<C>,
-	variants: Record<VariantName, ComponentStyledProps<C>>
+	variants: Record<VariantName, Omit<ComponentStyledProps<C>, 'variant'>>
 	sizes?: Record<string, string | number>
 }>;
 

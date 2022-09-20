@@ -11,7 +11,7 @@ import type {
 } from '../typography/types';
 import type Components from '../components/Components';
 import type {
-	ComponentName, ComponentState, PropsWithVariant, VariantName
+	ComponentName, ComponentState, ComponentStyledProps, VariantName
 } from '../components/types';
 import type Layout from '../layout/Layout';
 import type {
@@ -128,7 +128,7 @@ export default class Theme {
 
 	resolvePropsFor(
 		componentName: ComponentName,
-		props: PropsWithVariant,
+		props: ComponentStyledProps<ComponentName>,
 		state?: ComponentState
 	) {
 		return this._components.resolvePropsFor( componentName, props, state );
