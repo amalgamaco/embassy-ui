@@ -54,13 +54,13 @@ describe( 'Checkbox', () => {
 	} );
 
 	it( 'applies the __selected styles when it is selected', () => {
-		const { getByTestId, debug } = renderComponent( { isSelected: true } );
+		const { getByTestId } = renderComponent( { selected: true } );
 		expect( getByTestId( 'test-checkbox-icon' ) ).toHaveStyle( { borderColor: '#4F80FF' } );
 		accessibilityTest( { getByTestId, checked: true } );
 	} );
 
 	it( 'applies the __indeterminated styles when it is indeterminated', () => {
-		const { getByTestId } = renderComponent( { isIndeterminated: true } );
+		const { getByTestId } = renderComponent( { indeterminated: true } );
 		expect( getByTestId( 'test-checkbox-icon' ) ).toHaveStyle( { borderColor: '#4F80FF' } );
 		accessibilityTest( { getByTestId, checked: 'mixed' } );
 	} );

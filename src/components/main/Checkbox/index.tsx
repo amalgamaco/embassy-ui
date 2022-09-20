@@ -14,17 +14,17 @@ const defaultUncheckedIcon = <Icon as={UIKitIcon} name="box-unchecked" />;
 
 const defaultIndeterminatedIcon = <Icon as={UIKitIcon} name="box-indeterminated" />;
 
-const selectIcon = ( isSelected: boolean, isIndeterminated: boolean, checkedIcon: JSX.Element,
+const selectIcon = ( selected: boolean, indeterminated: boolean, checkedIcon: JSX.Element,
 	uncheckedIcon: JSX.Element, indeterminatedIcon: JSX.Element ) => {
-	if ( isIndeterminated ) return indeterminatedIcon;
-	if ( isSelected ) return checkedIcon;
+	if ( indeterminated ) return indeterminatedIcon;
+	if ( selected ) return checkedIcon;
 	return uncheckedIcon;
 };
 
 const Checkbox = ( {
 	label,
-	isSelected = false,
-	isIndeterminated = false,
+	selected = false,
+	indeterminated = false,
 	checkedIcon = defaultCheckedIcon,
 	uncheckedIcon = defaultUncheckedIcon,
 	indeterminatedIcon = defaultIndeterminatedIcon,
@@ -37,12 +37,12 @@ const Checkbox = ( {
 		labelProps,
 		containerProps
 	} = useCheckboxPropsResolver( {
-		isIndeterminated, isSelected, ...props
+		indeterminated, selected, ...props
 	} );
 
 	const icon = selectIcon(
-		isSelected,
-		isIndeterminated,
+		selected,
+		indeterminated,
 		checkedIcon,
 		uncheckedIcon,
 		indeterminatedIcon );
@@ -53,7 +53,7 @@ const Checkbox = ( {
 			accessibilityRole='checkbox'
 			accessibilityLabel={label}
 			accessibilityState={{
-				checked: isIndeterminated ? 'mixed' : isSelected,
+				checked: indeterminated ? 'mixed' : selected,
 				disabled: props.disabled || false
 			}}
 			testID={testID}

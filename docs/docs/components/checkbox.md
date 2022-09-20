@@ -27,7 +27,7 @@ const App = () => {
 	const [ isSelected, setSelected ] = useState( false );
 	return (
 		<Checkbox
-			isSelected={ isSelected }
+			selected={ isSelected }
 			onPress={ () => { setSelected( !isSelected ); } }
 		/>
 	);
@@ -36,7 +36,7 @@ const App = () => {
 
 ## Props
 
-### isSelected
+### selected
 If the checkbox is selected or not.
 
 | TYPE | REQUIRED | DEFAULT |
@@ -46,11 +46,11 @@ If the checkbox is selected or not.
 <CodePreview>
     <HStack>
         <Checkbox />
-        <Checkbox isSelected />
+        <Checkbox selected />
     </HStack>
 </CodePreview>
 
-### isIndeterminated
+### indeterminated
 If the checkbox is indeterminated or not. This is usually used for lists of checkboxes when some of their children are checked but not all of them. This is only a visual state, it only changes the checkbox icon.
 
 | TYPE | REQUIRED | DEFAULT |
@@ -58,7 +58,7 @@ If the checkbox is indeterminated or not. This is usually used for lists of chec
 | bool | No       | false   |
 
 <CodePreview>
-    <Checkbox isIndeterminated/>
+    <Checkbox indeterminated/>
 </CodePreview>
 
 ### disabled
@@ -71,8 +71,8 @@ If the checkbox is disabled or not.
 <CodePreview>
     <HStack>
         <Checkbox disabled />
-        <Checkbox disabled isSelected />
-        <Checkbox disabled isIndeterminated />
+        <Checkbox disabled selected />
+        <Checkbox disabled indeterminated />
     </HStack>
 </CodePreview>
 
@@ -101,4 +101,4 @@ Sets the component to an accessibility element. It is set by default to `true`.
 Communicates the purpose of the component. It is set by default to `"checkbox"`.
 
 ### accessibilityState
-Describes the current state of the element. By default, indicates if the `Checkbox` is `disabled`, `isSelected` and `isIndeterminated`.
+Describes the current state of the element. By default, indicates if the `Checkbox` is `disabled`, `selected` and `indeterminated`.

@@ -48,8 +48,8 @@ const CheckboxExamples = () => {
 
 			<HStack>
 				<Checkbox />
-				<Checkbox isSelected />
-				<Checkbox isIndeterminated />
+				<Checkbox selected />
+				<Checkbox indeterminated />
 			</HStack>
 
 			<View style={styles.vspace} />
@@ -58,8 +58,8 @@ const CheckboxExamples = () => {
 
 			<HStack>
 				<Checkbox disabled />
-				<Checkbox disabled isSelected />
-				<Checkbox disabled isIndeterminated />
+				<Checkbox disabled selected />
+				<Checkbox disabled indeterminated />
 			</HStack>
 
 			<View style={styles.vspace} />
@@ -67,7 +67,7 @@ const CheckboxExamples = () => {
 			<View style={styles.separator} />
 
 			<HStack>
-				<Checkbox isSelected={isSelected} isIndeterminated={isIndeterminated} onPress={onPressed}/>
+				<Checkbox selected={isSelected} indeterminated={isIndeterminated} onPress={onPressed}/>
 			</HStack>
 
 			<View style={styles.vspace} />
@@ -77,10 +77,10 @@ const CheckboxExamples = () => {
 
 			<VStack alignItems="flex-start" justifyContent="flex-start" alignContent="flex-start" space="0">
 				<Checkbox label="Unselected" />
-				<Checkbox label="Selected" isSelected />
-				<Checkbox label="Indeterminated" isIndeterminated />
+				<Checkbox label="Selected" selected />
+				<Checkbox label="Indeterminated" indeterminated />
 				<Checkbox label="Disabled" disabled />
-				<Checkbox label="Controlled" isSelected={isSelected} isIndeterminated={isIndeterminated} onPress={onPressed}/>
+				<Checkbox label="Controlled" selected={isSelected} indeterminated={isIndeterminated} onPress={onPressed}/>
 			</VStack>
 
 			<View style={styles.vspace} />

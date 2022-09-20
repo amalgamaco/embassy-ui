@@ -47,8 +47,8 @@ const CheckboxExamples = () => {
 
 			<HStack>
 				<Checkbox />
-				<Checkbox isSelected />
-				<Checkbox isIndeterminated />
+				<Checkbox selected />
+				<Checkbox indeterminated />
 			</HStack>
 
 			<View style={styles.vspace} />
@@ -57,8 +57,8 @@ const CheckboxExamples = () => {
 
 			<HStack>
 				<Checkbox disabled />
-				<Checkbox disabled isSelected />
-				<Checkbox disabled isIndeterminated />
+				<Checkbox disabled selected />
+				<Checkbox disabled indeterminated />
 			</HStack>
 
 			<View style={styles.vspace} />
@@ -66,7 +66,7 @@ const CheckboxExamples = () => {
 			<View style={styles.separator} />
 
 			<HStack>
-				<Checkbox isSelected
+				<Checkbox selected
 					__focused={{
 						bg: 'secondary.10',
 						borderWidth: '1'
@@ -78,9 +78,9 @@ const CheckboxExamples = () => {
 			<View style={styles.separator} />
 
 			<HStack alignItems="center" space="3">
-				<Checkbox isSelected={isSelected} isIndeterminated={isIndeterminated} onPress={onPressed}/>
+				<Checkbox selected={isSelected} indeterminated={isIndeterminated} onPress={onPressed}/>
 				<Text>|</Text>
-				<Checkbox isSelected={isSelected} isIndeterminated={isIndeterminated} onPress={onPressed} label="With label" />
+				<Checkbox selected={isSelected} indeterminated={isIndeterminated} onPress={onPressed} label="With label" />
 			</HStack>
 
 			<View style={styles.vspace} />
@@ -91,14 +91,14 @@ const CheckboxExamples = () => {
 			<VStack alignItems="flex-start" space="2">
 				<HStack justifyContent="space-between" width="100%">
 					<Checkbox label="Unselected" />
-					<Checkbox label="Selected" isSelected />
-					<Checkbox label="Indeterminated" isIndeterminated />
+					<Checkbox label="Selected" selected />
+					<Checkbox label="Indeterminated" indeterminated />
 				</HStack>
 
 				<HStack justifyContent="space-between" width="100%">
 					<Checkbox disabled label="Unselected" />
-					<Checkbox disabled label="Selected" isSelected />
-					<Checkbox disabled label="Indeterminated" isIndeterminated />
+					<Checkbox disabled label="Selected" selected />
+					<Checkbox disabled label="Indeterminated" indeterminated />
 				</HStack>
 			</VStack>
 

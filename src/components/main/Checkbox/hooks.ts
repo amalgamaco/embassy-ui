@@ -16,8 +16,8 @@ interface IUseCheckboxPropsResolverReturnType {
 }
 
 export const useCheckboxPropsResolver = ( {
-	isSelected = false,
-	isIndeterminated = false,
+	selected = false,
+	indeterminated = false,
 	...props
 } : ICheckboxProps
 ): IUseCheckboxPropsResolverReturnType => {
@@ -27,13 +27,13 @@ export const useCheckboxPropsResolver = ( {
 	const { isFocused, onFocus, onBlur } = useIsFocused( props );
 
 	const state = useMemo( () => ( {
-		isSelected,
-		isIndeterminated,
+		isSelected: selected,
+		isIndeterminated: indeterminated,
 		isDisabled: disabled || false,
 		isPressed,
 		isHovered,
 		isFocused
-	} ), [ isSelected, isIndeterminated, disabled, isPressed, isHovered, isFocused ] );
+	} ), [ selected, indeterminated, disabled, isPressed, isHovered, isFocused ] );
 
 	const {
 		__icon: iconProps,

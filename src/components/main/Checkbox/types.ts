@@ -5,6 +5,17 @@ export interface ICheckboxProps extends Omit<PressableProps, 'children'>,
 	ComponentStyledProps<'Checkbox'>
 {
 	label?: string,
+
+	selected?: boolean,
+	indeterminated?: boolean,
+	disabled?: boolean,
+
+	checkedIcon?: JSX.Element,
+	uncheckedIcon?: JSX.Element,
+	indeterminatedIcon?: JSX.Element
+
+	outlineStyle?: string,
+
 	onPress?: PressableProps['onPress'],
 	onPressOut?: PressableProps['onPressOut'],
 	onPressIn?: PressableProps['onPressIn'],
@@ -12,11 +23,4 @@ export interface ICheckboxProps extends Omit<PressableProps, 'children'>,
 	onBlur?: PressableProps['onBlur'],
 	onHoverIn?: ( ( event: GestureResponderEvent ) => void ),
 	onHoverOut?: ( ( event: GestureResponderEvent ) => void ),
-	outlineStyle?: string,
-	disabled?: boolean,
-	isSelected?: boolean,
-	isIndeterminated?: boolean,
-	checkedIcon?: JSX.Element,
-	uncheckedIcon?: JSX.Element,
-	indeterminatedIcon?: JSX.Element
 }
