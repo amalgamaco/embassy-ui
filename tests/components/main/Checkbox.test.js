@@ -49,19 +49,19 @@ describe( 'Checkbox', () => {
 
 	it( 'applies the __unselected styles when it is unselected', () => {
 		const { getByTestId } = renderComponent();
-		expect( getByTestId( 'test-checkbox' ) ).toHaveStyle( { borderColor: '#676A79' } );
+		expect( getByTestId( 'test-checkbox-icon' ) ).toHaveStyle( { borderColor: '#676A79' } );
 		accessibilityTest( { getByTestId } );
 	} );
 
 	it( 'applies the __selected styles when it is selected', () => {
-		const { getByTestId } = renderComponent( { isSelected: true } );
-		expect( getByTestId( 'test-checkbox' ) ).toHaveStyle( { borderColor: '#4F80FF' } );
+		const { getByTestId, debug } = renderComponent( { isSelected: true } );
+		expect( getByTestId( 'test-checkbox-icon' ) ).toHaveStyle( { borderColor: '#4F80FF' } );
 		accessibilityTest( { getByTestId, checked: true } );
 	} );
 
 	it( 'applies the __indeterminated styles when it is indeterminated', () => {
 		const { getByTestId } = renderComponent( { isIndeterminated: true } );
-		expect( getByTestId( 'test-checkbox' ) ).toHaveStyle( { borderColor: '#4F80FF' } );
+		expect( getByTestId( 'test-checkbox-icon' ) ).toHaveStyle( { borderColor: '#4F80FF' } );
 		accessibilityTest( { getByTestId, checked: 'mixed' } );
 	} );
 
@@ -73,7 +73,19 @@ describe( 'Checkbox', () => {
 
 	it( 'shows the custom icon', () => {
 		const { getByTestId } = renderComponent( { uncheckedIcon: TestIcon() } );
-		expect( getByTestId( 'test-icon' ) ).toHaveTextContent( 'test' );
+		expect( getByTestId( 'test-checkbox-icon' ) ).toHaveTextContent( 'test' );
+	} );
+
+	describe( 'with label', () => {
+		it( 'shows the label', () => {
+			const { getByTestId } = renderComponent( { label: 'Checkbox!' } );
+			expect( getByTestId( 'test-checkbox' ) ).toHaveTextContent( 'Checkbox!' );
+		} );
+
+		it( 'adds the accesibility label with the label text', () => {
+			const { getByTestId } = renderComponent( { label: 'Checkbox!' } );
+			expect( getByTestId( 'test-checkbox' ) ).toHaveProp( 'accessibilityLabel', 'Checkbox!' );
+		} );
 	} );
 
 	itBehavesLike(

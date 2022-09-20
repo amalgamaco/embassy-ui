@@ -1,9 +1,12 @@
 import React, { cloneElement } from 'react';
 import UIKitIcon from '../../../icons/UIKitIcon';
 import Icon from '../Icon';
+import Text from '../Text';
 import Pressable from '../Pressable';
+import { HStack } from '../Stack';
 import { useCheckboxPropsResolver } from './hooks';
 import type { ICheckboxProps } from './types';
+import Box from '../Box';
 
 const defaultCheckedIcon = <Icon as={UIKitIcon} name="box-checked" />;
 
@@ -19,14 +22,21 @@ const selectIcon = ( isSelected: boolean, isIndeterminated: boolean, checkedIcon
 };
 
 const Checkbox = ( {
+	label,
 	isSelected = false,
 	isIndeterminated = false,
 	checkedIcon = defaultCheckedIcon,
 	uncheckedIcon = defaultUncheckedIcon,
 	indeterminatedIcon = defaultIndeterminatedIcon,
+	testID,
 	...props
 }: ICheckboxProps ) => {
-	const { iconProps, containerProps } = useCheckboxPropsResolver( {
+	const {
+		iconProps,
+		iconContainerProps,
+		labelProps,
+		containerProps
+	} = useCheckboxPropsResolver( {
 		isIndeterminated, isSelected, ...props
 	} );
 
@@ -41,13 +51,31 @@ const Checkbox = ( {
 		<Pressable
 			accessible
 			accessibilityRole='checkbox'
+			accessibilityLabel={label}
 			accessibilityState={{
 				checked: isIndeterminated ? 'mixed' : isSelected,
 				disabled: props.disabled || false
 			}}
+			testID={testID}
 			{...containerProps}
 		>
-			{cloneElement( icon, iconProps )}
+			<HStack space="0.5" alignItems="center" alignContent="flex-start">
+				<Box {...iconContainerProps}>
+					{cloneElement( icon, {
+						...iconProps,
+						testID: testID && `${testID}-icon`
+					} )}
+				</Box>
+				{!!label && (
+					<Text
+						{...labelProps}
+						selectable={false}
+						testID={testID && `${testID}-label`}
+					>
+						{label}
+					</Text>
+				)}
+			</HStack>
 		</Pressable>
 	);
 };

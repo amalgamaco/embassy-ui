@@ -72,6 +72,19 @@ const CheckboxExamples = () => {
 
 			<View style={styles.vspace} />
 
+			<Text variant="sh1" color="primary.800">With Label</Text>
+			<View style={styles.separator} />
+
+			<VStack alignItems="flex-start" justifyContent="flex-start" alignContent="flex-start" space="0">
+				<Checkbox label="Unselected" />
+				<Checkbox label="Selected" isSelected />
+				<Checkbox label="Indeterminated" isIndeterminated />
+				<Checkbox label="Disabled" disabled />
+				<Checkbox label="Controlled" isSelected={isSelected} isIndeterminated={isIndeterminated} onPress={onPressed}/>
+			</VStack>
+
+			<View style={styles.vspace} />
+
 		</VStack>
 	);
 };

@@ -5,10 +5,14 @@ import useIsPressed from '../../hooks/useIsPressed';
 import { useComponentPropsResolver } from '../../../hooks';
 import type { ICheckboxProps } from './types';
 import type { IIconProps } from '../Icon/types';
+import type { IBoxProps } from '../Box/types';
+import type { ITextProps } from '../Text/types';
 
 interface IUseCheckboxPropsResolverReturnType {
-	iconProps: Omit<IIconProps, 'name'>,
-    containerProps: Omit<ICheckboxProps, '__icon'>
+	iconProps?: Omit<IIconProps, 'name'>,
+	iconContainerProps?: Omit<IBoxProps, 'children'>,
+	labelProps?: Omit<ITextProps, 'children'>,
+	containerProps: Omit<ICheckboxProps, '__icon'>
 }
 
 export const useCheckboxPropsResolver = ( {
@@ -33,6 +37,8 @@ export const useCheckboxPropsResolver = ( {
 
 	const {
 		__icon: iconProps,
+		__iconContainer: iconContainerProps,
+		__label: labelProps,
 		...containerProps
 	} = useComponentPropsResolver( 'Checkbox', props, state ) as ICheckboxProps;
 
@@ -44,5 +50,7 @@ export const useCheckboxPropsResolver = ( {
 	containerProps.onFocus = onFocus;
 	containerProps.onBlur = onBlur;
 
-	return { iconProps: { ...iconProps }, containerProps };
+	return {
+		iconProps, iconContainerProps, labelProps, containerProps
+	};
 };
