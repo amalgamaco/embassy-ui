@@ -8,3 +8,4 @@ export { default as IconButton } from './main/IconButton';
 export { default as Checkbox } from './main/Checkbox';
 export { default as Radio } from './main/Radio';
 export { default as FormControl } from './main/FormControl';
+export { default as TextInput } from './main/TextInput';
