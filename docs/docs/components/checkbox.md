@@ -1,6 +1,7 @@
 import { Checkbox, HStack } from '@amalgama/react-native-ui-kit'
 import CodePreview from '@site/src/components/CodePreview';
 import ExampleCheckbox from '@site/src/components/ExampleCheckbox';
+import ExampleCheckboxGroup from '@site/src/components/ExampleCheckboxGroup';
 import { useState } from 'react'
 
 
@@ -14,10 +15,12 @@ To add the `Checkbox` component to your project you can import it as follows:
 import { Checkbox } from '@amalgama/react-native-ui-kit';
 ```
 
-## Examples
+## Standalone
+
+### Examples
 <CodePreview>
     <ExampleCheckbox />
-</CodePreview> 
+</CodePreview>
 
 ```jsx
 import { Checkbox } from '@amalgama/react-native-ui-kit';
@@ -34,7 +37,7 @@ const App = () => {
 };
 ```
 
-## Props
+### Props
 
 ### selected
 If the checkbox is selected or not.
@@ -56,6 +59,21 @@ If the checkbox is indeterminated or not. This is usually used for lists of chec
 | TYPE | REQUIRED | DEFAULT |
 | ---- | -------- | ------- |
 | bool | No       | false   |
+
+<CodePreview>
+    <Checkbox indeterminated/>
+</CodePreview>
+
+### value
+If the checkbox is inside a `Checkbox.Group` this prop indicates the value for it.
+
+| TYPE   | REQUIRED |
+| ------ | -------- |
+| string | No       |
+
+:::caution
+If the `Checkbox` is inside a `Checkbox.Group` this prop is required and will throw an `Exception` if not set.
+:::
 
 <CodePreview>
     <Checkbox indeterminated/>
@@ -91,14 +109,83 @@ Invoked when the checkbox is pressed.
 <Checkbox onPress={ () => { window.alert( 'The checkbox was pressed!' ) } }/>
 ```
 
-## Accessibility props
-[React Native accessibility docs](https://reactnative.dev/docs/accessibility)
+## CheckboxGroup
 
-### accessible
-Sets the component to an accessibility element. It is set by default to `true`.
+### Examples
+<CodePreview>
+    <ExampleCheckboxGroup />
+</CodePreview> 
 
-### accessibilityRole
-Communicates the purpose of the component. It is set by default to `"checkbox"`.
+```jsx
+import React, { useState } from 'react';
+import { Checkbox, Text, VStack } from '@amalgama/react-native-ui-kit';
 
-### accessibilityState
-Describes the current state of the element. By default, indicates if the `Checkbox` is `disabled`, `selected` and `indeterminated`.
+const ExampleCheckboxGroup = () => {
+	const [ value, setValue ] = useState( [] );
+
+	return (
+		<VStack>
+			<Text variant="sh1">What are your favorite coding languages?</Text>
+			<Checkbox.Group value={value} onChange={setValue}>
+				<Checkbox value="js" label="Javascript" />
+				<Checkbox value="ts" label="Typescript" />
+				<Checkbox value="rb" label="Ruby" />
+				<Checkbox value="python" label="Python" />
+				<Checkbox value="c" label="C" />
+				<Checkbox value="cpp" label="C++" />
+			</Checkbox.Group>
+		</VStack>
+	);
+};
+```
+
+### Props
+
+### value
+A list containing the selected checkbox values.
+
+| TYPE     | REQUIRED | DEFAULT |
+| ---------| -------- | ------- |
+| string[] | No       | []      |
+
+
+### onChange
+Invoked when the group selection changes (because a new option was selected or a previous one was unselected) with the selected option values.
+
+| TYPE     | REQUIRED |
+| -------- | -------- |
+| function | No       |
+
+### disabled
+If the checkbox is disabled or not.
+
+| TYPE | REQUIRED | DEFAULT |
+| ---- | -------- | ------- |
+| bool | No       | false   |
+
+<CodePreview>
+	<ExampleCheckboxGroup disabled />
+</CodePreview>
+
+```jsx
+import React, { useState } from 'react';
+import { Checkbox, Text, VStack } from '@amalgama/react-native-ui-kit';
+
+const ExampleCheckboxGroup = () => {
+	const [ value, setValue ] = useState( [] );
+
+	return (
+		<VStack>
+			<Text variant="sh1">What are your favorite coding languages?</Text>
+			<Checkbox.Group disabled value={value} onChange={setValue}>
+				<Checkbox value="js" label="Javascript" />
+				<Checkbox value="ts" label="Typescript" />
+				<Checkbox value="rb" label="Ruby" />
+				<Checkbox value="python" label="Python" />
+				<Checkbox value="c" label="C" />
+				<Checkbox value="cpp" label="C++" />
+			</Checkbox.Group>
+		</VStack>
+	);
+};
+```
