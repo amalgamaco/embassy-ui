@@ -15,6 +15,10 @@ interface IconCustomProps {
 interface IconButtonCustomProps {
 	as?: any
 }
+// RadioButton
+interface RadioButtonCustomProps {
+	as?: any
+}
 
 // Stack
 interface StackCustomProps {
@@ -27,6 +31,7 @@ interface StackCustomProps {
 interface ComponentsCustomPropsConfig {
 	Icon: IconCustomProps,
 	IconButton: IconButtonCustomProps,
+	RadioButton: RadioButtonCustomProps,
 	Stack: StackCustomProps
 }
 

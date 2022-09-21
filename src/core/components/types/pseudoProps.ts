@@ -38,8 +38,9 @@ interface ICheckboxPseudoProps {
 // Pseudoprops config for all components
 interface ComponentsPseudoPropsConfig {
 	Button: IButtonPseudoProps,
-	IconButton: IIconButtonPseudoProps
-	Checkbox: ICheckboxPseudoProps
+	Checkbox: ICheckboxPseudoProps,
+	IconButton: IIconButtonPseudoProps,
+	RadioButton: IIconButtonPseudoProps
 }
 
 // Template type to get pseudoprops for a given component

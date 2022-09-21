@@ -26,8 +26,8 @@ import type { ValueOf } from '../../types';
 
 export const COMPONENT_STATE_PROPS_MAP = {
 	'isPressed': '__pressed',
-	'isDisabled': '__disabled',
 	'isSelected': '__selected',
+	'isDisabled': '__disabled',
 	'isIndeterminated': '__indeterminated',
 	'isHovered': '__hovered',
 	'isFocused': '__focused'
