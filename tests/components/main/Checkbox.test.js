@@ -1,4 +1,4 @@
-import { render } from '@testing-library/react-native';
+import { fireEvent, render } from '@testing-library/react-native';
 import React from 'react';
 import {
 	Checkbox, extendThemeConfig, Icon, Text, ThemeProvider
@@ -103,4 +103,66 @@ describe( 'Checkbox', () => {
 			testId: 'test-checkbox'
 		}
 	);
+} );
+
+describe( 'Checkbox.Group', () => {
+	const renderComponent = ( {
+		disabled, value, onChange, ...props
+	} = {} ) => render(
+		<ThemeProvider theme={customTheme}>
+			<Checkbox.Group
+				testID="test-checkbox-group"
+				disabled={disabled}
+				value={value}
+				onChange={onChange}
+				{...props}
+			>
+				<Checkbox value="opt-1" label="Option 1" testID="test-checkbox-1" />
+				<Checkbox value="opt-2" label="Option 2" testID="test-checkbox-2" />
+				<Checkbox value="opt-3" label="Option 3" testID="test-checkbox-3" />
+			</Checkbox.Group>
+		</ThemeProvider>
+	);
+
+	it( 'renders the children inside of it', () => {
+		const { getByTestId } = renderComponent();
+
+		expect( getByTestId( 'test-checkbox-1' ) ).toHaveTextContent( 'Option 1' );
+		expect( getByTestId( 'test-checkbox-2' ) ).toHaveTextContent( 'Option 2' );
+		expect( getByTestId( 'test-checkbox-3' ) ).toHaveTextContent( 'Option 3' );
+	} );
+
+	it( 'selects the checkboxes which values are inside the value prop', () => {
+		const { getByTestId } = renderComponent( { value: [ 'opt-1', 'opt-3' ] } );
+
+		expect( getByTestId( 'test-checkbox-1' ) ).toHaveProp( 'selected', true );
+		expect( getByTestId( 'test-checkbox-2' ) ).toHaveProp( 'selected', false );
+		expect( getByTestId( 'test-checkbox-3' ) ).toHaveProp( 'selected', true );
+	} );
+
+	it( 'disables all the checkboxes when the group is disabled', () => {
+		const { getByTestId } = renderComponent( { disabled: true } );
+
+		expect( getByTestId( 'test-checkbox-1' ) ).toHaveStyle( { 'opacity': 0.7 } );
+		expect( getByTestId( 'test-checkbox-2' ) ).toHaveStyle( { 'opacity': 0.7 } );
+		expect( getByTestId( 'test-checkbox-3' ) ).toHaveStyle( { 'opacity': 0.7 } );
+	} );
+
+	it( 'calls the onChange prop with the selected values when a checkbox is selected', () => {
+		const onChange = jest.fn();
+		const { getByTestId } = renderComponent( { value: [ 'opt-1' ], onChange } );
+
+		fireEvent( getByTestId( 'test-checkbox-2' ), 'press' );
+
+		expect( onChange ).toHaveBeenCalledWith( [ 'opt-1', 'opt-2' ] );
+	} );
+
+	it( 'calls the onChange prop with the selected values when a checkbox is unselected', () => {
+		const onChange = jest.fn();
+		const { getByTestId } = renderComponent( { value: [ 'opt-1', 'opt-3' ], onChange } );
+
+		fireEvent( getByTestId( 'test-checkbox-3' ), 'press' );
+
+		expect( onChange ).toHaveBeenCalledWith( [ 'opt-1' ] );
+	} );
 } );

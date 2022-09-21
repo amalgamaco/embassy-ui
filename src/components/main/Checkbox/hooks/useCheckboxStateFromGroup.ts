@@ -8,10 +8,10 @@ const useCheckboxStateFromGroup = ( value?: string ) => {
 		throw new Error( 'A Checkbox inside a CheckboxGroup must have a value assgined.' );
 	}
 
-	const { selectedValues, onCheckboxPress } = context;
-	if ( !selectedValues && !onCheckboxPress ) { return null; }
+	const { disabled, selectedValues, onCheckboxPress } = context;
 
 	return ( {
+		disabled,
 		selected: selectedValues?.has( value ),
 		onPress: () => onCheckboxPress( value )
 	} );

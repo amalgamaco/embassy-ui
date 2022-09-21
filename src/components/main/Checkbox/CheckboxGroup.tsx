@@ -8,7 +8,8 @@ import { CheckboxGroupContext } from './context';
 const CheckboxGroup = ( {
 	children,
 	value: initialSelectedValues = [],
-	onChange,
+	onChange = undefined,
+	disabled = false,
 	...props
 }: ICheckboxGroupProps, ref?: any ) => {
 	const [ selectedValues, setSelectedValues ] = useState( new Set( initialSelectedValues ) );
@@ -25,7 +26,7 @@ const CheckboxGroup = ( {
 
 	return (
 		<CheckboxGroupContext.Provider
-			value={( { selectedValues, onCheckboxPress } )}
+			value={( { disabled, selectedValues, onCheckboxPress } )}
 		>
 			<Box ref={ref} {...props}>
 				{children}

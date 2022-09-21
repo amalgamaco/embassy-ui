@@ -20,7 +20,7 @@ const Checkbox = ( {
 		labelProps,
 		containerProps
 	} = useCheckboxPropsResolver( {
-		indeterminated, selected, ...props
+		label, indeterminated, selected, ...props
 	} );
 
 	return (
