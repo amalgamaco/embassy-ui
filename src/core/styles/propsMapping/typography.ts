@@ -47,6 +47,9 @@ export default {
 	textAlign: {
 		property: 'textAlign'
 	},
+	textAlignVertical: {
+		property: 'textAlignVertical'
+	},
 	fontStyle: {
 		property: 'fontStyle'
 	},
