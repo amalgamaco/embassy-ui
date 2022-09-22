@@ -6,6 +6,7 @@ import Stack from './Stack';
 import Checkbox from './Checkbox';
 import Radio from './Radio';
 import FormControl from './FormControl';
+import TextInput from './TextInput';
 
 export default {
 	Text,
@@ -15,5 +16,6 @@ export default {
 	Stack,
 	Checkbox,
 	Radio,
-	FormControl
+	FormControl,
+	TextInput
 };

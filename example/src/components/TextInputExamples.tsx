@@ -5,15 +5,18 @@ import { View } from 'react-native';
 const styles = {
 	textInput: {
 		marginBottom: 20,
-		borderColor: 'grey',
-		borderWidth: 1,
-		width: 200,
-		padding: 10,
-		borderRadius: 7
+		width: 200
 	},
 	vspace: {
 		height: 10,
 		minWidth: '100%'
+	},
+	separator: {
+		height: 1,
+		minWidth: '100%',
+		marginTop: 2,
+		marginBottom: 6,
+		backgroundColor: 'black'
 	}
 };
 
@@ -21,7 +24,17 @@ const TextInputExamples = () => (
 	<VStack>
 		<Text variant="h1" bgColor="primary.200">Text Input Component</Text>
 		<View style={styles.vspace} />
-		<TextInput placeholder='This is a text input' style={styles.textInput} />
+		<Text variant="sh1" color="primary.800">Enabled</Text>
+		<View style={styles.separator} />
+		<View style={styles.vspace} />
+		<TextInput placeholder='This is an enabled text input' isPassword/>
+		<View style={styles.vspace} />
+
+		<Text variant="sh1" color="primary.800">Disabled</Text>
+		<View style={styles.separator} />
+		<View style={styles.vspace} />
+		<TextInput placeholder='This is a disabled text input' disabled isPassword />
+		<View style={styles.vspace} />
 	</VStack>
 );
 
