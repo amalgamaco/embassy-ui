@@ -12,7 +12,7 @@ To add the `IconButton` component to your project you can import it as follows:
 import { IconButton } from '@amalgama/react-native-ui-kit';
 ```
 
-## Examples
+## Example
 
 <CodePreview>
 	<IconButton

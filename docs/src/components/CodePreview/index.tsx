@@ -10,7 +10,7 @@ const CodePreview = ( {
 		flex={1}
 		alignItems={alignItems}
 		padding={padding}
-		background="secondary.400"
+		background="secondary.200"
 		marginY="2"
 		rounded="xl"
 	>
