@@ -31,12 +31,17 @@ export type ComponentBaseStyledProps<C extends ComponentName> = {
 	[K in (
 		keyof StyledProps
 		| keyof ComponentCustomProps<C>
+		| 'variant'
 		| 'size'
 	)]?:
 		K extends keyof StyledProps
 			? StyledProps[K]
 			: K extends keyof ComponentCustomProps<C>
 			? ComponentCustomProps<C>[K]
+			: K extends 'variant'
+			? C extends keyof IThemeConfig['components']
+				? VariantType<C>
+				: any
 			: K extends 'size'
 			? C extends keyof IThemeConfig['components']
 				? ComponentSizeType<C>

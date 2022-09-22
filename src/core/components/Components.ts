@@ -21,15 +21,18 @@ export default class Components {
 		{ variant, ...props }: PropsWithVariant,
 		state: ComponentState = {}
 	): ComponentStyledProps<C> {
-		const defaultProps: ComponentStyledProps<C> = this
+		const defaultProps = this
 			.defaultPropsFor( componentName ) || {};
 
-		const variantProps: ComponentStyledProps<C> = (
+		const variantProps = (
 			variant ? this.variantPropsFor( componentName, variant ) : undefined
 		) || {};
 
 		const resolvedProps: ComponentStyledProps<C> = merge(
-			{}, defaultProps, variantProps, props
+			{} as ComponentStyledProps<C>,
+			defaultProps,
+			variantProps,
+			props
 		);
 
 		return this.applyStateProps( resolvedProps, state );
@@ -44,7 +47,7 @@ export default class Components {
 	variantPropsFor<C extends ComponentName>(
 		componentName: C,
 		variantName: VariantName
-	): ComponentStyledProps<C> | undefined {
+	): Omit<ComponentStyledProps<C>, 'variant'> | undefined {
 		return this.configFor( componentName )?.variants?.[ variantName ];
 	}
 

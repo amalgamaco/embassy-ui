@@ -5,15 +5,19 @@ import useIsPressed from '../../hooks/useIsPressed';
 import { useComponentPropsResolver } from '../../../hooks';
 import type { ICheckboxProps } from './types';
 import type { IIconProps } from '../Icon/types';
+import type { IBoxProps } from '../Box/types';
+import type { ITextProps } from '../Text/types';
 
 interface IUseCheckboxPropsResolverReturnType {
-	iconProps: Omit<IIconProps, 'name'>,
-    containerProps: Omit<ICheckboxProps, '__icon'>
+	iconProps?: Omit<IIconProps, 'name'>,
+	iconContainerProps?: Omit<IBoxProps, 'children'>,
+	labelProps?: Omit<ITextProps, 'children'>,
+	containerProps: Omit<ICheckboxProps, '__icon'>
 }
 
 export const useCheckboxPropsResolver = ( {
-	isSelected = false,
-	isIndeterminated = false,
+	selected = false,
+	indeterminated = false,
 	...props
 } : ICheckboxProps
 ): IUseCheckboxPropsResolverReturnType => {
@@ -23,20 +27,22 @@ export const useCheckboxPropsResolver = ( {
 	const { isFocused, onFocus, onBlur } = useIsFocused( props );
 
 	const state = useMemo( () => ( {
-		isSelected,
-		isIndeterminated,
+		isSelected: selected,
+		isIndeterminated: indeterminated,
 		isDisabled: disabled || false,
 		isPressed,
 		isHovered,
 		isFocused
-	} ), [ isSelected, isIndeterminated, disabled, isPressed, isHovered, isFocused ] );
+	} ), [ selected, indeterminated, disabled, isPressed, isHovered, isFocused ] );
 
 	const {
 		__icon: iconProps,
+		__iconContainer: iconContainerProps,
+		__label: labelProps,
 		...containerProps
 	} = useComponentPropsResolver( 'Checkbox', props, state ) as ICheckboxProps;
 
-	containerProps.onPress = props.onChange;
+	containerProps.onPress = props.onPress;
 	containerProps.onPressIn = onPressIn;
 	containerProps.onPressOut = onPressOut;
 	containerProps.onHoverIn = onHoverIn;
@@ -44,5 +50,7 @@ export const useCheckboxPropsResolver = ( {
 	containerProps.onFocus = onFocus;
 	containerProps.onBlur = onBlur;
 
-	return { iconProps: { ...iconProps }, containerProps };
+	return {
+		iconProps, iconContainerProps, labelProps, containerProps
+	};
 };

@@ -1,12 +1,12 @@
 import { useMemo } from 'react';
 import type {
-	ComponentName, ComponentState, PropsWithVariant, ComponentStyledProps
+	ComponentName, ComponentState, ComponentBaseStyledProps, ComponentStyledProps
 } from '../core/components/types';
 import { useTheme } from '../core/theme/hooks';
 
 const useComponentPropsResolver = <C extends ComponentName>(
 	componentName: C,
-	props: PropsWithVariant,
+	props: ComponentBaseStyledProps<C>,
 	state: ComponentState = {}
 ): ComponentStyledProps<C> => {
 	const theme = useTheme();

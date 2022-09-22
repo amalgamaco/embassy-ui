@@ -27,7 +27,7 @@ const CheckboxExamples = () => {
 	const [ isSelected, setIsSelected ] = useState( false );
 	const [ isIndeterminated, setIsIndeterminated ] = useState( false );
 
-	const onChange = () => {
+	const onPressed = () => {
 		if ( isIndeterminated ) {
 			setIsIndeterminated( false );
 		} else if ( isSelected ) {
@@ -47,8 +47,8 @@ const CheckboxExamples = () => {
 
 			<HStack>
 				<Checkbox />
-				<Checkbox isSelected />
-				<Checkbox isIndeterminated />
+				<Checkbox selected />
+				<Checkbox indeterminated />
 			</HStack>
 
 			<View style={styles.vspace} />
@@ -57,8 +57,8 @@ const CheckboxExamples = () => {
 
 			<HStack>
 				<Checkbox disabled />
-				<Checkbox disabled isSelected />
-				<Checkbox disabled isIndeterminated />
+				<Checkbox disabled selected />
+				<Checkbox disabled indeterminated />
 			</HStack>
 
 			<View style={styles.vspace} />
@@ -66,8 +66,8 @@ const CheckboxExamples = () => {
 			<View style={styles.separator} />
 
 			<HStack>
-				<Checkbox isSelected
-					__focus={{
+				<Checkbox selected
+					__focused={{
 						bg: 'secondary.10',
 						borderWidth: '1'
 					}} />
@@ -77,9 +77,30 @@ const CheckboxExamples = () => {
 			<Text variant="sh1" color="primary.800">On Change</Text>
 			<View style={styles.separator} />
 
-			<HStack>
-				<Checkbox isSelected={isSelected} isIndeterminated={isIndeterminated} onChange={onChange}/>
+			<HStack alignItems="center" space="3">
+				<Checkbox selected={isSelected} indeterminated={isIndeterminated} onPress={onPressed}/>
+				<Text>|</Text>
+				<Checkbox selected={isSelected} indeterminated={isIndeterminated} onPress={onPressed} label="With label" />
 			</HStack>
+
+			<View style={styles.vspace} />
+
+			<Text variant="sh1" color="primary.800">With Label</Text>
+			<View style={styles.separator} />
+
+			<VStack alignItems="flex-start" space="2">
+				<HStack justifyContent="space-between" width="100%">
+					<Checkbox label="Unselected" />
+					<Checkbox label="Selected" selected />
+					<Checkbox label="Indeterminated" indeterminated />
+				</HStack>
+
+				<HStack justifyContent="space-between" width="100%">
+					<Checkbox disabled label="Unselected" />
+					<Checkbox disabled label="Selected" selected />
+					<Checkbox disabled label="Indeterminated" indeterminated />
+				</HStack>
+			</VStack>
 
 			<View style={styles.vspace} />
 

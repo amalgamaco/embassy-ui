@@ -30,7 +30,9 @@ interface IIconButtonPseudoProps {
 }
 
 interface ICheckboxPseudoProps {
-	__icon: ComponentBaseStyledProps<'Icon'>
+	__icon: ComponentBaseStyledProps<'Icon'>,
+	__iconContainer: ComponentBaseStyledProps<'Box'>,
+	__label: ComponentBaseStyledProps<'Text'>
 }
 
 // Pseudoprops config for all components

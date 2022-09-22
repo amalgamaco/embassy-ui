@@ -1,7 +1,7 @@
 const { fireEvent } = require( '@testing-library/react-native' );
 
 module.exports = ( { renderComponent, testId } ) => {
-	describe( 'handle pressable events', () => {
+	describe( 'is a pressable component', () => {
 		const events = [
 			[ 'onPress', 'press' ],
 			[ 'onPressIn', 'pressIn' ],

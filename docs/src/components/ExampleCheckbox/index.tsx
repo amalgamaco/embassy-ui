@@ -5,8 +5,8 @@ const ExampleCheckbox = () => {
 	const [ isSelected, setSelected ] = useState( false );
 	return (
 		<Checkbox
-			isSelected={ isSelected }
-			onChange={ () => { setSelected( !isSelected ); } }
+			selected={ isSelected }
+			onPress={ () => { setSelected( !isSelected ); } }
 		/>
 	);
 };
