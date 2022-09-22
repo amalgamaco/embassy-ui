@@ -9,7 +9,7 @@ const darkCodeTheme = require( 'prism-react-renderer/themes/dracula' );
 const config = {
 	title: 'Amalgama\'s UI Kit',
 	tagline: 'A components library to help users build Design Systems.',
-	url: 'https://amalgama.pages.amalgama.co',
+	url: process.env.URL || 'https://amalgama.pages.amalgama.co',
 	baseUrl: process.env.BASE_URL || '/',
 	onBrokenLinks: 'throw',
 	onBrokenMarkdownLinks: 'warn',
