@@ -49,13 +49,21 @@ interface IFormControlPseudoProps {
 	__errorIcon: ComponentBaseStyledProps<'Icon'>
 }
 
+// TextInput pseudoprops
+interface ITextInputPseudoProps {
+	__icon: ComponentBaseStyledProps<'Icon'>
+	__container: ComponentBaseStyledProps<'Box'>
+	__textInput: ComponentBaseStyledProps<'TextInput'>
+}
+
 // Pseudoprops config for all components
 interface ComponentsPseudoPropsConfig {
 	Button: IButtonPseudoProps,
 	Checkbox: ICheckboxPseudoProps,
 	IconButton: IIconButtonPseudoProps,
 	Radio: IRadioPseudoProps
-	FormControl: IFormControlPseudoProps
+	FormControl: IFormControlPseudoProps,
+	TextInput: ITextInputPseudoProps
 }
 
 // Template type to get pseudoprops for a given component
