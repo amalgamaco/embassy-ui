@@ -7,7 +7,7 @@ export interface IFormControlProps extends ComponentStyledProps<'FormControl'> {
 	error?: string,
 	errorIcon?: string,
 	isRequired?: boolean,
-	children?: JSX.Element | JSX.Element[] | string | any,
+	children?: JSX.Element | JSX.Element[] | string,
 	testID?: string
 }
 

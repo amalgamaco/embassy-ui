@@ -5,12 +5,9 @@ import WithThemeProvider from '../../support/withThemeProvider';
 
 import Button from '../../../src/components/main/Button';
 import { Icon } from '../../../src';
+import FakeBaseIcon from '../../support/FakeBaseIcon';
 
 const { itBehavesLike } = require( '../../support/sharedExamples' );
-
-const FakeBaseIcon = ( { name, testID, ...props } ) => (
-	<Text testID={testID} {...props}>{name}</Text>
-);
 
 const TestIcon = () => (
 	<Icon name="test" testID="test-icon" as={FakeBaseIcon} />

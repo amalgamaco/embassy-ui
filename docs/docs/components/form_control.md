@@ -31,7 +31,7 @@ The `FormControl` component is used to wrap form inputs (suchs as `TextInput`, `
 ## Props
 
 ### label
-The label text to show abaove the input component.
+The label text to show above the input component.
 
 | TYPE   | REQUIRED |
 | ------ | -------- |
@@ -81,7 +81,7 @@ Shows an indicator for required input.
 ```
 
 :::caution
-The required indicator wont be shown unless a label text is provided even if `isRequired` is set to `true`.
+The required indicator won't be shown unless a label text is provided even if `isRequired` is set to `true`.
 :::
 
 ### hint
@@ -111,6 +111,10 @@ Shows a hint text below the input.
 	<TextInput placeholder="Email address" />
 </FormControl>
 ```
+
+:::caution
+If the `hint` and `error` props are both provided, the `error` text takes precedence over the `hint` one.
+:::
 
 ### error
 Shows an error text below the input.

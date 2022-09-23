@@ -1,35 +1,15 @@
 import { render } from '@testing-library/react-native';
 import React from 'react';
-import {
-	extendThemeConfig, FormControl, Icon, Text, ThemeProvider
-} from '../../../src';
-
-const FakeBaseIcon = ( { name, testID, ...props } ) => (
-	<Text testID={testID} {...props}>{name}</Text>
-);
-
-const TestIcon = () => (
-	<Icon name="test" testID="test-icon" as={FakeBaseIcon} />
-);
-
-const customTheme = extendThemeConfig( {
-	components: {
-		Icon: {
-			defaultProps: {
-				as: TestIcon
-			}
-		}
-	}
-} );
+import { FormControl } from '../../../src';
+import WithThemeProvider from '../../support/withThemeProvider';
 
 describe( 'FormControl', () => {
 	const renderComponent = ( props = {} ) => render(
-		<ThemeProvider theme={customTheme}>
-			<FormControl
-				testID="test-form-control"
-				{...props}
-			/>
-		</ThemeProvider>
+		<FormControl
+			testID="test-form-control"
+			{...props}
+		/>,
+		{ wrapper: WithThemeProvider }
 	);
 
 	it( 'shows a label when set', () => {
@@ -77,6 +57,7 @@ describe( 'FormControl', () => {
 		const hint = 'Hint text!';
 		const error = 'Error text!';
 		const { getByTestId } = renderComponent( { hint, error } );
+		expect( getByTestId( 'test-form-control-helper-text' ) ).not.toHaveTextContent( hint );
 		expect( getByTestId( 'test-form-control-helper-text' ) ).toHaveTextContent( error );
 	} );
 

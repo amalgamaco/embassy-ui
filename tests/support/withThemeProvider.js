@@ -1,8 +1,19 @@
 import React from 'react';
-import { ThemeProvider } from '../../src/core/theme/context';
+import FakeBaseIcon from './FakeBaseIcon';
+import { extendThemeConfig, ThemeProvider } from '../../src';
+
+const theme = extendThemeConfig( {
+	components: {
+		Icon: {
+			defaultProps: {
+				as: FakeBaseIcon
+			}
+		}
+	}
+} );
 
 const WithThemeProvider = ( { children } ) => (
-	<ThemeProvider>
+	<ThemeProvider theme={theme}>
 		{children}
 	</ThemeProvider>
 );
