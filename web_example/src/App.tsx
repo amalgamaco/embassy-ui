@@ -13,7 +13,7 @@ import ButtonExamples from './components/ButtonExamples';
 import IconExamples from './components/IconExamples';
 import IconButtonExamples from './components/IconButtonExamples';
 import CheckboxExamples from './components/CheckboxExamples';
-import RadioButtonExamples from './components/RadioButtonExamples';
+import RadioExamples from './components/RadioExamples';
 
 const customTheme = extendThemeConfig( {
 	palette: {
@@ -97,7 +97,7 @@ export default function App() {
 					<IconExamples />
 					<IconButtonExamples />
 					<CheckboxExamples />
-					<RadioButtonExamples/>
+					<RadioExamples/>
 				</VStack>
 			</Box>
 		</ThemeProvider>

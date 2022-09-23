@@ -1,22 +1,22 @@
-import {RadioButton, HStack} from '@amalgama/react-native-ui-kit'
+import {Radio, HStack} from '@amalgama/react-native-ui-kit'
 import {UIKitIcon} from '@amalgama/react-native-ui-kit/'
 import CodePreview from '@site/src/components/CodePreview'
-import ExampleRadioButton from '@site/src/components/ExampleRadioButton'
+import ExampleRadio from '@site/src/components/ExampleRadio'
 import {useState} from 'react'
 
-# RadioButton
+# Radio
 
 ## Import
 
-To add the `RadioButton` component to your project you can import it as follows:
+To add the `Radio` component to your project you can import it as follows:
 
 ```tsx
-import {RadioButton} from '@amalgama/react-native-ui-kit'; 
+import {Radio} from '@amalgama/react-native-ui-kit'; 
 ```
 
 ## Examples
 <CodePreview>
-    <ExampleRadioButton/>
+    <ExampleRadio/>
 </CodePreview>
 
 ## Props
@@ -28,7 +28,7 @@ The default value is `UIKitIcon`.
 ```jsx
 import UIKitIcon from '@amalgama/react-native-ui-kit';
 
-<RadioButton
+<Radio
 	as={UIKitIcon}
 	selectedIcon="circle-filled"
     unselectedIcon="circle"
@@ -42,7 +42,7 @@ The name of the icon from the icon family selected to use when the button is sel
 ```jsx
 import UIKitIcon from '@amalgama/react-native-ui-kit';
 
-<RadioButton
+<Radio
     as={UIKitIcon}
     selectedIcon="circle-filled"
     unselectedIcon="circle"
@@ -57,7 +57,7 @@ The name of the icon from the icon family selected to use when the button is uns
 ```jsx
 import UIKitIcon from '@amalgama/react-native-ui-kit';
 
-<RadioButton
+<Radio
     as={UIKitIcon}
     selectedIcon="circle-filled"
     unselectedIcon="circle"
@@ -65,7 +65,7 @@ import UIKitIcon from '@amalgama/react-native-ui-kit';
 />
 ```
 ### selected
-If the RadioButton is selected or not.
+If the Radio is selected or not.
 
 | TYPE | REQUIRED | DEFAULT |
 | ---- | -------- | ------- |
@@ -73,13 +73,13 @@ If the RadioButton is selected or not.
 
 <CodePreview>
     <HStack>
-        <RadioButton />
-        <RadioButton selected />
+        <Radio />
+        <Radio selected />
     </HStack>
 </CodePreview>
 
 ### disabled
-If the radioButton is disabled or not.
+If the Radio is disabled or not.
 
 | TYPE | REQUIRED | DEFAULT |
 | ---- | -------- | ------- |
@@ -87,25 +87,25 @@ If the radioButton is disabled or not.
 
 <CodePreview>
     <HStack backgroundColor="white">
-        <RadioButton disabled />
-        <RadioButton selected disabled />
+        <Radio disabled />
+        <Radio selected disabled />
     </HStack>
 </CodePreview>
 
 
 ### onPress
-Invoked when the RadioButton is pressed.
+Invoked when the Radio is pressed.
 
 | TYPE     | REQUIRED |
 | -------- | -------- |
 | function | No       |
 
 <CodePreview>
-    <RadioButton onPress={ () => { window.alert( 'The RadioButton was pressed!' ) } }/>
+    <Radio onPress={ () => { window.alert( 'The Radio was pressed!' ) } }/>
 </CodePreview>
 
 ```jsx
-<RadioButton onPress={ () => { window.alert( 'The radioButton was pressed!' ) } }/>
+<Radio onPress={ () => { window.alert( 'The Radio was pressed!' ) } }/>
 ```
 
 ## Accessibility props
@@ -118,4 +118,4 @@ Sets the component to an accessibility element. It is set by default to `true`.
 Communicates the purpose of the component. It is set by default to `"radio"`.
 
 ### accessibilityState
-Describes the current state of the element. By default, indicates if the `RadioButton` is `disabled`, `selected` or `unselected`.
+Describes the current state of the element. By default, indicates if the `Radio` is `disabled`, `selected` or `unselected`.

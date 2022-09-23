@@ -6,4 +6,4 @@ export { default as Text } from './main/Text';
 export { default as Icon } from './main/Icon';
 export { default as IconButton } from './main/IconButton';
 export { default as Checkbox } from './main/Checkbox';
-export { default as RadioButton } from './main/RadioButton';
+export { default as Radio } from './main/Radio';

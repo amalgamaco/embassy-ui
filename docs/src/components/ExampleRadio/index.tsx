@@ -1,14 +1,14 @@
-import { RadioButton } from '@amalgama/react-native-ui-kit';
+import { Radio } from '@amalgama/react-native-ui-kit';
 import React, { useState } from 'react';
 
-const ExampleRadioButton = () => {
+const ExampleRadio = () => {
 	const [ isSelected, setSelected ] = useState( false );
 	return (
-		<RadioButton
+		<Radio
 			selected={ isSelected }
 			onPress={ () => { setSelected( prev => !prev ); } }
 		/>
 	);
 };
 
-export default ExampleRadioButton;
+export default ExampleRadio;

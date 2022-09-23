@@ -4,7 +4,7 @@ import Icon from './Icon';
 import IconButton from './IconButton';
 import Stack from './Stack';
 import Checkbox from './Checkbox';
-import RadioButton from './RadioButton';
+import Radio from './Radio';
 
 export default {
 	Text,
@@ -13,5 +13,5 @@ export default {
 	Button,
 	Stack,
 	Checkbox,
-	RadioButton
+	Radio
 };

@@ -14,6 +14,6 @@ export {
 	VStack,
 	Text,
 	Checkbox,
-	RadioButton
+	Radio
 } from './components';
 export { UIKitIcon };

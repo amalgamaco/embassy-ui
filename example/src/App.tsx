@@ -5,7 +5,7 @@ import { ThemeProvider, VStack, extendThemeConfig } from '@amalgama/react-native
 import FontAwesomeIcon from 'react-native-vector-icons/FontAwesome';
 import IoniconsIcon from 'react-native-vector-icons/Ionicons';
 
-import RadioButtonExamples from './components/RadioButtonExamples';
+import RadioExamples from './components/RadioExamples';
 import TextExamples from './components/TextExamples';
 import BoxExamples from './components/BoxExamples';
 import ButtonExamples from './components/ButtonExamples';
@@ -88,7 +88,7 @@ export default function App() {
 						<IconExamples />
 						<IconButtonExamples />
 						<CheckboxExamples />
-						<RadioButtonExamples/>
+						<RadioExamples/>
 					</VStack>
 				</ScrollView>
 			</SafeAreaView>

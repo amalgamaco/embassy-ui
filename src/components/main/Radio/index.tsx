@@ -1,17 +1,17 @@
 import React, { forwardRef, memo } from 'react';
 import UIKitIcon from '../../../icons/UIKitIcon';
 import IconButton from '../IconButton';
-import useRadioButtonPropsResolver from './hooks';
-import type { IRadioButtonProps } from './types';
+import useRadioPropsResolver from './hooks';
+import type { IRadioProps } from './types';
 
-const RadioButton = ( {
+const Radio = ( {
 	as = UIKitIcon,
 	selectedIcon = 'circle-filled',
 	unselectedIcon = 'circle',
 	selected = false,
 	...props
-}: IRadioButtonProps, ref?: any ) => {
-	const { iconProps, restProps } = useRadioButtonPropsResolver( {
+}: IRadioProps, ref?: any ) => {
+	const { iconProps, restProps } = useRadioPropsResolver( {
 		...props,
 		selectedIcon,
 		unselectedIcon,
@@ -35,4 +35,4 @@ const RadioButton = ( {
 	);
 };
 
-export default memo( forwardRef( RadioButton ) );
+export default memo( forwardRef( Radio ) );

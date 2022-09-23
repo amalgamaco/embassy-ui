@@ -1,28 +1,29 @@
 import { useMemo } from 'react';
 import { useComponentPropsResolver } from '../../../hooks';
-import type { IRadioButtonProps } from './types';
+import type { IRadioProps } from './types';
 import { useIsFocused, useIsHovered, useIsPressed } from '../../hooks';
 import type { IIconButtonProps } from '../IconButton/types';
 
-interface IUseRadioButtonPropsResolverReturnType {
-	iconProps: IRadioButtonProps[ '__icon' ];
+interface IUseRadioPropsResolverReturnType {
+	iconProps: IRadioProps[ '__icon' ];
 	restProps: Omit<IIconButtonProps, '__pressed' | 'size' >;
 }
 
-const useRadioButtonPropsResolver = (
+const useRadioPropsResolver = (
 	{
 		selectedIcon,
 		unselectedIcon,
 		...props
-	} : IRadioButtonProps ) : IUseRadioButtonPropsResolverReturnType => {
+	} : IRadioProps ) : IUseRadioPropsResolverReturnType => {
 	const { isPressed, onPressIn, onPressOut } = useIsPressed( props );
 	const { isHovered, onHoverIn, onHoverOut } = useIsHovered( props );
 	const { isFocused, onFocus, onBlur } = useIsFocused( props );
 
-	const { selected, disabled, testID } = props;
+	const { selected = false, disabled, testID } = props;
+
 	const state = useMemo( () => ( {
-		isDisabled: !!disabled,
-		isSelected: !!selected,
+		isDisabled: disabled || false,
+		isSelected: selected,
 		isPressed,
 		isHovered,
 		isFocused
@@ -31,13 +32,15 @@ const useRadioButtonPropsResolver = (
 	const {
 		__icon: iconProps,
 		...restProps
-	} = useComponentPropsResolver( 'RadioButton', props, state ) as IIconButtonProps;
-	const name = ( props.selected ? selectedIcon : unselectedIcon ) as string;
+	} = useComponentPropsResolver( 'Radio', props, state ) as IIconButtonProps;
 
-	const iconPropsWithTestId = { ...iconProps, testID: !!testID && `${testID}-icon` };
+	const name = ( selected ? selectedIcon : unselectedIcon ) as string;
 
 	return {
-		iconProps: iconPropsWithTestId,
+		iconProps: {
+			...iconProps,
+			testID: testID && `${testID.toString()}-icon`
+		},
 		restProps: {
 			...restProps,
 			name,
@@ -51,4 +54,4 @@ const useRadioButtonPropsResolver = (
 	};
 };
 
-export default useRadioButtonPropsResolver;
+export default useRadioPropsResolver;
