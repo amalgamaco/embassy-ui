@@ -39,6 +39,8 @@ const CheckboxExamples = () => {
 		}
 	};
 
+	const [ selectedValues, setSelectedValues ] = useState<string[]>( [] );
+
 	return (
 		<VStack style={styles.container}>
 			<Text variant="h1" bgColor="primary.200">Checkbox Component</Text>
@@ -85,6 +87,35 @@ const CheckboxExamples = () => {
 
 			<View style={styles.vspace} />
 
+			<Text variant="h1" bgColor="primary.200">Checkbox Group Component</Text>
+			<View style={styles.vspace} />
+
+			<Text variant="sh1" color="primary.800">Select multiple options</Text>
+			<View style={styles.separator} />
+
+			<Checkbox.Group
+				value={selectedValues}
+				onChange={setSelectedValues}
+			>
+				<Checkbox value="opt-1" label="Option 1" />
+				<Checkbox value="opt-2" label="Option 2" />
+				<Checkbox value="opt-3" label="Option 3" />
+			</Checkbox.Group>
+
+			<View style={styles.vspace} />
+			<Text variant="sh1" color="primary.800">Disabled</Text>
+			<View style={styles.separator} />
+
+			<Checkbox.Group
+				value={[ 'opt-2' ]}
+				disabled
+			>
+				<Checkbox value="opt-1" label="Option 1" />
+				<Checkbox value="opt-2" label="Option 2" />
+				<Checkbox value="opt-3" label="Option 3" />
+			</Checkbox.Group>
+
+			<View style={styles.vspace} />
 		</VStack>
 	);
 };
