@@ -1,5 +1,8 @@
 image: node:17.0.1
 
+include:
+  - local: .functions.yml
+
 variables:
   FF_USE_FASTZIP: "true"
   ARTIFACT_COMPRESSION_LEVEL: default
@@ -9,16 +12,28 @@ variables:
 cache: &global_cache
   - key:
       files:
-        - Gemfile.lock
-      prefix: $CI_PROJECT_TITLE
-    paths:
-      - vendor/ruby
-  - key:
-      files:
         - yarn.lock
       prefix: $CI_PROJECT_TITLE
     paths:
       - node_modules/
+  - key:
+      files:
+        - example/yarn.lock
+      prefix: $CI_PROJECT_TITLE
+    paths:
+      - example/node_modules/
+  - key:
+      files:
+        - web_example/yarn.lock
+      prefix: $CI_PROJECT_TITLE
+    paths:
+      - web_example/node_modules/
+  - key:
+      files:
+        - docs/yarn.lock
+      prefix: $CI_PROJECT_TITLE
+    paths:
+      - docs/node_modules/
 
 before_script:
   - mkdir -p reports/
@@ -96,16 +111,34 @@ upload_to_sonar:
   dependencies:
     - run_unit_tests
 
+preview_docs:
+  stage: docs
+  before_script:
+    - apt-get update -qqy && apt-get install -qqy awscli
+  script:
+    - yarn
+    - cd docs
+    - yarn install
+    - URL=$DOCS_PREVIEW_BASE_URL BASE_URL="/${CI_COMMIT_SHORT_SHA}/" yarn build
+    - aws s3 sync build "${DOCS_PREVIEW_BUCKET_PATH}/${CI_COMMIT_SHORT_SHA}/"
+    - !reference [.commit_comment, script]
+    - commit_comment "You can see a preview of the changes made to the docs [here](${DOCS_PREVIEW_BASE_URL}/${CI_COMMIT_SHORT_SHA}/)"
+  only:
+    changes:
+      - docs/**/*
+  except:
+    - master
+
 pages:
   stage: docs
   script:
-  - yarn
-  - cd docs
-  - yarn install
-  - yarn build
-  - mv ./build ../public
+    - yarn
+    - cd docs
+    - yarn install
+    - yarn build
+    - mv ./build ../public
   artifacts:
     paths:
-    - public
+      - public
   only:
     - master
