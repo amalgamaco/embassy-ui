@@ -1,28 +1,7 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import type { ComponentName } from '../core/components/types';
-import { STYLE_PROPS_MAPPING } from '../core/styles/propsMapping';
 import { useTheme } from '../core/theme/hooks';
-
-const getStylePropsAndRestProps = ( props: any ) => Object
-	.keys( props )
-	.reduce(
-		(
-			{ styleProps, restProps }: { styleProps: any, restProps: any },
-			key: string
-		) => {
-			if ( key in STYLE_PROPS_MAPPING ) {
-				styleProps[ key ] = props[ key ];
-			} else {
-				restProps[ key ] = props[ key ];
-			}
-
-			return { styleProps, restProps };
-		},
-		{
-			styleProps: {},
-			restProps: {}
-		}
-	);
+import getStylePropsAndRestProps from './getStylePropsAndRestProps';
 
 const useStyleFromPropsResolver = (
 	componentName: ComponentName,

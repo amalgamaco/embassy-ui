@@ -52,8 +52,7 @@ interface IFormControlPseudoProps {
 // TextInput pseudoprops
 interface ITextInputPseudoProps {
 	__icon: ComponentBaseStyledProps<'Icon'>
-	__container: ComponentBaseStyledProps<'Box'>
-	__textInput: ComponentBaseStyledProps<'TextInput'>
+	__textInput: ComponentBaseStyledProps<'Box'>
 }
 
 // Pseudoprops config for all components

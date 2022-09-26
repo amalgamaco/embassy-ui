@@ -27,13 +27,19 @@ const TextInputExamples = () => (
 		<Text variant="sh1" color="primary.800">Enabled</Text>
 		<View style={styles.separator} />
 		<View style={styles.vspace} />
-		<TextInput placeholder='This is an enabled text input' isPassword/>
+		<TextInput placeholder='This is an enabled text input' type='password' />
+		<View style={styles.vspace} />
+		<TextInput placeholder='This is an enabled text input' type='text'/>
+
 		<View style={styles.vspace} />
 
 		<Text variant="sh1" color="primary.800">Disabled</Text>
 		<View style={styles.separator} />
 		<View style={styles.vspace} />
-		<TextInput placeholder='This is a disabled text input' disabled isPassword />
+		<TextInput placeholder='This is a disabled text input' disabled type='password' />
+		<View style={styles.vspace} />
+		<TextInput placeholder='This is an enabled text input' disabled type='text'/>
+
 		<View style={styles.vspace} />
 	</VStack>
 );

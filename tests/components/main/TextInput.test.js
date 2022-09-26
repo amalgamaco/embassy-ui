@@ -30,9 +30,9 @@ describe( 'TextInput', () => {
 		</ThemeProvider>
 	);
 
-	it( 'shows the correct icon when isPassword is set', () => {
+	it( 'shows the correct icon when type=\'password\' is set', () => {
 		const { getByTestId } = renderComponent( {
-			isPassword: true, passwordIcon: <TestIcon />
+			type: 'password', passwordIcon: <TestIcon />
 		} );
 
 		expect( getByTestId( 'test-icon' ) ).toHaveTextContent( 'icon' );
@@ -40,10 +40,10 @@ describe( 'TextInput', () => {
 
 	it( 'applies the correct styles', () => {
 		const { getByTestId } = renderComponent( {
-			isPassword: true
+			type: 'password'
 		} );
 
-		expect( getByTestId( 'test-text-input-container' ) ).toHaveStyle( {
+		expect( getByTestId( 'test-text-input' ) ).toHaveStyle( {
 			flex: 1,
 			paddingHorizontal: 16,
 			borderWidth: 1,
@@ -52,7 +52,7 @@ describe( 'TextInput', () => {
 			margin: 1
 		} );
 
-		expect( getByTestId( 'test-text-input' ) ).toHaveStyle( {
+		expect( getByTestId( 'test-text-input-rn' ) ).toHaveStyle( {
 			flexGrow: 1,
 			color: '#4F5C7B'
 		} );
@@ -61,14 +61,14 @@ describe( 'TextInput', () => {
 	it( 'applies the __disabled styles when it is disabled', () => {
 		const { getByTestId } = renderComponent( {
 			disabled: true,
-			isPassword: true
-		} );
-
-		expect( getByTestId( 'test-text-input-container' ) ).toHaveStyle( {
-			backgroundColor: '#F3F3F3'
+			type: 'password'
 		} );
 
 		expect( getByTestId( 'test-text-input' ) ).toHaveStyle( {
+			backgroundColor: '#F3F3F3'
+		} );
+
+		expect( getByTestId( 'test-text-input-rn' ) ).toHaveStyle( {
 			color: '#AAB2CC'
 		} );
 	} );
