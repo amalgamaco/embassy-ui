@@ -1,10 +1,12 @@
-import { fireEvent, render } from '@testing-library/react-native';
 import React from 'react';
+import { fireEvent, render } from '@testing-library/react-native';
 import {
 	Radio, ThemeProvider
 } from '../../../src';
 
-const TEST_ID = 'test-radio-button';
+const { itBehavesLike } = require( '../../support/sharedExamples' );
+
+const TEST_ID = 'test-radio';
 
 const accessibilityTest = ( {
 	getByTestId,
@@ -29,13 +31,16 @@ const hasChildWithProp = ( elem, prop, value ) => {
 };
 
 describe( 'Radio', () => {
-	const renderRadio = ( { selected = false, onPress, disabled } = {} ) => render(
+	const renderRadio = ( {
+		selected = false, onPress, disabled, ...props
+	} = {} ) => render(
 		<ThemeProvider>
 			<Radio
-				testID="test-radio-button"
+				testID="test-radio"
 				selected={selected}
 				onPress={onPress}
 				disabled={disabled}
+				{...props}
 			/>
 		</ThemeProvider>
 	);
@@ -92,4 +97,20 @@ describe( 'Radio', () => {
 			} );
 		} );
 	} );
+
+	itBehavesLike(
+		'aPressableComponent',
+		{
+			renderComponent: props => renderRadio( props ),
+			testId: 'test-radio'
+		}
+	);
+
+	itBehavesLike(
+		'aStyledPressableComponent',
+		{
+			renderComponent: props => renderRadio( props ),
+			testId: 'test-radio'
+		}
+	);
 } );

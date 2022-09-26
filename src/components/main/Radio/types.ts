@@ -1,14 +1,24 @@
+import type { PressableProps, GestureResponderEvent } from 'react-native';
 import type { ComponentStyledProps } from '../../../core/components/types';
 import type { IPressableProps } from '../Pressable/types';
-import type { IIconProps } from '../Icon/types';
-import type { IIconButtonProps } from '../IconButton/types';
 
 export interface IRadioProps extends Omit<IPressableProps, 'children' | 'size' | 'variant' >,
 ComponentStyledProps<'Radio'>{
-    selectedIcon?: string;
-    unselectedIcon?: string;
-    selected?: boolean;
-    size?: IIconProps['size'];
+	label?: string,
 
-    __icon?: IIconButtonProps[ '__icon' ]
+	selected?: boolean,
+	disabled?: boolean,
+
+	selectedIcon?: JSX.Element,
+	unselectedIcon?: JSX.Element
+
+	outlineStyle?: string,
+
+	onPress?: PressableProps['onPress'],
+	onPressOut?: PressableProps['onPressOut'],
+	onPressIn?: PressableProps['onPressIn'],
+	onFocus?: PressableProps['onFocus'],
+	onBlur?: PressableProps['onBlur'],
+	onHoverIn?: ( ( event: GestureResponderEvent ) => void ),
+	onHoverOut?: ( ( event: GestureResponderEvent ) => void ),
 }

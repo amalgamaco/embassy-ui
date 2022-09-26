@@ -1,14 +1,21 @@
 export default {
 	defaultProps: {
-		height: 32,
-		width: 32,
-		justifyContent: 'center',
-		alignItems: 'center',
-		rounded: 'full',
+		flexShrink: 1,
 		outlineStyle: 'none',
 		__icon: {
+			size: 'sm',
 			color: 'neutral.800',
-			size: 'sm'
+			borderColor: 'neutral.800'
+		},
+		__iconContainer: {
+			justifyContent: 'center',
+			alignItems: 'center',
+			padding: '1.5',
+			rounded: 'full'
+		},
+		__label: {
+			variant: 'body',
+			color: 'neutral.800'
 		},
 		__disabled: {
 			__icon: {
@@ -21,16 +28,10 @@ export default {
 			}
 		},
 		__pressed: {
-			backgroundColor: 'secondary.50'
+			__iconContainer: { bg: 'secondary.50' }
 		},
 		__hovered: {
-			backgroundColor: 'secondary.50'
-		},
-		__focused: {
-			borderWidth: '1',
-			backgroundColor: 'secondary.50',
-			borderColor: 'secondary.900'
+			__iconContainer: { bg: 'secondary.50' }
 		}
-
 	}
 };

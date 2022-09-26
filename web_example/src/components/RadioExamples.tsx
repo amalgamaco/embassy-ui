@@ -57,6 +57,23 @@ const RadioExamples = () => {
 
 			<View style={styles.vspace} />
 
+			<Text variant="sh1" color="primary.800">With Label</Text>
+			<View style={styles.separator} />
+
+			<VStack alignItems="flex-start" space="2">
+				<HStack justifyContent="flex-start" space="4">
+					<Radio label="Unselected" />
+					<Radio label="Selected" selected />
+				</HStack>
+
+				<HStack justifyContent="flex-start" space="4">
+					<Radio disabled label="Unselected" />
+					<Radio disabled label="Selected" selected />
+				</HStack>
+			</VStack>
+
+			<View style={styles.vspace} />
+
 		</VStack>
 	);
 };

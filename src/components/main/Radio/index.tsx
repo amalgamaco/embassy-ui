@@ -1,37 +1,51 @@
-import React, { forwardRef, memo } from 'react';
-import UIKitIcon from '../../../icons/UIKitIcon';
-import IconButton from '../IconButton';
-import useRadioPropsResolver from './hooks';
+import React, { cloneElement, forwardRef, memo } from 'react';
+import Text from '../Text';
+import Pressable from '../Pressable';
+import { HStack } from '../Stack';
+import { useRadioPropsResolver } from './hooks';
 import type { IRadioProps } from './types';
+import Box from '../Box';
 
 const Radio = ( {
-	as = UIKitIcon,
-	selectedIcon = 'circle-filled',
-	unselectedIcon = 'circle',
+	label,
 	selected = false,
+	testID,
 	...props
 }: IRadioProps, ref?: any ) => {
-	const { iconProps, restProps } = useRadioPropsResolver( {
-		...props,
-		selectedIcon,
-		unselectedIcon,
-		selected
+	const {
+		icon,
+		iconProps,
+		iconContainerProps,
+		labelProps,
+		containerProps
+	} = useRadioPropsResolver( {
+		label, selected, ...props
 	} );
 
 	return (
-		<IconButton
+		<Pressable
+			testID={testID}
+			{...containerProps}
 			ref={ref}
-			accessible
-			accessibilityLabel='radio button'
-			accessibilityRole='radio'
-			accessibilityState={{
-				checked: selected,
-				disabled: !!props.disabled
-			}}
-			as={as}
-			__icon={iconProps}
-			{...restProps}
-		/>
+		>
+			<HStack space="0.5" alignItems="center" alignContent="flex-start">
+				<Box {...iconContainerProps}>
+					{cloneElement( icon, {
+						...iconProps,
+						testID: testID && `${testID}-icon`
+					} )}
+				</Box>
+				{!!label && (
+					<Text
+						{...labelProps}
+						selectable={false}
+						testID={testID && `${testID}-label`}
+					>
+						{label}
+					</Text>
+				)}
+			</HStack>
+		</Pressable>
 	);
 };
 

@@ -25,13 +25,6 @@ const Checkbox = ( {
 
 	return (
 		<Pressable
-			accessible
-			accessibilityRole='checkbox'
-			accessibilityLabel={label}
-			accessibilityState={{
-				checked: indeterminated ? 'mixed' : selected,
-				disabled: props.disabled || false
-			}}
 			testID={testID}
 			{...containerProps}
 		>

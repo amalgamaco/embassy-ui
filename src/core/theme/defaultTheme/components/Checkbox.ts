@@ -10,7 +10,7 @@ export default {
 		__iconContainer: {
 			justifyContent: 'center',
 			alignItems: 'center',
-			padding: '1',
+			padding: '1.5',
 			rounded: 'full'
 		},
 		__label: {
