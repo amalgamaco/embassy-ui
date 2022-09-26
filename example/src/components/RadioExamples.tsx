@@ -1,5 +1,5 @@
 /* eslint-disable no-alert */
-import * as React from 'react';
+import React, { useState } from 'react';
 
 import { StyleSheet, View } from 'react-native';
 import {
@@ -25,7 +25,9 @@ const styles = StyleSheet.create( {
 } );
 
 const RadioExamples = () => {
-	const [ selected, setSelected ] = React.useState( false );
+	const [ selected, setSelected ] = useState( false );
+	const [ selectedValue, setSelectedValue ] = useState<string | undefined>();
+
 	return (
 		<VStack style={styles.container}>
 			<Text variant="h1" bgColor="primary.200">Radio Component</Text>
@@ -71,6 +73,36 @@ const RadioExamples = () => {
 					<Radio disabled label="Selected" selected />
 				</HStack>
 			</VStack>
+
+			<View style={styles.vspace} />
+
+			<Text variant="h1" bgColor="primary.200">Radio Group Component</Text>
+			<View style={styles.vspace} />
+
+			<Text variant="sh1" color="primary.800">Select one option</Text>
+			<View style={styles.separator} />
+
+			<Radio.Group
+				value={selectedValue}
+				onChange={setSelectedValue}
+			>
+				<Radio value="opt-1" label="Option 1" />
+				<Radio value="opt-2" label="Option 2" />
+				<Radio value="opt-3" label="Option 3" />
+			</Radio.Group>
+
+			<View style={styles.vspace} />
+			<Text variant="sh1" color="primary.800">Disabled</Text>
+			<View style={styles.separator} />
+
+			<Radio.Group
+				value={'opt-2'}
+				disabled
+			>
+				<Radio value="opt-1" label="Option 1" />
+				<Radio value="opt-2" label="Option 2" />
+				<Radio value="opt-3" label="Option 3" />
+			</Radio.Group>
 
 			<View style={styles.vspace} />
 
