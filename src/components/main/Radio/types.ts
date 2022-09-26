@@ -5,6 +5,7 @@ import type { IPressableProps } from '../Pressable/types';
 export interface IRadioProps extends Omit<IPressableProps, 'children' | 'size' | 'variant' >,
 ComponentStyledProps<'Radio'>{
 	label?: string,
+	value?: string,
 
 	selected?: boolean,
 	disabled?: boolean,
@@ -22,3 +23,26 @@ ComponentStyledProps<'Radio'>{
 	onHoverIn?: ( ( event: GestureResponderEvent ) => void ),
 	onHoverOut?: ( ( event: GestureResponderEvent ) => void ),
 }
+
+export interface IRadioGroupProps {
+	children?: JSX.Element | JSX.Element[] | string;
+	value?: string,
+	onChange?: ( selectedValue: string ) => void,
+	disabled?: boolean
+}
+
+export interface IRadioGroupContext {
+	disabled: boolean,
+	selectedValue?: string,
+	onRadioPress: ( value: string ) => void
+}
+
+export type IRadioGroupComponentType = (
+	props: IRadioGroupProps
+) => JSX.Element;
+
+export type IRadioComponentType = ( (
+	props: IRadioProps
+ ) => JSX.Element ) & {
+	Group: IRadioGroupComponentType
+};
