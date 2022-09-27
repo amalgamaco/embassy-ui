@@ -10,7 +10,8 @@ export default {
 			borderRadius: 'lg',
 			borderColor: 'neutral.600',
 			justifyContent: 'space-between',
-			alignItems: 'center'
+			alignItems: 'center',
+			margin: 0.25
 		},
 		__textInput: {
 			flexGrow: 1,
@@ -29,7 +30,8 @@ export default {
 		__focused: {
 			__container: {
 				borderWidth: '2',
-				borderColor: 'primary.700'
+				borderColor: 'primary.700',
+				margin: 0
 			},
 			__textInput: { color: 'neutral.900' },
 			__icon: { color: 'neutral.900' }

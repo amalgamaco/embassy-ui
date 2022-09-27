@@ -15,7 +15,7 @@ const TextInput = ( props: ITextInputProps ) => {
 	} = useTextInputPropsResolver( props );
 	const [ style ] = useStyleFromPropsResolver( 'TextInput', textInputProps || {} );
 	return (
-		<HStack {...containerProps} height={56}>
+		<HStack {...containerProps} testID={`${props.testID}-container`}>
 			<TextInputRN style={style} {...restProps}/>
 			{props.isPassword && React.cloneElement( props.passwordIcon || passwordIcon, iconProps )}
 		</HStack>
