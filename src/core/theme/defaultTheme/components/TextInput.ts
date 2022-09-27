@@ -4,22 +4,30 @@ export default {
 	defaultProps: {
 		height: 56,
 		flex: 1,
-		paddingY: Platform.OS === 'web' ? 4 : 0,
-		paddingX: 4,
 		borderWidth: '1',
 		borderRadius: 'lg',
 		borderColor: 'neutral.600',
 		justifyContent: 'space-between',
 		alignItems: 'center',
-		margin: 0.25,
+		padding: 0.25,
 		__textInput: {
 			flexGrow: 1,
+			paddingY: 4,
+			paddingX: 4,
 			color: 'neutral.600',
-			outlineStyle: 'none'
+			...(
+				Platform.OS === 'web'
+					? { outlineStyle: 'none' }
+					: {}
+			)
 		},
-		__icon: { color: 'neutral.600' },
+		__icon: {
+			color: 'neutral.600',
+			paddingY: 4,
+			marginRight: 4
+		},
 		__disabled: {
-			borderWidth: '0',
+			borderColor: 'transparent',
 			bg: 'neutral.50',
 			__textInput: { color: 'neutral.200' },
 			__icon: { color: 'neutral.200' }
@@ -27,7 +35,7 @@ export default {
 		__focused: {
 			borderWidth: '2',
 			borderColor: 'primary.700',
-			margin: 0,
+			padding: 0,
 			__textInput: { color: 'neutral.900' },
 			__icon: { color: 'neutral.900' }
 		}

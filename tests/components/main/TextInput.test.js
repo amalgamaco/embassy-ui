@@ -1,4 +1,4 @@
-import { render } from '@testing-library/react-native';
+import { fireEvent, render } from '@testing-library/react-native';
 import React from 'react';
 import {
 	extendThemeConfig, Icon, Text, ThemeProvider
@@ -32,7 +32,7 @@ describe( 'TextInput', () => {
 
 	it( 'shows the correct icon when type=\'password\' is set', () => {
 		const { getByTestId } = renderComponent( {
-			type: 'password', passwordIcon: <TestIcon />
+			type: 'password', __icon: { name: 'icon', as: TestIcon }
 		} );
 
 		expect( getByTestId( 'test-icon' ) ).toHaveTextContent( 'icon' );
@@ -45,31 +45,94 @@ describe( 'TextInput', () => {
 
 		expect( getByTestId( 'test-text-input' ) ).toHaveStyle( {
 			flex: 1,
-			paddingHorizontal: 16,
 			borderWidth: 1,
 			borderRadius: 8,
 			borderColor: '#4F5C7B',
-			margin: 1
+			padding: 1
 		} );
 
 		expect( getByTestId( 'test-text-input-rn' ) ).toHaveStyle( {
 			flexGrow: 1,
+			paddingHorizontal: 16,
 			color: '#4F5C7B'
 		} );
 	} );
 
-	it( 'applies the __disabled styles when it is disabled', () => {
-		const { getByTestId } = renderComponent( {
-			disabled: true,
-			type: 'password'
+	it( 'sets the passed value as the internal text input value', () => {
+		const { getByTestId } = renderComponent( { value: 'test' } );
+		expect( getByTestId( 'test-text-input-rn' ) ).toHaveProp( 'value', 'test' );
+	} );
+
+	it( 'calls the onChange handler when the internal text input text changes', () => {
+		const onChange = jest.fn();
+		const { getByTestId } = renderComponent( { onChange } );
+		fireEvent( getByTestId( 'test-text-input-rn' ), 'change' );
+
+		expect( onChange ).toHaveBeenCalled();
+	} );
+
+	it( 'calls the onChangeText handler when the internal text input text changes', () => {
+		const onChangeText = jest.fn();
+		const { getByTestId } = renderComponent( { onChangeText } );
+		fireEvent.changeText( getByTestId( 'test-text-input-rn' ), 'test' );
+
+		expect( onChangeText ).toHaveBeenCalledWith( 'test' );
+	} );
+
+	describe( 'when it is disabled', () => {
+		it( 'applies the __disabled styles', () => {
+			const { getByTestId } = renderComponent( { disabled: true } );
+
+			expect( getByTestId( 'test-text-input' ) ).toHaveStyle( {
+				backgroundColor: '#F3F3F3'
+			} );
+
+			expect( getByTestId( 'test-text-input-rn' ) ).toHaveStyle( {
+				color: '#AAB2CC'
+			} );
 		} );
 
-		expect( getByTestId( 'test-text-input' ) ).toHaveStyle( {
-			backgroundColor: '#F3F3F3'
+		it( 'disables the internal text input', () => {
+			const { getByTestId } = renderComponent( { disabled: true } );
+
+			expect( getByTestId( 'test-text-input-rn' ) ).toHaveProp(
+				'disabled', true
+			);
 		} );
 
-		expect( getByTestId( 'test-text-input-rn' ) ).toHaveStyle( {
-			color: '#AAB2CC'
+		it( 'disables the toggle password button', () => {
+			const { getByTestId } = renderComponent( {
+				disabled: true, type: 'password'
+			} );
+
+			expect( getByTestId( 'test-text-input-icon' ) ).toHaveProp(
+				'accessibilityState', { disabled: true }
+			);
+		} );
+	} );
+
+	describe( 'when the type is password', () => {
+		it( 'obscures the text by default', () => {
+			const { getByTestId } = renderComponent( { type: 'password' } );
+
+			expect( getByTestId( 'test-text-input-rn' ) ).toHaveProp(
+				'secureTextEntry', true
+			);
+		} );
+
+		it( 'shows the toggle password icon button', () => {
+			const { queryByTestId } = renderComponent( { type: 'password' } );
+			expect( queryByTestId( 'test-text-input-icon' ) ).not.toBeNull();
+		} );
+
+		it( 'shows the text when the toggle password icon button is pressed', () => {
+			const { getByTestId } = renderComponent( { type: 'password' } );
+
+			fireEvent.press( getByTestId( 'test-text-input-icon' ) );
+
+			expect( getByTestId( 'test-text-input-rn' ) ).toHaveProp(
+				'secureTextEntry', false
+			);
 		} );
 	} );
 } );

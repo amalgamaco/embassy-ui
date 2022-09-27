@@ -1,29 +1,58 @@
-import { useMemo } from 'react';
+import { useMemo, useState } from 'react';
 import { useIsFocused } from '../../hooks';
 import { useComponentPropsResolver } from '../../../hooks';
 import type { ITextInputProps } from './types';
+import { TEXT_INPUT_PROP_NAMES } from './consts';
+import type { IIconButtonProps } from '../IconButton/types';
+import type { WithOptional } from '../../../core/types';
 
-interface IUseTextInputPropsResolverType {
+interface IUseTextInputPropsResolverReturnType {
 	containerProps: Omit<ITextInputProps, '__icon' | '__textInput'>,
-	iconProps: ITextInputProps['__icon'],
-	textInputProps: ITextInputProps['__textInput']
+	iconProps: WithOptional<IIconButtonProps, 'name'>,
+	textInputProps: ITextInputProps['__textInput'],
+	showPasswordToggleButton: boolean
 }
 
-const TEXT_INPUT_PROP_NAMES = [ 'value', 'onChange', 'multiline', 'placeholder', 'disabled',
-	'secureTextEntry', 'editable' ];
+interface ITextInputInternalProps extends Omit<ITextInputProps, '__icon'> {
+	__icon: IIconButtonProps,
+}
 
-const useTextInputPropsFromContainerProps = ( textInputProps: any, containerProps: any ) => {
-	TEXT_INPUT_PROP_NAMES.forEach( ( propName ) => {
-		textInputProps[ propName ] = containerProps[ propName ];
-		delete containerProps[ propName ];
-	} );
+type IUseTogglePasswordIconButtonStateReturnType = [
+	boolean, boolean, () => void
+];
 
-	return { textInputProps, containerProps };
+const useTextInputPropsFromContainerProps = ( textInputProps: any, containerProps: any ) => useMemo(
+	() => {
+		TEXT_INPUT_PROP_NAMES.forEach( ( propName ) => {
+			textInputProps[ propName ] = containerProps[ propName ];
+			delete containerProps[ propName ];
+		} );
+
+		return { textInputProps, containerProps };
+	},
+	[ textInputProps, containerProps ]
+);
+
+const useTogglePasswordIconButtonState = (
+	{ type }: { type: ITextInputProps['type'] }
+): IUseTogglePasswordIconButtonStateReturnType => {
+	const isPasswordField = type === 'password';
+	const [ secureTextEntry, setSecureTextEntry ] = useState( isPasswordField );
+	const onIconPress = () => { setSecureTextEntry( !secureTextEntry ); };
+
+	return [ isPasswordField, secureTextEntry, onIconPress ];
 };
 
-const useTextInputPropsResolver = ( props: ITextInputProps ): IUseTextInputPropsResolverType => {
+const useTextInputPropsResolver = ( {
+	type = 'text',
+	...props
+}: ITextInputProps ): IUseTextInputPropsResolverReturnType => {
 	const { disabled } = props;
 	const { isFocused, onFocus, onBlur } = useIsFocused( props );
+
+	const [
+		showPasswordToggleButton, secureTextEntry, onIconPress
+	] = useTogglePasswordIconButtonState( { type } );
 
 	const state = useMemo( () => ( {
 		isDisabled: disabled || false,
@@ -34,19 +63,21 @@ const useTextInputPropsResolver = ( props: ITextInputProps ): IUseTextInputProps
 		__icon: iconProps,
 		__textInput: baseTextInputProps,
 		...restProps
-	} = useComponentPropsResolver( 'TextInput', props, state ) as ITextInputProps;
-
-	restProps.onFocus = onFocus;
-	restProps.onBlur = onBlur;
-	restProps.editable = !disabled;
-	restProps.secureTextEntry = props.type === 'password';
+	} = useComponentPropsResolver( 'TextInput', props, state ) as ITextInputInternalProps;
 
 	const { textInputProps, containerProps } = useTextInputPropsFromContainerProps(
 		baseTextInputProps, restProps
 	);
 
+	textInputProps.onFocus = onFocus;
+	textInputProps.onBlur = onBlur;
+	textInputProps.editable = !disabled;
+	textInputProps.secureTextEntry = secureTextEntry;
+	iconProps.onPress = onIconPress;
+	iconProps.disabled = disabled;
+
 	return {
-		containerProps, iconProps, textInputProps
+		containerProps, iconProps, textInputProps, showPasswordToggleButton
 	};
 };
 

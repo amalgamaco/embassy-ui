@@ -7,18 +7,23 @@ import type { ITextInputProps } from './types';
 import IconButton from '../IconButton';
 import useTranslatePropsToStyle from '../../../hooks/useTranslatePropsToStyle';
 
-const passwordIcon = <IconButton name='eye' as={UIKitIcon} />;
-
 const TextInput = ( props: ITextInputProps ) => {
 	const {
-		containerProps, textInputProps, iconProps
+		containerProps, textInputProps, iconProps, showPasswordToggleButton
 	} = useTextInputPropsResolver( props );
 
 	const [ style, restProps ] = useTranslatePropsToStyle( textInputProps );
 	return (
 		<HStack {...containerProps}>
 			<TextInputRN style={style} {...restProps} testID={`${props.testID}-rn`}/>
-			{props.type === 'password' && React.cloneElement( props.passwordIcon || passwordIcon, iconProps )}
+			{showPasswordToggleButton && (
+				<IconButton
+					name="eye"
+					as={UIKitIcon}
+					testID={`${props.testID}-icon`}
+					{...iconProps}
+				/>
+			)}
 		</HStack>
 
 	);
