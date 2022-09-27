@@ -47,7 +47,7 @@ const useTextInputPropsResolver = ( {
 	type = 'text',
 	...props
 }: ITextInputProps ): IUseTextInputPropsResolverReturnType => {
-	const { disabled } = props;
+	const { disabled, error } = props;
 	const { isFocused, onFocus, onBlur } = useIsFocused( props );
 
 	const [
@@ -56,8 +56,9 @@ const useTextInputPropsResolver = ( {
 
 	const state = useMemo( () => ( {
 		isDisabled: disabled || false,
+		hasError: error || false,
 		isFocused
-	} ), [ disabled, isFocused ] );
+	} ), [ disabled, error, isFocused ] );
 
 	const {
 		__icon: iconProps,

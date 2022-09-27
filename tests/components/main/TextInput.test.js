@@ -111,6 +111,16 @@ describe( 'TextInput', () => {
 		} );
 	} );
 
+	describe( 'when it has an error', () => {
+		it( 'applies the __error styles', () => {
+			const { getByTestId } = renderComponent( { error: true } );
+
+			expect( getByTestId( 'test-text-input' ) ).toHaveStyle( {
+				borderColor: '#F8727D'
+			} );
+		} );
+	} );
+
 	describe( 'when the type is password', () => {
 		it( 'obscures the text by default', () => {
 			const { getByTestId } = renderComponent( { type: 'password' } );

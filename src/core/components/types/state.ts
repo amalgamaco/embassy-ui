@@ -30,7 +30,8 @@ export const COMPONENT_STATE_PROPS_MAP = {
 	'isDisabled': '__disabled',
 	'isIndeterminated': '__indeterminated',
 	'isHovered': '__hovered',
-	'isFocused': '__focused'
+	'isFocused': '__focused',
+	'hasError': '__error'
 } as const;
 
 export type ComponentStateKey = keyof typeof COMPONENT_STATE_PROPS_MAP;

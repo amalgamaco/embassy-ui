@@ -32,6 +32,9 @@ export default {
 			__textInput: { color: 'neutral.200' },
 			__icon: { color: 'neutral.200' }
 		},
+		__error: {
+			borderColor: 'error.500'
+		},
 		__focused: {
 			borderWidth: '2',
 			borderColor: 'primary.700',

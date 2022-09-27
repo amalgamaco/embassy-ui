@@ -43,6 +43,16 @@ const TextInputExamples = () => (
 		</View>
 		<View style={styles.vspace} />
 
+		<Text variant="sh1" color="primary.800">Error</Text>
+		<View style={styles.separator} />
+		<View style={styles.vspace} />
+		<View style={{ width: 327 }}>
+			<TextInput placeholder='This is a text input that has an error' type='password' error/>
+			<View style={styles.vspace} />
+			<TextInput placeholder='This is a text input that has an error' type='text' error/>
+		</View>
+		<View style={styles.vspace} />
+
 	</VStack>
 );
 
