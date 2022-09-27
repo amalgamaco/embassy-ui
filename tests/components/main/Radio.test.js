@@ -1,10 +1,12 @@
-import { fireEvent, render } from '@testing-library/react-native';
 import React from 'react';
+import { fireEvent, render } from '@testing-library/react-native';
 import {
-	RadioButton, ThemeProvider
+	Radio, ThemeProvider
 } from '../../../src';
 
-const TEST_ID = 'test-radio-button';
+const { itBehavesLike } = require( '../../support/sharedExamples' );
+
+const TEST_ID = 'test-radio';
 
 const accessibilityTest = ( {
 	getByTestId,
@@ -28,27 +30,30 @@ const hasChildWithProp = ( elem, prop, value ) => {
 	return hasProperty;
 };
 
-describe( 'RadioButton', () => {
-	const renderRadioButton = ( { selected = false, onPress, disabled } = {} ) => render(
+describe( 'Radio', () => {
+	const renderRadio = ( {
+		selected = false, onPress, disabled, ...props
+	} = {} ) => render(
 		<ThemeProvider>
-			<RadioButton
-				testID="test-radio-button"
+			<Radio
+				testID="test-radio"
 				selected={selected}
 				onPress={onPress}
 				disabled={disabled}
+				{...props}
 			/>
 		</ThemeProvider>
 	);
 
 	test( 'renders the unselected style when unselected', () => {
-		const { getByTestId } = renderRadioButton();
+		const { getByTestId } = renderRadio();
 		const icon = getByTestId( `${TEST_ID}-icon` );
 		expect( hasChildWithProp( icon, 'stroke', '#676A79' ) ).toBe( true );
 		accessibilityTest( { getByTestId } );
 	} );
 
 	test( 'renders the selected style when selected', () => {
-		const { getByTestId } = renderRadioButton( { selected: true } );
+		const { getByTestId } = renderRadio( { selected: true } );
 		const icon = getByTestId( `${TEST_ID}-icon` );
 		expect( hasChildWithProp( icon, 'stroke', '#4F80FF' ) ).toBe( true );
 		accessibilityTest( { getByTestId, checked: true } );
@@ -57,7 +62,7 @@ describe( 'RadioButton', () => {
 	describe( 'when onPress function is provided', () => {
 		test( 'calls onPress function when pressed', () => {
 			const onPress = jest.fn();
-			const { getByTestId } = renderRadioButton( { onPress } );
+			const { getByTestId } = renderRadio( { onPress } );
 			fireEvent.press( getByTestId( TEST_ID ) );
 			expect( onPress ).toHaveBeenCalled();
 		} );
@@ -67,14 +72,14 @@ describe( 'RadioButton', () => {
 		describe( 'when pressed', () => {
 			test( 'does not calls onPress', () => {
 				const onPress = jest.fn();
-				const { queryByTestId } = renderRadioButton( { disabled: true, onPress } );
+				const { queryByTestId } = renderRadio( { disabled: true, onPress } );
 				fireEvent.press( queryByTestId( TEST_ID ) );
 				expect( onPress ).not.toHaveBeenCalled();
 			} );
 		} );
 		describe( 'when is unselected', () => {
 			it( 'should render the disabled style', () => {
-				const { getByTestId } = renderRadioButton( { disabled: true } );
+				const { getByTestId } = renderRadio( { disabled: true } );
 				const icon = getByTestId( `${TEST_ID}-icon` );
 				expect( hasChildWithProp( icon, 'stroke', '#B0B4CD' ) ).toBe( true );
 				accessibilityTest( { getByTestId, disabled: true } );
@@ -83,7 +88,7 @@ describe( 'RadioButton', () => {
 
 		describe( 'when is selected', () => {
 			it( 'should render the disabled style', () => {
-				const { getByTestId } = renderRadioButton( { disabled: true, selected: true } );
+				const { getByTestId } = renderRadio( { disabled: true, selected: true } );
 				const icon = getByTestId( `${TEST_ID}-icon` );
 				expect( hasChildWithProp( icon, 'stroke', '#B0B4CD' ) ).toBe( true );
 				accessibilityTest( {
@@ -92,4 +97,20 @@ describe( 'RadioButton', () => {
 			} );
 		} );
 	} );
+
+	itBehavesLike(
+		'aPressableComponent',
+		{
+			renderComponent: props => renderRadio( props ),
+			testId: 'test-radio'
+		}
+	);
+
+	itBehavesLike(
+		'aStyledPressableComponent',
+		{
+			renderComponent: props => renderRadio( props ),
+			testId: 'test-radio'
+		}
+	);
 } );

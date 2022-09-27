@@ -1,32 +1,32 @@
-import React, { cloneElement } from 'react';
+import React, { cloneElement, forwardRef, memo } from 'react';
 import Text from '../Text';
 import Pressable from '../Pressable';
 import { HStack } from '../Stack';
-import { useCheckboxPropsResolver } from './hooks';
-import type { ICheckboxProps } from './types';
+import { useRadioPropsResolver } from './hooks';
+import type { IRadioProps } from './types';
 import Box from '../Box';
 
-const Checkbox = ( {
+const Radio = ( {
 	label,
 	selected = false,
-	indeterminated = false,
 	testID,
 	...props
-}: ICheckboxProps ) => {
+}: IRadioProps, ref?: any ) => {
 	const {
 		icon,
 		iconProps,
 		iconContainerProps,
 		labelProps,
 		containerProps
-	} = useCheckboxPropsResolver( {
-		label, indeterminated, selected, ...props
+	} = useRadioPropsResolver( {
+		label, selected, ...props
 	} );
 
 	return (
 		<Pressable
 			testID={testID}
 			{...containerProps}
+			ref={ref}
 		>
 			<HStack space="0.5" alignItems="center" alignContent="flex-start">
 				<Box {...iconContainerProps}>
@@ -49,4 +49,4 @@ const Checkbox = ( {
 	);
 };
 
-export default Checkbox;
+export default memo( forwardRef( Radio ) );

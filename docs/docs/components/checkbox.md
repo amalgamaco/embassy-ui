@@ -53,6 +53,11 @@ If the checkbox is selected or not.
     </HStack>
 </CodePreview>
 
+```jsx
+<Checkbox />
+<Checkbox selected />
+```
+
 ### indeterminated
 If the checkbox is indeterminated or not. This is usually used for lists of checkboxes when some of their children are checked but not all of them. This is only a visual state, it only changes the checkbox icon.
 
@@ -64,6 +69,25 @@ If the checkbox is indeterminated or not. This is usually used for lists of chec
     <Checkbox indeterminated/>
 </CodePreview>
 
+```jsx
+<Checkbox indeterminated />
+```
+
+### label
+Shows a label text next to the checkbox icon.
+
+| TYPE   | REQUIRED |
+| ------ | -------- |
+| string | No       |
+
+<CodePreview>
+    <Checkbox label="Checkbox" />
+</CodePreview>
+
+```jsx
+<Checkbox label="Checkbox" />
+```
+
 ### value
 If the checkbox is inside a `Checkbox.Group` this prop indicates the value for it.
 
@@ -74,10 +98,6 @@ If the checkbox is inside a `Checkbox.Group` this prop indicates the value for i
 :::caution
 If the `Checkbox` is inside a `Checkbox.Group` this prop is required and will throw an `Exception` if not set.
 :::
-
-<CodePreview>
-    <Checkbox indeterminated/>
-</CodePreview>
 
 ### disabled
 If the checkbox is disabled or not.
@@ -93,6 +113,12 @@ If the checkbox is disabled or not.
         <Checkbox disabled indeterminated />
     </HStack>
 </CodePreview>
+
+```jsx
+<Checkbox disabled />
+<Checkbox disabled selected />
+<Checkbox disabled indeterminated />
+```
 
 ### onPress
 Invoked when the checkbox is pressed.

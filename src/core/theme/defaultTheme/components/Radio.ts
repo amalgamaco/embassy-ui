@@ -3,7 +3,7 @@ export default {
 		flexShrink: 1,
 		outlineStyle: 'none',
 		__icon: {
-			size: 'md',
+			size: 'sm',
 			color: 'neutral.800',
 			borderColor: 'neutral.800'
 		},
@@ -17,26 +17,21 @@ export default {
 			variant: 'body',
 			color: 'neutral.800'
 		},
+		__disabled: {
+			__icon: {
+				color: 'neutral.600'
+			}
+		},
 		__selected: {
 			__icon: {
-				color: 'secondary.900',
-				borderColor: 'secondary.900'
+				color: 'secondary.900'
 			}
-		},
-		__indeterminated: {
-			__icon: {
-				color: 'secondary.900',
-				borderColor: 'secondary.900'
-			}
-		},
-		__disabled: {
-			opacity: 0.7
 		},
 		__pressed: {
-			__iconContainer: { bg: 'secondary.10' }
+			__iconContainer: { bg: 'secondary.50' }
 		},
 		__hovered: {
-			__iconContainer: { bg: 'secondary.10' }
+			__iconContainer: { bg: 'secondary.50' }
 		}
 	}
 };

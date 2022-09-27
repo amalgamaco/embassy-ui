@@ -3,7 +3,7 @@ import * as React from 'react';
 
 import { StyleSheet, View } from 'react-native';
 import {
-	RadioButton, VStack, Text, HStack
+	Radio, VStack, Text, HStack
 } from '@amalgama/react-native-ui-kit';
 
 const styles = StyleSheet.create( {
@@ -24,18 +24,18 @@ const styles = StyleSheet.create( {
 	}
 } );
 
-const RadioButtonExamples = () => {
+const RadioExamples = () => {
 	const [ selected, setSelected ] = React.useState( false );
 	return (
 		<VStack style={styles.container}>
-			<Text variant="h1" bgColor="primary.200">RadioButton Component</Text>
+			<Text variant="h1" bgColor="primary.200">Radio Component</Text>
 			<View style={styles.vspace} />
 			<Text variant="sh1" color="primary.800">Enabled</Text>
 			<View style={styles.separator} />
 
 			<HStack>
-				<RadioButton />
-				<RadioButton selected />
+				<Radio />
+				<Radio selected />
 			</HStack>
 
 			<View style={styles.vspace} />
@@ -43,8 +43,8 @@ const RadioButtonExamples = () => {
 			<View style={styles.separator} />
 
 			<HStack>
-				<RadioButton disabled />
-				<RadioButton disabled selected />
+				<Radio disabled />
+				<Radio disabled selected />
 			</HStack>
 
 			<View style={styles.vspace} />
@@ -52,8 +52,25 @@ const RadioButtonExamples = () => {
 			<View style={styles.separator} />
 
 			<HStack>
-				<RadioButton selected={selected} onPress={() => setSelected( prev => !prev )} />
+				<Radio selected={selected} onPress={() => setSelected( prev => !prev )} />
 			</HStack>
+
+			<View style={styles.vspace} />
+
+			<Text variant="sh1" color="primary.800">With Label</Text>
+			<View style={styles.separator} />
+
+			<VStack alignItems="flex-start" space="2">
+				<HStack justifyContent="flex-start" space="4">
+					<Radio label="Unselected" />
+					<Radio label="Selected" selected />
+				</HStack>
+
+				<HStack justifyContent="flex-start" space="4">
+					<Radio disabled label="Unselected" />
+					<Radio disabled label="Selected" selected />
+				</HStack>
+			</VStack>
 
 			<View style={styles.vspace} />
 
@@ -61,4 +78,4 @@ const RadioButtonExamples = () => {
 	);
 };
 
-export default RadioButtonExamples;
+export default RadioExamples;

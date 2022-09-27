@@ -35,12 +35,18 @@ interface ICheckboxPseudoProps {
 	__label: ComponentBaseStyledProps<'Text'>
 }
 
+interface IRadioPseudoProps {
+	__icon: ComponentBaseStyledProps<'Icon'>,
+	__iconContainer: ComponentBaseStyledProps<'Box'>,
+	__label: ComponentBaseStyledProps<'Text'>
+}
+
 // Pseudoprops config for all components
 interface ComponentsPseudoPropsConfig {
 	Button: IButtonPseudoProps,
 	Checkbox: ICheckboxPseudoProps,
 	IconButton: IIconButtonPseudoProps,
-	RadioButton: IIconButtonPseudoProps
+	Radio: IRadioPseudoProps
 }
 
 // Template type to get pseudoprops for a given component

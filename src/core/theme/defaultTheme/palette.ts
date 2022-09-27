@@ -79,7 +79,8 @@ export default {
 		},
 		black: '#000000',
 		white: '#FFFFFF',
-		dark: '#121212'
+		dark: '#121212',
+		transparent: 'transparent'
 	},
 	light: {},
 	dark: {}
