@@ -44,7 +44,6 @@ describe( 'TextInput', () => {
 		} );
 
 		expect( getByTestId( 'test-text-input' ) ).toHaveStyle( {
-			flex: 1,
 			borderWidth: 1,
 			borderRadius: 8,
 			borderColor: '#4F5C7B',
@@ -53,7 +52,7 @@ describe( 'TextInput', () => {
 
 		expect( getByTestId( 'test-text-input-rn' ) ).toHaveStyle( {
 			flexGrow: 1,
-			paddingHorizontal: 16,
+			padding: 16,
 			color: '#4F5C7B'
 		} );
 	} );

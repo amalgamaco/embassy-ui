@@ -3,7 +3,6 @@ import { Platform } from 'react-native';
 export default {
 	defaultProps: {
 		height: 56,
-		flex: 1,
 		borderWidth: '1',
 		borderRadius: 'lg',
 		borderColor: 'neutral.600',
@@ -12,8 +11,7 @@ export default {
 		padding: 0.25,
 		__textInput: {
 			flexGrow: 1,
-			paddingY: 4,
-			paddingX: 4,
+			padding: 4,
 			color: 'neutral.600',
 			...(
 				Platform.OS === 'web'
@@ -23,8 +21,8 @@ export default {
 		},
 		__icon: {
 			color: 'neutral.600',
-			paddingY: 4,
-			marginRight: 4
+			marginRight: 2,
+			padding: 2
 		},
 		__disabled: {
 			borderColor: 'transparent',
