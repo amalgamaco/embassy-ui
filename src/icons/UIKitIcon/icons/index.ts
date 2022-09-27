@@ -1,3 +1,4 @@
+export { default as AlertCircle } from './AlertCircle';
 export { default as BoxChecked } from './BoxChecked';
 export { default as CircleOutilned } from './CircleOutilned';
 export { default as CircleFilled } from './CircleFilled';

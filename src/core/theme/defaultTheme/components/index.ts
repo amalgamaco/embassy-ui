@@ -5,6 +5,7 @@ import IconButton from './IconButton';
 import Stack from './Stack';
 import Checkbox from './Checkbox';
 import Radio from './Radio';
+import FormControl from './FormControl';
 
 export default {
 	Text,
@@ -13,5 +14,6 @@ export default {
 	Button,
 	Stack,
 	Checkbox,
-	Radio
+	Radio,
+	FormControl
 };

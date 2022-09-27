@@ -5,13 +5,14 @@ import { ThemeProvider, VStack, extendThemeConfig } from '@amalgama/react-native
 import FontAwesomeIcon from 'react-native-vector-icons/FontAwesome';
 import IoniconsIcon from 'react-native-vector-icons/Ionicons';
 
-import RadioExamples from './components/RadioExamples';
 import TextExamples from './components/TextExamples';
 import BoxExamples from './components/BoxExamples';
 import ButtonExamples from './components/ButtonExamples';
 import IconExamples from './components/IconExamples';
 import IconButtonExamples from './components/IconButtonExamples';
 import CheckboxExamples from './components/CheckboxExamples';
+import RadioExamples from './components/RadioExamples';
+import FormControlExamples from './components/FormControlExamples';
 
 const styles = StyleSheet.create( {
 	container: {
@@ -89,6 +90,7 @@ export default function App() {
 						<IconButtonExamples />
 						<CheckboxExamples />
 						<RadioExamples/>
+						<FormControlExamples />
 					</VStack>
 				</ScrollView>
 			</SafeAreaView>

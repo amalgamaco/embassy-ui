@@ -1,28 +1,14 @@
 import { fireEvent, render } from '@testing-library/react-native';
 import React from 'react';
-import {
-	Checkbox, extendThemeConfig, Icon, Text, ThemeProvider
-} from '../../../src';
+import { Checkbox, Icon } from '../../../src';
+import FakeBaseIcon from '../../support/FakeBaseIcon';
+import WithThemeProvider from '../../support/withThemeProvider';
 
 const { itBehavesLike } = require( '../../support/sharedExamples' );
-
-const FakeBaseIcon = ( { name, testID, ...props } ) => (
-	<Text testID={testID} {...props}>{name}</Text>
-);
 
 const TestIcon = () => (
 	<Icon name="test" testID="test-icon" as={FakeBaseIcon} />
 );
-
-const customTheme = extendThemeConfig( {
-	components: {
-		Icon: {
-			defaultProps: {
-				as: TestIcon
-			}
-		}
-	}
-} );
 
 const accessibilityTest = ( {
 	getByTestId,
@@ -37,14 +23,13 @@ const accessibilityTest = ( {
 
 describe( 'Checkbox', () => {
 	const renderComponent = ( { isIndeterminated, isSelected, ...props } = {} ) => render(
-		<ThemeProvider theme={customTheme}>
-			<Checkbox
-				testID="test-checkbox"
-				isIndeterminated={isIndeterminated}
-				isSelected={isSelected}
-				{...props}
-			/>
-		</ThemeProvider>
+		<Checkbox
+			testID="test-checkbox"
+			isIndeterminated={isIndeterminated}
+			isSelected={isSelected}
+			{...props}
+		/>,
+		{ wrapper: WithThemeProvider }
 	);
 
 	it( 'applies the __unselected styles when it is unselected', () => {
@@ -109,19 +94,18 @@ describe( 'Checkbox.Group', () => {
 	const renderComponent = ( {
 		disabled, value, onChange, ...props
 	} = {} ) => render(
-		<ThemeProvider theme={customTheme}>
-			<Checkbox.Group
-				testID="test-checkbox-group"
-				disabled={disabled}
-				value={value}
-				onChange={onChange}
-				{...props}
-			>
-				<Checkbox value="opt-1" label="Option 1" testID="test-checkbox-1" />
-				<Checkbox value="opt-2" label="Option 2" testID="test-checkbox-2" />
-				<Checkbox value="opt-3" label="Option 3" testID="test-checkbox-3" />
-			</Checkbox.Group>
-		</ThemeProvider>
+		<Checkbox.Group
+			testID="test-checkbox-group"
+			disabled={disabled}
+			value={value}
+			onChange={onChange}
+			{...props}
+		>
+			<Checkbox value="opt-1" label="Option 1" testID="test-checkbox-1" />
+			<Checkbox value="opt-2" label="Option 2" testID="test-checkbox-2" />
+			<Checkbox value="opt-3" label="Option 3" testID="test-checkbox-3" />
+		</Checkbox.Group>,
+		{ wrapper: WithThemeProvider }
 	);
 
 	it( 'renders the children inside of it', () => {
