@@ -1,5 +1,4 @@
-import { FormControl, HStack } from '@amalgama/react-native-ui-kit';
-import TextInput from '@site/src/components/TextInput';
+import { FormControl, HStack, TextInput } from '@amalgama/react-native-ui-kit';
 import CodePreview from '@site/src/components/CodePreview';
 
 # FormControl
@@ -13,7 +12,7 @@ The `FormControl` component is used to wrap form inputs (suchs as `TextInput`, `
 		isRequired
 		hint="Remember to enter a valid email address"
 	>
-		<TextInput placeholder="Email address" />
+		<TextInput placeholder="Email address" width="300px" />
 	</FormControl>
 </CodePreview>
 
@@ -24,7 +23,7 @@ The `FormControl` component is used to wrap form inputs (suchs as `TextInput`, `
 	isRequired
 	hint="Remember to enter a valid email address"
 >
-	<TextInput placeholder="Email address" />
+	<TextInput placeholder="Email address" width="300px" />
 </FormControl>
 ```
 
@@ -42,7 +41,7 @@ The label text to show above the input component.
 	<FormControl
 		label="Email"
 	>
-		<TextInput placeholder="Email address" />
+		<TextInput placeholder="Email address" width="300px" />
 	</FormControl>
 </CodePreview>
 
@@ -50,7 +49,7 @@ The label text to show above the input component.
 <FormControl
 	label="Email"
 >
-	<TextInput placeholder="Email address" />
+	<TextInput placeholder="Email address" width="300px" />
 </FormControl>
 ```
 
@@ -67,7 +66,7 @@ Shows an indicator for required input.
 		label="Email"
 		isRequired
 	>
-		<TextInput placeholder="Email address" />
+		<TextInput placeholder="Email address" width="300px" />
 	</FormControl>
 </CodePreview>
 
@@ -76,7 +75,7 @@ Shows an indicator for required input.
 	label="Email"
 	isRequired
 >
-	<TextInput placeholder="Email address" />
+	<TextInput placeholder="Email address" width="300px" />
 </FormControl>
 ```
 
@@ -98,7 +97,7 @@ Shows a hint text below the input.
 		isRequired
 		hint="Remember to enter a valid email address"
 	>
-		<TextInput placeholder="Email address" />
+		<TextInput placeholder="Email address" width="300px" />
 	</FormControl>
 </CodePreview>
 
@@ -108,7 +107,7 @@ Shows a hint text below the input.
 	isRequired
 	hint="Remember to enter a valid email address"
 >
-	<TextInput placeholder="Email address" />
+	<TextInput placeholder="Email address" width="300px" />
 </FormControl>
 ```
 
@@ -130,7 +129,7 @@ Shows an error text below the input.
 		isRequired
 		error="The email address is not valid"
 	>
-		<TextInput placeholder="Email address" />
+		<TextInput placeholder="Email address" width="300px" />
 	</FormControl>
 </CodePreview>
 
@@ -140,7 +139,7 @@ Shows an error text below the input.
 	isRequired
 	error="The email address is not valid"
 >
-	<TextInput placeholder="Email address" />
+	<TextInput placeholder="Email address" width="300px" />
 </FormControl>
 ```
 
