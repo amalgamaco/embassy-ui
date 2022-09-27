@@ -81,7 +81,7 @@ const FormControlExamples = () => (
 			error="The email is not valid!"
 			isRequired
 		>
-			<TextInput placeholder="Enter your email address" />
+			<TextInput value="invalid-email" error />
 		</FormControl>
 
 		<View style={styles.vspace} />

@@ -129,7 +129,7 @@ Shows an error text below the input.
 		isRequired
 		error="The email address is not valid"
 	>
-		<TextInput placeholder="Email address" width="300px" />
+		<TextInput value="invalid-email" width="300px" error />
 	</FormControl>
 </CodePreview>
 
@@ -139,7 +139,7 @@ Shows an error text below the input.
 	isRequired
 	error="The email address is not valid"
 >
-	<TextInput placeholder="Email address" width="300px" />
+	<TextInput placeholder="invalid-email" width="300px" error />
 </FormControl>
 ```
 

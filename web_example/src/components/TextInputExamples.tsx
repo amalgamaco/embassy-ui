@@ -37,7 +37,7 @@ const TextInputExamples = () => (
 		<View style={styles.separator} />
 		<View style={styles.vspace} />
 		<View style={{ width: 327 }}>
-			<TextInput placeholder='This is a disabled text input' disabled type='password'/>
+			<TextInput placeholder='This is a disabled password input' disabled type='password'/>
 			<View style={styles.vspace} />
 			<TextInput placeholder='This is a disabled text input' disabled type='text'/>
 		</View>

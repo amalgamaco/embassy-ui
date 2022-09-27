@@ -36,9 +36,9 @@ const TextInputExamples = () => (
 		<Text variant="sh1" color="primary.800">Disabled</Text>
 		<View style={styles.separator} />
 		<View style={styles.vspace} />
-		<TextInput placeholder='This is a disabled text input' disabled type='password' />
+		<TextInput placeholder='This is a disabled password input' disabled type='password' />
 		<View style={styles.vspace} />
-		<TextInput placeholder='This is an enabled text input' disabled type='text'/>
+		<TextInput placeholder='This is a disabled text input' disabled type='text'/>
 
 		<View style={styles.vspace} />
 
@@ -46,9 +46,9 @@ const TextInputExamples = () => (
 		<View style={styles.separator} />
 		<View style={styles.vspace} />
 		<View>
-			<TextInput placeholder='This is a text input that has an error' type='password' error/>
+			<TextInput placeholder='This is a text input that has an error' type='password' error />
 			<View style={styles.vspace} />
-			<TextInput placeholder='This is a text input that has an error' type='text' error/>
+			<TextInput placeholder='This is a text input that has an error' type='text' error />
 		</View>
 		<View style={styles.vspace} />
 	</VStack>
