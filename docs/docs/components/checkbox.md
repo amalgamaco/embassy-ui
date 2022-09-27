@@ -1,4 +1,5 @@
-import { Checkbox, HStack } from '@amalgama/react-native-ui-kit'
+import { Checkbox, HStack, Icon } from '@amalgama/react-native-ui-kit'
+import Feather from 'react-native-vector-icons/Feather';
 import CodePreview from '@site/src/components/CodePreview';
 import ExampleCheckbox from '@site/src/components/ExampleCheckbox';
 import ExampleCheckboxGroup from '@site/src/components/ExampleCheckboxGroup';
@@ -39,7 +40,7 @@ const App = () => {
 
 ### Props
 
-### selected
+#### selected
 If the checkbox is selected or not.
 
 | TYPE | REQUIRED | DEFAULT |
@@ -58,7 +59,7 @@ If the checkbox is selected or not.
 <Checkbox selected />
 ```
 
-### indeterminated
+#### indeterminated
 If the checkbox is indeterminated or not. This is usually used for lists of checkboxes when some of their children are checked but not all of them. This is only a visual state, it only changes the checkbox icon.
 
 | TYPE | REQUIRED | DEFAULT |
@@ -73,7 +74,7 @@ If the checkbox is indeterminated or not. This is usually used for lists of chec
 <Checkbox indeterminated />
 ```
 
-### label
+#### label
 Shows a label text next to the checkbox icon.
 
 | TYPE   | REQUIRED |
@@ -88,7 +89,7 @@ Shows a label text next to the checkbox icon.
 <Checkbox label="Checkbox" />
 ```
 
-### value
+#### value
 If the checkbox is inside a `Checkbox.Group` this prop indicates the value for it.
 
 | TYPE   | REQUIRED |
@@ -99,7 +100,7 @@ If the checkbox is inside a `Checkbox.Group` this prop indicates the value for i
 If the `Checkbox` is inside a `Checkbox.Group` this prop is required and will throw an `Exception` if not set.
 :::
 
-### disabled
+#### disabled
 If the checkbox is disabled or not.
 
 | TYPE | REQUIRED | DEFAULT |
@@ -120,7 +121,7 @@ If the checkbox is disabled or not.
 <Checkbox disabled indeterminated />
 ```
 
-### onPress
+#### onPress
 Invoked when the checkbox is pressed.
 
 | TYPE     | REQUIRED |
@@ -133,6 +134,63 @@ Invoked when the checkbox is pressed.
 
 ```jsx
 <Checkbox onPress={ () => { window.alert( 'The checkbox was pressed!' ) } }/>
+```
+
+#### checkedIcon
+An icon component to show when the checkbox is selected. The default value is the `box-checked` icon from the `UIKitIcon` icons package.
+
+<CodePreview>
+	<Checkbox
+		selected
+		checkedIcon={<Icon as={Feather}  name="x-square" />}
+	/>
+</CodePreview>
+
+```jsx
+import Feather from 'react-native-vector-icons/Feather';
+
+<Checkbox
+	selected
+	checkedIcon={<Icon as={Feather}  name="x-square" />}
+/>
+```
+
+#### uncheckedIcon
+
+An icon component to show when the checkbox is unselected. The default value is the `box-unchecked` icon from the `UIKitIcon` icons package.
+
+<CodePreview>
+	<Checkbox
+		uncheckedIcon={<Icon as={Feather}  name="square" />}
+	/>
+</CodePreview>
+
+```jsx
+import Feather from 'react-native-vector-icons/Feather';
+
+<Checkbox
+	uncheckedIcon={<Icon as={Feather}  name="square" />}
+/>
+```
+
+#### indeterminatedIcon
+
+An icon component to show when the checkbox is inditerminated. The default value is the `box-indeterminated` icon from the `UIKitIcon` icons package.
+
+<CodePreview>
+	<Checkbox
+		indeterminated
+		indeterminatedIcon={<Icon as={Feather}  name="minus-square" />}
+	/>
+</CodePreview>
+
+```jsx
+import EvilIcons from 'react-native-vector-icons/Feather';
+
+<Checkbox
+	indeterminated
+	indeterminatedIcon={<Icon as={Feather}  name="minus-square" />}
+/>
 ```
 
 ## CheckboxGroup
@@ -167,7 +225,7 @@ const ExampleCheckboxGroup = () => {
 
 ### Props
 
-### value
+#### value
 A list containing the selected checkbox values.
 
 | TYPE     | REQUIRED | DEFAULT |
@@ -175,14 +233,14 @@ A list containing the selected checkbox values.
 | string[] | No       | []      |
 
 
-### onChange
+#### onChange
 Invoked when the group selection changes (because a new option was selected or a previous one was unselected) with the selected option values.
 
 | TYPE     | REQUIRED |
 | -------- | -------- |
 | function | No       |
 
-### disabled
+#### disabled
 If the checkbox is disabled or not.
 
 | TYPE | REQUIRED | DEFAULT |

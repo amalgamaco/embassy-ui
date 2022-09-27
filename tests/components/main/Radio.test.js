@@ -19,17 +19,6 @@ const accessibilityTest = ( {
 	expect( getByTestId( testID ) ).toHaveProp( 'accessibilityState', { checked, disabled } );
 };
 
-const hasChildWithProp = ( elem, prop, value ) => {
-	let hasProperty = false;
-	for ( let index = 0; index < elem.children.length && !hasProperty; index += 1 ) {
-		const element = elem.children[ index ];
-		if ( element.props[ prop ] === value || hasChildWithProp( element, prop, value ) ) {
-			hasProperty = true;
-		}
-	}
-	return hasProperty;
-};
-
 describe( 'Radio', () => {
 	const renderRadio = ( {
 		selected = false, onPress, disabled, ...props
@@ -47,15 +36,13 @@ describe( 'Radio', () => {
 
 	test( 'renders the unselected style when unselected', () => {
 		const { getByTestId } = renderRadio();
-		const icon = getByTestId( `${TEST_ID}-icon` );
-		expect( hasChildWithProp( icon, 'stroke', '#676A79' ) ).toBe( true );
+		expect( getByTestId( `${TEST_ID}-icon` ) ).toHaveChildWithProp( 'stroke', '#676A79' );
 		accessibilityTest( { getByTestId } );
 	} );
 
 	test( 'renders the selected style when selected', () => {
 		const { getByTestId } = renderRadio( { selected: true } );
-		const icon = getByTestId( `${TEST_ID}-icon` );
-		expect( hasChildWithProp( icon, 'stroke', '#4F80FF' ) ).toBe( true );
+		expect( getByTestId( `${TEST_ID}-icon` ) ).toHaveChildWithProp( 'stroke', '#4F80FF' );
 		accessibilityTest( { getByTestId, checked: true } );
 	} );
 
@@ -80,8 +67,7 @@ describe( 'Radio', () => {
 		describe( 'when is unselected', () => {
 			it( 'should render the disabled style', () => {
 				const { getByTestId } = renderRadio( { disabled: true } );
-				const icon = getByTestId( `${TEST_ID}-icon` );
-				expect( hasChildWithProp( icon, 'stroke', '#B0B4CD' ) ).toBe( true );
+				expect( getByTestId( `${TEST_ID}-icon` ) ).toHaveChildWithProp( 'stroke', '#B0B4CD' );
 				accessibilityTest( { getByTestId, disabled: true } );
 			} );
 		} );
@@ -89,8 +75,7 @@ describe( 'Radio', () => {
 		describe( 'when is selected', () => {
 			it( 'should render the disabled style', () => {
 				const { getByTestId } = renderRadio( { disabled: true, selected: true } );
-				const icon = getByTestId( `${TEST_ID}-icon` );
-				expect( hasChildWithProp( icon, 'stroke', '#B0B4CD' ) ).toBe( true );
+				expect( getByTestId( `${TEST_ID}-icon` ) ).toHaveChildWithProp( 'stroke', '#B0B4CD' );
 				accessibilityTest( {
 					getByTestId, disabled: true, checked: true
 				} );
@@ -113,4 +98,74 @@ describe( 'Radio', () => {
 			testId: 'test-radio'
 		}
 	);
+} );
+
+describe( 'Radio.Group', () => {
+	const renderComponent = ( {
+		disabled, value, onChange, ...props
+	} = {} ) => render(
+		<ThemeProvider>
+			<Radio.Group
+				testID="test-radio-group"
+				disabled={disabled}
+				value={value}
+				onChange={onChange}
+				{...props}
+			>
+				<Radio value="opt-1" label="Option 1" testID="test-radio-1" />
+				<Radio value="opt-2" label="Option 2" testID="test-radio-2" />
+				<Radio value="opt-3" label="Option 3" testID="test-radio-3" />
+			</Radio.Group>
+		</ThemeProvider>
+	);
+
+	it( 'renders the children inside of it', () => {
+		const { getByTestId } = renderComponent();
+
+		expect( getByTestId( 'test-radio-1' ) ).toHaveTextContent( 'Option 1' );
+		expect( getByTestId( 'test-radio-2' ) ).toHaveTextContent( 'Option 2' );
+		expect( getByTestId( 'test-radio-3' ) ).toHaveTextContent( 'Option 3' );
+	} );
+
+	it( 'selects the radio buttons which value is equal to the value prop', () => {
+		const { getByTestId } = renderComponent( { value: 'opt-3' } );
+
+		expect( getByTestId( 'test-radio-1' ) ).toHaveProp( 'selected', false );
+		expect( getByTestId( 'test-radio-2' ) ).toHaveProp( 'selected', false );
+		expect( getByTestId( 'test-radio-3' ) ).toHaveProp( 'selected', true );
+	} );
+
+	it( 'disables all the radio buttons when the group is disabled', () => {
+		const { getByTestId } = renderComponent( { disabled: true } );
+
+		expect( getByTestId( 'test-radio-1-icon' ) ).toHaveChildWithProp( 'stroke', '#B0B4CD' );
+		expect( getByTestId( 'test-radio-2-icon' ) ).toHaveChildWithProp( 'stroke', '#B0B4CD' );
+		expect( getByTestId( 'test-radio-3-icon' ) ).toHaveChildWithProp( 'stroke', '#B0B4CD' );
+	} );
+
+	it( 'calls the onChange prop with the selected value when a radio is selected', () => {
+		const onChange = jest.fn();
+		const { getByTestId } = renderComponent( { value: 'opt-1', onChange } );
+
+		fireEvent( getByTestId( 'test-radio-2' ), 'press' );
+
+		expect( onChange ).toHaveBeenCalledWith( 'opt-2' );
+	} );
+
+	it( 'unselects all the other radio buttons when on of the is selected', () => {
+		const onChange = jest.fn();
+		const { getByTestId } = renderComponent( { value: 'opt-1', onChange } );
+
+		fireEvent( getByTestId( 'test-radio-3' ), 'press' );
+
+		expect( getByTestId( 'test-radio-1' ) ).toHaveProp(
+			'accessibilityState', { checked: false, disabled: false }
+		);
+		expect( getByTestId( 'test-radio-2' ) ).toHaveProp(
+			'accessibilityState', { checked: false, disabled: false }
+		);
+		expect( getByTestId( 'test-radio-3' ) ).toHaveProp(
+			'accessibilityState', { checked: true, disabled: false }
+		);
+	} );
 } );

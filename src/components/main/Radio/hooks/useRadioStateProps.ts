@@ -2,8 +2,10 @@ import { useMemo } from 'react';
 import type { PressableProps } from 'react-native';
 import type { IHoverableComponent } from '../../../../core/components/types';
 import { useIsFocused, useIsHovered, useIsPressed } from '../../../hooks';
+import useRadioStateFromGroup from './useRadioStateFromGroup';
 
 interface IUseRadioStateProps {
+	value?: string,
 	disabled?: boolean,
 	selected?: boolean,
 	onPress?: PressableProps[ 'onPress' ],
@@ -16,17 +18,24 @@ interface IUseRadioStateProps {
 }
 
 const useRadioStateProps = ( {
-	disabled = false,
-	selected = false,
-	onPress,
+	value,
+	disabled: disabledProp = false,
+	selected: selectedProp = false,
+	onPress: onPressProp,
 	...props
 }: IUseRadioStateProps ) => {
 	const { isPressed, onPressIn, onPressOut } = useIsPressed( props );
 	const { isHovered, onHoverIn, onHoverOut } = useIsHovered( props );
 	const { isFocused, onFocus, onBlur } = useIsFocused( props );
 
+	const groupState = useRadioStateFromGroup( value );
+
 	return useMemo(
 		() => {
+			const disabled = groupState?.disabled || disabledProp;
+			const selected = groupState?.selected || selectedProp;
+			const onPress = groupState?.onPress || onPressProp;
+
 			const state = {
 				isSelected: selected,
 				isDisabled: disabled,
@@ -50,8 +59,8 @@ const useRadioStateProps = ( {
 			return { state, stateProps };
 		},
 		[
-			selected, disabled, isPressed, isHovered, isFocused, onPress,
-			onPressIn, onPressOut, onHoverIn, onHoverOut, onFocus, onBlur
+			groupState, selectedProp, disabledProp, isPressed, isHovered, isFocused,
+			onPressProp, onPressIn, onPressOut, onHoverIn, onHoverOut, onFocus, onBlur
 		]
 	);
 };
