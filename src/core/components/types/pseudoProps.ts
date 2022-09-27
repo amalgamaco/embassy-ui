@@ -44,8 +44,8 @@ interface IRadioPseudoProps {
 interface IFormControlPseudoProps {
 	__label: ComponentBaseStyledProps<'Text'>,
 	__required: ComponentBaseStyledProps<'Text'>,
-	__hint: ComponentBaseStyledProps<'Text'>,
-	__error: ComponentBaseStyledProps<'Text'>,
+	__hintText: ComponentBaseStyledProps<'Text'>,
+	__errorText: ComponentBaseStyledProps<'Text'>,
 	__errorIcon: ComponentBaseStyledProps<'Icon'>
 }
 

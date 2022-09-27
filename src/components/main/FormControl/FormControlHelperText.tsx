@@ -9,8 +9,8 @@ const FormControlHelperText = ( {
 	hint,
 	error,
 	errorIcon = 'alert-circle',
-	__hint: hintProps,
-	__error: errorProps,
+	__hintText: hintProps,
+	__errorText: errorProps,
 	__errorIcon: errorIconProps,
 	testID
 }: IFormControHelperTextProps ) => {

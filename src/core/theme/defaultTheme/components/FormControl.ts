@@ -7,11 +7,11 @@ export default {
 			variant: 'small-bold',
 			color: 'error.900'
 		},
-		__hint: {
+		__hintText: {
 			variant: 'small',
 			color: 'neutral.200'
 		},
-		__error: {
+		__errorText: {
 			variant: 'small',
 			color: 'neutral.200'
 		},

@@ -18,8 +18,8 @@ const FormControl = ( {
 	const {
 		__label: labelProps,
 		__required: requiredProps,
-		__hint: hintProps,
-		__error: errorProps,
+		__hintText: hintProps,
+		__errorText: errorProps,
 		__errorIcon: errorIconProps,
 		...containerProps
 	} = useComponentPropsResolver( 'FormControl', props ) as IFormControlProps;
@@ -41,8 +41,8 @@ const FormControl = ( {
 					hint={hint}
 					error={error}
 					errorIcon={errorIcon}
-					__hint={hintProps}
-					__error={errorProps}
+					__hintText={hintProps}
+					__errorText={errorProps}
 					__errorIcon={errorIconProps}
 					testID={testID && `${testID}-helper-text`}
 				/>
