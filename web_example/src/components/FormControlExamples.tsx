@@ -25,9 +25,9 @@ const styles = StyleSheet.create( {
 
 const FormControlExamples = () => (
 	<VStack style={styles.container} space="2">
-		<Text variant="h1" bgColor="primary.200">FormControl Component</Text>
+		<Text variant="headline">FormControl Component</Text>
 
-		<Text variant="sh1" color="primary.800">With label</Text>
+		<Text variant="subtitle">With label</Text>
 		<View style={styles.separator} />
 
 		<FormControl
@@ -39,7 +39,7 @@ const FormControlExamples = () => (
 
 		<View style={styles.vspace} />
 
-		<Text variant="sh1" color="primary.800">Not required</Text>
+		<Text variant="subtitle">Not required</Text>
 		<View style={styles.separator} />
 
 		<FormControl
@@ -50,7 +50,7 @@ const FormControlExamples = () => (
 
 		<View style={styles.vspace} />
 
-		<Text variant="sh1" color="primary.800">With hint</Text>
+		<Text variant="subtitle">With hint</Text>
 		<View style={styles.separator} />
 
 		<FormControl
@@ -63,7 +63,7 @@ const FormControlExamples = () => (
 
 		<View style={styles.vspace} />
 
-		<Text variant="sh1" color="primary.800">Without label</Text>
+		<Text variant="subtitle">Without label</Text>
 		<View style={styles.separator} />
 
 		<FormControl
@@ -73,7 +73,7 @@ const FormControlExamples = () => (
 		</FormControl>
 
 		<View style={styles.vspace} />
-		<Text variant="sh1" color="primary.800">With error</Text>
+		<Text variant="subtitle">With error</Text>
 		<View style={styles.separator} />
 
 		<FormControl
@@ -85,7 +85,7 @@ const FormControlExamples = () => (
 		</FormControl>
 
 		<View style={styles.vspace} />
-		<Text variant="sh1" color="primary.800">With Checkboxes</Text>
+		<Text variant="subtitle">With Checkboxes</Text>
 		<View style={styles.separator} />
 
 		<FormControl
@@ -102,7 +102,7 @@ const FormControlExamples = () => (
 		</FormControl>
 
 		<View style={styles.vspace} />
-		<Text variant="sh1" color="primary.800">With Radios</Text>
+		<Text variant="subtitle">With Radios</Text>
 		<View style={styles.separator} />
 
 		<FormControl

@@ -27,9 +27,9 @@ const styles = StyleSheet.create( {
 
 const BoxExamples = () => (
 	<VStack style={styles.container}>
-		<Text variant="h1" bgColor="primary.200">Box Component</Text>
+		<Text variant="headline">Box Component</Text>
 		<View style={styles.vspace} />
-		<Text variant="sh1" color="primary.800">Border radius</Text>
+		<Text variant="subtitle">Border radius</Text>
 		<View style={styles.separator} />
 		<VStack style={styles.vstack} space="3">
 			<Box rounded="3xl" backgroundColor="error.400" padding="2.5">
@@ -54,7 +54,7 @@ const BoxExamples = () => (
 			</HStack>
 		</VStack>
 		<View style={styles.vspace} />
-		<Text variant="sh1" color="primary.800">Padding</Text>
+		<Text variant="subtitle">Padding</Text>
 		<View style={styles.separator} />
 		<VStack style={styles.vstack} space="3">
 			<Box backgroundColor="error.400" padding="0.5">
@@ -68,7 +68,7 @@ const BoxExamples = () => (
 			</Box>
 		</VStack>
 		<View style={styles.vspace} />
-		<Text variant="sh1" color="primary.800">Margin</Text>
+		<Text variant="subtitle">Margin</Text>
 		<View style={styles.separator} />
 		<VStack style={styles.vstack} space="3">
 			<Box backgroundColor="error.400" margin="0.5">

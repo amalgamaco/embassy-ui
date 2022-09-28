@@ -26,15 +26,15 @@ const onButtonPressed = () => window.alert( 'Pressed!' );
 
 const ButtonExamples = () => (
 	<VStack style={styles.container} space="2">
-		<Text variant="h1" bgColor="primary.200">Button Component</Text>
+		<Text variant="headline">Button Component</Text>
 		<View style={styles.vspace} />
-		<Text variant="sh1" color="primary.800">Variants</Text>
+		<Text variant="subtitle">Variants</Text>
 		<View style={styles.separator} />
 		<Button variant="primary" onPress={onButtonPressed}>Primary</Button>
 		<Button variant="secondary" onPress={onButtonPressed}>Secondary</Button>
 		<Button variant="priority" onPress={onButtonPressed}>Priority</Button>
 		<Button variant="custom" onPress={onButtonPressed}>Custom</Button>
-		<Text variant="sh1" color="primary.800">Icons</Text>
+		<Text variant="subtitle">Icons</Text>
 		<View style={styles.separator} />
 		<Button
 			variant="primary"
@@ -67,7 +67,7 @@ const ButtonExamples = () => (
 		>
 			Custom
 		</Button>
-		<Text variant="sh1" color="primary.800">Disabled</Text>
+		<Text variant="subtitle">Disabled</Text>
 		<View style={styles.separator} />
 		<Button variant="primary" disabled onPress={onButtonPressed}>Primary Disabled</Button>
 		<Button variant="secondary" disabled onPress={onButtonPressed}>Secondary Disabled</Button>
@@ -79,7 +79,7 @@ const ButtonExamples = () => (
 		>
 			Primary with custom disabled bg
 		</Button>
-		<Text variant="sh1" color="primary.800">Horizontal group</Text>
+		<Text variant="subtitle">Horizontal group</Text>
 		<View style={styles.separator} />
 		<HStack space="10">
 			<Button variant="secondary" onPress={onButtonPressed}>Cancel</Button>

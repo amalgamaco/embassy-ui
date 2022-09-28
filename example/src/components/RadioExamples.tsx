@@ -30,9 +30,9 @@ const RadioExamples = () => {
 
 	return (
 		<VStack style={styles.container}>
-			<Text variant="h1" bgColor="primary.200">Radio Component</Text>
+			<Text variant="headline">Radio Component</Text>
 			<View style={styles.vspace} />
-			<Text variant="sh1" color="primary.800">Enabled</Text>
+			<Text variant="subtitle">Enabled</Text>
 			<View style={styles.separator} />
 
 			<HStack>
@@ -41,7 +41,7 @@ const RadioExamples = () => {
 			</HStack>
 
 			<View style={styles.vspace} />
-			<Text variant="sh1" color="primary.800">Disabled</Text>
+			<Text variant="subtitle">Disabled</Text>
 			<View style={styles.separator} />
 
 			<HStack>
@@ -50,7 +50,7 @@ const RadioExamples = () => {
 			</HStack>
 
 			<View style={styles.vspace} />
-			<Text variant="sh1" color="primary.800">On press</Text>
+			<Text variant="subtitle">On press</Text>
 			<View style={styles.separator} />
 
 			<HStack>
@@ -59,7 +59,7 @@ const RadioExamples = () => {
 
 			<View style={styles.vspace} />
 
-			<Text variant="sh1" color="primary.800">With Label</Text>
+			<Text variant="subtitle">With Label</Text>
 			<View style={styles.separator} />
 
 			<VStack alignItems="flex-start" space="2">
@@ -76,10 +76,10 @@ const RadioExamples = () => {
 
 			<View style={styles.vspace} />
 
-			<Text variant="h1" bgColor="primary.200">Radio Group Component</Text>
+			<Text variant="headline">Radio Group Component</Text>
 			<View style={styles.vspace} />
 
-			<Text variant="sh1" color="primary.800">Select one option</Text>
+			<Text variant="subtitle">Select one option</Text>
 			<View style={styles.separator} />
 
 			<Radio.Group
@@ -92,7 +92,7 @@ const RadioExamples = () => {
 			</Radio.Group>
 
 			<View style={styles.vspace} />
-			<Text variant="sh1" color="primary.800">Disabled</Text>
+			<Text variant="subtitle">Disabled</Text>
 			<View style={styles.separator} />
 
 			<Radio.Group

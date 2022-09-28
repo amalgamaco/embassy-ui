@@ -23,25 +23,26 @@ const styles = StyleSheet.create( {
 
 const TextExamples = () => (
 	<VStack style={styles.container}>
-		<Text variant="h1" bgColor="primary.200">Text Component</Text>
+		<Text variant="headline">Text Component</Text>
 		<View style={styles.vspace} />
-		<Text variant="sh1" color="primary.800">Variants</Text>
+		<Text variant="subtitle">Variants</Text>
 		<View style={styles.separator} />
 		<Text variant="h1">Headline 1</Text>
 		<Text variant="h2">Headline 2</Text>
 		<Text variant="h3">Headline 3</Text>
-		<Text variant="sh1">Subtitle 1</Text>
-		<Text variant="sh2">Subtitle 2</Text>
-		<Text variant="sh3">Subtitle 3</Text>
-		<Text variant="body">Body text</Text>
-		<Text variant="body-2">Body text 2</Text>
+		<Text variant="sh">Subtitle</Text>
+		<Text variant="body">Body</Text>
+		<Text variant="body-special">Body special</Text>
+		<Text variant="body-italic">Body italic</Text>
 		<Text variant="links">Links</Text>
-		<Text variant="small">Small text</Text>
-		<Text variant="small-bold">Small bold text</Text>
-		<Text variant="caption">Caption text</Text>
-		<Text variant="caption-bold">Caption bold text</Text>
+		<Text variant="small">Small</Text>
+		<Text variant="small-bold">Small bold</Text>
+		<Text variant="small-link">Small link</Text>
+		<Text variant="x-small">Extra small</Text>
+		<Text variant="x-small-bold">Extra small bold</Text>
+		<Text variant="x-small-link">Extra small link</Text>
 		<View style={styles.vspace} />
-		<Text variant="sh1" color="primary.800">Free props</Text>
+		<Text variant="subtitle">Free props</Text>
 		<View style={styles.separator} />
 		<Text fontSize="3xl" fontWeight="extrabold" textAlign="left" style={{ paddingBottom: 20 }}>Text</Text>
 		<Text fontSize="xs" fontStyle="italic" fontWeight="medium">Text!</Text>
