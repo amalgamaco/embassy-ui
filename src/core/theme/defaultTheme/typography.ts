@@ -79,31 +79,40 @@ const typography = {
 		},
 		'Inter': {
 			100: {
-				normal: 'Inter-Thin'
+				normal: 'Inter-Thin',
+				italic: 'Inter-ThinItalic'
 			},
 			200: {
-				normal: 'Inter-ExtraLight'
+				normal: 'Inter-ExtraLight',
+				italic: 'Inter-ExtraLightItalic'
 			},
 			300: {
-				normal: 'Inter-Light'
+				normal: 'Inter-Light',
+				italic: 'Inter-LightItalic'
 			},
 			400: {
-				normal: 'Inter-Regular'
+				normal: 'Inter-Regular',
+				italic: 'Inter-Italic'
 			},
 			500: {
-				normal: 'Inter-Medium'
+				normal: 'Inter-Medium',
+				italic: 'Inter-MediumItalic'
 			},
 			600: {
-				normal: 'Inter-SemiBold'
+				normal: 'Inter-SemiBold',
+				italic: 'Inter-SemiBoldItalic'
 			},
 			700: {
-				normal: 'Inter-Bold'
+				normal: 'Inter-Bold',
+				italic: 'Inter-BoldItalic'
 			},
 			800: {
-				normal: 'Inter-ExtraBold'
+				normal: 'Inter-ExtraBold',
+				italic: 'Inter-ExtraBoldItalic'
 			},
 			900: {
-				normal: 'Inter-Black'
+				normal: 'Inter-Black',
+				italic: 'Inter-BlackItalic'
 			}
 		}
 	}
