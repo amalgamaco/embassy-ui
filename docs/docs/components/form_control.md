@@ -163,14 +163,14 @@ Props to be applied to the internal `Text` component showing the required indica
 | ------ | -------- |
 | ITextProps | No       |
 
-### __hint
+### __hintText
 Props to be applied to the internal `Text` component showing the hint text.
 
 | TYPE   | REQUIRED |
 | ------ | -------- |
 | ITextProps | No       |
 
-### __error
+### __errorText
 Props to be applied to the internal `Text` component showing the error text.
 
 | TYPE   | REQUIRED |
