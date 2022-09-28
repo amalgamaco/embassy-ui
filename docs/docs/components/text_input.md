@@ -221,3 +221,20 @@ Props to be applied to the internal `IconButton` component that toggles the pass
 	__icon={{ name: 'lock', as: Feather, size: 'sm' }}
 />
 ```
+## Pseudo Props
+
+### __icon
+
+Props to be applied to the internal `icon` component.
+
+| TYPE   | REQUIRED |
+| ------ | -------- |
+| IIconProps | No  |
+
+### __textInput
+
+`Box` props to be applied to the internal `text input` component.
+
+| TYPE   | REQUIRED |
+| ------ | -------- |
+| IBoxProps | No  |

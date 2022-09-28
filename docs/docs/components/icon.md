@@ -183,7 +183,7 @@ import  MyIconLib  from './MyIconLib';
 
 ```
 
-### inline way
+### Inline way
 ```tsx
 import { Path, Svg } from 'react-native-svg';
 import AlertCircle from './AlertCircle';

@@ -238,3 +238,29 @@ const ExampleRadioGroup = () => {
 	);
 };
 ```
+
+## Pseudo Props
+
+### __icon 
+
+Props to be applied to the internal `Icon` component showing the right icon.
+
+| TYPE   | REQUIRED |
+| ------ | -------- |
+| IIconProps | No   |
+
+### __iconContainer
+
+Props to be applied to the internal `Box` component which contains the label and the icons.
+
+| TYPE   | REQUIRED |
+| ------ | -------- |
+| IBoxProps | No  |
+
+### __label
+
+Props to be applied to the internal `Text` component showing the label text.
+
+| TYPE   | REQUIRED |
+| ------ | -------- |
+| ITextProps | No   |
