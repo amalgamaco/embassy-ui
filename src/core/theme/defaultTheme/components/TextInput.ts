@@ -3,7 +3,7 @@ import { Platform } from 'react-native';
 export default {
 	defaultProps: {
 		height: 56,
-		borderWidth: '1',
+		borderWidth: 'xs',
 		borderRadius: 'lg',
 		borderColor: 'neutral.600',
 		justifyContent: 'space-between',
@@ -20,6 +20,7 @@ export default {
 			)
 		},
 		__icon: {
+			size: 'sm',
 			color: 'neutral.600',
 			marginRight: 2,
 			padding: 2
@@ -34,7 +35,7 @@ export default {
 			borderColor: 'error.500'
 		},
 		__focused: {
-			borderWidth: '2',
+			borderWidth: 'sm',
 			borderColor: 'primary.700',
 			padding: 0,
 			__textInput: { color: 'neutral.900' },

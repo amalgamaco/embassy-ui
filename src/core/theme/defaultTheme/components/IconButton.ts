@@ -1,6 +1,6 @@
 export default {
 	defaultProps: {
-		size: 'md',
+		size: 'sm',
 		__disabled: {
 			opacity: 0.3
 		},
@@ -9,12 +9,12 @@ export default {
 		}
 	},
 	sizes: {
-		'xs': 14,
-		'sm': 18,
-		'md': 24,
-		'lg': 34,
-		'xl': 48,
-		'2xl': 72,
-		'3xl': 96
+		'2xs': 16,
+		'xs': 20,
+		'sm': 24,
+		'md': 32,
+		'lg': 48,
+		'xl': 72,
+		'2xl': 96
 	}
 };

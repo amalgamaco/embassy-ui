@@ -35,13 +35,13 @@ describe( 'IconButton', () => {
 	it( 'translates the size alias an sets it to the base icon component', () => {
 		const { getByTestId } = renderComponent( { size: 'sm' } );
 
-		expect( getByTestId( 'test-icon' ) ).toHaveProp( 'size', 18 );
+		expect( getByTestId( 'test-icon' ) ).toHaveProp( 'size', 24 );
 	} );
 
 	it( 'translates the color alias and sets it to the base icon component', () => {
 		const { getByTestId } = renderComponent( { color: 'primary.400' } );
 
-		expect( getByTestId( 'test-icon' ) ).toHaveProp( 'color', '#999AB8' );
+		expect( getByTestId( 'test-icon' ) ).toHaveProp( 'color', '#475993' );
 	} );
 
 	itBehavesLike(

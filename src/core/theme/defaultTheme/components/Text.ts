@@ -2,95 +2,110 @@ export default {
 	defaultProps: {
 		font: 'Inter',
 		fontSize: 'md',
-		fontWeight: 'normal'
+		fontWeight: 'regular'
 	},
 	variants: {
 		'h1': {
 			font: 'Epilogue',
-			fontSize: '4xl',
-			fontWeight: 'medium',
-			lineHeight: '3xl'
+			fontSize: '3xl',
+			fontWeight: 'bold',
+			lineHeight: '3xl',
+			letterSpacing: 'md'
 		},
 		'h2': {
 			font: 'Epilogue',
-			fontSize: '2xl',
+			fontSize: 'xl',
 			fontWeight: 'bold',
 			lineHeight: '2xl',
-			letterSpacing: 'xl'
+			letterSpacing: 'md'
 		},
 		'h3': {
 			font: 'Epilogue',
-			fontSize: 'xl',
-			fontWeight: 'medium',
+			fontSize: 'lg',
+			fontWeight: 'bold',
 			lineHeight: 'xl',
-			letterSpacing: 'lg'
-		},
-		'sh1': {
-			font: 'Epilogue',
-			fontSize: 'md',
-			fontWeight: 'normal',
-			lineHeight: 'md',
-			letterSpacing: 'lg'
-		},
-		'sh2': {
-			font: 'Epilogue',
-			fontSize: 'md',
-			fontWeight: 'semibold',
-			lineHeight: 'lg',
 			letterSpacing: 'md'
 		},
-		'sh3': {
+		'sh': {
 			font: 'Epilogue',
-			fontSize: 'md',
+			fontSize: 'sm',
 			fontWeight: 'bold',
 			lineHeight: 'md',
 			letterSpacing: 'md'
 		},
 		'body': {
 			font: 'Inter',
-			fontSize: 'md',
-			fontWeight: 'normal',
-			lineHeight: 'md',
-			letterSpacing: '2xl'
+			fontSize: 'sm',
+			fontWeight: 'regular',
+			lineHeight: 'lg',
+			letterSpacing: 'sm'
 		},
-		'body-2': {
+		'body-special': {
 			font: 'Inter',
-			fontSize: 'md',
+			fontSize: 'sm',
 			fontWeight: 'bold',
-			lineHeight: 'md',
-			letterSpacing: '2xl'
+			lineHeight: 'lg',
+			letterSpacing: 'sm'
+		},
+		'body-italic': {
+			font: 'Inter',
+			fontSize: 'sm',
+			fontWeight: 'regular',
+			lineHeight: 'lg',
+			letterSpacing: 'sm',
+			fontStyle: 'italic'
 		},
 		'links': {
 			font: 'Inter',
-			fontSize: 'md',
-			fontWeight: 'normal',
-			lineHeight: 'md',
-			letterSpacing: '2xl',
+			fontSize: 'sm',
+			fontWeight: 'regular',
+			lineHeight: 'lg',
+			letterSpacing: 'sm',
 			textDecoration: 'underline'
 		},
 		'small': {
 			font: 'Inter',
-			fontSize: 'sm',
-			fontWeight: 'normal',
-			lineHeight: 'sm'
+			fontSize: 'xs',
+			fontWeight: 'regular',
+			letterSpacing: 'sm',
+			lineHeight: 'xs'
 		},
 		'small-bold': {
 			font: 'Inter',
-			fontSize: 'sm',
-			fontWeight: 'bold',
-			lineHeight: 'sm'
-		},
-		'caption': {
-			font: 'Inter',
-			fontSize: 'xs',
-			fontWeight: 'normal',
-			lineHeight: 'xs'
-		},
-		'caption-bold': {
-			font: 'Inter',
 			fontSize: 'xs',
 			fontWeight: 'bold',
+			letterSpacing: 'sm',
 			lineHeight: 'xs'
+		},
+		'small-link': {
+			font: 'Inter',
+			fontSize: 'xs',
+			fontWeight: 'regular',
+			letterSpacing: 'sm',
+			lineHeight: 'xs',
+			textDecoration: 'underline'
+		},
+		'x-small': {
+			font: 'Inter',
+			fontSize: '2xs',
+			fontWeight: 'regular',
+			letterSpacing: 'sm',
+			lineHeight: '2xs'
+		},
+		'x-small-bold': {
+			font: 'Inter',
+			fontSize: '2xs',
+			fontWeight: 'bold',
+			letterSpacing: 'sm',
+			lineHeight: '2xs'
+		},
+		'x-small-link': {
+			font: 'Inter',
+			fontSize: '2xs',
+			fontWeight: 'regular',
+			letterSpacing: 'sm',
+			lineHeight: '2xs',
+			textDecoration: 'underline'
 		}
 	}
 };

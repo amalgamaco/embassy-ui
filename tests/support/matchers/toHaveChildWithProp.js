@@ -8,7 +8,7 @@ expect.extend( {
 	toHaveChildWithProp( receivedElement, prop, expectedValue ) {
 		return {
 			pass: hasChildWithProp( receivedElement, prop, expectedValue ),
-			message: `Expected element to have a child with a prop "${prop}" with value ${expectedValue}`
+			message: () => `Expected element to have a child with a prop "${prop}" with value ${expectedValue}`
 		};
 	}
 } );

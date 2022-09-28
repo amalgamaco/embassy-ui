@@ -12,7 +12,7 @@ module.exports = ( { renderComponent, testId } ) => {
 		it.each( events )(
 			'applies the %s style when %s',
 			( stateStyleKey, _, event ) => {
-				const { getByTestId } = renderComponent( { [ stateStyleKey ]: { bg: 'secondary.10' } } );
+				const { getByTestId } = renderComponent( { [ stateStyleKey ]: { bg: 'secondary.50' } } );
 				fireEvent( getByTestId( testId ), event );
 
 				expect( getByTestId( testId ) ).toHaveStyle( { backgroundColor: '#EDF2FF' } );

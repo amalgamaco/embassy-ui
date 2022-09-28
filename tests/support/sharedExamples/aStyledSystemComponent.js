@@ -1,14 +1,14 @@
 const { STYLE_PROPS_MAPPING } = require( '../../../src/core/styles/propsMapping' );
 
-const colorPropValues = [ 'primary.400', '#999AB8' ];
-const letterSpacingPropValues = [ 'md', 0.1 ];
+const colorPropValues = [ 'primary.400', '#475993' ];
+const letterSpacingPropValues = [ 'md', 0.4 ];
 const lineHeightPropValues = [ 'lg', 24 ];
 const fontWeightPropValues = [ 'bold', '700' ];
-const fontSizePropValues = [ 'xs', 12 ];
+const fontSizePropValues = [ 'xs', 14 ];
 const fontPropValues = [ 'Epilogue', 'Epilogue-Regular' ];
-const borderWidthPropValues = [ '4', 4 ];
+const borderWidthPropValues = [ 'lg', 4 ];
 const spacingPropValues = [ '16', 64 ];
-const radiusPropValues = [ 'lg', 8 ];
+const radiusPropValues = [ 'lg', 12 ];
 
 const propValuesByScale = {
 	palette: colorPropValues,

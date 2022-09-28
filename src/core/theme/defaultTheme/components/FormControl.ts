@@ -1,11 +1,12 @@
 export default {
 	defaultProps: {
 		__label: {
-			variant: 'small-bold'
+			variant: 'small-bold',
+			color: 'neutral.900'
 		},
 		__required: {
 			variant: 'small-bold',
-			color: 'error.900'
+			color: 'error.500'
 		},
 		__hintText: {
 			variant: 'small',
@@ -16,8 +17,8 @@ export default {
 			color: 'neutral.200'
 		},
 		__errorIcon: {
-			size: 'xs',
-			color: 'error.900'
+			size: '2xs',
+			color: 'error.500'
 		}
 	}
 };

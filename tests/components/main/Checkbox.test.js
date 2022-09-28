@@ -34,25 +34,25 @@ describe( 'Checkbox', () => {
 
 	it( 'applies the __unselected styles when it is unselected', () => {
 		const { getByTestId } = renderComponent();
-		expect( getByTestId( 'test-checkbox-icon' ) ).toHaveStyle( { borderColor: '#676A79' } );
+		expect( getByTestId( 'test-checkbox-icon' ) ).toHaveChildWithProp( 'fill', '#4F5C7B' );
 		accessibilityTest( { getByTestId } );
 	} );
 
 	it( 'applies the __selected styles when it is selected', () => {
 		const { getByTestId } = renderComponent( { selected: true } );
-		expect( getByTestId( 'test-checkbox-icon' ) ).toHaveStyle( { borderColor: '#4F80FF' } );
+		expect( getByTestId( 'test-checkbox-icon' ) ).toHaveChildWithProp( 'fill', '#4F80FF' );
 		accessibilityTest( { getByTestId, checked: true } );
 	} );
 
 	it( 'applies the __indeterminated styles when it is indeterminated', () => {
 		const { getByTestId } = renderComponent( { indeterminated: true } );
-		expect( getByTestId( 'test-checkbox-icon' ) ).toHaveStyle( { borderColor: '#4F80FF' } );
+		expect( getByTestId( 'test-checkbox-icon' ) ).toHaveChildWithProp( 'fill', '#4F80FF' );
 		accessibilityTest( { getByTestId, checked: 'mixed' } );
 	} );
 
 	it( 'applies the __disabled styles when it is disabled', () => {
 		const { getByTestId } = renderComponent( { disabled: true } );
-		expect( getByTestId( 'test-checkbox' ) ).toHaveStyle( { opacity: 0.7 } );
+		expect( getByTestId( 'test-checkbox-icon' ) ).toHaveChildWithProp( 'fill', '#AAB2CC' );
 		accessibilityTest( { getByTestId, disabled: true } );
 	} );
 
@@ -127,9 +127,9 @@ describe( 'Checkbox.Group', () => {
 	it( 'disables all the checkboxes when the group is disabled', () => {
 		const { getByTestId } = renderComponent( { disabled: true } );
 
-		expect( getByTestId( 'test-checkbox-1' ) ).toHaveStyle( { 'opacity': 0.7 } );
-		expect( getByTestId( 'test-checkbox-2' ) ).toHaveStyle( { 'opacity': 0.7 } );
-		expect( getByTestId( 'test-checkbox-3' ) ).toHaveStyle( { 'opacity': 0.7 } );
+		expect( getByTestId( 'test-checkbox-1-icon' ) ).toHaveChildWithProp( 'fill', '#AAB2CC' );
+		expect( getByTestId( 'test-checkbox-2-icon' ) ).toHaveChildWithProp( 'fill', '#AAB2CC' );
+		expect( getByTestId( 'test-checkbox-3-icon' ) ).toHaveChildWithProp( 'fill', '#AAB2CC' );
 	} );
 
 	it( 'calls the onChange prop with the selected values when a checkbox is selected', () => {
