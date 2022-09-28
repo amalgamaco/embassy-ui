@@ -1,5 +1,6 @@
 import CodePreview from '@site/src/components/CodePreview';
 import ExampleText from '@site/src/components/ExampleText';
+import { Text } from '@amalgama/react-native-ui-kit';
 
 # Text
 
@@ -16,7 +17,7 @@ import { Text } from '@amalgama/react-native-ui-kit';
 ## Example
 
 <CodePreview>
-    <ExampleText/>
+	<ExampleText/>
 </CodePreview>
 
 ```tsx
@@ -37,28 +38,53 @@ The available variants are:
 - `h1`
 - `h2`
 - `h3`
-- `sh1`
-- `sh2`
-- `sh3`
+- `sh`
 - `body`
-- `body-2`
+- `body-special`
+- `body-italic`
 - `links`
 - `small`
 - `small-bold`
-- `caption`
-- `caption-bold`
-
-#### Example
+- `small-link`
+- `x-small`
+- `x-small-bold`
+- `x-small-link`
 
 <CodePreview>
-    <ExampleText variant="h1"/>
+	<Text variant="h1">Headline 1</Text>
+	<Text variant="h2">Headline 2</Text>
+	<Text variant="h3">Headline 3</Text>
+	<Text variant="sh">Subtitle</Text>
+	<Text variant="body">Body</Text>
+	<Text variant="body-special">Body special</Text>
+	<Text variant="body-italic">Body italic</Text>
+	<Text variant="small">Small</Text>
+	<Text variant="small-bold">Small bold</Text>
+	<Text variant="small-link">Small link</Text>
+	<Text variant="x-small">Extra small</Text>
+	<Text variant="x-small-bold">Extra small bold</Text>
+	<Text variant="x-small-link">Extra small link</Text>
 </CodePreview>
 
 ```tsx
 import React from 'react';
 import { Text } from '@amalgama/react-native-ui-kit';
 
-<Text variant="h1"> Hello World </Text>;
+<VStack>
+	<Text variant="h1">Headline 1</Text>
+	<Text variant="h2">Headline 2</Text>
+	<Text variant="h3">Headline 3</Text>
+	<Text variant="sh">Subtitle</Text>
+	<Text variant="body">Body</Text>
+	<Text variant="body-special">Body special</Text>
+	<Text variant="body-italic">Body italic</Text>
+	<Text variant="small">Small</Text>
+	<Text variant="small-bold">Small bold</Text>
+	<Text variant="small-link">Small link</Text>
+	<Text variant="x-small">Extra small</Text>
+	<Text variant="x-small-bold">Extra small bold</Text>
+	<Text variant="x-small-link">Extra small link</Text>
+<VStack>
 ```
 
 You can see the rest of the props in the [React Native documentation](https://facebook.github.io/react-native/docs/text.html#props).
