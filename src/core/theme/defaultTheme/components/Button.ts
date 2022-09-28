@@ -1,6 +1,5 @@
 export default {
 	defaultProps: {
-		flex: 1,
 		bg: 'white',
 		borderColor: 'black',
 		borderWidth: '2',

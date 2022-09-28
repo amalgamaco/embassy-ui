@@ -21,7 +21,7 @@ const styles = StyleSheet.create( {
 		flex: 1,
 		alignItems: 'flex-start',
 		justifyContent: 'flex-start',
-		marginHorizontal: 16
+		width: '100%'
 	},
 	scroll: {
 		flexGrow: 1,
@@ -102,8 +102,8 @@ export default function App() {
 	return (
 		<ThemeProvider theme={customTheme}>
 			<SafeAreaView style={styles.container}>
-				<ScrollView contentContainerStyle={styles.scroll}>
-					<VStack>
+				<ScrollView contentContainerStyle={styles.scroll} style={{ width: '100%' }}>
+					<VStack marginX="3">
 						<PaletteColorGrid />
 						<TextExamples />
 						<BoxExamples />

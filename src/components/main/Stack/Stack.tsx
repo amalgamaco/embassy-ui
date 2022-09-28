@@ -24,7 +24,6 @@ const Stack = ( {
 
 	return (
 		<Box
-			flex={1}
 			alignContent='stretch'
 			{...restProps}
 			flexDirection={flexDirection}
