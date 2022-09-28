@@ -23,8 +23,8 @@ export interface IFormControHelperTextProps {
 	error?: string,
 	errorIcon?: string,
 
-	__hint?: IFormControlProps['__hint'],
-	__error?: IFormControlProps['__error'],
+	__hintText?: IFormControlProps['__hintText'],
+	__errorText?: IFormControlProps['__errorText'],
 	__errorIcon?: IFormControlProps['__errorIcon'],
 
 	testID?: string

@@ -1,7 +1,9 @@
 import * as React from 'react';
 
-import { StyleSheet, TextInput, View } from 'react-native';
-import { VStack, FormControl, Text } from '@amalgama/react-native-ui-kit';
+import { StyleSheet, View } from 'react-native';
+import {
+	VStack, FormControl, TextInput, Text
+} from '@amalgama/react-native-ui-kit';
 
 const styles = StyleSheet.create( {
 	container: {
@@ -17,12 +19,6 @@ const styles = StyleSheet.create( {
 		marginTop: 2,
 		marginBottom: 6,
 		backgroundColor: 'black'
-	},
-	textInput: {
-		height: 30,
-		width: '100%',
-		borderBottomWidth: 1,
-		borderBottomColor: '#888'
 	}
 } );
 
@@ -37,9 +33,7 @@ const FormControlExamples = () => (
 			label="Email"
 			isRequired
 		>
-			<TextInput
-				style={styles.textInput}
-				placeholder="Enter your email address"
+			<TextInput placeholder="Enter your email address"
 			/>
 		</FormControl>
 
@@ -51,10 +45,7 @@ const FormControlExamples = () => (
 		<FormControl
 			label="Email"
 		>
-			<TextInput
-				style={styles.textInput}
-				placeholder="Enter your email address"
-			/>
+			<TextInput placeholder="Enter your email address" />
 		</FormControl>
 
 		<View style={styles.vspace} />
@@ -67,9 +58,7 @@ const FormControlExamples = () => (
 			hint="Remember to enter a valid email address"
 			isRequired
 		>
-			<TextInput
-				style={styles.textInput}
-				placeholder="Enter your email address"
+			<TextInput placeholder="Enter your email address"
 			/>
 		</FormControl>
 
@@ -81,10 +70,7 @@ const FormControlExamples = () => (
 		<FormControl
 			hint="Remember to enter a valid email address"
 		>
-			<TextInput
-				style={styles.textInput}
-				placeholder="Enter your email address"
-			/>
+			<TextInput placeholder="Enter your email address" />
 		</FormControl>
 
 		<View style={styles.vspace} />
@@ -97,10 +83,7 @@ const FormControlExamples = () => (
 			error="The email is not valid!"
 			isRequired
 		>
-			<TextInput
-				style={styles.textInput}
-				placeholder="Enter your email address"
-			/>
+			<TextInput value="invalid-email" error />
 		</FormControl>
 
 		<View style={styles.vspace} />

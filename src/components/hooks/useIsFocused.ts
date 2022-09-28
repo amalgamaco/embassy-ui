@@ -1,9 +1,9 @@
 import { useCallback, useState } from 'react';
-import type { PressableProps, NativeSyntheticEvent, TargetedEvent } from 'react-native';
+import type { PressableProps, TextInputProps } from 'react-native';
 
 interface IUseIsFocusedState {
-	onFocus?: PressableProps[ 'onFocus' ],
-	onBlur?: PressableProps[ 'onBlur' ]
+	onFocus?: PressableProps[ 'onFocus' ] | TextInputProps[ 'onFocus' ],
+	onBlur?: PressableProps[ 'onBlur' ] | TextInputProps[ 'onBlur' ]
 }
 
 const useIsFocused = ( {
@@ -12,12 +12,12 @@ const useIsFocused = ( {
 }: IUseIsFocusedState ) => {
 	const [ isFocused, setIsFocused ] = useState( false );
 
-	const onFocus = useCallback( ( event: NativeSyntheticEvent<TargetedEvent> ) => {
+	const onFocus = useCallback( ( event ) => {
 		onFocusProp?.( event );
 		setIsFocused( true );
 	}, [ setIsFocused ] );
 
-	const onBlur = useCallback( ( event: NativeSyntheticEvent<TargetedEvent> ) => {
+	const onBlur = useCallback( ( event ) => {
 		onBlurProp?.( event );
 		setIsFocused( false );
 	}, [ setIsFocused ] );

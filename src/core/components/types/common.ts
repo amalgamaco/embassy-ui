@@ -1,7 +1,7 @@
 import type { StyledProps } from '../../theme/types';
 
 export type ComponentName = 'Text' | 'Box' | 'Stack' | 'Button' | 'Pressable' | 'Icon' | 'Checkbox'
-| 'IconButton' | 'Radio' | 'FormControl';
+| 'IconButton' | 'Radio' | 'FormControl' | 'TextInput';
 
 export type VariantName = string;
 

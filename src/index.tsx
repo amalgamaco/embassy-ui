@@ -15,6 +15,7 @@ export {
 	Text,
 	Checkbox,
 	Radio,
-	FormControl
+	FormControl,
+	TextInput
 } from './components';
 export { UIKitIcon };

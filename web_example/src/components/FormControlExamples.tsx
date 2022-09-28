@@ -1,7 +1,10 @@
 import * as React from 'react';
 
-import { StyleSheet, TextInput, View } from 'react-native';
-import { VStack, FormControl, Text } from '@amalgama/react-native-ui-kit';
+import { StyleSheet, View } from 'react-native';
+import {
+	VStack, FormControl, TextInput, Text,
+	Checkbox, Radio
+} from '@amalgama/react-native-ui-kit';
 
 const styles = StyleSheet.create( {
 	container: {
@@ -17,12 +20,6 @@ const styles = StyleSheet.create( {
 		marginTop: 2,
 		marginBottom: 6,
 		backgroundColor: 'black'
-	},
-	textInput: {
-		height: 30,
-		width: '100%',
-		borderBottomWidth: 1,
-		borderBottomColor: '#888'
 	}
 } );
 
@@ -37,10 +34,7 @@ const FormControlExamples = () => (
 			label="Email"
 			isRequired
 		>
-			<TextInput
-				style={styles.textInput}
-				placeholder="Enter your email address"
-			/>
+			<TextInput placeholder="Enter your email address" />
 		</FormControl>
 
 		<View style={styles.vspace} />
@@ -51,10 +45,7 @@ const FormControlExamples = () => (
 		<FormControl
 			label="Email"
 		>
-			<TextInput
-				style={styles.textInput}
-				placeholder="Enter your email address"
-			/>
+			<TextInput placeholder="Enter your email address" />
 		</FormControl>
 
 		<View style={styles.vspace} />
@@ -67,10 +58,7 @@ const FormControlExamples = () => (
 			hint="Remember to enter a valid email address"
 			isRequired
 		>
-			<TextInput
-				style={styles.textInput}
-				placeholder="Enter your email address"
-			/>
+			<TextInput placeholder="Enter your email address" />
 		</FormControl>
 
 		<View style={styles.vspace} />
@@ -81,14 +69,10 @@ const FormControlExamples = () => (
 		<FormControl
 			hint="Remember to enter a valid email address"
 		>
-			<TextInput
-				style={styles.textInput}
-				placeholder="Enter your email address"
-			/>
+			<TextInput placeholder="Enter your email address" />
 		</FormControl>
 
 		<View style={styles.vspace} />
-
 		<Text variant="sh1" color="primary.800">With error</Text>
 		<View style={styles.separator} />
 
@@ -97,10 +81,41 @@ const FormControlExamples = () => (
 			error="The email is not valid!"
 			isRequired
 		>
-			<TextInput
-				style={styles.textInput}
-				placeholder="Enter your email address"
-			/>
+			<TextInput value="invalid-email" error />
+		</FormControl>
+
+		<View style={styles.vspace} />
+		<Text variant="sh1" color="primary.800">With Checkboxes</Text>
+		<View style={styles.separator} />
+
+		<FormControl
+			label="What are your favorite languages?"
+			error="You have to select at least one!"
+			isRequired
+		>
+			<Checkbox.Group>
+				<Checkbox label="Javascript" value="js" />
+				<Checkbox label="Typescript" value="ts" />
+				<Checkbox label="Ruby" value="rb" />
+				<Checkbox label="Python" value="py" />
+			</Checkbox.Group>
+		</FormControl>
+
+		<View style={styles.vspace} />
+		<Text variant="sh1" color="primary.800">With Radios</Text>
+		<View style={styles.separator} />
+
+		<FormControl
+			label="What is your favorite language?"
+			error="You have to select one!"
+			isRequired
+		>
+			<Radio.Group>
+				<Radio label="Javascript" value="js" />
+				<Radio label="Typescript" value="ts" />
+				<Radio label="Ruby" value="rb" />
+				<Radio label="Python" value="py" />
+			</Radio.Group>
 		</FormControl>
 
 		<View style={styles.vspace} />
