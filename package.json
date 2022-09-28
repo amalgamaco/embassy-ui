@@ -1,6 +1,6 @@
 {
   "name": "@amalgama/react-native-ui-kit",
-  "version": "0.1.0",
+  "version": "0.0.1",
   "description": "A set of UI components following Amalgama's Design System.",
   "main": "lib/commonjs/index",
   "module": "lib/module/index",
@@ -131,7 +131,7 @@
       "requireCleanWorkingDir": false,
       "requireUpstream": true,
       "commitMessage": "Release v${version}",
-      "changelog": "--issue-url https://git.amalgama.co/amalgama/packages/npm/react-native-ui-kit/-/issues/{id} --merge-url https://git.amalgama.co/amalgama/packages/npm/react-native-ui-kit/-/merge_requests/{id} --commit-url https://git.amalgama.co/amalgama/packages/npm/react-native-ui-kit/-/commit/{id}"
+      "changelog": "npx auto-changelog --stdout --commit-limit false --unreleased --issue-url https://git.amalgama.co/amalgama/packages/npm/react-native-ui-kit/-/issues/{id} --merge-url https://git.amalgama.co/amalgama/packages/npm/react-native-ui-kit/-/merge_requests/{id} --commit-url https://git.amalgama.co/amalgama/packages/npm/react-native-ui-kit/-/commit/{id}"
     },
     "hooks": {
       "after:bump": "npx auto-changelog -p"
