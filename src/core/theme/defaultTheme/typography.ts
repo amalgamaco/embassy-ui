@@ -1,28 +1,27 @@
 const typography = {
 	letterSpacings: {
+		'2xs': -0.8,
 		'xs': -0.4,
-		'sm': 0,
-		'md': 0.1,
-		'lg': 0.15,
-		'xl': 0.18,
-		'2xl': 0.25
+		'sm': 0.1,
+		'md': 0.4,
+		'lg': 0.8,
+		'xl': 1.6
 	},
 	lineHeights: {
-		'xs': 16,
-		'sm': 18,
-		'md': 20,
+		'2xs': 16,
+		'xs': 18,
+		'sm': 20,
+		'md': 22,
 		'lg': 24,
 		'xl': 28,
 		'2xl': 32,
-		'3xl': 42,
-		'4xl': 48,
-		'5xl': 64
+		'3xl': 40
 	},
 	fontWeights: {
-		hairline: '100',
-		thin: '200',
+		thin: '100',
+		xlight: '200',
 		light: '300',
-		normal: '400',
+		regular: '400',
 		medium: '500',
 		semibold: '600',
 		bold: '700',
@@ -30,20 +29,14 @@ const typography = {
 		black: '900'
 	},
 	fontSizes: {
-		'2xs': 10,
-		'xs': 12,
-		'sm': 14,
-		'md': 16,
-		'lg': 18,
-		'xl': 20,
-		'2xl': 24,
-		'3xl': 30,
-		'4xl': 34,
-		'5xl': 48,
-		'6xl': 60,
-		'7xl': 72,
-		'8xl': 96,
-		'9xl': 128
+		'2xs': 12,
+		'xs': 14,
+		'sm': 16,
+		'md': 18,
+		'lg': 20,
+		'xl': 24,
+		'2xl': 30,
+		'3xl': 32
 	},
 	fonts: {
 		'Epilogue': {
@@ -86,31 +79,40 @@ const typography = {
 		},
 		'Inter': {
 			100: {
-				normal: 'Inter-Thin'
+				normal: 'Inter-Thin',
+				italic: 'Inter-ThinItalic'
 			},
 			200: {
-				normal: 'Inter-ExtraLight'
+				normal: 'Inter-ExtraLight',
+				italic: 'Inter-ExtraLightItalic'
 			},
 			300: {
-				normal: 'Inter-Light'
+				normal: 'Inter-Light',
+				italic: 'Inter-LightItalic'
 			},
 			400: {
-				normal: 'Inter-Regular'
+				normal: 'Inter-Regular',
+				italic: 'Inter-Italic'
 			},
 			500: {
-				normal: 'Inter-Medium'
+				normal: 'Inter-Medium',
+				italic: 'Inter-MediumItalic'
 			},
 			600: {
-				normal: 'Inter-SemiBold'
+				normal: 'Inter-SemiBold',
+				italic: 'Inter-SemiBoldItalic'
 			},
 			700: {
-				normal: 'Inter-Bold'
+				normal: 'Inter-Bold',
+				italic: 'Inter-BoldItalic'
 			},
 			800: {
-				normal: 'Inter-ExtraBold'
+				normal: 'Inter-ExtraBold',
+				italic: 'Inter-ExtraBoldItalic'
 			},
 			900: {
-				normal: 'Inter-Black'
+				normal: 'Inter-Black',
+				italic: 'Inter-BlackItalic'
 			}
 		}
 	}

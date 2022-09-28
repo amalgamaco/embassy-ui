@@ -37,140 +37,140 @@ const styles = StyleSheet.create( {
 
 const IconExamples = () => (
 	<VStack style={styles.container} space="2">
-		<Text variant="h1" bgColor="primary.200">Icon Component</Text>
+		<Text variant="headline">Icon Component</Text>
 		<View style={styles.vspace} />
-		<Text variant="sh1" color="primary.800">Icon sets</Text>
+		<Text variant="subtitle">Icon sets</Text>
 		<View style={styles.separator} />
 		<Text variant="sh2" color="primary.800">AntDesign</Text>
 		<HStack mb={5} justifyContent="space-between">
-			<Icon name="heart" size="md" as={AntDesign} />
-			<Icon name="check" size="md" as={AntDesign} />
-			<Icon name="close" size="md" as={AntDesign} />
-			<Icon name="plus" size="md" as={AntDesign} />
-			<Icon name="minus" size="md" as={AntDesign} />
-			<Icon name="calendar" size="md" as={AntDesign} />
-			<Icon name="wechat" size="md" as={AntDesign} />
+			<Icon name="heart" as={AntDesign} />
+			<Icon name="check" as={AntDesign} />
+			<Icon name="close" as={AntDesign} />
+			<Icon name="plus" as={AntDesign} />
+			<Icon name="minus" as={AntDesign} />
+			<Icon name="calendar" as={AntDesign} />
+			<Icon name="wechat" as={AntDesign} />
 		</HStack>
 		<Text variant="sh2" color="primary.800">Entypo</Text>
 		<HStack mb={5} justifyContent="space-between">
-			<Icon name="heart" size="md" as={Entypo} />
-			<Icon name="check" size="md" as={Entypo} />
-			<Icon name="cross" size="md" as={Entypo} />
-			<Icon name="plus" size="md" as={Entypo} />
-			<Icon name="minus" size="md" as={Entypo} />
-			<Icon name="calendar" size="md" as={Entypo} />
-			<Icon name="chat" size="md" as={Entypo} />
+			<Icon name="heart" as={Entypo} />
+			<Icon name="check" as={Entypo} />
+			<Icon name="cross" as={Entypo} />
+			<Icon name="plus" as={Entypo} />
+			<Icon name="minus" as={Entypo} />
+			<Icon name="calendar" as={Entypo} />
+			<Icon name="chat" as={Entypo} />
 		</HStack>
 		<Text variant="sh2" color="primary.800">EvilIcons</Text>
 		<HStack mb={5} justifyContent="space-between">
-			<Icon name="heart" size="md" as={EvilIcons} />
-			<Icon name="check" size="md" as={EvilIcons} />
-			<Icon name="close" size="md" as={EvilIcons} />
-			<Icon name="plus" size="md" as={EvilIcons} />
-			<Icon name="minus" size="md" as={EvilIcons} />
-			<Icon name="calendar" size="md" as={EvilIcons} />
-			<Icon name="comment" size="md" as={EvilIcons} />
+			<Icon name="heart" as={EvilIcons} />
+			<Icon name="check" as={EvilIcons} />
+			<Icon name="close" as={EvilIcons} />
+			<Icon name="plus" as={EvilIcons} />
+			<Icon name="minus" as={EvilIcons} />
+			<Icon name="calendar" as={EvilIcons} />
+			<Icon name="comment" as={EvilIcons} />
 		</HStack>
 		<Text variant="sh2" color="primary.800">Feather</Text>
 		<HStack mb={5} justifyContent="space-between">
-			<Icon name="heart" size="md" as={Feather} />
-			<Icon name="check" size="md" as={Feather} />
-			<Icon name="x" size="md" as={Feather} />
-			<Icon name="plus" size="md" as={Feather} />
-			<Icon name="minus" size="md" as={Feather} />
-			<Icon name="calendar" size="md" as={Feather} />
-			<Icon name="message-circle" size="md" as={Feather} />
+			<Icon name="heart" as={Feather} />
+			<Icon name="check" as={Feather} />
+			<Icon name="x" as={Feather} />
+			<Icon name="plus" as={Feather} />
+			<Icon name="minus" as={Feather} />
+			<Icon name="calendar" as={Feather} />
+			<Icon name="message-circle" as={Feather} />
 		</HStack>
 		<Text variant="sh2" color="primary.800">Fontawesome</Text>
 		<HStack mb={5} justifyContent="space-between">
-			<Icon name="heart" size="md" as={FontAwesome} />
-			<Icon name="check" size="md" as={FontAwesome} />
-			<Icon name="close" size="md" as={FontAwesome} />
-			<Icon name="plus" size="md" as={FontAwesome} />
-			<Icon name="minus" size="md" as={FontAwesome} />
-			<Icon name="calendar" size="md" as={FontAwesome} />
-			<Icon name="comment" size="md" as={FontAwesome} />
+			<Icon name="heart" as={FontAwesome} />
+			<Icon name="check" as={FontAwesome} />
+			<Icon name="close" as={FontAwesome} />
+			<Icon name="plus" as={FontAwesome} />
+			<Icon name="minus" as={FontAwesome} />
+			<Icon name="calendar" as={FontAwesome} />
+			<Icon name="comment" as={FontAwesome} />
 		</HStack>
 		<Text variant="sh2" color="primary.800">Fontisto</Text>
 		<HStack mb={5} justifyContent="space-between">
-			<Icon name="heart" size="md" as={Fontisto} />
-			<Icon name="check" size="md" as={Fontisto} />
-			<Icon name="close-a" size="md" as={Fontisto} />
-			<Icon name="plus-a" size="md" as={Fontisto} />
-			<Icon name="minus-a" size="md" as={Fontisto} />
-			<Icon name="calendar" size="md" as={Fontisto} />
-			<Icon name="comment" size="md" as={Fontisto} />
+			<Icon name="heart" as={Fontisto} />
+			<Icon name="check" as={Fontisto} />
+			<Icon name="close-a" as={Fontisto} />
+			<Icon name="plus-a" as={Fontisto} />
+			<Icon name="minus-a" as={Fontisto} />
+			<Icon name="calendar" as={Fontisto} />
+			<Icon name="comment" as={Fontisto} />
 		</HStack>
 		<Text variant="sh2" color="primary.800">Foundation</Text>
 		<HStack mb={5} justifyContent="space-between">
-			<Icon name="heart" size="md" as={Foundation} />
-			<Icon name="check" size="md" as={Foundation} />
-			<Icon name="x" size="md" as={Foundation} />
-			<Icon name="plus" size="md" as={Foundation} />
-			<Icon name="minus" size="md" as={Foundation} />
-			<Icon name="calendar" size="md" as={Foundation} />
-			<Icon name="comment" size="md" as={Foundation} />
+			<Icon name="heart" as={Foundation} />
+			<Icon name="check" as={Foundation} />
+			<Icon name="x" as={Foundation} />
+			<Icon name="plus" as={Foundation} />
+			<Icon name="minus" as={Foundation} />
+			<Icon name="calendar" as={Foundation} />
+			<Icon name="comment" as={Foundation} />
 		</HStack>
 		<Text variant="sh2" color="primary.800">Ionicons</Text>
 		<HStack mb={5} justifyContent="space-between">
-			<Icon name="heart" size="md" as={Ionicons} />
-			<Icon name="checkmark" size="md" as={Ionicons} />
-			<Icon name="close" size="md" as={Ionicons} />
-			<Icon name="md-add" size="md" as={Ionicons} />
-			<Icon name="md-remove" size="md" as={Ionicons} />
-			<Icon name="calendar" size="md" as={Ionicons} />
-			<Icon name="chatbubble-outline" size="md" as={Ionicons} />
+			<Icon name="heart" as={Ionicons} />
+			<Icon name="checkmark" as={Ionicons} />
+			<Icon name="close" as={Ionicons} />
+			<Icon name="md-add" as={Ionicons} />
+			<Icon name="md-remove" as={Ionicons} />
+			<Icon name="calendar" as={Ionicons} />
+			<Icon name="chatbubble-outline" as={Ionicons} />
 		</HStack>
 		<Text variant="sh2" color="primary.800">MaterialCommunityIcons</Text>
 		<HStack mb={5} justifyContent="space-between">
-			<Icon name="heart" size="md" as={MaterialCommunityIcons} />
-			<Icon name="check" size="md" as={MaterialCommunityIcons} />
-			<Icon name="close" size="md" as={MaterialCommunityIcons} />
-			<Icon name="plus" size="md" as={MaterialCommunityIcons} />
-			<Icon name="minus" size="md" as={MaterialCommunityIcons} />
-			<Icon name="calendar" size="md" as={MaterialCommunityIcons} />
-			<Icon name="comment" size="md" as={MaterialCommunityIcons} />
+			<Icon name="heart" as={MaterialCommunityIcons} />
+			<Icon name="check" as={MaterialCommunityIcons} />
+			<Icon name="close" as={MaterialCommunityIcons} />
+			<Icon name="plus" as={MaterialCommunityIcons} />
+			<Icon name="minus" as={MaterialCommunityIcons} />
+			<Icon name="calendar" as={MaterialCommunityIcons} />
+			<Icon name="comment" as={MaterialCommunityIcons} />
 		</HStack>
 		<Text variant="sh2" color="primary.800">Octicons</Text>
 		<HStack mb={5} justifyContent="space-between">
-			<Icon name="heart" size="md" as={Octicons} />
-			<Icon name="check" size="md" as={Octicons} />
-			<Icon name="x" size="md" as={Octicons} />
-			<Icon name="plus" size="md" as={Octicons} />
-			<Icon name="dash" size="md" as={Octicons} />
-			<Icon name="calendar" size="md" as={Octicons} />
-			<Icon name="comment" size="md" as={Octicons} />
+			<Icon name="heart" as={Octicons} />
+			<Icon name="check" as={Octicons} />
+			<Icon name="x" as={Octicons} />
+			<Icon name="plus" as={Octicons} />
+			<Icon name="dash" as={Octicons} />
+			<Icon name="calendar" as={Octicons} />
+			<Icon name="comment" as={Octicons} />
 		</HStack>
 		<Text variant="sh2" color="primary.800">SimpleLineIcons</Text>
 		<HStack mb={5} justifyContent="space-between">
-			<Icon name="heart" size="md" as={SimpleLineIcons} />
-			<Icon name="check" size="md" as={SimpleLineIcons} />
-			<Icon name="close" size="md" as={SimpleLineIcons} />
-			<Icon name="plus" size="md" as={SimpleLineIcons} />
-			<Icon name="minus" size="md" as={SimpleLineIcons} />
-			<Icon name="calendar" size="md" as={SimpleLineIcons} />
-			<Icon name="bubble" size="md" as={SimpleLineIcons} />
+			<Icon name="heart" as={SimpleLineIcons} />
+			<Icon name="check" as={SimpleLineIcons} />
+			<Icon name="close" as={SimpleLineIcons} />
+			<Icon name="plus" as={SimpleLineIcons} />
+			<Icon name="minus" as={SimpleLineIcons} />
+			<Icon name="calendar" as={SimpleLineIcons} />
+			<Icon name="bubble" as={SimpleLineIcons} />
 		</HStack>
 		<Text variant="sh2" color="primary.800">Zocial</Text>
 		<HStack mb={5} justifyContent="space-between">
-			<Icon name="amazon" size="md" as={Zocial} />
-			<Icon name="android" size="md" as={Zocial} />
-			<Icon name="appstore" size="md" as={Zocial} />
-			<Icon name="stackoverflow" size="md" as={Zocial} />
-			<Icon name="reddit" size="md" as={Zocial} />
-			<Icon name="wikipedia" size="md" as={Zocial} />
-			<Icon name="github" size="md" as={Zocial} />
+			<Icon name="amazon" as={Zocial} />
+			<Icon name="android" as={Zocial} />
+			<Icon name="appstore" as={Zocial} />
+			<Icon name="stackoverflow" as={Zocial} />
+			<Icon name="reddit" as={Zocial} />
+			<Icon name="wikipedia" as={Zocial} />
+			<Icon name="github" as={Zocial} />
 		</HStack>
-		<Text variant="sh1" color="primary.800">Sizes</Text>
+		<Text variant="subtitle">Sizes</Text>
 		<View style={styles.separator} />
 		<HStack space={2}>
+			<Icon name="heart" color="error.700" size="2xs" />
 			<Icon name="heart" color="information.100" size="xs" />
 			<Icon name="heart" color="success.200" size="sm" />
 			<Icon name="heart" color="success.300" size="md" />
 			<Icon name="heart" color="accent.400" size="lg" />
 			<Icon name="heart" color="error.500" size="xl" />
 			<Icon name="heart" color="success.600" size="2xl" />
-			<Icon name="heart" color="error.700" size="3xl" />
 		</HStack>
 	</VStack>
 );

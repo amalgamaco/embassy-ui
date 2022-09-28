@@ -3,9 +3,8 @@ export default {
 		flexShrink: 1,
 		outlineStyle: 'none',
 		__icon: {
-			size: 'sm',
-			color: 'neutral.800',
-			borderColor: 'neutral.800'
+			size: 'xs',
+			color: 'neutral.600'
 		},
 		__iconContainer: {
 			justifyContent: 'center',
@@ -15,11 +14,14 @@ export default {
 		},
 		__label: {
 			variant: 'body',
-			color: 'neutral.800'
+			color: 'neutral.500'
 		},
 		__disabled: {
 			__icon: {
-				color: 'neutral.600'
+				color: 'neutral.200'
+			},
+			__label: {
+				color: 'neutral.200'
 			}
 		},
 		__selected: {

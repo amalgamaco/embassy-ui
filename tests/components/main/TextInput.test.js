@@ -45,7 +45,7 @@ describe( 'TextInput', () => {
 
 		expect( getByTestId( 'test-text-input' ) ).toHaveStyle( {
 			borderWidth: 1,
-			borderRadius: 8,
+			borderRadius: 12,
 			borderColor: '#4F5C7B',
 			padding: 1
 		} );
@@ -83,7 +83,7 @@ describe( 'TextInput', () => {
 			const { getByTestId } = renderComponent( { disabled: true } );
 
 			expect( getByTestId( 'test-text-input' ) ).toHaveStyle( {
-				backgroundColor: '#F3F3F3'
+				backgroundColor: '#EAEBFE'
 			} );
 
 			expect( getByTestId( 'test-text-input-rn' ) ).toHaveStyle( {
@@ -115,7 +115,7 @@ describe( 'TextInput', () => {
 			const { getByTestId } = renderComponent( { error: true } );
 
 			expect( getByTestId( 'test-text-input' ) ).toHaveStyle( {
-				borderColor: '#F8727D'
+				borderColor: '#FD3A45'
 			} );
 		} );
 	} );

@@ -21,9 +21,9 @@ const styles = {
 
 const TextInputExamples = () => (
 	<VStack>
-		<Text variant="h1" bgColor="primary.200">Text Input Component</Text>
+		<Text variant="headline">Text Input Component</Text>
 		<View style={styles.vspace} />
-		<Text variant="sh1" color="primary.800">Enabled</Text>
+		<Text variant="subtitle">Enabled</Text>
 		<View style={styles.separator} />
 		<View style={styles.vspace} />
 		<View style={{ width: 327 }}>
@@ -33,7 +33,7 @@ const TextInputExamples = () => (
 		</View>
 		<View style={styles.vspace} />
 
-		<Text variant="sh1" color="primary.800">Disabled</Text>
+		<Text variant="subtitle">Disabled</Text>
 		<View style={styles.separator} />
 		<View style={styles.vspace} />
 		<View style={{ width: 327 }}>
@@ -43,7 +43,7 @@ const TextInputExamples = () => (
 		</View>
 		<View style={styles.vspace} />
 
-		<Text variant="sh1" color="primary.800">Error</Text>
+		<Text variant="subtitle">Error</Text>
 		<View style={styles.separator} />
 		<View style={styles.vspace} />
 		<View style={{ width: 327 }}>

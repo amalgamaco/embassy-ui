@@ -16,6 +16,7 @@ import CheckboxExamples from './components/CheckboxExamples';
 import RadioExamples from './components/RadioExamples';
 import FormControlExamples from './components/FormControlExamples';
 import TextInputExamples from './components/TextInputExamples';
+import PaletteColorGrid from './components/PaletteColorGrid';
 
 const customTheme = extendThemeConfig( {
 	palette: {
@@ -50,19 +51,38 @@ const customTheme = extendThemeConfig( {
 				900: { normal: 'Epilogue', italic: 'Epilogue' }
 			},
 			'Inter': {
-				100: { normal: 'Inter' },
-				200: { normal: 'Inter' },
-				300: { normal: 'Inter' },
-				400: { normal: 'Inter' },
-				500: { normal: 'Inter' },
-				600: { normal: 'Inter' },
-				700: { normal: 'Inter' },
-				800: { normal: 'Inter' },
-				900: { normal: 'Inter' }
+				100: { normal: 'Inter', italic: 'Inter' },
+				200: { normal: 'Inter', italic: 'Inter' },
+				300: { normal: 'Inter', italic: 'Inter' },
+				400: { normal: 'Inter', italic: 'Inter' },
+				500: { normal: 'Inter', italic: 'Inter' },
+				600: { normal: 'Inter', italic: 'Inter' },
+				700: { normal: 'Inter', italic: 'Inter' },
+				800: { normal: 'Inter', italic: 'Inter' },
+				900: { normal: 'Inter', italic: 'Inter' }
 			}
 		}
 	},
 	components: {
+		Text: {
+			variants: {
+				'headline': {
+					font: 'Epilogue',
+					fontSize: '3xl',
+					fontWeight: 'bold',
+					lineHeight: '3xl',
+					letterSpacing: 'md',
+					bg: 'secondary.100'
+				},
+				'subtitle': {
+					font: 'Epilogue',
+					fontSize: 'md',
+					lineHeight: 'md',
+					letterSpacing: 'md',
+					color: 'primary.800'
+				}
+			}
+		},
 		Button: {
 			variants: {
 				custom: {
@@ -93,6 +113,7 @@ export default function App() {
 		<ThemeProvider theme={customTheme}>
 			<Box flex={1} alignItems="center">
 				<VStack width="500px">
+					<PaletteColorGrid />
 					<TextExamples />
 					<BoxExamples />
 					<ButtonExamples />

@@ -67,7 +67,7 @@ describe( 'Text', () => {
 	it( 'translates the fontSize property correctly', () => {
 		const { getByTestId } = renderText(
 			'Test!',
-			{ fontSize: 'xs' }
+			{ fontSize: '2xs' }
 		);
 
 		expect( getByTestId( 'test-text' ) ).toHaveStyle( {
@@ -93,7 +93,7 @@ describe( 'Text', () => {
 		);
 
 		expect( getByTestId( 'test-text' ) ).toHaveStyle( {
-			letterSpacing: 0.15
+			letterSpacing: 0.8
 		} );
 	} );
 
@@ -104,7 +104,7 @@ describe( 'Text', () => {
 		);
 
 		expect( getByTestId( 'test-text' ) ).toHaveStyle( {
-			color: '#999AB8'
+			color: '#475993'
 		} );
 	} );
 
@@ -115,7 +115,7 @@ describe( 'Text', () => {
 		);
 
 		expect( getByTestId( 'test-text' ) ).toHaveStyle( {
-			backgroundColor: '#999AB8'
+			backgroundColor: '#475993'
 		} );
 	} );
 

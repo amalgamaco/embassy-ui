@@ -14,6 +14,7 @@ import CheckboxExamples from './components/CheckboxExamples';
 import RadioExamples from './components/RadioExamples';
 import FormControlExamples from './components/FormControlExamples';
 import TextInputExamples from './components/TextInputExamples';
+import PaletteColorGrid from './components/PaletteColorGrid';
 
 const styles = StyleSheet.create( {
 	container: {
@@ -46,6 +47,25 @@ const customTheme = extendThemeConfig( {
 		}
 	},
 	components: {
+		Text: {
+			variants: {
+				'headline': {
+					font: 'Epilogue',
+					fontSize: '3xl',
+					fontWeight: 'bold',
+					lineHeight: '3xl',
+					letterSpacing: 'md',
+					bg: 'secondary.100'
+				},
+				'subtitle': {
+					font: 'Epilogue',
+					fontSize: 'md',
+					lineHeight: 'md',
+					letterSpacing: 'md',
+					color: 'primary.800'
+				}
+			}
+		},
 		Button: {
 			variants: {
 				custom: {
@@ -84,6 +104,7 @@ export default function App() {
 			<SafeAreaView style={styles.container}>
 				<ScrollView contentContainerStyle={styles.scroll}>
 					<VStack>
+						<PaletteColorGrid />
 						<TextExamples />
 						<BoxExamples />
 						<ButtonExamples />

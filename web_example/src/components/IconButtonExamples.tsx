@@ -1,10 +1,8 @@
-/* eslint-disable no-alert */
 import React from 'react';
-import { StyleSheet, View } from 'react-native';
-import Octicons from 'react-native-vector-icons/Octicons';
+import { Alert, StyleSheet } from 'react-native';
 
 import {
-	IconButton, VStack, Text
+	IconButton, VStack, HStack, Text
 } from '@amalgama/react-native-ui-kit';
 
 const styles = StyleSheet.create( {
@@ -17,25 +15,20 @@ const styles = StyleSheet.create( {
 	}
 } );
 
-const onPressRed = () => window.alert( 'You pressed the red heart' );
-const onPressBlack = () => window.alert( 'You pressed the black heart' );
+const onPressed = () => Alert.alert( 'Pressed!' );
 
 const IconButtonExamples = () => (
 	<VStack style={styles.container} space="2">
-		<Text variant="h1" bgColor="primary.200">IconButton Component</Text>
-		<View style={styles.vspace} />
-		<IconButton
-			name='heart'
-			onPress={onPressRed}
-			__icon={{ size: '3xl', color: 'error.900' }}
-			mx={1}
-		/>
-		<IconButton
-			name='heart'
-			onPress={onPressBlack}
-			as={Octicons}
-			__icon={{ size: 'xl' }}
-		/>
+		<Text variant="headline">IconButton Component</Text>
+		<HStack space={2}>
+			<IconButton name="heart" onPress={onPressed} color="error.700" size="2xs" />
+			<IconButton name="heart" onPress={onPressed} color="information.100" size="xs" />
+			<IconButton name="heart" onPress={onPressed} color="success.200" size="sm" />
+			<IconButton name="heart" onPress={onPressed} color="success.300" size="md" />
+			<IconButton name="heart" onPress={onPressed} color="accent.400" size="lg" />
+			<IconButton name="heart" onPress={onPressed} color="error.500" size="xl" />
+			<IconButton name="heart" onPress={onPressed} color="success.600" size="2xl" />
+		</HStack>
 	</VStack>
 );
 

@@ -43,9 +43,9 @@ const CheckboxExamples = () => {
 
 	return (
 		<VStack style={styles.container}>
-			<Text variant="h1" bgColor="primary.200">Checkbox Component</Text>
+			<Text variant="headline">Checkbox Component</Text>
 			<View style={styles.vspace} />
-			<Text variant="sh1" color="primary.800">Enabled</Text>
+			<Text variant="subtitle">Enabled</Text>
 			<View style={styles.separator} />
 
 			<HStack>
@@ -55,7 +55,7 @@ const CheckboxExamples = () => {
 			</HStack>
 
 			<View style={styles.vspace} />
-			<Text variant="sh1" color="primary.800">Disabled</Text>
+			<Text variant="subtitle">Disabled</Text>
 			<View style={styles.separator} />
 
 			<HStack>
@@ -65,7 +65,7 @@ const CheckboxExamples = () => {
 			</HStack>
 
 			<View style={styles.vspace} />
-			<Text variant="sh1" color="primary.800">On Change</Text>
+			<Text variant="subtitle">On Change</Text>
 			<View style={styles.separator} />
 
 			<HStack>
@@ -74,7 +74,7 @@ const CheckboxExamples = () => {
 
 			<View style={styles.vspace} />
 
-			<Text variant="sh1" color="primary.800">With Label</Text>
+			<Text variant="subtitle">With Label</Text>
 			<View style={styles.separator} />
 
 			<VStack alignItems="flex-start" justifyContent="flex-start" alignContent="flex-start" space="0">
@@ -87,10 +87,10 @@ const CheckboxExamples = () => {
 
 			<View style={styles.vspace} />
 
-			<Text variant="h1" bgColor="primary.200">Checkbox Group Component</Text>
+			<Text variant="headline">Checkbox Group Component</Text>
 			<View style={styles.vspace} />
 
-			<Text variant="sh1" color="primary.800">Select multiple options</Text>
+			<Text variant="subtitle">Select multiple options</Text>
 			<View style={styles.separator} />
 
 			<Checkbox.Group
@@ -103,7 +103,7 @@ const CheckboxExamples = () => {
 			</Checkbox.Group>
 
 			<View style={styles.vspace} />
-			<Text variant="sh1" color="primary.800">Disabled</Text>
+			<Text variant="subtitle">Disabled</Text>
 			<View style={styles.separator} />
 
 			<Checkbox.Group

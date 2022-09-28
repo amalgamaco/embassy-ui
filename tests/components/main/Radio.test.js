@@ -36,7 +36,7 @@ describe( 'Radio', () => {
 
 	test( 'renders the unselected style when unselected', () => {
 		const { getByTestId } = renderRadio();
-		expect( getByTestId( `${TEST_ID}-icon` ) ).toHaveChildWithProp( 'stroke', '#676A79' );
+		expect( getByTestId( `${TEST_ID}-icon` ) ).toHaveChildWithProp( 'stroke', '#4F5C7B' );
 		accessibilityTest( { getByTestId } );
 	} );
 
@@ -67,7 +67,7 @@ describe( 'Radio', () => {
 		describe( 'when is unselected', () => {
 			it( 'should render the disabled style', () => {
 				const { getByTestId } = renderRadio( { disabled: true } );
-				expect( getByTestId( `${TEST_ID}-icon` ) ).toHaveChildWithProp( 'stroke', '#4F5C7B' );
+				expect( getByTestId( `${TEST_ID}-icon` ) ).toHaveChildWithProp( 'stroke', '#AAB2CC' );
 				accessibilityTest( { getByTestId, disabled: true } );
 			} );
 		} );
@@ -75,7 +75,7 @@ describe( 'Radio', () => {
 		describe( 'when is selected', () => {
 			it( 'should render the disabled style', () => {
 				const { getByTestId } = renderRadio( { disabled: true, selected: true } );
-				expect( getByTestId( `${TEST_ID}-icon` ) ).toHaveChildWithProp( 'stroke', '#4F5C7B' );
+				expect( getByTestId( `${TEST_ID}-icon` ) ).toHaveChildWithProp( 'stroke', '#AAB2CC' );
 				accessibilityTest( {
 					getByTestId, disabled: true, checked: true
 				} );
@@ -138,9 +138,9 @@ describe( 'Radio.Group', () => {
 	it( 'disables all the radio buttons when the group is disabled', () => {
 		const { getByTestId } = renderComponent( { disabled: true } );
 
-		expect( getByTestId( 'test-radio-1-icon' ) ).toHaveChildWithProp( 'stroke', '#4F5C7B' );
-		expect( getByTestId( 'test-radio-2-icon' ) ).toHaveChildWithProp( 'stroke', '#4F5C7B' );
-		expect( getByTestId( 'test-radio-3-icon' ) ).toHaveChildWithProp( 'stroke', '#4F5C7B' );
+		expect( getByTestId( 'test-radio-1-icon' ) ).toHaveChildWithProp( 'stroke', '#AAB2CC' );
+		expect( getByTestId( 'test-radio-2-icon' ) ).toHaveChildWithProp( 'stroke', '#AAB2CC' );
+		expect( getByTestId( 'test-radio-3-icon' ) ).toHaveChildWithProp( 'stroke', '#AAB2CC' );
 	} );
 
 	it( 'calls the onChange prop with the selected value when a radio is selected', () => {
