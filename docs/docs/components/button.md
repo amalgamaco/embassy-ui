@@ -103,3 +103,37 @@ An icon component to show at the right part of the button.
 ```tsx
 <Button width="300px" variant="priority" rightIcon={<Icon name="close" />}>Block</Button>
 ```
+
+## Pseudo Props
+
+### __label
+
+Props to be applied to the internal `Text` component showing the label text.
+
+| TYPE   | REQUIRED |
+| ------ | -------- |
+| ITextProps | No   |
+
+### __stack 
+
+Props to be applied to the internal `Stack` component which contains the label and the icons.
+
+| TYPE   | REQUIRED |
+| ------ | -------- |
+| IStackProps | No  |
+
+### __leftIcon
+
+Props to be applied to the internal `Icon` component showing the left icon.
+
+| TYPE   | REQUIRED |
+| ------ | -------- |
+| IIconProps | No   |
+
+### __rightIcon
+
+Props to be applied to the internal `Icon` component showing the right icon.
+
+| TYPE   | REQUIRED |
+| ------ | -------- |
+| IIconProps | No   |

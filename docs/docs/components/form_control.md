@@ -147,7 +147,7 @@ Shows an error text below the input.
 If the `hint` and `error` props are both provided, the `error` text takes precedence over the `hint` one.
 :::
 
-## Pseudo-props
+## Pseudo Props
 
 ### __label
 Props to be applied to the internal `Text` component showing the label.

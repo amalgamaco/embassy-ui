@@ -143,3 +143,13 @@ If the button is disabled or not. **Boolean**.
 ```tsx
 <IconButton size="md" name="plus" disabled />
 ```
+
+## Pseudo Props
+
+### __icon
+
+`Box` props to be applied to the internal `icon` component.
+
+| TYPE   | REQUIRED |
+| ------ | -------- |
+| IBoxProps | No  |
