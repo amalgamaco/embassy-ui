@@ -1,3 +1,33 @@
+const HEADLINE_VARIANT = Object.freeze( {
+	font: 'Epilogue',
+	fontWeight: 'bold',
+	letterSpacing: 'md'
+} );
+
+const BODY_VARIANT = Object.freeze( {
+	font: 'Inter',
+	fontSize: 'sm',
+	fontWeight: 'regular',
+	lineHeight: 'lg',
+	letterSpacing: 'sm'
+} );
+
+const SMALL_VARIANT = Object.freeze( {
+	font: 'Inter',
+	fontSize: 'xs',
+	fontWeight: 'regular',
+	letterSpacing: 'sm',
+	lineHeight: 'xs'
+} );
+
+const X_SMALL_VARIANT = Object.freeze( {
+	font: 'Inter',
+	fontSize: '2xs',
+	fontWeight: 'regular',
+	letterSpacing: 'sm',
+	lineHeight: '2xs'
+} );
+
 export default {
 	defaultProps: {
 		font: 'Inter',
@@ -6,53 +36,32 @@ export default {
 	},
 	variants: {
 		'h1': {
-			font: 'Epilogue',
+			...HEADLINE_VARIANT,
 			fontSize: '3xl',
-			fontWeight: 'bold',
-			lineHeight: '3xl',
-			letterSpacing: 'md'
+			lineHeight: '3xl'
 		},
 		'h2': {
-			font: 'Epilogue',
+			...HEADLINE_VARIANT,
 			fontSize: 'xl',
-			fontWeight: 'bold',
-			lineHeight: '2xl',
-			letterSpacing: 'md'
+			lineHeight: '2xl'
 		},
 		'h3': {
-			font: 'Epilogue',
+			...HEADLINE_VARIANT,
 			fontSize: 'lg',
-			fontWeight: 'bold',
-			lineHeight: 'xl',
-			letterSpacing: 'md'
+			lineHeight: 'xl'
 		},
 		'sh': {
-			font: 'Epilogue',
+			...HEADLINE_VARIANT,
 			fontSize: 'sm',
-			fontWeight: 'bold',
-			lineHeight: 'md',
-			letterSpacing: 'md'
+			lineHeight: 'md'
 		},
-		'body': {
-			font: 'Inter',
-			fontSize: 'sm',
-			fontWeight: 'regular',
-			lineHeight: 'lg',
-			letterSpacing: 'sm'
-		},
+		'body': BODY_VARIANT,
 		'body-special': {
-			font: 'Inter',
-			fontSize: 'sm',
-			fontWeight: 'bold',
-			lineHeight: 'lg',
-			letterSpacing: 'sm'
+			...BODY_VARIANT,
+			fontWeight: 'bold'
 		},
 		'body-italic': {
-			font: 'Inter',
-			fontSize: 'sm',
-			fontWeight: 'regular',
-			lineHeight: 'lg',
-			letterSpacing: 'sm',
+			...BODY_VARIANT,
 			fontStyle: 'italic'
 		},
 		'links': {
@@ -63,48 +72,22 @@ export default {
 			letterSpacing: 'sm',
 			textDecoration: 'underline'
 		},
-		'small': {
-			font: 'Inter',
-			fontSize: 'xs',
-			fontWeight: 'regular',
-			letterSpacing: 'sm',
-			lineHeight: 'xs'
-		},
+		'small': SMALL_VARIANT,
 		'small-bold': {
-			font: 'Inter',
-			fontSize: 'xs',
-			fontWeight: 'bold',
-			letterSpacing: 'sm',
-			lineHeight: 'xs'
+			...SMALL_VARIANT,
+			fontWeight: 'bold'
 		},
 		'small-link': {
-			font: 'Inter',
-			fontSize: 'xs',
-			fontWeight: 'regular',
-			letterSpacing: 'sm',
-			lineHeight: 'xs',
+			...SMALL_VARIANT,
 			textDecoration: 'underline'
 		},
-		'x-small': {
-			font: 'Inter',
-			fontSize: '2xs',
-			fontWeight: 'regular',
-			letterSpacing: 'sm',
-			lineHeight: '2xs'
-		},
+		'x-small': X_SMALL_VARIANT,
 		'x-small-bold': {
-			font: 'Inter',
-			fontSize: '2xs',
-			fontWeight: 'bold',
-			letterSpacing: 'sm',
-			lineHeight: '2xs'
+			...X_SMALL_VARIANT,
+			fontWeight: 'bold'
 		},
 		'x-small-link': {
-			font: 'Inter',
-			fontSize: '2xs',
-			fontWeight: 'regular',
-			letterSpacing: 'sm',
-			lineHeight: '2xs',
+			...X_SMALL_VARIANT,
 			textDecoration: 'underline'
 		}
 	}

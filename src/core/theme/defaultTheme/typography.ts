@@ -1,3 +1,34 @@
+import type { FontConfig } from '../../typography/types';
+
+const FONT_WEIGHT_ALIASES: { [ weight: string ]: string } = Object.freeze( {
+	100: 'Thin',
+	200: 'ExtraLight',
+	300: 'Light',
+	400: 'Regular',
+	500: 'Medium',
+	600: 'SemiBold',
+	700: 'Bold',
+	800: 'ExtraBold',
+	900: 'Black'
+} );
+
+const fontConfigFor = ( fontName: string ) => Object
+	.keys( FONT_WEIGHT_ALIASES )
+	.reduce(
+		( res, fontWeightKey ) => {
+			const fontWeight = parseInt( fontWeightKey, 10 );
+			const fontWeightAlias = FONT_WEIGHT_ALIASES[ fontWeight ];
+
+			res[ fontWeight ] = {
+				normal: `${fontName}-${fontWeightAlias}`,
+				italic: `${fontName}-${fontWeightAlias}Italic`
+			};
+
+			return res;
+		},
+		{} as FontConfig
+	);
+
 const typography = {
 	letterSpacings: {
 		'2xs': -0.8,
@@ -39,80 +70,14 @@ const typography = {
 		'3xl': 32
 	},
 	fonts: {
-		'Epilogue': {
-			100: {
-				normal: 'Epilogue-Thin',
-				italic: 'Epilogue-ThinItalic'
-			},
-			200: {
-				normal: 'Epilogue-ExtraLight',
-				italic: 'Epilogue-ExtraLightItalic'
-			},
-			300: {
-				normal: 'Epilogue-Light',
-				italic: 'Epilogue-LightItalic'
-			},
-			400: {
-				normal: 'Epilogue-Regular',
-				italic: 'Epilogue-RegularItalic'
-			},
-			500: {
-				normal: 'Epilogue-Medium',
-				italic: 'Epilogue-MediumItalic'
-			},
-			600: {
-				normal: 'Epilogue-SemiBold',
-				italic: 'Epilogue-SemiBoldItalic'
-			},
-			700: {
-				normal: 'Epilogue-Bold',
-				italic: 'Epilogue-BoldItalic'
-			},
-			800: {
-				normal: 'Epilogue-ExtraBold',
-				italic: 'Epilogue-ExtraBoldItalic'
-			},
-			900: {
-				normal: 'Epilogue-Black',
-				italic: 'Epilogue-BlackItalic'
-			}
-		},
+		'Epilogue': fontConfigFor(
+			'Epilogue'
+		),
 		'Inter': {
-			100: {
-				normal: 'Inter-Thin',
-				italic: 'Inter-ThinItalic'
-			},
-			200: {
-				normal: 'Inter-ExtraLight',
-				italic: 'Inter-ExtraLightItalic'
-			},
-			300: {
-				normal: 'Inter-Light',
-				italic: 'Inter-LightItalic'
-			},
+			...fontConfigFor( 'Inter' ),
 			400: {
 				normal: 'Inter-Regular',
 				italic: 'Inter-Italic'
-			},
-			500: {
-				normal: 'Inter-Medium',
-				italic: 'Inter-MediumItalic'
-			},
-			600: {
-				normal: 'Inter-SemiBold',
-				italic: 'Inter-SemiBoldItalic'
-			},
-			700: {
-				normal: 'Inter-Bold',
-				italic: 'Inter-BoldItalic'
-			},
-			800: {
-				normal: 'Inter-ExtraBold',
-				italic: 'Inter-ExtraBoldItalic'
-			},
-			900: {
-				normal: 'Inter-Black',
-				italic: 'Inter-BlackItalic'
 			}
 		}
 	}
