@@ -1,6 +1,7 @@
 import React, {
 	memo, forwardRef, useState, useCallback
 } from 'react';
+import { Set } from 'immutable';
 import type { ICheckboxGroupProps } from './types';
 import Box from '../Box';
 import { CheckboxGroupContext } from './context';
@@ -12,16 +13,13 @@ const CheckboxGroup = ( {
 	disabled = false,
 	...props
 }: ICheckboxGroupProps, ref?: any ) => {
-	const [ selectedValues, setSelectedValues ] = useState( new Set( initialSelectedValues ) );
+	const [ selectedValues, setSelectedValues ] = useState( Set( initialSelectedValues ) );
 	const onCheckboxPress = useCallback( ( checkboxValue: string ) => {
-		if ( selectedValues.has( checkboxValue ) ) {
-			selectedValues.delete( checkboxValue );
-		} else {
-			selectedValues.add( checkboxValue );
-		}
+		const operation = selectedValues.has( checkboxValue ) ? 'delete' : 'add';
+		const newSelectedValues = selectedValues[ operation ]( checkboxValue );
 
-		setSelectedValues( selectedValues );
-		onChange?.( Array.from( selectedValues ) );
+		setSelectedValues( newSelectedValues );
+		onChange?.( Array.from( newSelectedValues ) );
 	}, [ selectedValues, setSelectedValues, onChange ] );
 
 	return (

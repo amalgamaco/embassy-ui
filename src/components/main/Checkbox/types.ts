@@ -1,3 +1,4 @@
+import type Immutable from 'immutable';
 import type { GestureResponderEvent, PressableProps } from 'react-native';
 import type { ComponentStyledProps } from '../../../core/components/types';
 
@@ -35,7 +36,7 @@ export interface ICheckboxGroupProps {
 
 export interface ICheckboxContext {
 	disabled: boolean,
-	selectedValues: Set<string>,
+	selectedValues: Immutable.Set<string>,
 	onCheckboxPress: ( value: string ) => void
 }
 

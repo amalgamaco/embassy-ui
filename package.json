@@ -167,6 +167,7 @@
     ]
   },
   "dependencies": {
+    "immutable": "^4.1.0",
     "lodash": "^4.17.21",
     "react-native-svg": "^13.1.0"
   }
