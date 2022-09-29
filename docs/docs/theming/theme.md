@@ -272,11 +272,16 @@ The key `radius` defines the aliases for the different border radius available.
 const themeConfig = {
 	layout:  {
 		borderWidths: {
-			'0': 0,
-			'1': 1,
-			'2': 2,
-			'4': 4,
-			'8': 8
+			'none': 0,
+			'2xs': 0.5,
+			'xs': 1,
+			'sm': 2,
+			'md': 3,
+			'lg': 4,
+			'xl': 5,
+			'2xl': 6,
+			'3xl': 7,
+			'4xl': 8
 		},
 		spacings: {
 			'0': 0,

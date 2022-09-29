@@ -25,7 +25,7 @@ An example where these kind of pseudo-props are used is the [Button component](.
 		rightIcon={<Icon name="star" />}
 		__leftIcon={{ color: 'information.900', size: 'md' }}
 		__rightIcon={{ color: 'success.900' }}
-		__stack={{ padding: '2', borderWidth: '1', borderColor: 'accent.600' }}
+		__stack={{ padding: '2', borderWidth: 'xs', borderColor: 'accent.600' }}
 	>
 		Button
 	</Button>
@@ -37,7 +37,7 @@ An example where these kind of pseudo-props are used is the [Button component](.
 	variant="priority"
 	leftIcon={<Icon name="bell" />}
 	rightIcon={<Icon name="star" />}
-	__stack={{ padding: '2', borderWidth: '1', borderColor: 'accent.600' }}
+	__stack={{ padding: '2', borderWidth: 'xs', borderColor: 'accent.600' }}
 	__leftIcon={{ color: 'information.900', size: 'md' }}
 	__rightIcon={{ color: 'success.900' }}
 >

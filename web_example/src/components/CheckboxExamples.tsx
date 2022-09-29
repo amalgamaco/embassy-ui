@@ -71,7 +71,7 @@ const CheckboxExamples = () => {
 				<Checkbox selected
 					__focused={{
 						bg: 'secondary.10',
-						borderWidth: '1'
+						borderWidth: 'xs'
 					}} />
 			</HStack>
 

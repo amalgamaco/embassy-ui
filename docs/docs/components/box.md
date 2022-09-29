@@ -8,13 +8,13 @@ This component is a wrapper for the `View` component. It provides a simple way t
 ## Example:
 
 <CodePreview>
-    <ExampleBox bg="primary.400" borderWidth={1} padding={1}/>
+    <ExampleBox bg="primary.400" borderWidth="xs" padding={1}/>
 </CodePreview>
 
 ```jsx
 import { Box, Text } from '@amalgama/react-native-ui-kit';
 
-<Box bg="primary.400" borderWidth={1} padding={1}>
+<Box bg="primary.400" borderWidth="xs" padding={1}>
     <Text>This is a box!</Text>
 </Box>
 ```

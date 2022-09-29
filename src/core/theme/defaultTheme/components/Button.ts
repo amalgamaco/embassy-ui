@@ -2,11 +2,10 @@ export default {
 	defaultProps: {
 		bg: 'white',
 		borderColor: 'black',
-		borderWidth: '2',
+		borderWidth: 'md',
 		rounded: 'xl',
 		padding: '3.5',
 		width: '100%',
-		height: 48,
 		__stack: {
 			width: '100%',
 			justifyContent: 'center',
