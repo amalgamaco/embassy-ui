@@ -51,7 +51,7 @@ import FontAwesomeIcon from 'react-native-vector-icons/FontAwesome';
 ```
 
 :::info
-`react-native-vector-icons` also support web platform, please refer to the [web installation guide](https://github.com/oblador/react-native-vector-icons#web-with-webpack) for more information about using it in web.
+`react-native-vector-icons` also support web platform, please refer to the [web installation guide](https://github.com/oblador/react-native-vector-icons#web-with-webpack) for more information about using it in web. You can also check [this gist](https://gist.github.com/sturmenta/246e8cb61dc891a29f8a36eceb55d529) if you are using CRA and you want to install the library without ejecting your app.
 :::
 
 ## Use your own custom SVG icons

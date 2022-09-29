@@ -72,7 +72,7 @@ To add the default fonts (`Epilogue` and `Inter`) to your React JS web project y
 2. Extend the default theme to overwrite the font configuration to always use the same font family name not matter the weight or style:
 
 ```ts
-const customTheme = extendTheme( {
+const customTheme = extendThemeConfig( {
 	typography: {
 		fonts: {
 			// When working with google fonts the font family is the
