@@ -17,13 +17,14 @@ You can style the stack using the [style props](/docs/theming/style_props).
 
 ```jsx
 import React from 'react';
-import { VStack, Text } from '@amalgama/react-native-ui-kit';
+import { VStack } from '@amalgama/react-native-ui-kit';
+import StackElement from "./StackElement";
 
-<Vstack>
-  <Text bg="success.900">First</Text>
-  <Text bg="secondary.900">Second</Text>
-  <Text bg="error.900">Third</Text>
-</Vstack>
+<VStack borderWidth="xs" borderRadius="sm">
+	<StackElement color="success.500" label="First" />
+	<StackElement color="secondary.500" label="Second" />
+	<StackElement color="warning.700" label="Third" />
+</VStack>
 ```
 
 ### Horizontal Stack
@@ -34,18 +35,19 @@ import { VStack, Text } from '@amalgama/react-native-ui-kit';
 
 ```jsx
 import React from 'react';
-import { HStack, Text } from '@amalgama/react-native-ui-kit';
+import { HStack } from '@amalgama/react-native-ui-kit';
+import StackElement from "./StackElement";
 
-<Hstack>
-  <Text bg="success.900">First</Text>
-  <Text bg="secondary.900">Second</Text>
-  <Text bg="error.900">Third</Text>
-</Hstack>
+<HStack borderWidth="xs" borderRadius="sm">
+	<StackElement color="success.500" label="First" />
+	<StackElement color="secondary.500" label="Second" />
+	<StackElement color="warning.700" label="Third" />
+</HStack>
 ```
 
 ## Props
 
-### Reversed
+### reversed
 
 By default, the stack is from top to bottom if it's a VStack and from left to right if is a Hstack. You can reverse the stack by passing `reversed` prop.
 
@@ -56,31 +58,32 @@ By default, the stack is from top to bottom if it's a VStack and from left to ri
 
 ```jsx
 import React from 'react';
-import { VStack, Text } from '@amalgama/react-native-ui-kit';
+import { VStack } from '@amalgama/react-native-ui-kit';
+import StackElement from "./StackElement";
 
-<Vstack reversed>
-  <Text bg="success.900">First</Text>
-  <Text bg="secondary.900">Second</Text>
-  <Text bg="error.900">Third</Text>
+<Vstack reversed borderWidth="xs" borderRadius="sm">
+	<StackElement color="success.500" label="First" />
+	<StackElement color="secondary.500" label="Second" />
+	<StackElement color="warning.700" label="Third" />
 </Vstack>
 ```
 
-### Space
+### space
 
-The spacing    between the components in the stack, not outside them.
+The spacing between the components in the stack. This space is calculated using the `layout.spacing` scale in the theme config.
 
 <CodePreview>
-    <ExampleVStack space={4} borderWidth={"xs"} />
+    <ExampleVStack space={4}/>
 </CodePreview>
 
 ```jsx
 import React from 'react';
-import { VStack, Text } from '@amalgama/react-native-ui-kit';
+import { VStack } from '@amalgama/react-native-ui-kit';
 
-<Vstack space={4} borderWidht={"xs"}>
-  <Text bg="success.900">First</Text>
-  <Text bg="secondary.900">Second</Text>
-  <Text bg="error.900">Third</Text>
+<Vstack space={4} borderWidht={"xs"} borderRadius="sm">
+	<StackElement color="success.500" label="First" />
+	<StackElement color="secondary.500" label="Second" />
+	<StackElement color="warning.700" label="Third" />
 </Vstack>
 ```
 

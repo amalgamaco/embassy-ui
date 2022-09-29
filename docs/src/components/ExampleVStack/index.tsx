@@ -1,11 +1,12 @@
 import React from 'react';
-import { VStack, Text } from '@amalgama/react-native-ui-kit';
+import { VStack } from '@amalgama/react-native-ui-kit';
+import StackElement from '../StackElement';
 
 const ExampleVStack = props => (
-	<VStack {...props}>
-		<Text bg="success.900">First</Text>
-		<Text bg="secondary.900">Second</Text>
-		<Text bg="error.900">Third</Text>
+	<VStack {...props} borderWidth="xs" borderRadius="sm">
+		<StackElement color="success.500" label="First" width={300} />
+		<StackElement color="secondary.500" label="Second" width={300} />
+		<StackElement color="warning.700" label="Third" width={300} />
 	</VStack>
 );
 
