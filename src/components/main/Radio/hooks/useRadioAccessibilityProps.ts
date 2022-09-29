@@ -1,4 +1,5 @@
 import { useMemo } from 'react';
+import { Platform } from 'react-native';
 
 interface IUseRadioAccessibilityProps {
 	label?: string,
@@ -15,7 +16,11 @@ const useRadioAccessibilityProps = ( {
 		accessible: true,
 		accessibilityRole: 'radio',
 		accessibilityLabel: label,
-		accessibilityState: { checked: selected, disabled }
+		accessibilityState: { checked: selected, disabled },
+		...( Platform.OS === 'web'
+			? { accessibilityChecked: selected }
+			: {} )
+
 	} ),
 	[ label, selected, disabled ]
 );

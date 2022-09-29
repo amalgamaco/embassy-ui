@@ -1,4 +1,5 @@
 import { useMemo } from 'react';
+import { Platform } from 'react-native';
 
 interface IUseCheckboxAccessibilityProps {
 	label?: string,
@@ -20,7 +21,11 @@ const useCheckboxAccessibilityProps = ( {
 		accessibilityState: {
 			checked: indeterminated ? 'mixed' : selected,
 			disabled
-		}
+		},
+		...( Platform.OS === 'web'
+			? { accessibilityChecked: indeterminated ? 'mixed' : selected }
+			: {} )
+
 	} ),
 	[ label, selected, indeterminated, disabled ]
 );

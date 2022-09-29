@@ -3,6 +3,7 @@ import { useComponentPropsResolver } from '../../../hooks';
 import { VStack } from '../Stack';
 import FormControlHelperText from './FormControlHelperText';
 import FormControlLabel from './FormControlLabel';
+import useFormControlAccessibilityProps from './hooks';
 import type { IFormControlProps } from './types';
 
 const FormControl = ( {
@@ -24,8 +25,10 @@ const FormControl = ( {
 		...containerProps
 	} = useComponentPropsResolver( 'FormControl', props ) as IFormControlProps;
 
+	const accessibilityProps = useFormControlAccessibilityProps( { label, hint } );
+
 	return (
-		<VStack testID={testID} {...containerProps} space="2">
+		<VStack testID={testID} {...containerProps} {...accessibilityProps} space="2">
 			{!!label && (
 				<FormControlLabel
 					text={label}
