@@ -75,19 +75,8 @@ const config = {
 				},
 				items: [
 					{
-						type: 'doc',
-						docId: 'getting_started',
-						position: 'left',
-						label: 'Docs'
-					},
-					{
 						label: 'Figma',
 						href: 'https://www.figma.com/file/X7a5bxxsP6hXXpNEzpMhoj/Design-System-RRSS',
-						position: 'right'
-					},
-					{
-						label: 'Example App',
-						href: 'https://ui-kit.amalgama.co',
 						position: 'right'
 					},
 					{

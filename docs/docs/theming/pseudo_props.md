@@ -1,3 +1,7 @@
+---
+sidebar_position: 5
+---
+
 import { Button, Icon } from '@amalgama/react-native-ui-kit';
 import CodePreview from '@site/src/components/CodePreview';
 

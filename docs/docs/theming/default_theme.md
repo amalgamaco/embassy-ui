@@ -1,3 +1,7 @@
+---
+sidebar_position: 2
+---
+
 import ColorPreview from "@site/src/components/ColorPreview"
 
 # Default theme
@@ -296,5 +300,5 @@ Here you can found the default theme values for the different scales.
 | Font | variant |
 | --- | --- |
 |`"Epilogue"`|`normal, italic`|
-|`"Inter"`|`normal`|
+|`"Inter"`|`normal`, `italic`|
 
