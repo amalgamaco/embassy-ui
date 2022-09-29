@@ -17,8 +17,8 @@ const CustomIcon = () => (
 				/>
 			</Svg>
 		)}
-		size="xl"
-		color="black"
+		size="md"
+		color="error.700"
 		name="custom-icon"
 	/> );
 
