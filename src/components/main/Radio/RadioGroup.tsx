@@ -4,15 +4,19 @@ import React, {
 import type { IRadioGroupProps } from './types';
 import Box from '../Box';
 import { RadioGroupContext } from './context';
+import { useFormControlContext } from '../FormControl/context';
 
 const RadioGroup = ( {
 	children,
 	value: initialSelectedValue,
 	onChange = undefined,
-	disabled = false,
+	disabled: disabledProp = false,
 	...props
 }: IRadioGroupProps, ref?: any ) => {
 	const [ selectedValue, setSelectedValue ] = useState( initialSelectedValue );
+	const formControlState = useFormControlContext();
+
+	const disabled = formControlState?.disabled || disabledProp;
 
 	const onRadioPressed = useCallback( ( value ) => {
 		setSelectedValue( value );

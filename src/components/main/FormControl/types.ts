@@ -6,6 +6,7 @@ export interface IFormControlProps extends ComponentStyledProps<'FormControl'> {
 	hint?: string,
 	error?: string,
 	errorIcon?: string,
+	disabled?: boolean,
 	isRequired?: boolean,
 	children?: JSX.Element | JSX.Element[] | string,
 	testID?: string
@@ -28,4 +29,9 @@ export interface IFormControHelperTextProps {
 	__errorIcon?: IFormControlProps['__errorIcon'],
 
 	testID?: string
+}
+
+export interface IFormControlContext {
+	disabled: boolean,
+	hasError: boolean
 }

@@ -1,4 +1,4 @@
-import { FormControl, HStack, TextInput } from '@amalgama/react-native-ui-kit';
+import { FormControl, Checkbox, Radio, HStack, TextInput } from '@amalgama/react-native-ui-kit';
 import CodePreview from '@site/src/components/CodePreview';
 
 # FormControl
@@ -112,11 +112,11 @@ Shows a hint text below the input.
 ```
 
 :::caution
-If the `hint` and `error` props are both provided, the `error` text takes precedence over the `hint` one.
+If the `hint` and `error` props are both provided, the `error` text takes precedence over the `hint` one. 
 :::
 
 ### error
-Shows an error text below the input.
+Shows an error text below the input. This value is also provided to the children through the `FormControlContext`.
 
 | TYPE   | REQUIRED |
 | ------ | -------- |
@@ -129,7 +129,7 @@ Shows an error text below the input.
 		isRequired
 		error="The email address is not valid"
 	>
-		<TextInput value="invalid-email" width="300px" error />
+		<TextInput value="invalid-email" width="300px" />
 	</FormControl>
 </CodePreview>
 
@@ -139,13 +139,104 @@ Shows an error text below the input.
 	isRequired
 	error="The email address is not valid"
 >
-	<TextInput placeholder="invalid-email" width="300px" error />
+	<TextInput value="invalid-email" width="300px" />
 </FormControl>
 ```
 
 :::caution
 If the `hint` and `error` props are both provided, the `error` text takes precedence over the `hint` one.
 :::
+
+### disabled
+Disables the form control. This value is also provided to the children through the `FormControlContext`.
+
+| TYPE   | REQUIRED | DEFAULT |
+| ------ | -------- | ---- |
+| boolean | No       | false |
+
+#### With a TextInput
+<CodePreview>
+	<FormControl
+		label="Email"
+		isRequired
+		hint="Remember to enter a valid email address"
+		disabled
+	>
+		<TextInput value="invalid-email" width="300px" />
+	</FormControl>
+</CodePreview>
+
+```jsx
+<FormControl
+	label="Email"
+	isRequired
+	error="The email address is not valid"
+>
+	<TextInput value="invalid-email" width="300px" />
+</FormControl>
+```
+
+#### With a CheckboxGroup
+<CodePreview>
+	<FormControl
+		label="Which are your favorite coding languages?"
+		isRequired
+		hint="You can select multiple options"
+		disabled
+	>
+		<Checkbox.Group>
+			<Checkbox value="js" label="Javascript" />
+			<Checkbox value="rb" label="Ruby" />
+			<Checkbox value="py" label="Python" />
+		</Checkbox.Group>
+	</FormControl>
+</CodePreview>
+
+```jsx
+<FormControl
+	label="Which are your favorite coding languages?"
+	isRequired
+	hint="You can select multiple options"
+	disabled
+>
+	<Checkbox.Group>
+		<Checkbox value="js" label="Javascript" />
+		<Checkbox value="rb" label="Ruby" />
+		<Checkbox value="py" label="Python" />
+	</Checkbox.Group>
+</FormControl>
+```
+
+#### With a RadioGroup
+<CodePreview>
+	<FormControl
+		label="Which is your favorite coding language?"
+		isRequired
+		hint="You can select only one option"
+		disabled
+	>
+		<Radio.Group>
+			<Radio value="js" label="Javascript" />
+			<Radio value="rb" label="Ruby" />
+			<Radio value="py" label="Python" />
+		</Radio.Group>
+	</FormControl>
+</CodePreview>
+
+```jsx
+<FormControl
+	label="Which is your favorite coding language?"
+	isRequired
+	hint="You can select only one option"
+	disabled
+>
+	<Radio.Group>
+		<Radio value="js" label="Javascript" />
+		<Radio value="rb" label="Ruby" />
+		<Radio value="py" label="Python" />
+	</Radio.Group>
+</FormControl>
+```
 
 ## Pseudo Props
 

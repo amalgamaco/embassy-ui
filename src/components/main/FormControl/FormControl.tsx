@@ -1,6 +1,7 @@
 import React from 'react';
 import { useComponentPropsResolver } from '../../../hooks';
 import { VStack } from '../Stack';
+import { FormControlContext } from './context';
 import FormControlHelperText from './FormControlHelperText';
 import FormControlLabel from './FormControlLabel';
 import useFormControlAccessibilityProps from './hooks';
@@ -12,6 +13,7 @@ const FormControl = ( {
 	error,
 	errorIcon,
 	children,
+	disabled = false,
 	isRequired = false,
 	testID,
 	...props
@@ -23,7 +25,7 @@ const FormControl = ( {
 		__errorText: errorProps,
 		__errorIcon: errorIconProps,
 		...containerProps
-	} = useComponentPropsResolver( 'FormControl', props ) as IFormControlProps;
+	} = useComponentPropsResolver( 'FormControl', props, { isDisabled: disabled } ) as IFormControlProps;
 
 	const accessibilityProps = useFormControlAccessibilityProps( { label, hint } );
 
@@ -38,7 +40,9 @@ const FormControl = ( {
 					{...labelProps}
 				/>
 			)}
-			{children}
+			<FormControlContext.Provider value={{ disabled, hasError: !!error }}>
+				{children}
+			</FormControlContext.Provider>
 			{( !!hint || !!error ) && (
 				<FormControlHelperText
 					hint={hint}

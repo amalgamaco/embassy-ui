@@ -5,15 +5,20 @@ import { Set } from 'immutable';
 import type { ICheckboxGroupProps } from './types';
 import Box from '../Box';
 import { CheckboxGroupContext } from './context';
+import { useFormControlContext } from '../FormControl/context';
 
 const CheckboxGroup = ( {
 	children,
 	value: initialSelectedValues = [],
 	onChange = undefined,
-	disabled = false,
+	disabled: disabledProp = false,
 	...props
 }: ICheckboxGroupProps, ref?: any ) => {
 	const [ selectedValues, setSelectedValues ] = useState( Set( initialSelectedValues ) );
+
+	const formControlState = useFormControlContext();
+	const disabled = formControlState?.disabled || disabledProp;
+
 	const onCheckboxPress = useCallback( ( checkboxValue: string ) => {
 		const operation = selectedValues.has( checkboxValue ) ? 'delete' : 'add';
 		const newSelectedValues = selectedValues[ operation ]( checkboxValue );

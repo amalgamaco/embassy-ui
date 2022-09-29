@@ -65,4 +65,9 @@ describe( 'FormControl', () => {
 		const { queryByTestId } = renderComponent();
 		expect( queryByTestId( 'test-form-control-helper-text' ) ).toBeNull();
 	} );
+
+	it( 'applies the disabled styles when is disabled', () => {
+		const { getByTestId } = renderComponent( { disabled: true, hint: 'Hint!' } );
+		expect( getByTestId( 'test-form-control-helper-text' ) ).toHaveStyle( { color: '#AAB2CC' } );
+	} );
 } );

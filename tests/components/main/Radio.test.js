@@ -1,8 +1,9 @@
 import React from 'react';
 import { fireEvent, render } from '@testing-library/react-native';
 import {
-	Radio, ThemeProvider
+	Radio, FormControl, ThemeProvider
 } from '../../../src';
+import WithThemeProvider from '../../support/withThemeProvider';
 
 const { itBehavesLike } = require( '../../support/sharedExamples' );
 
@@ -23,15 +24,14 @@ describe( 'Radio', () => {
 	const renderRadio = ( {
 		selected = false, onPress, disabled, ...props
 	} = {} ) => render(
-		<ThemeProvider>
-			<Radio
-				testID="test-radio"
-				selected={selected}
-				onPress={onPress}
-				disabled={disabled}
-				{...props}
-			/>
-		</ThemeProvider>
+		<Radio
+			testID="test-radio"
+			selected={selected}
+			onPress={onPress}
+			disabled={disabled}
+			{...props}
+		/>,
+		{ wrapper: WithThemeProvider }
 	);
 
 	test( 'renders the unselected style when unselected', () => {
@@ -167,5 +167,26 @@ describe( 'Radio.Group', () => {
 		expect( getByTestId( 'test-radio-3' ) ).toHaveProp(
 			'accessibilityState', { checked: true, disabled: false }
 		);
+	} );
+
+	describe( 'inside a FormControl', () => {
+		const renderFormControl = ( { disabled, error } ) => render(
+			<FormControl disabled={disabled} error={error}>
+				<Radio.Group>
+					<Radio value="opt-1" label="Option 1" testID="test-radio-1" />
+					<Radio value="opt-2" label="Option 2" testID="test-radio-2" />
+					<Radio value="opt-3" label="Option 3" testID="test-radio-3" />
+				</Radio.Group>
+			</FormControl>,
+			{ wrapper: WithThemeProvider }
+		);
+
+		it( 'disables all the radio buttons when the form control is disabled', () => {
+			const { getByTestId } = renderFormControl( { disabled: true } );
+
+			expect( getByTestId( 'test-radio-1-icon' ) ).toHaveChildWithProp( 'stroke', '#AAB2CC' );
+			expect( getByTestId( 'test-radio-2-icon' ) ).toHaveChildWithProp( 'stroke', '#AAB2CC' );
+			expect( getByTestId( 'test-radio-3-icon' ) ).toHaveChildWithProp( 'stroke', '#AAB2CC' );
+		} );
 	} );
 } );
