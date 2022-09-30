@@ -58,6 +58,13 @@ const ButtonExamples = () => (
 			Priority
 		</Button>
 		<Button
+			variant="success"
+			leftIcon={<Icon name="check"/>}
+			onPress={onButtonPressed}
+		>
+			Success
+		</Button>
+		<Button
 			variant="custom"
 			__leftIcon={{ color: 'success.800' }}
 			__rightIcon={{ color: 'error.700' }}
@@ -71,6 +78,8 @@ const ButtonExamples = () => (
 		<View style={styles.separator} />
 		<Button variant="primary" disabled onPress={onButtonPressed}>Primary Disabled</Button>
 		<Button variant="secondary" disabled onPress={onButtonPressed}>Secondary Disabled</Button>
+		<Button variant="priority" disabled onPress={onButtonPressed}>Priority Disabled</Button>
+		<Button variant="success" disabled onPress={onButtonPressed}>Success Disabled</Button>
 		<Button
 			variant="primary"
 			__disabled={{ bg: 'error.100', borderColor: 'error.100' }}
@@ -81,9 +90,9 @@ const ButtonExamples = () => (
 		</Button>
 		<Text variant="subtitle">Horizontal group</Text>
 		<View style={styles.separator} />
-		<HStack space="10">
-			<Button variant="secondary" onPress={onButtonPressed}>Cancel</Button>
-			<Button variant="priority" onPress={onButtonPressed}>Delete</Button>
+		<HStack space="3">
+			<Button flex={1} variant="secondary" onPress={onButtonPressed}>Cancel</Button>
+			<Button flex={1} variant="priority" onPress={onButtonPressed}>Delete</Button>
 		</HStack>
 	</VStack>
 );

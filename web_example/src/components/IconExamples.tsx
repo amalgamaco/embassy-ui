@@ -163,7 +163,7 @@ const IconExamples = () => (
 		</HStack>
 		<Text variant="subtitle">Sizes</Text>
 		<View style={styles.separator} />
-		<HStack space={2}>
+		<HStack space={2} justifyContent="space-between">
 			<Icon name="heart" color="error.700" size="2xs" />
 			<Icon name="heart" color="information.100" size="xs" />
 			<Icon name="heart" color="success.200" size="sm" />

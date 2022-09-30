@@ -84,9 +84,9 @@ const ButtonExamples = () => (
 		</Button>
 		<Text variant="subtitle">Horizontal group</Text>
 		<View style={styles.separator} />
-		<HStack space="10">
-			<Button variant="secondary" onPress={onButtonPressed}>Cancel</Button>
-			<Button variant="priority" onPress={onButtonPressed}>Delete</Button>
+		<HStack space="3" width="100%">
+			<Button flex={1} variant="secondary" onPress={onButtonPressed}>Cancel</Button>
+			<Button flex={1} variant="priority" onPress={onButtonPressed}>Delete</Button>
 		</HStack>
 	</VStack>
 );

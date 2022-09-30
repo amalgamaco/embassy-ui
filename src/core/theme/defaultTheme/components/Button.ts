@@ -5,7 +5,7 @@ export default {
 		borderWidth: 'md',
 		rounded: 'xl',
 		padding: '3.5',
-		width: '100%',
+		justifyContent: 'center',
 		__stack: {
 			width: '100%',
 			justifyContent: 'center',

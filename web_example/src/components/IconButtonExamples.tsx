@@ -1,5 +1,5 @@
 import React from 'react';
-import { Alert, StyleSheet } from 'react-native';
+import { StyleSheet } from 'react-native';
 
 import {
 	IconButton, VStack, HStack, Text
@@ -15,12 +15,12 @@ const styles = StyleSheet.create( {
 	}
 } );
 
-const onPressed = () => Alert.alert( 'Pressed!' );
+const onPressed = () => window.alert( 'Pressed!' );
 
 const IconButtonExamples = () => (
 	<VStack style={styles.container} space="2">
 		<Text variant="headline">IconButton Component</Text>
-		<HStack space={2}>
+		<HStack space={2} justifyContent="space-between">
 			<IconButton name="heart" onPress={onPressed} color="error.700" size="2xs" />
 			<IconButton name="heart" onPress={onPressed} color="information.100" size="xs" />
 			<IconButton name="heart" onPress={onPressed} color="success.200" size="sm" />
