@@ -4,7 +4,11 @@ A set of UI components following Amalgama's Design System.
 
 ## Installation
 
+For installation instructions go to the [Official Docs](https://ui-kit.amalgama.co/docs/getting_started/installation).
+
 ## Usage
+
+For usage instruction go to the [Official Docs](https://ui-kit.amalgama.co/docs/getting_started/overview).
 
 ## Contributing
 
