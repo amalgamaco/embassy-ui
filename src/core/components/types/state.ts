@@ -7,19 +7,19 @@
 // for any styled prop (and internal components styled props using pseudoprops)
 // to the value it should be when the component is dissabled.
 // {
-// 	bg: 'black',
-// 	mx: '2',
-// 	radius: 'xs',
-// 	__label: {
-// 		color: 'white',
-// 		fontSize: 'xl'
-// 	},
-// 	__disabled: {
-// 		opacity: 0.7,
-// 		__label: {
-// 			'color': 'primary.700'
-// 		}
-// 	},
+//   bg: 'black',
+//   mx: '2',
+//   radius: 'xs',
+//   __label: {
+//     color: 'white',
+//     fontSize: 'xl'
+//   },
+//   __disabled: {
+//     opacity: 0.7,
+//     __label: {
+//       'color': 'primary.700'
+//     }
+//   },
 // }
 import type { GestureResponderEvent } from 'react-native';
 import type { ValueOf } from '../../types';

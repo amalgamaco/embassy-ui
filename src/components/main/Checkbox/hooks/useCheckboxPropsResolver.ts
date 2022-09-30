@@ -21,7 +21,7 @@ const useCheckboxPropsResolver = ( {
 	uncheckedIcon,
 	indeterminatedIcon,
 	...props
-} : ICheckboxProps
+}: ICheckboxProps
 ): IUseCheckboxPropsResolverReturnType => {
 	const { state, stateProps } = useCheckboxStateProps( props );
 

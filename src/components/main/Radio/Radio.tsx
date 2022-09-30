@@ -1,17 +1,19 @@
 import React, { cloneElement, forwardRef, memo } from 'react';
+import type { View } from 'react-native';
 import Text from '../Text';
 import Pressable from '../Pressable';
 import { HStack } from '../Stack';
 import { useRadioPropsResolver } from './hooks';
 import type { IRadioProps } from './types';
 import Box from '../Box';
+import ConditionalRender from '../../utils/ConditionalRender';
 
 const Radio = ( {
 	label,
 	selected = false,
 	testID,
 	...props
-}: IRadioProps, ref?: any ) => {
+}: IRadioProps, ref?: React.Ref<View> ) => {
 	const {
 		icon,
 		iconProps,
@@ -35,7 +37,7 @@ const Radio = ( {
 						testID: testID && `${testID}-icon`
 					} )}
 				</Box>
-				{!!label && (
+				<ConditionalRender render={!!label}>
 					<Text
 						{...labelProps}
 						selectable={false}
@@ -43,7 +45,7 @@ const Radio = ( {
 					>
 						{label}
 					</Text>
-				)}
+				</ConditionalRender>
 			</HStack>
 		</Pressable>
 	);

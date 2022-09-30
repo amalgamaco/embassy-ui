@@ -115,8 +115,8 @@ describe( 'TextInput', () => {
 		} );
 
 		it( 'shows the toggle password icon button', () => {
-			const { queryByTestId } = renderComponent( { type: 'password' } );
-			expect( queryByTestId( 'test-text-input-icon' ) ).not.toBeNull();
+			const { getByTestId } = renderComponent( { type: 'password' } );
+			expect( getByTestId( 'test-text-input-icon' ) ).not.toBeNull();
 		} );
 
 		it( 'shows the text when the toggle password icon button is pressed', () => {

@@ -31,7 +31,9 @@ export type TransformerMethod = TransformerMethodName | TransformerFunct;
 
 export type PropName = string;
 export type PropValue = string | number;
-export type ComponentProps = Record<PropName, PropValue>
+export type ComponentProps = {
+	[ propName: PropName ]: PropValue
+} & { style?: Style }
 
 export type StylePropName = string;
 export type StylePropValue = string | number | undefined;

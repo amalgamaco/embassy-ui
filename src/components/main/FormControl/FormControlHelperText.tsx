@@ -1,5 +1,6 @@
 import React from 'react';
 import { HStack } from '../Stack';
+import ConditionalRender from '../../utils/ConditionalRender';
 import UIKitIcon from '../../../icons/UIKitIcon';
 import Icon from '../Icon';
 import Text from '../Text';
@@ -18,13 +19,14 @@ const FormControlHelperText = ( {
 
 	return (
 		<HStack space="1" justifyContent="flex-start" alignItems="center">
-			{!!isError && (
+			<ConditionalRender render={!!isError}>
 				<Icon
 					name={errorIcon}
 					as={UIKitIcon}
 					testID={testID && `${testID}-error-icon`}
-					{...errorIconProps} />
-			)}
+					{...errorIconProps}
+				/>
+			</ConditionalRender>
 			<Text
 				testID={testID}
 				{...( isError ? errorProps : hintProps )}

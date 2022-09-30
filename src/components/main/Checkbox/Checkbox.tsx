@@ -4,6 +4,7 @@ import Pressable from '../Pressable';
 import { HStack } from '../Stack';
 import { useCheckboxPropsResolver } from './hooks';
 import type { ICheckboxProps } from './types';
+import ConditionalRender from '../../utils/ConditionalRender';
 import Box from '../Box';
 
 const Checkbox = ( {
@@ -35,7 +36,7 @@ const Checkbox = ( {
 						testID: testID && `${testID}-icon`
 					} )}
 				</Box>
-				{!!label && (
+				<ConditionalRender render={!!label}>
 					<Text
 						{...labelProps}
 						selectable={false}
@@ -43,7 +44,7 @@ const Checkbox = ( {
 					>
 						{label}
 					</Text>
-				)}
+				</ConditionalRender>
 			</HStack>
 		</Pressable>
 	);

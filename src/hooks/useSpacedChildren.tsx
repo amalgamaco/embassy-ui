@@ -19,14 +19,14 @@ interface IGetSpacerStyleProps {
 
 const getSpacerStyle = ( { theme, space, direction }: IGetSpacerStyleProps ) => {
 	const sizeProp = direction === 'row' ? 'width' : 'height';
-	const rawSpace = theme?.layout.spacing( `${space}` ) || 0;
+	const rawSpace = theme?.layout.spacing( space?.toString() || '' ) || 0;
 
 	return { [ sizeProp ]: rawSpace };
 };
 
 const useSpacedChildren = ( {
 	children, direction, space
-} : IUseSpacedChildrenProps ): IStackProps[ 'children' ] => {
+}: IUseSpacedChildrenProps ): IStackProps[ 'children' ] => {
 	const theme = useTheme();
 
 	return useMemo<IStackProps[ 'children' ]>(
@@ -45,7 +45,7 @@ const useSpacedChildren = ( {
 				</React.Fragment>
 			) );
 		},
-		[ theme, children, space ]
+		[ theme, children, space, direction ]
 	);
 };
 

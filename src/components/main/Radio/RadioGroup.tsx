@@ -1,6 +1,7 @@
 import React, {
 	memo, forwardRef, useState, useCallback
 } from 'react';
+import type { View } from 'react-native';
 import type { IRadioGroupProps } from './types';
 import Box from '../Box';
 import { RadioGroupContext } from './context';
@@ -12,13 +13,13 @@ const RadioGroup = ( {
 	onChange = undefined,
 	disabled: disabledProp = false,
 	...props
-}: IRadioGroupProps, ref?: any ) => {
+}: IRadioGroupProps, ref?: React.Ref<View> ) => {
 	const [ selectedValue, setSelectedValue ] = useState( initialSelectedValue );
 	const formControlState = useFormControlContext();
 
 	const disabled = formControlState?.disabled || disabledProp;
 
-	const onRadioPressed = useCallback( ( value ) => {
+	const onRadioPressed = useCallback( ( value: string ) => {
 		setSelectedValue( value );
 		onChange?.( value );
 	}, [ setSelectedValue, onChange ] );

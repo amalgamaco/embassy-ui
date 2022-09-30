@@ -49,8 +49,8 @@ describe( 'FormControl', () => {
 
 	it( 'shows the error icon when there is an error set', () => {
 		const error = 'Error text!';
-		const { queryByTestId } = renderComponent( { error } );
-		expect( queryByTestId( 'test-form-control-helper-text-error-icon' ) ).not.toBeNull();
+		const { getByTestId } = renderComponent( { error } );
+		expect( getByTestId( 'test-form-control-helper-text-error-icon' ) ).not.toBeNull();
 	} );
 
 	it( 'shows the error when hint and error are both set', () => {

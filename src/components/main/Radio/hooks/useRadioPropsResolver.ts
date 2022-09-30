@@ -20,7 +20,7 @@ const useRadioPropsResolver = ( {
 	selectedIcon,
 	unselectedIcon,
 	...props
-} : IRadioProps ): IUseRadioPropsResolverReturnType => {
+}: IRadioProps ): IUseRadioPropsResolverReturnType => {
 	const { state, stateProps } = useRadioStateProps( props );
 
 	const {

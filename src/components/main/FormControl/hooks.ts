@@ -5,8 +5,9 @@ interface IUseFormControlAccessibilityProps {
     hint?: string
 }
 
-const useFormControlAccessibilityProps = ( { label, hint }
-    : IUseFormControlAccessibilityProps ) => useMemo(
+const useFormControlAccessibilityProps = ( {
+	label, hint
+}: IUseFormControlAccessibilityProps ) => useMemo(
 	() => ( {
 		accessible: true,
 		accessibilityLabel: label,

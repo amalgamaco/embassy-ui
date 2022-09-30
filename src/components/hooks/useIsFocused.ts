@@ -1,26 +1,30 @@
 import { useCallback, useState } from 'react';
-import type { PressableProps, TextInputProps } from 'react-native';
+import type {
+	NativeSyntheticEvent, TargetedEvent, TextInputFocusEventData
+} from 'react-native';
 
-interface IUseIsFocusedState {
-	onFocus?: PressableProps[ 'onFocus' ] | TextInputProps[ 'onFocus' ],
-	onBlur?: PressableProps[ 'onBlur' ] | TextInputProps[ 'onBlur' ]
+type EventType = TargetedEvent| TextInputFocusEventData;
+
+interface IUseIsFocusedState<E extends EventType> {
+	onFocus?: ( ( event: NativeSyntheticEvent<E> ) => void ) | null,
+	onBlur?: ( ( event: NativeSyntheticEvent<E> ) => void ) | null
 }
 
-const useIsFocused = ( {
+const useIsFocused = <E extends EventType>( {
 	onFocus: onFocusProp,
 	onBlur: onBlurProp
-}: IUseIsFocusedState ) => {
+}: IUseIsFocusedState<E> ) => {
 	const [ isFocused, setIsFocused ] = useState( false );
 
-	const onFocus = useCallback( ( event ) => {
+	const onFocus = useCallback( ( event: NativeSyntheticEvent<E> ) => {
 		onFocusProp?.( event );
 		setIsFocused( true );
-	}, [ setIsFocused ] );
+	}, [ setIsFocused, onFocusProp ] );
 
-	const onBlur = useCallback( ( event ) => {
+	const onBlur = useCallback( ( event: NativeSyntheticEvent<E> ) => {
 		onBlurProp?.( event );
 		setIsFocused( false );
-	}, [ setIsFocused ] );
+	}, [ setIsFocused, onBlurProp ] );
 
 	return { isFocused, onFocus, onBlur };
 };

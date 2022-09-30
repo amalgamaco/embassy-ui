@@ -39,11 +39,11 @@ const Button = ( {
 			{...containerProps}
 		>
 			<HStack {...stackProps}>
-				{leftIcon}
+				<>{leftIcon}</>
 				<Text {...labelProps}>
 					{children}
 				</Text>
-				{rightIcon}
+				<>{rightIcon}</>
 			</HStack>
 		</Pressable>
 	);

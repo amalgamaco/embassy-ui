@@ -1,16 +1,16 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import type React from 'react';
-import type { ViewProps, ColorValue } from 'react-native';
+import type { ViewProps, ColorValue, View } from 'react-native';
 import type { ComponentStyledProps } from '../../../core/components/types';
 
-interface AsComponentProps {
+export interface AsComponentProps extends ViewProps {
 	name: string,
 	size?: number | undefined,
-	color?: ColorValue | number | undefined
+	color?: ColorValue | number | undefined,
+	ref?: React.Ref<View>
 }
 
-export type AsComponent = React.ComponentClass<AsComponentProps>
-	| React.FunctionComponent<AsComponentProps>
-	| any;
+export type AsComponent = React.ComponentType<AsComponentProps>;
 
 export interface IIconProps extends ViewProps, ComponentStyledProps<'Icon'> {
 	// The name of the icon. It should be a valid name for

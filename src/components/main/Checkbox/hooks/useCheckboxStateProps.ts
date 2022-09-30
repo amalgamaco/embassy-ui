@@ -64,7 +64,8 @@ const useCheckboxStateProps = ( {
 		},
 		[
 			groupState, selectedProp, disabledProp, isPressed, isHovered, isFocused,
-			onPressProp, onPressIn, onPressOut, onHoverIn, onHoverOut, onFocus, onBlur
+			indeterminated, onPressProp, onPressIn, onPressOut, onHoverIn, onHoverOut,
+			onFocus, onBlur
 		]
 	);
 };

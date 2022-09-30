@@ -6,26 +6,31 @@ import useTextInputPropsResolver from './hooks';
 import type { ITextInputProps } from './types';
 import IconButton from '../IconButton';
 import useTranslatePropsToStyle from '../../../hooks/useTranslatePropsToStyle';
+import ConditionalRender from '../../utils/ConditionalRender';
 import Box from '../Box';
 
-const TextInput = ( props: ITextInputProps ) => {
+const TextInput = ( { testID, ...props }: ITextInputProps ) => {
 	const {
 		containerProps, textInputProps, iconProps, showPasswordToggleButton
 	} = useTextInputPropsResolver( props );
 
 	const [ style, restProps ] = useTranslatePropsToStyle( textInputProps );
 	return (
-		<Box {...containerProps}>
+		<Box {...containerProps} testID={testID}>
 			<HStack width="100%" height="100%" alignItems="center">
-				<TextInputRN style={style} {...restProps} testID={`${props.testID}-rn`}/>
-				{showPasswordToggleButton && (
+				<TextInputRN
+					testID={testID ? `${testID}-rn` : undefined}
+					style={style}
+					{...restProps}
+				/>
+				<ConditionalRender render={showPasswordToggleButton}>
 					<IconButton
 						name="eye"
 						as={UIKitIcon}
-						testID={`${props.testID}-icon`}
+						testID={testID ? `${testID}-icon` : undefined}
 						{...iconProps}
 					/>
-				)}
+				</ConditionalRender>
 			</HStack>
 		</Box>
 	);

@@ -1,4 +1,5 @@
 import React from 'react';
+import ConditionalRender from '../../utils/ConditionalRender';
 import { useComponentPropsResolver } from '../../../hooks';
 import { VStack } from '../Stack';
 import { FormControlContext } from './context';
@@ -31,19 +32,19 @@ const FormControl = ( {
 
 	return (
 		<VStack testID={testID} {...containerProps} {...accessibilityProps} space="2">
-			{!!label && (
+			<ConditionalRender render={!!label}>
 				<FormControlLabel
-					text={label}
+					text={label as string}
 					isRequired={isRequired}
 					__required={requiredProps}
 					testID={testID && `${testID}-label`}
 					{...labelProps}
 				/>
-			)}
+			</ConditionalRender>
 			<FormControlContext.Provider value={{ disabled, hasError: !!error }}>
 				{children}
 			</FormControlContext.Provider>
-			{( !!hint || !!error ) && (
+			<ConditionalRender render={( !!hint || !!error )}>
 				<FormControlHelperText
 					hint={hint}
 					error={error}
@@ -53,7 +54,7 @@ const FormControl = ( {
 					__errorIcon={errorIconProps}
 					testID={testID && `${testID}-helper-text`}
 				/>
-			)}
+			</ConditionalRender>
 		</VStack>
 	);
 };

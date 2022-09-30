@@ -10,7 +10,7 @@ module.exports = ( {
 			const { getAllByTestId } = renderComponent();
 			const children = getAllByTestId( childTestIdPattern );
 
-			expect( children.length ).toEqual( expectedChildrenTexts.length );
+			expect( children ).toHaveLength( expectedChildrenTexts.length );
 			children.forEach( ( child, index ) => {
 				expect( child ).toHaveTextContent( expectedChildrenTexts[ index ] );
 			} );
@@ -34,8 +34,8 @@ module.exports = ( {
 				const children = getAllByTestId( childTestIdPattern );
 				const spacers = getAllByTestId( /spacer-.*/ );
 
-				expect( children.length ).toEqual( expectedChildrenTexts.length );
-				expect( spacers.length ).toEqual( expectedChildrenTexts.length - 1 );
+				expect( children ).toHaveLength( expectedChildrenTexts.length );
+				expect( spacers ).toHaveLength( expectedChildrenTexts.length - 1 );
 
 				const spaceProp = direction === 'row' ? 'width' : 'height';
 

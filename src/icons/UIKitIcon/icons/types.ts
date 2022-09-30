@@ -3,5 +3,6 @@ export interface SVGIconProps {
 	height?: number,
 	fill?: string,
 	color?: string,
-	children: any
+	children?: JSX.Element | JSX.Element[] | string,
+	xmlns?: string
 }
