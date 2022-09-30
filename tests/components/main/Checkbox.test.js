@@ -1,6 +1,6 @@
 import { fireEvent, render } from '@testing-library/react-native';
 import React from 'react';
-import { Checkbox, Icon } from '../../../src';
+import { Checkbox, FormControl, Icon } from '../../../src';
 import FakeBaseIcon from '../../support/FakeBaseIcon';
 import WithThemeProvider from '../../support/withThemeProvider';
 
@@ -148,5 +148,26 @@ describe( 'Checkbox.Group', () => {
 		fireEvent( getByTestId( 'test-checkbox-3' ), 'press' );
 
 		expect( onChange ).toHaveBeenCalledWith( [ 'opt-1' ] );
+	} );
+
+	describe( 'inside a FormControl', () => {
+		const renderFormControl = ( { disabled, error } ) => render(
+			<FormControl disabled={disabled} error={error}>
+				<Checkbox.Group>
+					<Checkbox value="opt-1" label="Option 1" testID="test-checkbox-1" />
+					<Checkbox value="opt-2" label="Option 2" testID="test-checkbox-2" />
+					<Checkbox value="opt-3" label="Option 3" testID="test-checkbox-3" />
+				</Checkbox.Group>,
+			</FormControl>,
+			{ wrapper: WithThemeProvider }
+		);
+
+		it( 'disables all the checkboxes when the form control is disabled', () => {
+			const { getByTestId } = renderFormControl( { disabled: true } );
+
+			expect( getByTestId( 'test-checkbox-1-icon' ) ).toHaveChildWithProp( 'fill', '#AAB2CC' );
+			expect( getByTestId( 'test-checkbox-2-icon' ) ).toHaveChildWithProp( 'fill', '#AAB2CC' );
+			expect( getByTestId( 'test-checkbox-3-icon' ) ).toHaveChildWithProp( 'fill', '#AAB2CC' );
+		} );
 	} );
 } );

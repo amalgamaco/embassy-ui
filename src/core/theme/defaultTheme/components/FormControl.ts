@@ -10,15 +10,20 @@ export default {
 		},
 		__hintText: {
 			variant: 'small',
-			color: 'neutral.200'
+			color: 'neutral.600'
 		},
 		__errorText: {
 			variant: 'small',
-			color: 'neutral.200'
+			color: 'neutral.600'
 		},
 		__errorIcon: {
 			size: '2xs',
 			color: 'error.500'
+		},
+		__disabled: {
+			__hintText: {
+				color: 'neutral.200'
+			}
 		}
 	}
 };

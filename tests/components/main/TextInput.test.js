@@ -1,33 +1,18 @@
 import { fireEvent, render } from '@testing-library/react-native';
 import React from 'react';
-import {
-	extendThemeConfig, Icon, Text, ThemeProvider
-} from '../../../src';
+import { FormControl, Icon } from '../../../src';
 import TextInput from '../../../src/components/main/TextInput';
-
-const FakeBaseIcon = ( { name, testID, ...props } ) => (
-	<Text testID={testID} {...props}>{name}</Text>
-);
+import FakeBaseIcon from '../../support/FakeBaseIcon';
+import WithThemeProvider from '../../support/withThemeProvider';
 
 const TestIcon = () => (
 	<Icon name="icon" testID="test-icon" as={FakeBaseIcon} />
 );
 
-const customTheme = extendThemeConfig( {
-	components: {
-		Icon: {
-			defaultProps: {
-				as: TestIcon
-			}
-		}
-	}
-} );
-
 describe( 'TextInput', () => {
 	const renderComponent = props => render(
-		<ThemeProvider theme={customTheme}>
-			<TextInput testID='test-text-input' {...props} />
-		</ThemeProvider>
+		<TextInput testID='test-text-input' {...props} />,
+		{ wrapper: WithThemeProvider }
 	);
 
 	it( 'shows the correct icon when type=\'password\' is set', () => {
@@ -142,6 +127,32 @@ describe( 'TextInput', () => {
 			expect( getByTestId( 'test-text-input-rn' ) ).toHaveProp(
 				'secureTextEntry', false
 			);
+		} );
+	} );
+
+	// TODO: This should be in a shared example
+	describe( 'inside a FormControl', () => {
+		const testId = 'test-text-input';
+		const disabledStyles = { opacity: 0.3 };
+		const errorStyles = { bg: 'error.100' };
+		const expectedDisabledStyles = { opacity: 0.3 };
+		const expectedErrorStyles = { backgroundColor: '#FFCDD7' };
+
+		const renderFormControl = ( { disabled, error } ) => render(
+			<FormControl disabled={disabled} error={error}>
+				<TextInput testID={testId} __disabled={disabledStyles} __error={errorStyles} />
+			</FormControl>,
+			{ wrapper: WithThemeProvider }
+		);
+
+		it( 'disables the TextInput when the FormControl is disabled', () => {
+			const { getByTestId } = renderFormControl( { disabled: true } );
+			expect( getByTestId( testId ) ).toHaveStyle( expectedDisabledStyles );
+		} );
+
+		it( 'marks the TextInput as invalid when the FormControl has error', () => {
+			const { getByTestId } = renderFormControl( { error: 'Error!' } );
+			expect( getByTestId( testId ) ).toHaveStyle( expectedErrorStyles );
 		} );
 	} );
 } );
