@@ -98,25 +98,25 @@ declare module '@amalgama/react-native-ui-kit' {
   interface ICustomThemeConfig extends CustomThemeConfig {}
 }
 
-export default function App() {
-	return (
-		<ThemeProvider theme={customTheme}>
-			<SafeAreaView style={styles.container}>
-				<ScrollView contentContainerStyle={styles.scroll} style={{ width: '100%' }}>
-					<VStack marginX="3">
-						<PaletteColorGrid />
-						<TextExamples />
-						<BoxExamples />
-						<ButtonExamples />
-						<IconExamples />
-						<IconButtonExamples />
-						<CheckboxExamples />
-						<RadioExamples/>
-						<FormControlExamples />
-						<TextInputExamples />
-					</VStack>
-				</ScrollView>
-			</SafeAreaView>
-		</ThemeProvider>
-	);
-}
+const App = () => (
+	<ThemeProvider theme={customTheme}>
+		<SafeAreaView style={styles.container}>
+			<ScrollView contentContainerStyle={styles.scroll} style={{ width: '100%' }}>
+				<VStack marginX="3">
+					<PaletteColorGrid />
+					<TextExamples />
+					<BoxExamples />
+					<ButtonExamples />
+					<IconExamples />
+					<IconButtonExamples />
+					<CheckboxExamples />
+					<RadioExamples/>
+					<FormControlExamples />
+					<TextInputExamples />
+				</VStack>
+			</ScrollView>
+		</SafeAreaView>
+	</ThemeProvider>
+);
+
+export default App;

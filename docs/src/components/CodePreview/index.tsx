@@ -5,7 +5,7 @@ const CodePreview = ( {
 	children,
 	padding = '10',
 	alignItems = 'center'
-}: { children: any, padding: string, alignItems: string } ) => (
+}: { children: React.ReactNode, padding: string, alignItems: string } ) => (
 	<Box
 		flex={1}
 		alignItems={alignItems}
