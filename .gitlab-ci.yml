@@ -106,8 +106,7 @@ upload_to_sonar:
   tags:
     - docker
   only:
-    - master
-    - develop
+    - main
   dependencies:
     - run_unit_tests
 
@@ -127,7 +126,7 @@ preview_docs:
     changes:
       - docs/**/*
   except:
-    - master
+    - main
 
 pages:
   stage: docs
@@ -141,4 +140,4 @@ pages:
     paths:
       - public
   only:
-    - master
+    - main
