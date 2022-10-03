@@ -16,12 +16,12 @@ const useIsHovered = ( {
 	const onHoverIn = useCallback( ( event: GestureResponderEvent ) => {
 		onHoverInProp?.( event );
 		setIsHovered( true );
-	}, [ setIsHovered ] );
+	}, [ setIsHovered, onHoverInProp ] );
 
 	const onHoverOut = useCallback( ( event: GestureResponderEvent ) => {
 		onHoverOutProp?.( event );
 		setIsHovered( false );
-	}, [ setIsHovered ] );
+	}, [ setIsHovered, onHoverOutProp ] );
 
 	return { isHovered, onHoverIn, onHoverOut };
 };

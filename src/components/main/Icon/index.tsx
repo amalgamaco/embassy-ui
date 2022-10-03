@@ -1,10 +1,11 @@
 import React, { memo, forwardRef } from 'react';
+import type { View } from 'react-native';
 import { useIconPropsResolver } from './hooks';
 import type { IIconProps } from './types';
 
 const Icon = ( {
 	name, ...props
-}: IIconProps, ref: any ) => {
+}: IIconProps, ref: React.Ref<View> ) => {
 	const {
 		BaseIconComponent,
 		color,

@@ -7,7 +7,7 @@ import IconLightMode from '@theme/Icon/LightMode';
 import IconDarkMode from '@theme/Icon/DarkMode';
 import styles from './styles.module.css';
 
-function ColorModeToggle( { className, value, onChange } ) {
+const ColorModeToggle = ( { className, value, onChange } ) => {
 	const isBrowser = useIsBrowser();
 	const switchColorMode = useThemeColorModeSwtich();
 
@@ -35,7 +35,7 @@ function ColorModeToggle( { className, value, onChange } ) {
 
 	useEffect( () => {
 		switchColorMode( value );
-	}, [ value ] );
+	}, [ value, switchColorMode ] );
 
 	return (
 		<div className={clsx( styles.toggle, className )}>
@@ -59,5 +59,5 @@ function ColorModeToggle( { className, value, onChange } ) {
 			</button>
 		</div>
 	);
-}
+};
 export default React.memo( ColorModeToggle );

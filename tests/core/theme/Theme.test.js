@@ -1,3 +1,4 @@
+/* eslint-disable jest/valid-describe */
 import Components from '../../../src/core/components/Components';
 import Layout from '../../../src/core/layout/Layout';
 import Palette from '../../../src/core/palette/Palette';
@@ -245,11 +246,6 @@ describe( 'Theme', () => {
 				expect( theme.color( 'primary.300' ) ).toEqual( '#aaffee' );
 			} );
 		} );
-	} );
-
-	describe( 'swithcColorMode', () => {
-		// eslint-disable-next-line no-undef
-		pending( 'Add tests for swithcColorMode, it was tested in the hooks tests but it should be tested here aswell' );
 	} );
 
 	describe( 'defaultPropsFor', () => {

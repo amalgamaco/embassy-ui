@@ -58,9 +58,9 @@ const customTheme = extendThemeConfig( {
 	}
 } as const );
 
-export default function Root( { children }: { children: any } ) {
+const Root = ( { children }: { children: React.ReactNode } ) => (
 	// Wrap the whole application in the ThemeProvider
-	return (
-		<ThemeProvider theme={customTheme}>{children}</ThemeProvider>
-	);
-}
+	<ThemeProvider theme={customTheme}>{children}</ThemeProvider>
+);
+
+export default Root;

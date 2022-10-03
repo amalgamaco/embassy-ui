@@ -49,7 +49,7 @@ const UseThemeColorModeSwtichHookTestcomponent = () => {
 
 	useEffect( () => {
 		switchColorMode( 'dark' );
-	}, [] );
+	}, [ switchColorMode ] );
 
 	return ( <Text>Theme color mode: {theme.colorMode }</Text> );
 };

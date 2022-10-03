@@ -1,3 +1,5 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
+/* eslint-disable @typescript-eslint/no-unsafe-member-access */
 import { useMemo, useState } from 'react';
 import { useIsFocused } from '../../hooks';
 import { useComponentPropsResolver } from '../../../hooks';
@@ -22,7 +24,9 @@ type IUseTogglePasswordIconButtonStateReturnType = [
 	boolean, boolean, () => void
 ];
 
-const useTextInputPropsFromContainerProps = ( textInputProps: any, containerProps: any ) => useMemo(
+const useTextInputPropsFromContainerProps = (
+	textInputProps: any, containerProps: any
+) => useMemo(
 	() => {
 		TEXT_INPUT_PROP_NAMES.forEach( ( propName ) => {
 			textInputProps[ propName ] = containerProps[ propName ];
@@ -85,7 +89,10 @@ const useTextInputPropsResolver = ( {
 	iconProps.disabled = disabled;
 
 	return {
-		containerProps, iconProps, textInputProps, showPasswordToggleButton
+		containerProps,
+		iconProps,
+		textInputProps: textInputProps as ITextInputProps,
+		showPasswordToggleButton
 	};
 };
 

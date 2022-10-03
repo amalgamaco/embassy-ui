@@ -13,7 +13,7 @@ const useComponentPropsResolver = <C extends ComponentName>(
 
 	return useMemo<ComponentStyledProps<C>>( () => (
 		theme?.resolvePropsFor( componentName, props, state ) as ComponentStyledProps<C> || {}
-	), [ theme, props, state ] );
+	), [ componentName, theme, props, state ] );
 };
 
 export default useComponentPropsResolver;

@@ -1,3 +1,5 @@
+/* eslint-disable @typescript-eslint/no-unsafe-member-access */
+import type { ComponentProps, Style } from '../../../core/styles/types';
 import { useTheme } from '../../../core/theme/hooks';
 import { useComponentPropsResolver, useStyleFromPropsResolver } from '../../../hooks';
 import type { AsComponent, IIconProps } from './types';
@@ -10,13 +12,13 @@ export const useIconPropsResolver = ( props: Omit<IIconProps, 'name'> ) => {
 		size: sizeProp,
 		color: colorProp,
 		...resolvedProps
-	} = useComponentPropsResolver( 'Icon', props ) as Omit<IIconProps, 'name'>;
+	} = useComponentPropsResolver( 'Icon', props ) as Omit<IIconProps, 'name'> & { style: Style };
 
 	const size = sizeProp ? theme?.sizeFor( 'Icon', sizeProp ) : undefined;
 	const color = colorProp ? theme?.color( colorProp ) : undefined;
 
 	const [ style, restProps ] = useStyleFromPropsResolver(
-		'Icon', resolvedProps
+		'Icon', resolvedProps as ComponentProps
 	);
 
 	const BaseIconComponent = asProp as AsComponent;

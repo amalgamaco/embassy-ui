@@ -28,7 +28,7 @@ export interface ICheckboxProps extends Omit<PressableProps, 'children'>,
 }
 
 export interface ICheckboxGroupProps {
-	children?: JSX.Element | JSX.Element[] | string | any;
+	children?: JSX.Element | JSX.Element[] | string;
 	value?: string[],
 	onChange?: ( selectedValues: string[] ) => void,
 	disabled?: boolean

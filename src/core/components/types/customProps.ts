@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 // Components custom props types
 // ----------------------------
 // Here we define the custom props types for each component in the theme.

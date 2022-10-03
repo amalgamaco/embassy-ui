@@ -1,3 +1,6 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
+/* eslint-disable @typescript-eslint/no-unsafe-member-access */
+/* eslint-disable @typescript-eslint/no-unsafe-argument */
 import { STYLE_PROPS_MAPPING } from '../core/styles/propsMapping';
 
 const getStylePropsAndRestProps = ( props: any ) => Object

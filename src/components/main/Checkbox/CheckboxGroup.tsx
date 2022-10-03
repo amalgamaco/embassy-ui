@@ -1,6 +1,7 @@
 import React, {
 	memo, forwardRef, useState, useCallback
 } from 'react';
+import type { View } from 'react-native';
 import { Set } from 'immutable';
 import type { ICheckboxGroupProps } from './types';
 import Box from '../Box';
@@ -13,7 +14,7 @@ const CheckboxGroup = ( {
 	onChange = undefined,
 	disabled: disabledProp = false,
 	...props
-}: ICheckboxGroupProps, ref?: any ) => {
+}: ICheckboxGroupProps, ref?: React.Ref<View> ) => {
 	const [ selectedValues, setSelectedValues ] = useState( Set( initialSelectedValues ) );
 
 	const formControlState = useFormControlContext();

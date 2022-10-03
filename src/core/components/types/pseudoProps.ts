@@ -5,13 +5,13 @@
 // to the components' internal components, e.g. to set the label (Text) component's
 // props through the __label pseudoprop for the Button component.
 // {
-// 	bg: 'black',
-// 	mx: '2',
-// 	radius: 'xs',
-// 	__label: {
-// 		color: 'white',
-// 		fontSize: 'xl'
-// 	}
+//   bg: 'black',
+//   mx: '2',
+//   radius: 'xs',
+//   __label: {
+//     color: 'white',
+//     fontSize: 'xl'
+//   }
 // }
 import type { ComponentBaseStyledProps } from './styledProps';
 import type { ComponentName } from './common';

@@ -1,17 +1,15 @@
 {
   "compilerOptions": {
-    "baseUrl": "./",
-    "declaration": true,
     "paths": {
-      "@amalgama/react-native-ui-kit": ["./src/index"]
+      "@amalgama/react-native-ui-kit": ["../src"]
     },
+    "jsx": "react-native",
+    "lib": ["esnext", "dom"],
     "allowUnreachableCode": false,
     "allowUnusedLabels": false,
     "esModuleInterop": true,
     "importsNotUsedAsValues": "error",
     "forceConsistentCasingInFileNames": true,
-    "jsx": "react-native",
-    "lib": ["esnext", "dom"],
     "module": "esnext",
     "moduleResolution": "node",
     "noFallthroughCasesInSwitch": true,
@@ -26,6 +24,6 @@
     "strict": true,
     "target": "esnext"
   },
-  "include": [ "src" ],
-  "exclude": ["node_modules", "tests"]
+  "include": ["src"],
+  "exclude": ["node_modules", "build"]
 }

@@ -1,13 +1,13 @@
-import React from 'react';
+import React, { ElementType } from 'react';
 import {
 	CircleOutilned, CircleFilled, BoxChecked, BoxUnchecked,
 	BoxIndeterminated, AlertCircle, Eye
 } from './icons';
-import type { AsComponent, IIconProps } from '../../components/main/Icon/types';
+import type { AsComponentProps } from '../../components/main/Icon/types';
 import IconNotFoundError from './IconNotFoundError';
 
 interface IconsMap {
-	[key: string]: AsComponent;
+	[key: string]: ElementType;
 }
 
 const PACKAGE_ICONS = Object.freeze( {
@@ -22,7 +22,7 @@ const PACKAGE_ICONS = Object.freeze( {
 
 const UIKitIcon = ( {
 	name, size, color, style, ...restProps
-}: IIconProps ) => {
+}: AsComponentProps ) => {
 	const Illustration = PACKAGE_ICONS[ name ];
 
 	if ( !Illustration ) {

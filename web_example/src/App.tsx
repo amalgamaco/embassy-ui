@@ -108,23 +108,23 @@ const customTheme = extendThemeConfig( {
 	}
 } as const );
 
-export default function App() {
-	return (
-		<ThemeProvider theme={customTheme}>
-			<Box flex={1} alignItems="center">
-				<VStack width="500px">
-					<PaletteColorGrid />
-					<TextExamples />
-					<BoxExamples />
-					<ButtonExamples />
-					<IconExamples />
-					<IconButtonExamples />
-					<CheckboxExamples />
-					<RadioExamples/>
-					<FormControlExamples />
-					<TextInputExamples />
-				</VStack>
-			</Box>
-		</ThemeProvider>
-	);
-}
+const App = () => (
+	<ThemeProvider theme={customTheme}>
+		<Box flex={1} alignItems="center">
+			<VStack width="500px">
+				<PaletteColorGrid />
+				<TextExamples />
+				<BoxExamples />
+				<ButtonExamples />
+				<IconExamples />
+				<IconButtonExamples />
+				<CheckboxExamples />
+				<RadioExamples/>
+				<FormControlExamples />
+				<TextInputExamples />
+			</VStack>
+		</Box>
+	</ThemeProvider>
+);
+
+export default App;
