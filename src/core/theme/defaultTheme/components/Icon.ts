@@ -4,6 +4,7 @@ export default {
 		textAlign: 'center' as const
 	},
 	sizes: {
+		'3xs': 8,
 		'2xs': 16,
 		'xs': 20,
 		'sm': 24,

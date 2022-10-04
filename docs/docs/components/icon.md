@@ -206,6 +206,7 @@ The size of the Icon. The available sizes are resolved using the theme configura
 	components: {
 		Icon: {
 			sizes: {
+				'3xs': 8,
 				'2xs': 16,
 				'xs': 20,
 				'sm': 24,
