@@ -63,6 +63,37 @@ export default {
 				__rightIcon: {
 					color: 'neutral.600'
 				}
+			},
+			__dark: {
+				bg: 'primary.200',
+				borderColor: 'primary.200',
+				__label: {
+					color: 'black'
+				},
+				__leftIcon: {
+					color: 'black'
+				},
+				__rightIcon: {
+					color: 'black'
+				},
+				__pressed: {
+					opacity: 1,
+					bg: 'primary.300',
+					borderColor: 'primary.300'
+				},
+				__disabled: {
+					bg: 'neutral.50',
+					borderColor: 'neutral.50',
+					__label: {
+						color: 'neutral.300'
+					},
+					__leftIcon: {
+						color: 'neutral.300'
+					},
+					__rightIcon: {
+						color: 'neutral.300'
+					}
+				}
 			}
 		},
 		secondary: {

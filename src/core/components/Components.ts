@@ -1,9 +1,11 @@
-import { merge } from 'lodash';
+import { cloneDeep, merge } from 'lodash';
+import type { ColorMode } from '../types';
 import type {
 	ComponentsConfig, ComponentName, VariantName, ComponentState,
 	ComponentConfig, PropsWithVariant, ComponentStateKey,
 	ComponentStyledProps
 } from './types';
+import { COMPONENT_COLOR_MODE_PROPS_MAP } from './types/colorModeProps';
 
 import { COMPONENT_STATE_PROPS_MAP } from './types/state';
 
@@ -19,6 +21,7 @@ export default class Components {
 	resolvePropsFor<C extends ComponentName>(
 		componentName: C,
 		{ variant, ...props }: PropsWithVariant,
+		colorMode: ColorMode,
 		state: ComponentState = {}
 	): ComponentStyledProps<C> {
 		const defaultProps = this
@@ -30,9 +33,9 @@ export default class Components {
 
 		const resolvedProps: ComponentStyledProps<C> = merge(
 			{} as ComponentStyledProps<C>,
-			defaultProps,
-			variantProps,
-			props
+			this.applyColorModeProps( defaultProps, colorMode ),
+			this.applyColorModeProps( variantProps, colorMode ),
+			this.applyColorModeProps( props, colorMode )
 		);
 
 		return this.applyStateProps( resolvedProps, state );
@@ -59,6 +62,22 @@ export default class Components {
 	}
 
 	// eslint-disable-next-line class-methods-use-this
+	private applyColorModeProps<C extends ComponentName>(
+		props: ComponentStyledProps<C>,
+		colorMode: ColorMode
+	): ComponentStyledProps<C> {
+		const currentColorModeProp = COMPONENT_COLOR_MODE_PROPS_MAP[ colorMode ];
+		const propsForColorMode = props[ currentColorModeProp ] || {};
+		const resultProps = cloneDeep( props );
+
+		Object.values( COMPONENT_COLOR_MODE_PROPS_MAP ).forEach(
+			( colorModeProp ) => { delete resultProps[ colorModeProp ]; }
+		);
+
+		return merge( resultProps, propsForColorMode );
+	}
+
+	// eslint-disable-next-line class-methods-use-this
 	private applyStateProps<C extends ComponentName>(
 		props: ComponentStyledProps<C>,
 		state: ComponentState = {}
@@ -68,7 +87,7 @@ export default class Components {
 		).reduce(
 			( result, stateKey ) => {
 				const stateProp = COMPONENT_STATE_PROPS_MAP[ stateKey ];
-				const propsForState = props[ stateProp ];
+				const propsForState = props[ stateProp ] || {};
 				delete props[ stateProp ];
 
 				return state[ stateKey ] && !!propsForState

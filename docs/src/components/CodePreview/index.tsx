@@ -13,6 +13,7 @@ const CodePreview = ( {
 		background="secondary.200"
 		marginY="2"
 		rounded="xl"
+		__dark={{ background: 'neutral.800' }}
 	>
 		{children}
 	</Box>

@@ -131,7 +131,7 @@ export default class Theme {
 		props: ComponentStyledProps<ComponentName>,
 		state?: ComponentState
 	) {
-		return this._components.resolvePropsFor( componentName, props, state );
+		return this._components.resolvePropsFor( componentName, props, this.colorMode, state );
 	}
 
 	// Style

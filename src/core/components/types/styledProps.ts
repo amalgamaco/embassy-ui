@@ -11,6 +11,7 @@
 //    + Pseudo props defined for C (__label, __icon, etc)
 //    + State props (__disabled, __pressed, etc)
 import type { IThemeConfig, StyledProps } from '../../theme/types';
+import type { ComponentColorModeProp } from './colorModeProps';
 import type { ComponentName } from './common';
 import type { ComponentCustomProps } from './customProps';
 import type { ComponentPseudoProps } from './pseudoProps';
@@ -65,7 +66,7 @@ export type ComponentBaseStyledPropsWithPseudoProps<C extends ComponentName> = {
 export type ComponentStateProps<C extends ComponentName> =
 	Partial<Record<ComponentStateProp, ComponentBaseStyledPropsWithPseudoProps<C>>>;
 
-export type ComponentStyledProps<C extends ComponentName> = {
+export type ComponentBaseStyledPropsWithStateProps<C extends ComponentName> = {
 	[K in (
 		keyof ComponentBaseStyledPropsWithPseudoProps<C>
 		| keyof ComponentStateProps<C>
@@ -74,5 +75,20 @@ export type ComponentStyledProps<C extends ComponentName> = {
 			? ComponentBaseStyledPropsWithPseudoProps<C>[K]
 			: K extends keyof ComponentStateProps<C>
 			? ComponentStateProps<C>[K]
+			: never
+};
+
+export type ComponentColorModeProps<C extends ComponentName> =
+	Partial<Record<ComponentColorModeProp, ComponentBaseStyledPropsWithStateProps<C>>>;
+
+export type ComponentStyledProps<C extends ComponentName> = {
+	[K in (
+		keyof ComponentBaseStyledPropsWithStateProps<C>
+		| keyof ComponentColorModeProps<C>
+	)]?:
+		K extends keyof ComponentBaseStyledPropsWithStateProps<C>
+			? ComponentBaseStyledPropsWithStateProps<C>[K]
+			: K extends keyof ComponentColorModeProps<C>
+			? ComponentColorModeProps<C>[K]
 			: never
 };
