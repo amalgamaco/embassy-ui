@@ -2,7 +2,7 @@
 sidebar_position: 5
 ---
 
-import { Button, Icon } from '@amalgama/react-native-ui-kit';
+import { Button, Icon } from '@amalgama/embassy-ui';
 import CodePreview from '@site/src/components/CodePreview';
 
 # Pseudo-Props

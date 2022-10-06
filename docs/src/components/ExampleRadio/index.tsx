@@ -1,4 +1,4 @@
-import { Radio } from '@amalgama/react-native-ui-kit';
+import { Radio } from '@amalgama/embassy-ui';
 import React, { useState } from 'react';
 
 const ExampleRadio = () => {

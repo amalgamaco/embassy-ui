@@ -12,7 +12,7 @@ This component is a wrapper for the `View` component. It provides a simple way t
 </CodePreview>
 
 ```jsx
-import { Box, Text } from '@amalgama/react-native-ui-kit';
+import { Box, Text } from '@amalgama/embassy-ui';
 
 <Box bg="primary.400" borderWidth="xs" padding={1}>
     <Text>This is a box!</Text>

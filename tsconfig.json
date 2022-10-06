@@ -3,7 +3,7 @@
     "baseUrl": "./",
     "declaration": true,
     "paths": {
-      "@amalgama/react-native-ui-kit": ["./src/index"]
+      "@amalgama/embassy-ui": ["./src/index"]
     },
     "allowUnreachableCode": false,
     "allowUnusedLabels": false,

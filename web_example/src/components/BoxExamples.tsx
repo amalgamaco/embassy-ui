@@ -3,7 +3,7 @@ import * as React from 'react';
 import { StyleSheet, View } from 'react-native';
 import {
 	Box, Text, VStack, HStack
-} from '@amalgama/react-native-ui-kit';
+} from '@amalgama/embassy-ui';
 
 const styles = StyleSheet.create( {
 	container: {

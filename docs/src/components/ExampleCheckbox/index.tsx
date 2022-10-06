@@ -1,4 +1,4 @@
-import { Checkbox } from '@amalgama/react-native-ui-kit';
+import { Checkbox } from '@amalgama/embassy-ui';
 import React, { useState } from 'react';
 
 const ExampleCheckbox = () => {

@@ -2,7 +2,7 @@ import * as React from 'react';
 
 import {
 	ThemeProvider, Box, VStack, extendThemeConfig
-} from '@amalgama/react-native-ui-kit';
+} from '@amalgama/embassy-ui';
 
 import FontAwesome from 'react-native-vector-icons/FontAwesome';
 import IoniconsIcon from 'react-native-vector-icons/Ionicons';

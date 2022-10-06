@@ -100,7 +100,7 @@ upload_to_sonar:
     paths:
       - .sonar/cache
   script:
-    - sed -i.bk 's/SF:.*\/react-native-ui-kit\/\(.*\)/SF:\1/' reports/coverage/lcov.info
+    - sed -i.bk 's/SF:.*\/embassy-ui\/\(.*\)/SF:\1/' reports/coverage/lcov.info
     - sonar-scanner
   allow_failure: true
   tags:

@@ -1,7 +1,7 @@
 {
-  "name": "@amalgama/react-native-ui-kit",
+  "name": "@amalgama/embassy-ui",
   "version": "1.0.0",
-  "description": "A set of UI components following Amalgama's Design System.",
+  "description": "A set of UI components following Embassy Design System.",
   "main": "lib/commonjs/index",
   "module": "lib/module/index",
   "types": "lib/typescript/index.d.ts",
@@ -13,7 +13,7 @@
     "android",
     "ios",
     "cpp",
-    "react-native-ui-kit.podspec",
+    "embassy-ui.podspec",
     "!lib/typescript/example",
     "!android/build",
     "!ios/build",
@@ -38,13 +38,13 @@
     "ios",
     "android"
   ],
-  "repository": "https://git.amalgama.co/amalgama/packages/npm/react-native-ui-kit.git",
+  "repository": "https://git.amalgama.co/amalgama/packages/npm/embassy-ui.git",
   "author": "Mauro E. Bender <mauro@amalgama.co> (https://git.amalgama.co/mauro)",
   "license": "MIT",
   "bugs": {
-    "url": "https://git.amalgama.co/amalgama/packages/npm/react-native-ui-kit.git/issues"
+    "url": "https://git.amalgama.co/amalgama/packages/npm/embassy-ui.git/issues"
   },
-  "homepage": "https://git.amalgama.co/amalgama/packages/npm/react-native-ui-kit.git#readme",
+  "homepage": "https://git.amalgama.co/amalgama/packages/npm/embassy-ui.git#readme",
   "publishConfig": {
     "registry": "https://git.amalgama.co/api/v4/projects/982/packages/npm/"
   },
@@ -135,7 +135,7 @@
       "requireCleanWorkingDir": false,
       "requireUpstream": true,
       "commitMessage": "Release v${version}",
-      "changelog": "npx auto-changelog --stdout --commit-limit false --unreleased --issue-url https://git.amalgama.co/amalgama/packages/npm/react-native-ui-kit/-/issues/{id} --merge-url https://git.amalgama.co/amalgama/packages/npm/react-native-ui-kit/-/merge_requests/{id} --commit-url https://git.amalgama.co/amalgama/packages/npm/react-native-ui-kit/-/commit/{id}"
+      "changelog": "npx auto-changelog --stdout --commit-limit false --unreleased --issue-url https://git.amalgama.co/amalgama/packages/npm/embassy-ui/-/issues/{id} --merge-url https://git.amalgama.co/amalgama/packages/npm/embassy-ui/-/merge_requests/{id} --commit-url https://git.amalgama.co/amalgama/packages/npm/embassy-ui/-/commit/{id}"
     },
     "hooks": {
       "after:bump": "npx auto-changelog -p"

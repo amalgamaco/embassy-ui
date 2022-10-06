@@ -1,4 +1,4 @@
-import { FormControl, Checkbox, Radio, HStack, TextInput } from '@amalgama/react-native-ui-kit';
+import { FormControl, Checkbox, Radio, HStack, TextInput } from '@amalgama/embassy-ui';
 import CodePreview from '@site/src/components/CodePreview';
 
 # FormControl

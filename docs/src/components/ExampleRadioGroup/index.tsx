@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Radio, Text, VStack } from '@amalgama/react-native-ui-kit';
+import { Radio, Text, VStack } from '@amalgama/embassy-ui';
 
 const ExampleRadioGroup = ( { disabled = false }: { disabled?: boolean } ) => {
 	const [ value, setValue ] = useState<string | undefined>();

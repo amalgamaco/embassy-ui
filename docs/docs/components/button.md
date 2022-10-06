@@ -1,4 +1,4 @@
-import { Button, HStack, Icon } from '@amalgama/react-native-ui-kit'
+import { Button, HStack, Icon } from '@amalgama/embassy-ui'
 import CodePreview from '@site/src/components/CodePreview';
 
 # Button
@@ -10,7 +10,7 @@ Buttons allow user to trigger actions or events with a single tap.
 To add the `Button` component to your project you can import it as follows:
 
 ```tsx
-import { Button } from '@amalgama/react-native-ui-kit';
+import { Button } from '@amalgama/embassy-ui';
 ```
 
 ## Examples

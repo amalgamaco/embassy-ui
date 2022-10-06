@@ -1,5 +1,5 @@
 import React from 'react';
-import { Box, Text } from '@amalgama/react-native-ui-kit';
+import { Box, Text } from '@amalgama/embassy-ui';
 
 const StackElement = ( { color, label, width = undefined } ) => (
 	<Box

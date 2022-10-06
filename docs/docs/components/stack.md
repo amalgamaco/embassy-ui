@@ -17,7 +17,7 @@ You can style the stack using the [style props](/docs/theming/style_props).
 
 ```jsx
 import React from 'react';
-import { VStack } from '@amalgama/react-native-ui-kit';
+import { VStack } from '@amalgama/embassy-ui';
 import StackElement from "./StackElement";
 
 <VStack borderWidth="xs" borderRadius="sm">
@@ -35,7 +35,7 @@ import StackElement from "./StackElement";
 
 ```jsx
 import React from 'react';
-import { HStack } from '@amalgama/react-native-ui-kit';
+import { HStack } from '@amalgama/embassy-ui';
 import StackElement from "./StackElement";
 
 <HStack borderWidth="xs" borderRadius="sm">
@@ -58,7 +58,7 @@ By default, the stack is from top to bottom if it's a VStack and from left to ri
 
 ```jsx
 import React from 'react';
-import { VStack } from '@amalgama/react-native-ui-kit';
+import { VStack } from '@amalgama/embassy-ui';
 import StackElement from "./StackElement";
 
 <Vstack reversed borderWidth="xs" borderRadius="sm">
@@ -78,7 +78,7 @@ The spacing between the components in the stack. This space is calculated using 
 
 ```jsx
 import React from 'react';
-import { VStack } from '@amalgama/react-native-ui-kit';
+import { VStack } from '@amalgama/embassy-ui';
 
 <Vstack space={4} borderWidht={"xs"} borderRadius="sm">
 	<StackElement color="success.500" label="First" />

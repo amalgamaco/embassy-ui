@@ -30,7 +30,7 @@ const Home = (): JSX.Element => {
 	return (
 		<Layout
 			title={`${siteConfig.title}`}
-			description="A set of UI components following Amalgama's Design System">
+			description="A set of UI components following the Embassy Design System">
 			<HomepageHeader />
 			<main>
 			</main>

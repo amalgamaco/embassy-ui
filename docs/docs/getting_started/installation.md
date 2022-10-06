@@ -6,10 +6,10 @@ sidebar_position: 2
 
 ## Install the library
 
-Run the following command to add the `RN UI Kit` library to your project:
+Run the following command to add the `Embassy UI` library to your project:
 
 ```sh
-yarn add @amalgama/react-native-ui-kit
+yarn add @amalgama/embassy-ui
 ```
 
 ### Web
@@ -37,7 +37,7 @@ You need to add [react-native-svg](https://www.npmjs.com/package/react-native-sv
 
 To install the default fonts (`Epilogue` and `Inter`) to your ReactNative project you need to follow the next steps:
 
-1. Download all the font files from [here](https://git.amalgama.co/amalgama/packages/npm/react-native-ui-kit/-/tree/main/example/assets/fonts) and put them in the `assets/fonts` folder (create the folder if it doesn't exists in your project).
+1. Download all the font files from [here](https://git.amalgama.co/amalgama/packages/npm/embassy-ui/-/tree/main/example/assets/fonts) and put them in the `assets/fonts` folder (create the folder if it doesn't exists in your project).
 2. Create a `react-native.config.js` file if you don't have already one in your project and add the following configuration:
 	```js
 	module.exports = {

@@ -1,14 +1,14 @@
-# RN UI Kit
+# Embassy UI
 
-A set of UI components following Amalgama's Design System.
+A set of UI components following the Embassy Design System.
 
 ## Installation
 
-For installation instructions go to the [Official Docs](https://ui-kit.amalgama.co/docs/getting_started/installation).
+For installation instructions go to the [Official Docs](https://embassy-ui.amalgama.co/docs/getting_started/installation).
 
 ## Usage
 
-For usage instruction go to the [Official Docs](https://ui-kit.amalgama.co/docs/getting_started/overview).
+For usage instruction go to the [Official Docs](https://embassy-ui.amalgama.co/docs/getting_started/overview).
 
 ## Contributing
 

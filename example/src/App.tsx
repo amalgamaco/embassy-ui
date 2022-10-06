@@ -1,7 +1,7 @@
 import * as React from 'react';
 
 import { SafeAreaView, ScrollView, StyleSheet } from 'react-native';
-import { ThemeProvider, VStack, extendThemeConfig } from '@amalgama/react-native-ui-kit';
+import { ThemeProvider, VStack, extendThemeConfig } from '@amalgama/embassy-ui';
 import FontAwesomeIcon from 'react-native-vector-icons/FontAwesome';
 import IoniconsIcon from 'react-native-vector-icons/Ionicons';
 
@@ -93,7 +93,7 @@ const customTheme = extendThemeConfig( {
 
 type CustomThemeConfig = typeof customTheme;
 
-declare module '@amalgama/react-native-ui-kit' {
+declare module '@amalgama/embassy-ui' {
   // eslint-disable-next-line @typescript-eslint/no-empty-interface
   interface ICustomThemeConfig extends CustomThemeConfig {}
 }

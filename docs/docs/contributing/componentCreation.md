@@ -25,7 +25,7 @@ When creating your `useComponentNamePropsResolver` hook you will probably be usi
 ## I have finished creating my component, what should I do now?
 
 ###  Add your component to the `src/components/index.ts` file
-You should add your component to the `src/components/index.ts` file and to `src/index.tsx` so that it can be imported from the `react-native-ui-kit` package.
+You should add your component to the `src/components/index.ts` file and to `src/index.tsx` so that it can be imported from the `embassy-ui` package.
 
 ### Make sure your component is properly documented
 You should add your component to the `docs/docs/components` folder.

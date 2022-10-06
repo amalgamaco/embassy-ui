@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Checkbox, Text, VStack } from '@amalgama/react-native-ui-kit';
+import { Checkbox, Text, VStack } from '@amalgama/embassy-ui';
 
 const ExampleCheckboxGroup = ( { disabled = false }: { disabled?: boolean } ) => {
 	const [ value, setValue ] = useState( [] );

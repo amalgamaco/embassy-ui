@@ -1,5 +1,5 @@
 import React from 'react';
-import { HStack } from '@amalgama/react-native-ui-kit';
+import { HStack } from '@amalgama/embassy-ui';
 import StackElement from '../StackElement';
 
 const ExampleHStack = props => (

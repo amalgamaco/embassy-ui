@@ -4,7 +4,7 @@ import { StyleSheet, View } from 'react-native';
 import {
 	VStack, FormControl, TextInput, Text,
 	Checkbox, Radio
-} from '@amalgama/react-native-ui-kit';
+} from '@amalgama/embassy-ui';
 
 const styles = StyleSheet.create( {
 	container: {

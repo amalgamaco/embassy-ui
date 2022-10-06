@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import clsx from 'clsx';
-import { useThemeColorModeSwtich } from '@amalgama/react-native-ui-kit';
+import { useThemeColorModeSwtich } from '@amalgama/embassy-ui';
 import useIsBrowser from '@docusaurus/useIsBrowser';
 import { translate } from '@docusaurus/Translate';
 import IconLightMode from '@theme/Icon/LightMode';

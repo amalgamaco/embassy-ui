@@ -7,9 +7,9 @@ const darkCodeTheme = require( 'prism-react-renderer/themes/dracula' );
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-	title: 'Amalgama\'s UI Kit',
+	title: 'Embassy UI',
 	tagline: 'A components library to help users build Design Systems.',
-	url: process.env.URL || 'https://amalgama.pages.amalgama.co',
+	url: process.env.URL || 'https://embassy-ui.amalgama.co',
 	baseUrl: process.env.BASE_URL || '/',
 	onBrokenLinks: 'throw',
 	onBrokenMarkdownLinks: 'warn',
@@ -38,14 +38,14 @@ const config = {
 					// Please change this to your repo.
 					// Remove this to remove the "edit this page" links.
 					editUrl:
-						'https://git.amalgama.co/amalgama/packages/npm/react-native-ui-kit/-/tree/docs'
+						'https://git.amalgama.co/amalgama/packages/npm/embassy-ui/-/tree/docs'
 				},
 				blog: {
 					showReadingTime: true,
 					// Please change this to your repo.
 					// Remove this to remove the "edit this page" links.
 					editUrl:
-					'https://git.amalgama.co/amalgama/packages/npm/react-native-ui-kit/-/tree/docs'
+					'https://git.amalgama.co/amalgama/packages/npm/embassy-ui/-/tree/docs'
 				},
 				theme: {
 					customCss: require.resolve( './src/css/custom.css' )
@@ -68,20 +68,20 @@ const config = {
 		/** @type {import('@docusaurus/preset-classic').ThemeConfig} */
 		( {
 			navbar: {
-				title: 'Amalgama\'s UI Kit',
+				title: 'Embassy UI',
 				logo: {
-					alt: 'Amalgama\'s Logo',
+					alt: 'Embassy UI Logo',
 					src: 'img/logo.svg'
 				},
 				items: [
 					{
 						label: 'Figma',
-						href: 'https://www.figma.com/file/X7a5bxxsP6hXXpNEzpMhoj/Design-System-RRSS',
+						href: 'https://www.figma.com/file/X7a5bxxsP6hXXpNEzpMhoj/Design-System-Amalgama',
 						position: 'right'
 					},
 					{
 						label: 'GitLab',
-						href: 'https://git.amalgama.co/amalgama/packages/npm/react-native-ui-kit',
+						href: 'https://git.amalgama.co/amalgama/packages/npm/embassy-ui',
 						position: 'right'
 					}
 				]

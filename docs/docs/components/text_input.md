@@ -1,4 +1,4 @@
-import {VStack, TextInput} from '@amalgama/react-native-ui-kit'
+import {VStack, TextInput} from '@amalgama/embassy-ui'
 import CodePreview from '@site/src/components/CodePreview'
 import Feather from 'react-native-vector-icons/Feather';
 import ExampleTextInput from '@site/src/components/ExampleTextInput'
@@ -15,7 +15,7 @@ The `TextInput` component allows a user to provide input in a text field.
 </CodePreview>
 
 ```jsx
-import { TextInput } from '@amalgama/react-native-ui-kit';
+import { TextInput } from '@amalgama/embassy-ui';
 
 <TextInput placeholder="Enter your text" width="300px" />
 ```

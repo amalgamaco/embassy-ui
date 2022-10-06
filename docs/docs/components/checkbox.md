@@ -1,4 +1,4 @@
-import { Checkbox, HStack, Icon } from '@amalgama/react-native-ui-kit'
+import { Checkbox, HStack, Icon } from '@amalgama/embassy-ui'
 import Feather from 'react-native-vector-icons/Feather';
 import CodePreview from '@site/src/components/CodePreview';
 import ExampleCheckbox from '@site/src/components/ExampleCheckbox';
@@ -13,7 +13,7 @@ import { useState } from 'react'
 To add the `Checkbox` component to your project you can import it as follows:
 
 ```tsx
-import { Checkbox } from '@amalgama/react-native-ui-kit';
+import { Checkbox } from '@amalgama/embassy-ui';
 ```
 
 ## Standalone
@@ -24,7 +24,7 @@ import { Checkbox } from '@amalgama/react-native-ui-kit';
 </CodePreview>
 
 ```jsx
-import { Checkbox } from '@amalgama/react-native-ui-kit';
+import { Checkbox } from '@amalgama/embassy-ui';
 import React, { useState } from 'react';
 
 const App = () => {
@@ -45,7 +45,7 @@ If the checkbox is selected or not.
 
 | TYPE | REQUIRED | DEFAULT |
 | ---- | -------- | ------- |
-| bool | No       | false   |
+| `boolean` | No       | `false`   |
 
 <CodePreview>
     <HStack>
@@ -64,7 +64,7 @@ If the checkbox is indeterminated or not. This is usually used for lists of chec
 
 | TYPE | REQUIRED | DEFAULT |
 | ---- | -------- | ------- |
-| bool | No       | false   |
+| `boolean` | No       | `false`   |
 
 <CodePreview>
     <Checkbox indeterminated/>
@@ -94,7 +94,7 @@ If the checkbox is inside a `Checkbox.Group` this prop indicates the value for i
 
 | TYPE   | REQUIRED |
 | ------ | -------- |
-| string | No       |
+| `string` | No       |
 
 :::caution
 If the `Checkbox` is inside a `Checkbox.Group` this prop is required and will throw an `Exception` if not set.
@@ -105,7 +105,7 @@ If the checkbox is disabled or not.
 
 | TYPE | REQUIRED | DEFAULT |
 | ---- | -------- | ------- |
-| bool | No       | false   |
+| `boolean` | No       | `false`   |
 
 <CodePreview>
     <HStack>
@@ -126,7 +126,7 @@ Invoked when the checkbox is pressed.
 
 | TYPE     | REQUIRED |
 | -------- | -------- |
-| function | No       |
+| `(): void` | No       |
 
 <CodePreview>
     <Checkbox onPress={ () => { window.alert( 'The checkbox was pressed!' ) } }/>
@@ -202,7 +202,7 @@ import EvilIcons from 'react-native-vector-icons/Feather';
 
 ```jsx
 import React, { useState } from 'react';
-import { Checkbox, Text, VStack } from '@amalgama/react-native-ui-kit';
+import { Checkbox, Text, VStack } from '@amalgama/embassy-ui';
 
 const ExampleCheckboxGroup = () => {
 	const [ value, setValue ] = useState( [] );
@@ -230,7 +230,7 @@ A list containing the selected checkbox values.
 
 | TYPE     | REQUIRED | DEFAULT |
 | ---------| -------- | ------- |
-| string[] | No       | []      |
+| `string[]` | No       | `[]`      |
 
 
 #### onChange
@@ -238,14 +238,14 @@ Invoked when the group selection changes (because a new option was selected or a
 
 | TYPE     | REQUIRED |
 | -------- | -------- |
-| function | No       |
+| `( selected: string[] ): void` | No       |
 
 #### disabled
-If the checkbox is disabled or not.
+If the checkbox group is disabled or not. When it's set to true it disables all the checkboxes inside the group.
 
 | TYPE | REQUIRED | DEFAULT |
 | ---- | -------- | ------- |
-| bool | No       | false   |
+| `boolean` | No       | `false`   |
 
 <CodePreview>
 	<ExampleCheckboxGroup disabled />
@@ -253,7 +253,7 @@ If the checkbox is disabled or not.
 
 ```jsx
 import React, { useState } from 'react';
-import { Checkbox, Text, VStack } from '@amalgama/react-native-ui-kit';
+import { Checkbox, Text, VStack } from '@amalgama/embassy-ui';
 
 const ExampleCheckboxGroup = () => {
 	const [ value, setValue ] = useState( [] );
@@ -282,7 +282,7 @@ Props to be applied to the internal `Icon` component showing the right icon.
 
 | TYPE   | REQUIRED |
 | ------ | -------- |
-| IIconProps | No   |
+| `IIconProps` | No   |
 
 ### __iconContainer
 
@@ -290,7 +290,7 @@ Props to be applied to the internal `Box` component which contains the label and
 
 | TYPE   | REQUIRED |
 | ------ | -------- |
-| IBoxProps | No  |
+| `IBoxProps` | No  |
 
 ### __label
 
@@ -298,4 +298,4 @@ Props to be applied to the internal `Text` component showing the label text.
 
 | TYPE   | REQUIRED |
 | ------ | -------- |
-| ITextProps | No   |
+| `ITextProps` | No   |

@@ -1,4 +1,4 @@
-import {Radio, HStack, Icon} from '@amalgama/react-native-ui-kit'
+import {Radio, HStack, Icon} from '@amalgama/embassy-ui'
 import Feather from 'react-native-vector-icons/Feather';
 import CodePreview from '@site/src/components/CodePreview'
 import ExampleRadio from '@site/src/components/ExampleRadio'
@@ -12,7 +12,7 @@ import {useState} from 'react'
 To add the `Radio` component to your project you can import it as follows:
 
 ```tsx
-import {Radio} from '@amalgama/react-native-ui-kit'; 
+import { Radio } from '@amalgama/embassy-ui'; 
 ```
 
 ## Standalone
@@ -23,7 +23,7 @@ import {Radio} from '@amalgama/react-native-ui-kit';
 </CodePreview>
 
 ```jsx
-import { Radio } from '@amalgama/react-native-ui-kit';
+import { Radio } from '@amalgama/embassy-ui';
 import React, { useState } from 'react';
 
 const ExampleRadio = () => {
@@ -45,7 +45,7 @@ If the Radio is selected or not.
 
 | TYPE | REQUIRED | DEFAULT |
 | ---- | -------- | ------- |
-| bool | No       | false   |
+| `boolean` | No       | `false`   |
 
 <CodePreview>
 	<HStack>
@@ -64,7 +64,7 @@ If the Radio is disabled or not.
 
 | TYPE | REQUIRED | DEFAULT |
 | ---- | -------- | ------- |
-| bool | No       | false   |
+| `boolean` | No       | `false`   |
 
 <CodePreview>
 	<HStack>
@@ -83,7 +83,7 @@ Invoked when the Radio is pressed.
 
 | TYPE     | REQUIRED |
 | -------- | -------- |
-| function | No       |
+| `(): void` | No       |
 
 <CodePreview>
 	<Radio onPress={ () => { window.alert( 'The Radio was pressed!' ) } }/>
@@ -98,7 +98,7 @@ Shows a label text next to the radio button icon.
 
 | TYPE   | REQUIRED |
 | ------ | -------- |
-| string | No       |
+| `string` | No       |
 
 <CodePreview>
 	<Radio label="Radio" />
@@ -113,7 +113,7 @@ If the radio is inside a `Radio.Group` this prop indicates the value for it.
 
 | TYPE   | REQUIRED |
 | ------ | -------- |
-| string | No       |
+| `string` | No       |
 
 :::caution
 If the `Radio` is inside a `Radio.Group` this prop is required and will throw an `Exception` if not set.
@@ -167,7 +167,7 @@ import Feather from 'react-native-vector-icons/Feather';
 
 ```jsx
 import React, { useState } from 'react';
-import { Radio, Text, VStack } from '@amalgama/react-native-ui-kit';
+import { Radio, Text, VStack } from '@amalgama/embassy-ui';
 
 const ExampleRadioGroup = () => {
 	const [ value, setValue ] = useState();
@@ -191,26 +191,26 @@ const ExampleRadioGroup = () => {
 ### Props
 
 #### value
-A list containing the selected checkbox values.
+The selected radio value.
 
 | TYPE     | REQUIRED | DEFAULT |
 | ---------| -------- | ------- |
-| string[] | No       | []      |
+| `string` | No       | `undefined` |
 
 
 #### onChange
-Invoked when the group selection changes (because a new option was selected or a previous one was unselected) with the selected option values.
+Invoked when the group selection changes (because a new option was selected) with the new selected option value.
 
 | TYPE     | REQUIRED |
 | -------- | -------- |
-| function | No       |
+| `( selected: string ): void` | No       |
 
 #### disabled
-If the checkbox is disabled or not.
+If the radio group is disabled or not. When it's set to true it disables all the radios inside the group.
 
 | TYPE | REQUIRED | DEFAULT |
 | ---- | -------- | ------- |
-| bool | No       | false   |
+| `boolean` | No       | `false` |
 
 <CodePreview>
 	<ExampleRadioGroup disabled />
@@ -218,7 +218,7 @@ If the checkbox is disabled or not.
 
 ```jsx
 import React, { useState } from 'react';
-import { Radio, Text, VStack } from '@amalgama/react-native-ui-kit';
+import { Radio, Text, VStack } from '@amalgama/embassy-ui';
 
 const ExampleRadioGroup = () => {
 	const [ value, setValue ] = useState();
@@ -247,7 +247,7 @@ Props to be applied to the internal `Icon` component showing the right icon.
 
 | TYPE   | REQUIRED |
 | ------ | -------- |
-| IIconProps | No   |
+| `IIconProps` | No   |
 
 ### __iconContainer
 
@@ -255,7 +255,7 @@ Props to be applied to the internal `Box` component which contains the label and
 
 | TYPE   | REQUIRED |
 | ------ | -------- |
-| IBoxProps | No  |
+| `IBoxProps` | No  |
 
 ### __label
 
@@ -263,4 +263,4 @@ Props to be applied to the internal `Text` component showing the label text.
 
 | TYPE   | REQUIRED |
 | ------ | -------- |
-| ITextProps | No   |
+| `ITextProps` | No   |

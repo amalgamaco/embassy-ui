@@ -1,4 +1,4 @@
-import { TextInput } from '@amalgama/react-native-ui-kit';
+import { TextInput } from '@amalgama/embassy-ui';
 import React, { useState } from 'react';
 
 const ExampleTextInput = () => {

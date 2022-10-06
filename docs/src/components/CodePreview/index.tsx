@@ -1,5 +1,5 @@
 import React from 'react';
-import { Box } from '@amalgama/react-native-ui-kit';
+import { Box } from '@amalgama/embassy-ui';
 
 const CodePreview = ( {
 	children,

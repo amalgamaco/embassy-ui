@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Text, TextInput, VStack } from '@amalgama/react-native-ui-kit';
+import { Text, TextInput, VStack } from '@amalgama/embassy-ui';
 import { View } from 'react-native';
 
 const styles = {

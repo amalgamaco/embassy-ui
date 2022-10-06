@@ -1,7 +1,7 @@
 {
   "compilerOptions": {
     "paths": {
-      "@amalgama/react-native-ui-kit": ["../src"]
+      "@amalgama/embassy-ui": ["../src"]
     },
     "lib": [
       "dom",

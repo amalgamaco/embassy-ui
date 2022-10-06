@@ -1,7 +1,7 @@
 import * as React from 'react';
 
 import { StyleSheet, View } from 'react-native';
-import { Text, VStack } from '@amalgama/react-native-ui-kit';
+import { Text, VStack } from '@amalgama/embassy-ui';
 
 const styles = StyleSheet.create( {
 	container: {

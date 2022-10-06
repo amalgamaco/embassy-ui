@@ -1,5 +1,5 @@
 import React from 'react';
-import { Icon } from '@amalgama/react-native-ui-kit';
+import { Icon } from '@amalgama/embassy-ui';
 import { Svg, Path } from 'react-native-svg';
 
 const CustomIcon = () => (

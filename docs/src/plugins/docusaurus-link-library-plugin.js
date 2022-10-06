@@ -8,8 +8,8 @@ async function linkLibraryPlugin() {
 			return {
 				resolve: {
 					alias: {
-						// Link react-native-ui-kit library
-						'@amalgama/react-native-ui-kit': path.resolve( __dirname, '..', '..', '..', 'src' ),
+						// Link embassy-ui library
+						'@amalgama/embassy-ui': path.resolve( __dirname, '..', '..', '..', 'src' ),
 						// Resolve react, react-dom and react-native-web packages to the doc's project
 						// node_modules/ folder.
 						'react': path.resolve( __dirname, '..', '..', 'node_modules', 'react' ),
