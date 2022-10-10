@@ -58,7 +58,8 @@ interface ITextInputPseudoProps {
 // CHIP pseudoprops
 interface IChipPseudoProps {
 	__stack: ComponentBaseStyledProps<'Stack'>,
-	__label: ComponentBaseStyledProps<'Text'>
+	__label: ComponentBaseStyledProps<'Text'>,
+	__icon: ComponentBaseStyledProps<'Icon'>
 }
 
 // Pseudoprops config for all components

@@ -1,18 +1,10 @@
-import React, { ReactElement } from 'react';
+import React from 'react';
 import Pressable from '../Pressable';
 import { HStack } from '../Stack';
 import Text from '../Text';
 import { useButtonPropsResolver } from './hooks';
-import type { IButtonIconProps, IButtonProps } from './types';
-
-const cloneIconWithProps = (
-	element: ReactElement<IButtonIconProps> | undefined,
-	props: IButtonIconProps
-) => (
-	element && React.isValidElement( element )
-		? React.cloneElement( element, { ...props, ...element.props } )
-		: null
-);
+import type { IButtonProps } from './types';
+import cloneElement from '../../utils/cloneElement';
 
 const Button = ( {
 	children,
@@ -28,8 +20,8 @@ const Button = ( {
 		rightIconProps
 	} = useButtonPropsResolver( props );
 
-	const leftIcon = cloneIconWithProps( leftIconProp, leftIconProps || {} );
-	const rightIcon = cloneIconWithProps( rightIconProp, rightIconProps || {} );
+	const leftIcon = cloneElement( leftIconProp, leftIconProps || {} );
+	const rightIcon = cloneElement( rightIconProp, rightIconProps || {} );
 
 	return (
 		<Pressable

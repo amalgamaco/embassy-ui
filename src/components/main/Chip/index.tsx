@@ -5,15 +5,22 @@ import { HStack } from '../Stack';
 import Text from '../Text';
 import { useChipPropsResolver } from './hooks';
 import type { IChipProps } from './types';
+import cloneElement from '../../utils/cloneElement';
 
 const Chip = ( {
-	label, testID, ...props
+	label,
+	testID,
+	icon: iconProp,
+	...props
 }: IChipProps, ref?: React.Ref<View> ) => {
 	const {
 		containerProps,
 		stackProps,
-		labelProps
+		labelProps,
+		iconProps
 	} = useChipPropsResolver( props );
+
+	const icon = cloneElement( iconProp, iconProps || {} );
 
 	return (
 		<Pressable
@@ -22,6 +29,7 @@ const Chip = ( {
 			ref={ref}
 		>
 			<HStack {...stackProps}>
+				<>{icon}</>
 				<Text
 					{...labelProps}
 					testID={testID ? `${testID}-label` : undefined}

@@ -12,6 +12,10 @@ export default {
 			color: 'primary.900',
 			variant: 'small-bold'
 		},
+		__icon: {
+			size: 'xs',
+			marginRight: '2'
+		},
 		__disabled: {
 			backgroundColor: 'primary.50',
 			__label: {

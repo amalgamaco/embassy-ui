@@ -20,6 +20,7 @@ export const useChipPropsResolver = ( props: Omit<IChipProps, 'label'> ) => {
 	const {
 		__stack: stackProps,
 		__label: labelProps,
+		__icon: iconProps,
 		...containerProps
 	} = useComponentPropsResolver( 'Chip', props, state ) as IChipProps;
 
@@ -33,6 +34,7 @@ export const useChipPropsResolver = ( props: Omit<IChipProps, 'label'> ) => {
 	return {
 		containerProps,
 		stackProps,
-		labelProps
+		labelProps,
+		iconProps
 	};
 };
