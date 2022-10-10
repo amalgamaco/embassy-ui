@@ -55,6 +55,12 @@ interface ITextInputPseudoProps {
 	__textInput: ComponentBaseStyledProps<'Box'>
 }
 
+// CHIP pseudoprops
+interface IChipPseudoProps {
+	__stack: ComponentBaseStyledProps<'Stack'>,
+	__label: ComponentBaseStyledProps<'Text'>
+}
+
 // Pseudoprops config for all components
 interface ComponentsPseudoPropsConfig {
 	Button: IButtonPseudoProps,
@@ -62,7 +68,8 @@ interface ComponentsPseudoPropsConfig {
 	IconButton: IIconButtonPseudoProps,
 	Radio: IRadioPseudoProps
 	FormControl: IFormControlPseudoProps,
-	TextInput: ITextInputPseudoProps
+	TextInput: ITextInputPseudoProps,
+	Chip: IChipPseudoProps
 }
 
 // Template type to get pseudoprops for a given component
