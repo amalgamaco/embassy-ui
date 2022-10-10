@@ -5,4 +5,5 @@ export interface IChipProps extends Omit<IPressableProps, 'children' | 'variant'
 	ComponentStyledProps<'Chip'>
 {
 	label: string,
+	selected?: boolean
 }

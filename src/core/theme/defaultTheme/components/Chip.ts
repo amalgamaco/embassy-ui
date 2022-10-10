@@ -11,6 +11,21 @@ export default {
 		__label: {
 			color: 'primary.900',
 			variant: 'small-bold'
+		},
+		__disabled: {
+			backgroundColor: 'primary.50',
+			__label: {
+				color: 'neutral.200'
+			}
+		},
+		__pressed: {
+			backgroundColor: 'neutral.50'
+		},
+		__hovered: {
+			backgroundColor: 'neutral.50'
+		},
+		__selected: {
+			borderColor: 'primary.900'
 		}
 	}
 };
