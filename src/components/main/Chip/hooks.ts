@@ -40,7 +40,8 @@ export const useChipPropsResolver = (
 		...deleteIconThemeProps,
 		name: 'close-outlined',
 		as: UIKitIcon,
-		onPress: onDeletePress
+		onPress: onDeletePress,
+		disabled
 	};
 
 	return {

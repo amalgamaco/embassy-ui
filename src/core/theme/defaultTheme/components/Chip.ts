@@ -27,15 +27,19 @@ export default {
 			marginY: -0.5,
 			borderRadius: 'full',
 			__pressed: {
-				backgroundColor: 'secondary.300'
+				opacity: 1,
+				bg: 'secondary.300'
 			},
 			__hovered: {
-				backgroundColor: 'secondary.300'
+				bg: 'secondary.300'
 			}
 		},
 		__disabled: {
 			backgroundColor: 'primary.50',
 			__label: {
+				color: 'neutral.200'
+			},
+			__icon: {
 				color: 'neutral.200'
 			}
 		},
