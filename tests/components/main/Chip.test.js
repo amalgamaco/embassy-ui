@@ -1,5 +1,5 @@
 import React from 'react';
-import { render } from '@testing-library/react-native';
+import { fireEvent, render } from '@testing-library/react-native';
 import WithThemeProvider from '../../support/withThemeProvider';
 import FakeBaseIcon from '../../support/FakeBaseIcon';
 
@@ -33,6 +33,19 @@ describe( 'Chip', () => {
 	it( 'shows an icon when it\'s set', () => {
 		const { queryByTestId } = renderChip( { label, icon: <TestIcon /> } );
 		expect( queryByTestId( 'test-icon' ) ).not.toBeUndefined();
+	} );
+
+	it( 'shows an delete icon when the onDeletePress prop it\'s set', () => {
+		const onDeletePress = jest.fn();
+		const { queryByTestId } = renderChip( { label, onDeletePress } );
+		expect( queryByTestId( 'test-chip-delete-icon' ) ).not.toBeUndefined();
+	} );
+
+	it( 'calls onDeletePress when the delete icon is pressed', () => {
+		const onDeletePress = jest.fn();
+		const { getByTestId } = renderChip( { label, onDeletePress } );
+		fireEvent.press( getByTestId( 'test-chip-delete-icon' ) );
+		expect( onDeletePress ).toHaveBeenCalled();
 	} );
 
 	itBehavesLike(

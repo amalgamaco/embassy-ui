@@ -4,7 +4,7 @@ import { HStack } from '../Stack';
 import Text from '../Text';
 import { useButtonPropsResolver } from './hooks';
 import type { IButtonProps } from './types';
-import cloneElement from '../../utils/cloneElement';
+import { cloneElement } from '../../utils/elements';
 
 const Button = ( {
 	children,

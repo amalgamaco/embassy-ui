@@ -59,7 +59,8 @@ interface ITextInputPseudoProps {
 interface IChipPseudoProps {
 	__stack: ComponentBaseStyledProps<'Stack'>,
 	__label: ComponentBaseStyledProps<'Text'>,
-	__icon: ComponentBaseStyledProps<'Icon'>
+	__icon: ComponentBaseStyledProps<'Icon'>,
+	__deleteIcon: ComponentBaseStyledProps<'Icon'>
 }
 
 // Pseudoprops config for all components
