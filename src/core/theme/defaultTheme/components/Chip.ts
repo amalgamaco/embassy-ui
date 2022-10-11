@@ -28,10 +28,10 @@ export default {
 			borderRadius: 'full',
 			__pressed: {
 				opacity: 1,
-				bg: 'secondary.300'
+				bg: 'secondary.200'
 			},
 			__hovered: {
-				bg: 'secondary.300'
+				bg: 'secondary.200'
 			}
 		},
 		__disabled: {
