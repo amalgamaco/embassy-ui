@@ -18,6 +18,7 @@ import FormControlExamples from './components/FormControlExamples';
 import TextInputExamples from './components/TextInputExamples';
 import PaletteColorGrid from './components/PaletteColorGrid';
 import ColorModeToggler from './components/ColorModeToggler';
+import ChipExamples from './components/ChipExamples';
 
 const styles = StyleSheet.create( {
 	container: {
@@ -128,6 +129,7 @@ const App = () => (
 						<RadioExamples/>
 						<FormControlExamples />
 						<TextInputExamples />
+						<ChipExamples />
 					</VStack>
 				</ScrollView>
 			</SafeAreaView>
