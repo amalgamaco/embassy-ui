@@ -23,6 +23,8 @@ export default {
 			size: 'xs',
 			marginLeft: '2',
 			color: 'primary.900',
+			padding: 0.5,
+			marginY: -0.5,
 			borderRadius: 'full',
 			__pressed: {
 				backgroundColor: 'secondary.300'

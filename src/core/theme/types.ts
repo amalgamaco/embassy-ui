@@ -19,15 +19,29 @@ export type ColorType = Leaves<IThemeConfig[ 'palette' ][ 'base' ]>
 
 type RNStyles = ViewStyle & ImageStyle & TextStyle;
 
+type GetLayoutScaleValuesWithNegativeValues<
+	T extends keyof IThemeConfig[ 'layout' ]
+> = {
+	[K in keyof IThemeConfig[ 'layout' ][T]]-?: K extends string | number
+		? K | `-${K}`
+		: never
+}[keyof IThemeConfig[ 'layout' ][T]]
+
+type SpaceType = GetLayoutScaleValuesWithNegativeValues<'spacings'>
+	| ( string & {} )
+	| ( number & {} );
+
 type GetThemeScaleValues<T extends keyof IThemeConfig> = 'palette' extends T
 	? ColorType
 	: keyof IThemeConfig[T] | ( string & {} ) | ( number & {} );
 
 type GetThemeCategorizedScaleValues<
 	T extends keyof IThemeConfig, Y extends keyof IThemeConfig[T]
-> = (
-	keyof IThemeConfig[T][Y] | ( string & {} ) | ( number & {} )
-);
+> = 'layout' extends T
+		? 'spacings' extends Y
+			? SpaceType
+			: keyof IThemeConfig[T][Y] | ( string & {} ) | ( number & {} )
+		: keyof IThemeConfig[T][Y] | ( string & {} ) | ( number & {} );
 
 type GetCategorizedRNStyles<key, category extends keyof IThemeConfig, scale = null> = (
 	scale extends keyof IThemeConfig[ category ]
