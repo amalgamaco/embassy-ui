@@ -1,7 +1,9 @@
 import * as React from 'react';
 
 import { SafeAreaView, ScrollView, StyleSheet } from 'react-native';
-import { ThemeProvider, VStack, extendThemeConfig } from '@amalgama/embassy-ui';
+import {
+	ThemeProvider, VStack, extendThemeConfig, Box
+} from '@amalgama/embassy-ui';
 import FontAwesomeIcon from 'react-native-vector-icons/FontAwesome';
 import IoniconsIcon from 'react-native-vector-icons/Ionicons';
 
@@ -15,6 +17,7 @@ import RadioExamples from './components/RadioExamples';
 import FormControlExamples from './components/FormControlExamples';
 import TextInputExamples from './components/TextInputExamples';
 import PaletteColorGrid from './components/PaletteColorGrid';
+import ColorModeToggler from './components/ColorModeToggler';
 
 const styles = StyleSheet.create( {
 	container: {
@@ -55,14 +58,21 @@ const customTheme = extendThemeConfig( {
 					fontWeight: 'bold',
 					lineHeight: '3xl',
 					letterSpacing: 'md',
-					bg: 'secondary.100'
+					bg: 'secondary.100',
+					__dark: {
+						bg: 'accent.800',
+						color: 'white'
+					}
 				},
 				'subtitle': {
 					font: 'Epilogue',
 					fontSize: 'md',
 					lineHeight: 'md',
 					letterSpacing: 'md',
-					color: 'primary.800'
+					color: 'primary.800',
+					__dark: {
+						color: 'white'
+					}
 				}
 			}
 		},
@@ -85,7 +95,10 @@ const customTheme = extendThemeConfig( {
 		},
 		Icon: {
 			defaultProps: {
-				as: FontAwesomeIcon
+				as: FontAwesomeIcon,
+				__dark: {
+					color: 'white'
+				}
 			}
 		}
 	}
@@ -100,22 +113,25 @@ declare module '@amalgama/embassy-ui' {
 
 const App = () => (
 	<ThemeProvider theme={customTheme}>
-		<SafeAreaView style={styles.container}>
-			<ScrollView contentContainerStyle={styles.scroll} style={{ width: '100%' }}>
-				<VStack marginX="3">
-					<PaletteColorGrid />
-					<TextExamples />
-					<BoxExamples />
-					<ButtonExamples />
-					<IconExamples />
-					<IconButtonExamples />
-					<CheckboxExamples />
-					<RadioExamples/>
-					<FormControlExamples />
-					<TextInputExamples />
-				</VStack>
-			</ScrollView>
-		</SafeAreaView>
+		<Box flex={1} __dark={{ bg: 'neutral.700' }}>
+			<SafeAreaView style={styles.container}>
+				<ScrollView contentContainerStyle={styles.scroll} style={{ width: '100%' }}>
+					<VStack marginX="3">
+						<ColorModeToggler />
+						<PaletteColorGrid />
+						<TextExamples />
+						<BoxExamples />
+						<ButtonExamples />
+						<IconExamples />
+						<IconButtonExamples />
+						<CheckboxExamples />
+						<RadioExamples/>
+						<FormControlExamples />
+						<TextInputExamples />
+					</VStack>
+				</ScrollView>
+			</SafeAreaView>
+		</Box>
 	</ThemeProvider>
 );
 

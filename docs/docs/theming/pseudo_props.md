@@ -113,3 +113,43 @@ __❌ Wrong__
 	Button
 </Button>
 ```
+
+## Color mode Pseudo-Props
+
+If you want to apply specific props when the theme is set to a specific color mode you can use the pseudo-props `__light` and `__dark`, that will override the other props when the theme is set to `light` or `dark` color mode respectivily.
+
+### Example
+:::info
+Change the color mode from the sun / moon icon on the top right border of the site to see how the example works.
+:::
+
+
+<CodePreview>
+	<Button
+		variant="primary"
+		width="300px"
+		__dark={{
+			__label: { color: 'accent.900' },
+			__pressed: {
+				__label: { color: 'success.500' }
+			}
+		}}
+	>
+		Press me!
+	</Button>
+</CodePreview>
+
+```tsx
+<Button
+	variant="primary"
+	width="300px"
+	__dark={{
+		__label: { color: 'accent.900' },
+		__pressed: {
+			__label: { color: 'success.500' }
+		}
+	}}
+>
+	Press me!
+</Button>
+```

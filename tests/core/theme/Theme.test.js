@@ -163,6 +163,7 @@ const components = new Components( {
 		defaultProps: {
 			rounded: 'md',
 			bg: 'white',
+			borderColor: 'accent.100',
 			__label: {
 				fontSize: '2xl',
 				lineHeight: 'md',
@@ -171,6 +172,13 @@ const components = new Components( {
 			},
 			__pressed: {
 				opacity: 0.7
+			},
+			__dark: {
+				bg: 'primary.900',
+				borderColor: 'accent.900',
+				__label: {
+					color: 'white'
+				}
 			}
 		},
 		variants: {
@@ -288,6 +296,7 @@ describe( 'Theme', () => {
 				bg: 'primary.600',
 				padding: 'md',
 				margin: 'sm',
+				borderColor: 'accent.100',
 				__label: {
 					fontSize: '2xl',
 					lineHeight: 'md',
@@ -326,11 +335,66 @@ describe( 'Theme', () => {
 				padding: 'md',
 				margin: 'sm',
 				opacity: 0.7,
+				borderColor: 'accent.100',
 				__label: {
 					fontSize: '2xl',
 					lineHeight: 'md',
 					fontWeight: 'bold',
 					color: 'black'
+				}
+			} );
+		} );
+
+		it( 'handles color mode props correctly for the current color mode', () => {
+			const theme = createTheme( { colorMode: 'dark' } );
+			expect(
+				theme.resolvePropsFor(
+					'Button',
+					{
+						padding: 'md',
+						margin: 'sm',
+						borderColor: 'error.100',
+						__label: {
+							fontWeight: 'bold'
+						},
+						__pressed: {
+							bg: 'primary.400',
+							__label: {
+								color: 'black'
+							}
+						},
+						__dark: {
+							__label: {
+								bg: 'primary.300'
+							},
+							__pressed: {
+								bg: 'primary.200',
+								__label: {
+									color: 'primary.100'
+								}
+							}
+						},
+						variant: 'primary'
+					},
+					{
+						isPressed: true
+					}
+				)
+			).toEqual( {
+				rounded: 'md',
+				bg: 'primary.200',
+				padding: 'md',
+				margin: 'sm',
+				opacity: 0.7,
+				// Component defined props overwrite __dark props
+				// set in theme config.
+				borderColor: 'error.100',
+				__label: {
+					fontSize: '2xl',
+					lineHeight: 'md',
+					fontWeight: 'bold',
+					bg: 'primary.300',
+					color: 'primary.100'
 				}
 			} );
 		} );
