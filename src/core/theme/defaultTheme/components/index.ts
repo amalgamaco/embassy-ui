@@ -7,6 +7,7 @@ import Checkbox from './Checkbox';
 import Radio from './Radio';
 import FormControl from './FormControl';
 import TextInput from './TextInput';
+import Chip from './Chip';
 
 export default {
 	Text,
@@ -17,5 +18,6 @@ export default {
 	Checkbox,
 	Radio,
 	FormControl,
-	TextInput
+	TextInput,
+	Chip
 };

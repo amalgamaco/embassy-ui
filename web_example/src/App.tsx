@@ -17,6 +17,7 @@ import RadioExamples from './components/RadioExamples';
 import FormControlExamples from './components/FormControlExamples';
 import TextInputExamples from './components/TextInputExamples';
 import PaletteColorGrid from './components/PaletteColorGrid';
+import ChipExamples from './components/ChipExamples';
 
 const customTheme = extendThemeConfig( {
 	palette: {
@@ -122,6 +123,7 @@ const App = () => (
 				<RadioExamples/>
 				<FormControlExamples />
 				<TextInputExamples />
+				<ChipExamples />
 			</VStack>
 		</Box>
 	</ThemeProvider>

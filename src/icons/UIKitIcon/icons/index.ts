@@ -5,3 +5,4 @@ export { default as CircleFilled } from './CircleFilled';
 export { default as BoxUnchecked } from './BoxUnchecked';
 export { default as BoxIndeterminated } from './BoxIndeterminated';
 export { default as Eye } from './Eye';
+export { default as CloseOutlined } from './CloseOutlined';
