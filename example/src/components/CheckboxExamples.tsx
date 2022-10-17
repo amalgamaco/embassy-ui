@@ -69,7 +69,7 @@ const CheckboxExamples = () => {
 			<View style={styles.separator} />
 
 			<HStack>
-				<Checkbox selected={isSelected} indeterminated={isIndeterminated} onPress={onPressed}/>
+				<Checkbox selected={isSelected} indeterminated={isIndeterminated} onPress={onPressed} />
 			</HStack>
 
 			<View style={styles.vspace} />
@@ -82,7 +82,7 @@ const CheckboxExamples = () => {
 				<Checkbox label="Selected" selected />
 				<Checkbox label="Indeterminated" indeterminated />
 				<Checkbox label="Disabled" disabled />
-				<Checkbox label="Controlled" selected={isSelected} indeterminated={isIndeterminated} onPress={onPressed}/>
+				<Checkbox label="Controlled" selected={isSelected} indeterminated={isIndeterminated} onPress={onPressed} />
 			</VStack>
 
 			<View style={styles.vspace} />

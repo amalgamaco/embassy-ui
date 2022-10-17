@@ -4,7 +4,7 @@ import type { SVGIconProps } from './types';
 
 const CircleOutilned = ( { color, ...props }: SVGIconProps ) => (
 	<Svg color={color} viewBox="0 0 20 20" fill="none" {...props}>
-		<Circle cx="10" cy="10" r="9" stroke={color} strokeWidth="2"/>
+		<Circle cx="10" cy="10" r="9" stroke={color} strokeWidth="2" />
 	</Svg>
 );
 

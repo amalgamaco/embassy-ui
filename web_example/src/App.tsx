@@ -120,7 +120,7 @@ const App = () => (
 				<IconExamples />
 				<IconButtonExamples />
 				<CheckboxExamples />
-				<RadioExamples/>
+				<RadioExamples />
 				<FormControlExamples />
 				<TextInputExamples />
 				<ChipExamples />

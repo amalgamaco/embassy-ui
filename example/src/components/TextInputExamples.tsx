@@ -29,7 +29,7 @@ const TextInputExamples = () => (
 		<View style={styles.vspace} />
 		<TextInput placeholder='This is an enabled text input' type='password' />
 		<View style={styles.vspace} />
-		<TextInput placeholder='This is an enabled text input' type='text'/>
+		<TextInput placeholder='This is an enabled text input' type='text' />
 
 		<View style={styles.vspace} />
 
@@ -38,7 +38,7 @@ const TextInputExamples = () => (
 		<View style={styles.vspace} />
 		<TextInput placeholder='This is a disabled password input' disabled type='password' />
 		<View style={styles.vspace} />
-		<TextInput placeholder='This is a disabled text input' disabled type='text'/>
+		<TextInput placeholder='This is a disabled text input' disabled type='text' />
 
 		<View style={styles.vspace} />
 

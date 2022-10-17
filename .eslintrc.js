@@ -199,6 +199,7 @@ module.exports = {
 			unnamedComponents: 'arrow-function'
 		} ],
 		'react/jsx-props-no-spreading': 'off',
+		'react/jsx-tag-spacing': 'error',
 		'react/prop-types': 'off',
 		'react/require-default-props': 'off'
 	}

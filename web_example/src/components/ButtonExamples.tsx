@@ -38,28 +38,28 @@ const ButtonExamples = () => (
 		<View style={styles.separator} />
 		<Button
 			variant="primary"
-			leftIcon={<Icon name="plus"/>}
+			leftIcon={<Icon name="plus" />}
 			onPress={onButtonPressed}
 		>
 			Primary
 		</Button>
 		<Button
 			variant="secondary"
-			rightIcon={<Icon name="gitlab"/>}
+			rightIcon={<Icon name="gitlab" />}
 			onPress={onButtonPressed}
 		>
 			Secondary
 		</Button>
 		<Button
 			variant="priority"
-			leftIcon={<Icon name="close"/>}
+			leftIcon={<Icon name="close" />}
 			onPress={onButtonPressed}
 		>
 			Priority
 		</Button>
 		<Button
 			variant="success"
-			leftIcon={<Icon name="check"/>}
+			leftIcon={<Icon name="check" />}
 			onPress={onButtonPressed}
 		>
 			Success
@@ -68,8 +68,8 @@ const ButtonExamples = () => (
 			variant="custom"
 			__leftIcon={{ color: 'success.800' }}
 			__rightIcon={{ color: 'error.700' }}
-			leftIcon={<Icon name="bus-outline"/>}
-			rightIcon={<Icon name="flask"/>}
+			leftIcon={<Icon name="bus-outline" />}
+			rightIcon={<Icon name="flask" />}
 			onPress={onButtonPressed}
 		>
 			Custom

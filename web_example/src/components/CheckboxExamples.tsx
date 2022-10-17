@@ -80,7 +80,7 @@ const CheckboxExamples = () => {
 			<View style={styles.separator} />
 
 			<HStack alignItems="center" space="3">
-				<Checkbox selected={isSelected} indeterminated={isIndeterminated} onPress={onPressed}/>
+				<Checkbox selected={isSelected} indeterminated={isIndeterminated} onPress={onPressed} />
 				<Text>|</Text>
 				<Checkbox selected={isSelected} indeterminated={isIndeterminated} onPress={onPressed} label="With label" />
 			</HStack>
