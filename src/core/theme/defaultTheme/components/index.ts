@@ -8,6 +8,7 @@ import Radio from './Radio';
 import FormControl from './FormControl';
 import TextInput from './TextInput';
 import Chip from './Chip';
+import Switch from './Switch';
 
 export default {
 	Text,
@@ -19,5 +20,6 @@ export default {
 	Radio,
 	FormControl,
 	TextInput,
-	Chip
+	Chip,
+	Switch
 };
