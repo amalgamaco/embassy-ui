@@ -55,6 +55,7 @@ interface ITextInputPseudoProps {
 	__icon: ComponentBaseStyledProps<'Icon'>
 	__textInput: ComponentBaseStyledProps<'Box'>
 }
+
 // Switch pseudoprops
 interface ISwitchPseudoProps {
 	__icon: ComponentBaseStyledProps<'Icon'>,
@@ -70,6 +71,14 @@ interface IChipPseudoProps {
 	__deleteIcon: ComponentBaseStyledProps<'Icon'>
 }
 
+// Banner pseudoprops
+interface IBannerPseudoProps {
+	__label: ComponentBaseStyledProps<'Text'>
+	__labelContainer: ComponentBaseStyledProps<'Box'>
+	__icon: ComponentBaseStyledProps<'Icon'>
+	__deleteIcon: ComponentBaseStyledProps<'Icon'>
+}
+
 // Pseudoprops config for all components
 interface ComponentsPseudoPropsConfig {
 	Button: IButtonPseudoProps,
@@ -79,7 +88,8 @@ interface ComponentsPseudoPropsConfig {
 	FormControl: IFormControlPseudoProps,
 	TextInput: ITextInputPseudoProps,
 	Chip: IChipPseudoProps,
-	Switch: ISwitchPseudoProps
+	Switch: ISwitchPseudoProps,
+	Banner: IBannerPseudoProps
 }
 
 // Template type to get pseudoprops for a given component

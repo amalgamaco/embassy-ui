@@ -11,3 +11,4 @@ export { default as FormControl } from './main/FormControl';
 export { default as TextInput } from './main/TextInput';
 export { default as Chip } from './main/Chip';
 export { default as Switch } from './main/Switch';
+export { Banner } from './main/Banner';

@@ -18,6 +18,7 @@ export {
 	FormControl,
 	TextInput,
 	Chip,
-	Switch
+	Switch,
+	Banner
 } from './components';
 export { UIKitIcon };
