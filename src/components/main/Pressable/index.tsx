@@ -1,4 +1,4 @@
-import React, { forwardRef, memo } from 'react';
+import React, { forwardRef } from 'react';
 import { Pressable as RNPressable, View } from 'react-native';
 import type { ComponentProps } from '../../../core/styles/types';
 import { useComponentPropsResolver, useStyleFromPropsResolver } from '../../../hooks';
@@ -23,4 +23,4 @@ const Pressable = ( {
 	);
 };
 
-export default memo( forwardRef( Pressable ) );
+export default forwardRef( Pressable );

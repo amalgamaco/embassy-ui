@@ -1,4 +1,4 @@
-import React, { forwardRef, memo } from 'react';
+import React, { forwardRef } from 'react';
 import { View } from 'react-native';
 import type { ComponentProps } from '../../../core/styles/types';
 import { useComponentPropsResolver, useStyleFromPropsResolver } from '../../../hooks';
@@ -21,4 +21,4 @@ const Box = ( { children, ...props }: IBoxProps, ref: React.Ref<View> ) => {
 	);
 };
 
-export default memo( forwardRef( Box ) );
+export default forwardRef( Box );
