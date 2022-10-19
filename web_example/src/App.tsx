@@ -19,6 +19,7 @@ import TextInputExamples from './components/TextInputExamples';
 import PaletteColorGrid from './components/PaletteColorGrid';
 import ChipExamples from './components/ChipExamples';
 import SwitchExamples from './components/SwitchExamples';
+import BannerExamples from './components/BannerExamples';
 
 const customTheme = extendThemeConfig( {
 	palette: {
@@ -126,6 +127,7 @@ const App = () => (
 				<TextInputExamples />
 				<ChipExamples />
 				<SwitchExamples />
+				<BannerExamples />
 			</VStack>
 		</Box>
 	</ThemeProvider>

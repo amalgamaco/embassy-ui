@@ -1,6 +1,6 @@
 import * as React from 'react';
 
-import { Alert, StyleSheet, View } from 'react-native';
+import { StyleSheet, View } from 'react-native';
 import {
 	Chip, HStack, Icon, Text, VStack
 } from '@amalgama/embassy-ui';
@@ -23,8 +23,8 @@ const styles = StyleSheet.create( {
 	}
 } );
 
-const onChipPressed = () => Alert.alert( 'Pressed!' );
-const onDeletePressed = () => Alert.alert( 'Delete pressed!' );
+const onChipPressed = () => alert( 'Pressed!' );
+const onDeletePressed = () => alert( 'Delete pressed!' );
 
 const ChipExamples = () => (
 	<VStack style={styles.container} space="2">

@@ -1,27 +1,30 @@
+import type { ReactElement } from 'react';
 import type { IIconProps } from '../../Icon/types';
 import { ComponentType, createComponent } from '../../../utils/elements';
 import IconButton from '../../IconButton';
 import type { IIconButtonProps } from '../../IconButton/types';
-import type { IBannerProps } from '../types';
+import type { IPressableProps } from '../../Pressable/types';
 
 interface IUseDeleteIconProps {
-	props: IBannerProps,
-	deleteIconProps?: Omit<IIconProps, 'name'>
+	deleteIconProp?: ReactElement<IIconProps>,
+	deleteIconProps?: Omit<IIconProps, 'name'>,
+	onDeletePress?: IPressableProps[ 'onPress' ]
 }
 
 const useDeleteIcon = ( {
-	props,
-	deleteIconProps
+	deleteIconProp,
+	deleteIconProps,
+	onDeletePress
 }: IUseDeleteIconProps ) => (
-	props.onDeletePress && createComponent(
+	onDeletePress ? createComponent(
 			IconButton as ComponentType<IIconButtonProps>,
 			{
-				from: props.deleteIcon,
+				from: deleteIconProp,
 				props: {
 					...deleteIconProps
 				}
 			}
-	)
+	) : null
 );
 
 export default useDeleteIcon;

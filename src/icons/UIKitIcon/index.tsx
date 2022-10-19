@@ -8,7 +8,6 @@ import {
 	Eye,
 	AlertTriangleOutlined,
 	QuestionCircleOutlined,
-	Check,
 	CheckmarkOutlined,
 	CloseOutlined,
 	CircleOutlined
@@ -27,7 +26,6 @@ const PACKAGE_ICONS = Object.freeze( {
 	'box-indeterminated': BoxIndeterminated,
 	'box-unchecked': BoxUnchecked,
 	'checkmark': CheckmarkOutlined,
-	'checkmark-outline': Check,
 	'circle': CircleOutlined,
 	'circle-filled': CircleFilled,
 	'close-outlined': CloseOutlined,

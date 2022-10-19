@@ -6,8 +6,6 @@ const useBannerPropsResolver = (
 	{
 		onDeletePress,
 		testID,
-		icon: iconProp,
-		deleteIcon: deleteIconProp,
 		...props
 	}: IBannerProps
 ) => {

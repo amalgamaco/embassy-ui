@@ -3,7 +3,6 @@ export { default as AlertTriangleOutlined } from './AlertTriangleOutlined';
 export { default as BoxChecked } from './BoxChecked';
 export { default as BoxIndeterminated } from './BoxIndeterminated';
 export { default as BoxUnchecked } from './BoxUnchecked';
-export { default as Check } from './Check';
 export { default as CheckmarkOutlined } from './CheckmarkOutlined';
 export { default as CircleOutlined } from './CircleOutlined';
 export { default as CircleFilled } from './CircleFilled';

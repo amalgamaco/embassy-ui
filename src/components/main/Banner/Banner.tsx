@@ -2,22 +2,24 @@ import React from 'react';
 import type { IBannerProps } from './types';
 import { HStack } from '../Stack';
 import Text from '../Text';
-import useBannerIcon from './hooks/useBannerIcon';
 import ConditionalRender from '../../utils/ConditionalRender';
-import { useBannerPropsResolver, useDeleteIcon } from './hooks';
+import { useBannerPropsResolver, useDeleteIcon, useBannerIcon } from './hooks';
 
 const Banner = ( {
 	children,
 	visible = true,
 	withIcon = true,
+	icon: iconProp,
+	deleteIcon: deleteIconProp,
+	onDeletePress,
 	...props
 }: IBannerProps ) => {
 	const {
 		containerProps, labelProps, textContainerProps, iconProps, deleteIconProps
-	} = useBannerPropsResolver( props );
+	} = useBannerPropsResolver( { onDeletePress, ...props } );
 
-	const icon = useBannerIcon( { props, iconProps } );
-	const deleteIcon = useDeleteIcon( { props, deleteIconProps } );
+	const icon = useBannerIcon( { iconProp, iconProps, variant: props.variant } );
+	const deleteIcon = useDeleteIcon( { deleteIconProp, deleteIconProps, onDeletePress } );
 
 	return (
 		<ConditionalRender render={visible}>
