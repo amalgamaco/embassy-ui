@@ -23,29 +23,25 @@ const Switch = ( {
 		...props
 	} );
 
-	const { position, startAnimation, reverseAnimation } = useSwitchAnimation( {
+	const position = useSwitchAnimation( {
+		isOn,
 		containerProps,
 		iconContainerProps: iconContainerProps || {},
 		animationDuration,
 		animatedValue: initialValue ? 1 : 0
 	} );
 
-	const toggle = useCallback( () => {
-		setIsOn( ( wasOn ) => {
-			if ( wasOn ) {
-				reverseAnimation();
-			} else {
-				startAnimation();
-			}
-			onChange?.( !wasOn );
-			return !wasOn;
-		} );
-	}, [ startAnimation, reverseAnimation, onChange ] );
+	const onSwitchPressed = useCallback( () => {
+		onChange?.( !isOn );
+		setIsOn( !isOn );
+	}, [ isOn, setIsOn, onChange ] );
+
+	const style = { transform: [ { translateX: position } ] };
 
 	return (
 		<Box {...switchContainerProps}>
-			<Pressable {...containerProps} onPress={toggle} testID={testID}>
-				<Box.Animated {...iconContainerProps} style={{ marginLeft: position }}>
+			<Pressable {...containerProps} onPress={onSwitchPressed} testID={testID}>
+				<Box.Animated {...iconContainerProps} style={style}>
 					{withIcon && cloneElement( icon, {
 						...iconProps,
 						testID: testID && `${testID}-icon`

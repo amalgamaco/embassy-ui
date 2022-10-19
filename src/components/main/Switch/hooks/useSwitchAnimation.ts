@@ -1,10 +1,11 @@
 /* eslint-disable @typescript-eslint/restrict-plus-operands */
-import { useRef } from 'react';
+import { useEffect, useRef } from 'react';
 import { Animated } from 'react-native';
 import type { ComponentStyledProps } from '../../../../core/components/types';
 import { useStyleFromPropsResolver } from '../../../../hooks';
 
 interface IUseAnimationProps {
+	isOn: boolean,
 	containerProps: ComponentStyledProps<'Box'>,
 	iconContainerProps: ComponentStyledProps<'Box'>,
 	iconWrapperProps?: ComponentStyledProps<'Box'>,
@@ -13,7 +14,7 @@ interface IUseAnimationProps {
 }
 
 const useSwitchAnimation = ( {
-	containerProps, iconContainerProps, animationDuration = 500, animatedValue = 0
+	isOn, containerProps, iconContainerProps, animationDuration = 300, animatedValue = 0
 }: IUseAnimationProps ) => {
 	const animation = useRef( new Animated.Value( animatedValue ) ).current;
 
@@ -25,24 +26,17 @@ const useSwitchAnimation = ( {
 
 	const widthBounds = width - iconWidth - 2 * ( borderWidth + iconMargin + iconPadding );
 
-	const animateToValue = ( toValue: number ) => {
+	useEffect( () => {
 		Animated.timing( animation, {
-			toValue,
+			toValue: isOn ? 1 : 0,
 			duration: animationDuration,
 			useNativeDriver: false
 		} ).start();
-	};
-	const startAnimation = () => animateToValue( 1 );
+	}, [ isOn, animation, animationDuration ] );
 
-	const reverseAnimation = () => animateToValue( 0 );
-
-	const position = animation.interpolate( {
+	return animation.interpolate( {
 		inputRange: [ 0, 1 ], outputRange: [ 0, widthBounds ], extrapolate: 'clamp'
 	} );
-
-	return {
-		position, startAnimation, reverseAnimation
-	};
 };
 
 export default useSwitchAnimation;
