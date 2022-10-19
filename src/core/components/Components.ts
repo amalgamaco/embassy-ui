@@ -33,8 +33,8 @@ export default class Components {
 
 		const resolvedProps: ComponentStyledProps<C> = merge(
 			{} as ComponentStyledProps<C>,
-			this.applyColorModeProps( defaultProps, colorMode ),
-			this.applyColorModeProps( variantProps, colorMode ),
+			this.applyColorModeProps( cloneDeep( defaultProps ), colorMode ),
+			this.applyColorModeProps( cloneDeep( variantProps ), colorMode ),
 			this.applyColorModeProps( props, colorMode )
 		);
 
@@ -68,13 +68,12 @@ export default class Components {
 	): ComponentStyledProps<C> {
 		const currentColorModeProp = COMPONENT_COLOR_MODE_PROPS_MAP[ colorMode ];
 		const propsForColorMode = props[ currentColorModeProp ] || {};
-		const resultProps = cloneDeep( props );
 
 		Object.values( COMPONENT_COLOR_MODE_PROPS_MAP ).forEach(
-			( colorModeProp ) => { delete resultProps[ colorModeProp ]; }
+			( colorModeProp ) => { delete props[ colorModeProp ]; }
 		);
 
-		return merge( resultProps, propsForColorMode );
+		return merge( props, propsForColorMode );
 	}
 
 	// eslint-disable-next-line class-methods-use-this
