@@ -1,6 +1,6 @@
 export default {
 	base: {
-		primary: {
+		'primary': {
 			900: '#01164D',
 			800: '#0D2663',
 			700: '#162F6F',
@@ -12,7 +12,7 @@ export default {
 			100: '#BCC2D8',
 			50: '#E4E7EF'
 		},
-		secondary: {
+		'secondary': {
 			900: '#4F80FF',
 			800: '#618DFF',
 			700: '#7299FF',
@@ -24,7 +24,7 @@ export default {
 			100: '#DCE6FF',
 			50: '#EDF2FF'
 		},
-		neutral: {
+		'neutral': {
 			900: '#1C2438',
 			800: '#2F374F',
 			700: '#3E4965',
@@ -36,7 +36,7 @@ export default {
 			100: '#C8D1E7',
 			50: '#EAEBFE'
 		},
-		error: {
+		'error': {
 			900: '#BF0B29',
 			800: '#CE1D35',
 			700: '#DB263C',
@@ -48,7 +48,7 @@ export default {
 			100: '#FFCDD7',
 			50: '#FFEBF0'
 		},
-		warning: {
+		'warning': {
 			900: '#ED4403',
 			800: '#F66200',
 			700: '#FC7400',
@@ -60,7 +60,7 @@ export default {
 			100: '#FFDEB0',
 			50: '#FFF2DF'
 		},
-		success: {
+		'success': {
 			900: '#006D2C',
 			800: '#008D40',
 			700: '#009E4D',
@@ -72,7 +72,7 @@ export default {
 			100: '#BFECD1',
 			50: '#E4F8EC'
 		},
-		information: {
+		'information': {
 			900: '#001ABA',
 			800: '#0032CB',
 			700: '#003ED6',
@@ -84,7 +84,7 @@ export default {
 			100: '#C7CCFA',
 			50: '#E9EBFD'
 		},
-		accent: {
+		'accent': {
 			900: '#7158F4',
 			800: '#7F69F5',
 			700: '#8D79F6',
@@ -96,10 +96,37 @@ export default {
 			100: '#E3DEFD',
 			50: '#F1EEFE'
 		},
-		black: '#000000',
-		white: '#FFFFFF',
-		dark: '#121212',
-		transparent: 'transparent'
+		'black': '#000000',
+		'white': '#FFFFFF',
+		'dark': '#121212',
+		'transparent': 'transparent',
+		// Text styles
+		'text-primary': 'neutral.900',
+		'text-secondary': 'neutral.800',
+		'text-disabled': 'neutral.500',
+		'text-link': 'information.500',
+		'text-success': 'success.800',
+		'text-warning': 'warning.500',
+		'text-error': 'error.900',
+		// Backgound primary state styles
+		'bg-primary-enabled': 'primary.800',
+		'bg-primary-disabled': 'primary.600',
+		'bg-primary-hover': 'primary.900',
+		'bg-primary-focus': 'primary.900',
+		'bg-primary-pressed': 'primary.900',
+		// Background secondary state styles
+		'bg-secondary-enabled': 'secondary.400',
+		'bg-secondary-enabled-light': 'secondary.50',
+		'bg-secondary-disabled': 'secondary.200',
+		'bg-secondary-hover': 'secondary.600',
+		'bg-secondary-hover-light': 'secondary.400',
+		'bg-secondary-focus': 'secondary.600',
+		'bg-secondary-focus-light': 'secondary.400',
+		'bg-secondary-pressed': 'secondary.600',
+		'bg-secondary-pressed-light': 'secondary.400',
+		// Border styles
+		'border-primary': 'primary.800',
+		'border-secondary': 'secondary.200'
 	},
 	light: {},
 	dark: {}

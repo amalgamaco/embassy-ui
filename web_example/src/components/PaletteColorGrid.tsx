@@ -30,6 +30,41 @@ const PaletteColorGrid = () => {
 	];
 	const range = [ 50, 100, 200, 300, 400, 500, 600, 700, 800, 900 ];
 
+	const textStyles = [
+		{ color: 'text-primary', label: 'Primary' },
+		{ color: 'text-secondary', label: 'Secondary' },
+		{ color: 'text-disabled', label: 'Disabled' },
+		{ color: 'text-link', label: 'Link' },
+		{ color: 'text-success', label: 'Success' },
+		{ color: 'text-warning', label: 'Warning' },
+		{ color: 'text-error', label: 'Error' }
+	];
+
+	const backgroundPrimaryStyles = [
+		{ color: 'bg-primary-enabled', label: 'Primary Enabled' },
+		{ color: 'bg-primary-disabled', label: 'Primary Disabled' },
+		{ color: 'bg-primary-hover', label: 'Primary Hover' },
+		{ color: 'bg-primary-focus', label: 'Primary Focus' },
+		{ color: 'bg-primary-pressed', label: 'Primary Pressed' }
+	];
+
+	const backgroundSecondaryStyles = [
+		{ color: 'bg-secondary-enabled', label: 'Secondary Enabled' },
+		{ color: 'bg-secondary-enabled-light', label: 'Secondary Enabled Light' },
+		{ color: 'bg-secondary-disabled', label: 'Secondary Disabled' },
+		{ color: 'bg-secondary-hover', label: 'Secondary Hover' },
+		{ color: 'bg-secondary-hover-light', label: 'Secondary Hover Light' },
+		{ color: 'bg-secondary-focus', label: 'Secondary Focus' },
+		{ color: 'bg-secondary-focus-light', label: 'Secondary Focus Light' },
+		{ color: 'bg-secondary-pressed', label: 'Secondary Pressed' },
+		{ color: 'bg-secondary-pressed-light', label: 'Secondary Pressed Light' }
+	];
+
+	const borderStyles = [
+		{ color: 'border-primary', label: 'Primary' },
+		{ color: 'border-secondary', label: 'Secondary' }
+	];
+
 	return (
 		<VStack style={styles.container}>
 			<Text variant="headline">Palette</Text>
@@ -60,6 +95,54 @@ const PaletteColorGrid = () => {
 					</VStack>
 				) ) )}
 			</VStack>
+			<View style={styles.vspace} />
+			<Text variant="headline">Styles</Text>
+
+			<View style={styles.vspace} />
+			<Text variant="subtitle">Text Styles</Text>
+			<View style={styles.separator} />
+			<View style={styles.vspace} />
+			<VStack>
+				{textStyles.map( ( { color, label } ) => (
+					<Text variant="body-special" color={color}>{label}</Text>
+				) )}
+			</VStack>
+
+			<View style={styles.vspace} />
+			<Text variant="subtitle">Background Primary State Styles</Text>
+			<View style={styles.separator} />
+			<View style={styles.vspace} />
+			<HStack flexWrap='wrap'>
+				{backgroundPrimaryStyles.map( ( { color, label } ) => (
+					<Box bg={color} height="100px" width="100px" marginRight="2" marginBottom="2">
+						<Text variant="body" textAlign='center' color="white">{label}</Text>
+					</Box>
+				) )}
+			</HStack>
+
+			<View style={styles.vspace} />
+			<Text variant="subtitle">Background Secondary State Styles</Text>
+			<View style={styles.separator} />
+			<View style={styles.vspace} />
+			<HStack flexWrap='wrap'>
+				{backgroundSecondaryStyles.map( ( { color, label } ) => (
+					<Box bg={color} height="100px" width="100px" marginRight="2" marginBottom="2">
+						<Text variant="body" textAlign='center' color="text-primary">{label}</Text>
+					</Box>
+				) )}
+			</HStack>
+
+			<View style={styles.vspace} />
+			<Text variant="subtitle">Border Styles</Text>
+			<View style={styles.separator} />
+			<View style={styles.vspace} />
+			<HStack flexWrap='wrap'>
+				{borderStyles.map( ( { color, label } ) => (
+					<Box borderColor={color} borderWidth="sm" height="100px" width="100px" marginRight="2" marginBottom="2">
+						<Text variant="body" textAlign='center' color="text-primary">{label}</Text>
+					</Box>
+				) )}
+			</HStack>
 		</VStack>
 	);
 };
