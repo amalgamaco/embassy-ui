@@ -18,20 +18,41 @@ Inside any of this categories you define the palette colors available as a two l
 const themeConfig = {
 	palette: {
 		base: {
-			primary: {
+			'primary': {
 				900: '#01164D',
-				800: '#343671',
-				600: '#676C94',
-				400: '#999AB8',
-				200: '#CCCDDB',
-				10: '#E6E7ED'
+				800: '#0D2663',
+				700: '#162F6F',
+				600: '#1F387A',
+				500: '#253E82',
+				400: '#475993',
+				300: '#6675A4',
+				200: '#909BBE',
+				100: '#BCC2D8',
+				50: '#E4E7EF'
+			},
+			'text-primary': 'primary.900'
+		},
+		dark: {
+			'primary': {
+				900: '#4F80FF',
+				800: '#618DFF',
+				700: '#7299FF',
+				600: '#84A6FF',
+				500: '#95B3FF',
+				400: '#A7C0FF',
+				300: '#B9CCFF',
+				200: '#CAD9FF',
+				100: '#DCE6FF',
+				50: '#EDF2FF'
 			}
 		}
 	}
 }
 ```
 
-In this example we define the `primary` color with a palette range from `50` to `900`. Then we also define that for a `dark` color mode the `primary` palette range will have different values (for example for a `primary.900` color we have a value of `#` for the `light` color mode and a value of `#` for the `dark` color mode).
+In this example we define the `primary` color with a palette range from `50` to `900`. Then we also define that for a `dark` color mode the `primary` palette range will have different values (for example for a `primary.900` color we have a value of `#01164D` for the `light` color mode and a value of `#4F80FF` for the `dark` color mode).
+
+As you can see in the example you can also define aliases for the colors in your palette, for example `text-primary` will always resolve to the value set to the `primary.900` color.
 
 The values defined for the theme's palette will be used to translate the [Palette Style Props](./style_props.md#palette).
 

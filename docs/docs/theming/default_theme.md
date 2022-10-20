@@ -128,6 +128,45 @@ Here you can found the default theme values for the different scales.
 |`accent.800`|`#7F69F5`|<ColorPreview color="accent.800"/>|
 |`accent.900`|`#7158F4`|<ColorPreview color="accent.900"/>|
 
+### Text Styles
+| Name | Value | color |
+| --- | --- | --- |
+|`text-primary`|`neutral.900`|<ColorPreview color="text-primary"/>|
+|`text-secondary`|`neutral.800`|<ColorPreview color="text-secondary"/>|
+|`text-disabled`|`neutral.500`|<ColorPreview color="text-disabled"/>|
+|`text-link`|`information.500`|<ColorPreview color="text-link"/>|
+|`text-success`|`success.800`|<ColorPreview color="text-success"/>|
+|`text-warning`|`warning.500`|<ColorPreview color="text-warning"/>|
+|`text-error`|`error.900`|<ColorPreview color="text-error"/>|
+
+### Background Primary State Styles
+| Name | Value | color |
+| --- | --- | --- |
+|`bg-primary-enabled`|`primary.800`|<ColorPreview color="bg-primary-enabled"/>|
+|`bg-primary-disabled`|`primary.600`|<ColorPreview color="bg-primary-disabled"/>|
+|`bg-primary-hover`|`primary.900`|<ColorPreview color="bg-primary-hover"/>|
+|`bg-primary-focus`|`primary.900`|<ColorPreview color="bg-primary-focus"/>|
+|`bg-primary-pressed`|`primary.900`|<ColorPreview color="bg-primary-pressed"/>|
+
+### Background Secondary State Styles
+| Name | Value | color |
+| --- | --- | --- |
+|`bg-secondary-enabled`|`secondary.800`|<ColorPreview color="bg-secondary-enabled"/>|
+|`bg-secondary-enabled-light`|`secondary.50`|<ColorPreview color="bg-secondary-enabled-light"/>|
+|`bg-secondary-disabled`|`secondary.200`|<ColorPreview color="bg-secondary-disabled"/>|
+|`bg-secondary-hover`|`secondary.600`|<ColorPreview color="bg-secondary-hover"/>|
+|`bg-secondary-hover-light`|`secondary.400`|<ColorPreview color="bg-secondary-hover-light"/>|
+|`bg-secondary-focus`|`secondary.600`|<ColorPreview color="bg-secondary-focus"/>|
+|`bg-secondary-focus-light`|`secondary.400`|<ColorPreview color="bg-secondary-focus-light"/>|
+|`bg-secondary-pressed`|`secondary.600`|<ColorPreview color="bg-secondary-pressed"/>|
+|`bg-secondary-pressed-light`|`secondary.400`|<ColorPreview color="bg-secondary-pressed-light"/>|
+
+### Border Styles
+| Name | Value | color |
+| --- | --- | --- |
+|`border-primary`|`primary.800`|<ColorPreview color="border-primary"/>|
+|`border-secondary`|`secondary.200`|<ColorPreview color="border-secondary"/>|
+
 ## Layout
 
 ### Border Widths

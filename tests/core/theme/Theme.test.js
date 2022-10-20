@@ -12,7 +12,7 @@ import spacingPropMapping from '../../../src/core/styles/propsMapping/spacing';
 const palette = new Palette(
 	{
 		base: {
-			primary: {
+			'primary': {
 				900: '#2200C1',
 				800: '#4600c8',
 				700: '#5700ce',
@@ -24,7 +24,8 @@ const palette = new Palette(
 				100: '#d7bff4',
 				50: '#f0e5fb'
 			},
-			neutral: '#000000'
+			'neutral': '#000000',
+			'text-primary': 'primary.500'
 		},
 		dark: {
 			primary: {
@@ -252,6 +253,13 @@ describe( 'Theme', () => {
 			it( 'returns the raw value for the dark mode', () => {
 				const theme = createTheme( { colorMode: 'dark' } );
 				expect( theme.color( 'primary.300' ) ).toEqual( '#aaffee' );
+			} );
+		} );
+
+		describe( 'when the color is an alias of another color', () => {
+			it( 'returns the raw value for the alias color', () => {
+				const theme = createTheme();
+				expect( theme.color( 'text-primary' ) ).toEqual( '#7101dc' );
 			} );
 		} );
 	} );

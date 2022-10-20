@@ -22,6 +22,9 @@ export default class Palette {
 	private getColor(
 		{ name, configKey }: { name: PaletteColor, configKey: PaletteConfigKey }
 	): string | undefined {
-		return getColor( name, this._config[ configKey ] );
+		const color = getColor( name, this._config[ configKey ] );
+		if ( !color ) { return undefined; }
+
+		return getColor( color, this._config[ configKey ] ) || color;
 	}
 }
