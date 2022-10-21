@@ -24,7 +24,7 @@ const PACKAGE_ICONS = Object.freeze( {
 } ) as IconsMap;
 
 const UIKitIcon = ( {
-	name, size, color, style, ...restProps
+	name, size, color = 'black', style, ...restProps
 }: AsComponentProps ) => {
 	const Illustration = PACKAGE_ICONS[ name ];
 
