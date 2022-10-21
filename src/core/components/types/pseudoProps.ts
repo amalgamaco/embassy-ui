@@ -54,6 +54,12 @@ interface ITextInputPseudoProps {
 	__icon: ComponentBaseStyledProps<'Icon'>
 	__textInput: ComponentBaseStyledProps<'Box'>
 }
+// Switch pseudoprops
+interface ISwitchPseudoProps {
+	__icon: ComponentBaseStyledProps<'Icon'>,
+	__iconContainer: ComponentBaseStyledProps<'Box'>,
+	__switchContainer: ComponentBaseStyledProps<'Box'>,
+}
 
 // CHIP pseudoprops
 interface IChipPseudoProps {
@@ -71,13 +77,14 @@ interface ComponentsPseudoPropsConfig {
 	Radio: IRadioPseudoProps
 	FormControl: IFormControlPseudoProps,
 	TextInput: ITextInputPseudoProps,
-	Chip: IChipPseudoProps
+	Chip: IChipPseudoProps,
+	Switch: ISwitchPseudoProps
 }
 
 // Template type to get pseudoprops for a given component
 /* eslint-disable @typescript-eslint/ban-types */
 export type ComponentPseudoProps<C extends ComponentName> =
 	C extends keyof ComponentsPseudoPropsConfig
-		? ComponentsPseudoPropsConfig[C]
-		: {};
+	? ComponentsPseudoPropsConfig[C]
+	: {};
 /* eslint-enable @typescript-eslint/ban-types */

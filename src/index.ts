@@ -17,6 +17,7 @@ export {
 	Radio,
 	FormControl,
 	TextInput,
-	Chip
+	Chip,
+	Switch
 } from './components';
 export { UIKitIcon };
