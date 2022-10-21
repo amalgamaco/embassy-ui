@@ -7,4 +7,3 @@ export { default as BoxIndeterminated } from './BoxIndeterminated';
 export { default as Eye } from './Eye';
 export { default as CloseOutlined } from './CloseOutlined';
 export { default as Check } from './Check';
-export { default as Close } from './Close';

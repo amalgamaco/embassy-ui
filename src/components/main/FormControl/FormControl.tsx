@@ -13,6 +13,11 @@ const FormControl = ( {
 	hint,
 	error,
 	errorIcon,
+	showInfoIcon = false,
+	onInfoIconPress,
+	onInfoIconHoverIn,
+	onInfoIconHoverOut,
+	infoIcon,
 	children,
 	disabled = false,
 	isRequired = false,
@@ -23,6 +28,7 @@ const FormControl = ( {
 		__label: labelProps,
 		__required: requiredProps,
 		__hintText: hintProps,
+		__infoIcon: infoIconProps,
 		__errorText: errorProps,
 		__errorIcon: errorIconProps,
 		...containerProps
@@ -37,6 +43,12 @@ const FormControl = ( {
 					text={label as string}
 					isRequired={isRequired}
 					__required={requiredProps}
+					infoIcon={infoIcon}
+					showInfoIcon={showInfoIcon}
+					onInfoIconHoverIn={onInfoIconHoverIn}
+					onInfoIconHoverOut={onInfoIconHoverOut}
+					onInfoIconPress={onInfoIconPress}
+					__infoIcon={infoIconProps}
 					testID={testID && `${testID}-label`}
 					{...labelProps}
 				/>
