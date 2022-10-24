@@ -63,6 +63,30 @@ const FormControlExamples = () => (
 
 		<View style={styles.vspace} />
 
+		<Text variant="subtitle">With info button</Text>
+		<View style={styles.separator} />
+
+		<Text variant="body">OnPress variant:</Text>
+
+		<FormControl
+			label="Email"
+			showInfoIcon
+			onInfoIconPress={() => window.alert( 'info pressed!!' )}>
+			<TextInput placeholder="Enter your email address" />
+		</FormControl>
+
+		<View style={styles.vspace} />
+		<Text variant="body">OnHover variant:</Text>
+
+		<FormControl
+			label="Email"
+			showInfoIcon
+			onInfoIconHoverIn={() => window.alert( 'info hovered in!!' )}
+			onInfoIconHoverOut={() => window.alert( 'info hovered out!!' )}>
+			<TextInput placeholder="Enter your email address" />
+		</FormControl>
+		<View style={styles.vspace} />
+
 		<Text variant="subtitle">Without label</Text>
 		<View style={styles.separator} />
 

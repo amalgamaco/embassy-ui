@@ -1,10 +1,11 @@
 import React, { ElementType } from 'react';
 import {
 	CircleOutilned, CircleFilled, BoxChecked, BoxUnchecked,
-	BoxIndeterminated, AlertCircle, Eye, CloseOutlined, Check, Close
+	BoxIndeterminated, AlertCircle, Eye, CloseOutlined, Check
 } from './icons';
 import type { AsComponentProps } from '../../components/main/Icon/types';
 import IconNotFoundError from './IconNotFoundError';
+import QuestionMarkOutlined from './icons/QuestionMarkOutlined';
 
 interface IconsMap {
 	[key: string]: ElementType;
@@ -19,8 +20,8 @@ const PACKAGE_ICONS = Object.freeze( {
 	'box-indeterminated': BoxIndeterminated,
 	'close-outlined': CloseOutlined,
 	'eye': Eye,
-	'close-outline': Close,
-	'checkmark-outline': Check
+	'checkmark-outline': Check,
+	'question-circle': QuestionMarkOutlined
 } ) as IconsMap;
 
 const UIKitIcon = ( {

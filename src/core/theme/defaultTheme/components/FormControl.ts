@@ -12,6 +12,11 @@ export default {
 			variant: 'small',
 			color: 'neutral.600'
 		},
+		__infoIcon: {
+			color: 'information.500',
+			size: 'xs',
+			padding: '0'
+		},
 		__errorText: {
 			variant: 'small',
 			color: 'neutral.600'

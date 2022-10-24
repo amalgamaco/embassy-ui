@@ -45,6 +45,7 @@ interface IFormControlPseudoProps {
 	__label: ComponentBaseStyledProps<'Text'>,
 	__required: ComponentBaseStyledProps<'Text'>,
 	__hintText: ComponentBaseStyledProps<'Text'>,
+	__infoIcon: ComponentBaseStyledProps<'Icon'>,
 	__errorText: ComponentBaseStyledProps<'Text'>,
 	__errorIcon: ComponentBaseStyledProps<'Icon'>
 }

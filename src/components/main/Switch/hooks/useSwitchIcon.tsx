@@ -4,7 +4,7 @@ import UIKitIcon from '../../../../icons/UIKitIcon';
 import Icon from '../../Icon';
 
 const defaultOnIcon = <Icon as={UIKitIcon} name="checkmark-outline" />;
-const defaultOffIcon = <Icon as={UIKitIcon} name="close-outline" />;
+const defaultOffIcon = <Icon as={UIKitIcon} name="close-outlined" />;
 
 interface IUseSwitchIconProps {
 	on: boolean,

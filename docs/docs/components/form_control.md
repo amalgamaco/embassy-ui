@@ -1,4 +1,4 @@
-import { FormControl, Checkbox, Radio, HStack, TextInput } from '@amalgama/embassy-ui';
+import { FormControl, Checkbox, Radio, HStack, TextInput, Icon, UIKitIcon  } from '@amalgama/embassy-ui';
 import CodePreview from '@site/src/components/CodePreview';
 
 # FormControl
@@ -82,6 +82,148 @@ Shows an indicator for required input.
 :::caution
 The required indicator won't be shown unless a label text is provided even if `isRequired` is set to `true`.
 :::
+
+### showInfoIcon
+Shows an info icon on the form label.
+
+| TYPE   | REQUIRED |  DEFAULT |
+| ------ | -------- | -------- |
+| string | No       | false    |
+
+<CodePreview>
+	<FormControl
+		label="Email"
+		showInfoIcon
+	>
+		<TextInput placeholder="Email address" width="300px" />
+	</FormControl>
+</CodePreview>
+
+```jsx
+<FormControl
+	label="Email"
+	showInfoIcon
+>
+	<TextInput placeholder="Email address" width="300px" />
+</FormControl>
+```
+
+:::caution
+The info icon won't be shown unless a label text is provided.
+:::
+
+### infoIcon
+Provides an icon to show as an info icon.
+
+| TYPE         | REQUIRED |
+| ------------ | -------- |
+| IconButton   | No       |
+
+<CodePreview>
+	<FormControl
+		label="Email"
+		showInfoIcon
+		infoIcon={<Icon as={UIKitIcon} name="question-circle"/>}
+	>
+		<TextInput placeholder="Email address" width="300px" />
+	</FormControl>
+</CodePreview>
+
+```jsx
+<FormControl
+	label="Email"
+	showInfoIcon
+	infoIcon={<Icon as={UIKitIcon} name="question-circle"/>}
+>
+	<TextInput placeholder="Email address" width="300px" />
+</FormControl>
+```
+
+:::info
+`question-circle` icon provided by `UIKitIcon` component is the default icon.
+:::
+
+### onInfoIconPress
+Callback function to be called when the info icon is pressed.
+
+| TYPE     | REQUIRED |
+| -------- | -------- |
+| function | No       |
+
+<CodePreview>
+	<FormControl
+		label="Email"
+		showInfoIcon
+		onInfoIconPress={() => window.alert('Info icon clicked')}
+	>
+		<TextInput placeholder="Email address" width="300px" />
+	</FormControl>
+</CodePreview>
+
+```jsx
+<FormControl
+	label="Email"
+	showInfoIcon
+	onInfoIconPress={() => window.alert('Info icon pressed')}
+>
+	<TextInput placeholder="Email address" width="300px" />
+</FormControl>
+```
+
+### onInfoIconHoverIn
+Callback function to be called when the info icon is hovered.
+
+| TYPE     | REQUIRED |
+| -------- | -------- |
+| function | No       |
+
+
+<CodePreview>
+	<FormControl
+		label="Email"
+		showInfoIcon
+		onInfoIconHoverIn={() => window.alert('Info icon hovered')}
+	>
+		<TextInput placeholder="Email address" width="300px" />
+	</FormControl>
+</CodePreview>
+
+```jsx
+<FormControl
+	label="Email"
+	showInfoIcon
+	onInfoIconHoverIn={() => window.alert('Info icon hovered')}
+>
+	<TextInput placeholder="Email address" width="300px" />
+</FormControl>
+```
+
+### onInfoIconHoverOut
+Callback function to be called when the info icon is hovered out.
+
+| TYPE     | REQUIRED |
+| -------- | -------- |
+| function | No       |
+
+<CodePreview>
+	<FormControl
+		label="Email"
+		showInfoIcon
+		onInfoIconHoverOut={() => window.alert('Info icon hovered out')}
+	>
+		<TextInput placeholder="Email address" width="300px" />
+	</FormControl>
+</CodePreview>
+
+```jsx
+<FormControl
+	label="Email"
+	showInfoIcon
+	onInfoIconHoverOut={() => window.alert('Info icon hovered out')}
+>
+	<TextInput placeholder="Email address" width="300px" />
+</FormControl>
+```
 
 ### hint
 Shows a hint text below the input.
@@ -213,7 +355,7 @@ Disables the form control. This value is also provided to the children through t
 		label="Which is your favorite coding language?"
 		isRequired
 		hint="You can select only one option"
-		disabled
+		disabled 
 	>
 		<Radio.Group>
 			<Radio value="js" label="Javascript" />
@@ -253,6 +395,13 @@ Props to be applied to the internal `Text` component showing the required indica
 | TYPE   | REQUIRED |
 | ------ | -------- |
 | ITextProps | No       |
+
+### __infoIcon
+Props to be applied to the internal `IconButton` component showing the info icon.
+
+| TYPE             | REQUIRED |
+| ---------------- | -------- |
+| IIconButtonProps | No       |
 
 ### __hintText
 Props to be applied to the internal `Text` component showing the hint text.

@@ -1,4 +1,5 @@
 import type { ComponentStyledProps } from '../../../core/components/types';
+import type { IIconProps } from '../Icon/types';
 import type { ITextProps } from '../Text/types';
 
 export interface IFormControlProps extends ComponentStyledProps<'FormControl'> {
@@ -8,6 +9,11 @@ export interface IFormControlProps extends ComponentStyledProps<'FormControl'> {
 	errorIcon?: string,
 	disabled?: boolean,
 	isRequired?: boolean,
+	onInfoIconPress?: () => void,
+	onInfoIconHoverIn?: () => void,
+	onInfoIconHoverOut?: () => void,
+	showInfoIcon?: boolean,
+	infoIcon?: JSX.Element,
 	children?: JSX.Element | JSX.Element[] | string,
 	testID?: string
 }
@@ -15,7 +21,13 @@ export interface IFormControlProps extends ComponentStyledProps<'FormControl'> {
 export interface IFormControlLabelProps extends ITextProps {
 	text: string,
 	isRequired?: boolean,
+	infoIcon?: JSX.Element,
+	onInfoIconPress?: () => void,
+	onInfoIconHoverIn?: () => void,
+	onInfoIconHoverOut?: () => void,
+	showInfoIcon?: boolean,
 
+	__infoIcon?: Omit<IIconProps, 'name'>
 	__required?: Omit<ITextProps, 'children'>
 }
 

@@ -1,4 +1,4 @@
-import { render } from '@testing-library/react-native';
+import { fireEvent, render } from '@testing-library/react-native';
 import React from 'react';
 import { FormControl } from '../../../src';
 import WithThemeProvider from '../../support/withThemeProvider';
@@ -33,6 +33,48 @@ describe( 'FormControl', () => {
 	it( 'doesn\'t show the required indicator when there is not label set even if it\'s required ', () => {
 		const { queryByTestId } = renderComponent( { isRequired: true } );
 		expect( queryByTestId( 'test-form-control-label-required' ) ).toBeNull();
+	} );
+
+	it( 'shows the info icon button when a showInfoIcon is true', () => {
+		const label = 'Label!';
+		const { getByTestId } = renderComponent( { label, showInfoIcon: true } );
+		expect( getByTestId( 'test-form-control-label-info-icon' ) ).toBeTruthy();
+	} );
+
+	it( 'doesn\'t show the info icon button when a showInfoIcon is not provided', () => {
+		const label = 'Label!';
+		const { queryByTestId } = renderComponent( { label } );
+		expect( queryByTestId( 'test-form-control-label-info-icon' ) ).toBeNull();
+	} );
+
+	it( 'calls the onInfoIconPress callback when the info icon button is pressed', () => {
+		const label = 'Label!';
+		const onInfoIconPress = jest.fn();
+		const { getByTestId } = renderComponent( { label, showInfoIcon: true, onInfoIconPress } );
+		fireEvent.press( getByTestId( 'test-form-control-label-info-icon' ) );
+		expect( onInfoIconPress ).toHaveBeenCalled();
+	} );
+
+	// This should be proppperly tested when we have a the testing library supports hover event.
+	// it( 'calls the onInfoIconHoverIn callback when the info icon button is hovered in', () => {
+	// const label = 'Label!';
+	// const onInfoIconHoverIn = jest.fn();
+	// const { getByTestId } = renderComponent( { label, showInfoIcon: true, onInfoIconHoverIn } );
+	// getByTestId( 'test-form-control-label-info-icon' ).props.onHoverIn();
+	// expect( onInfoIconHoverIn ).toHaveBeenCalled();
+	// } );
+
+	// it( 'calls the onInfoIconHoverOut callback when the info icon button is hovered out', () => {
+	// const label = 'Label!';
+	// const onInfoIconHoverOut = jest.fn();
+	// const { getByTestId } = renderComponent( { label, showInfoIcon: true, onInfoIconHoverOut } );
+	// getByTestId( 'test-form-control-label-info-icon' ).props.onHoverOut();
+	// expect( onInfoIconHoverOut ).toHaveBeenCalled();
+	// } );
+
+	it( "doesn't show the info icon button when when there is not label set even if showInfoIcon is true", () => {
+		const { queryByTestId } = renderComponent( { showInfoIcon: true } );
+		expect( queryByTestId( 'test-form-control-label-info-icon' ) ).toBeNull();
 	} );
 
 	it( 'shows the hint when set', () => {
