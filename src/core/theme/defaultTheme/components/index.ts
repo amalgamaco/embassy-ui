@@ -9,6 +9,7 @@ import FormControl from './FormControl';
 import TextInput from './TextInput';
 import Chip from './Chip';
 import Switch from './Switch';
+import Banner from './Banner';
 
 export default {
 	Text,
@@ -21,5 +22,6 @@ export default {
 	FormControl,
 	TextInput,
 	Chip,
-	Switch
+	Switch,
+	Banner
 };

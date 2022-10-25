@@ -2,7 +2,7 @@ import * as React from 'react';
 
 import { SafeAreaView, ScrollView, StyleSheet } from 'react-native';
 import {
-	ThemeProvider, VStack, extendThemeConfig, Box
+	ThemeProvider, VStack, extendThemeConfig, UIKitIcon, Box
 } from '@amalgama/embassy-ui';
 import FontAwesomeIcon from 'react-native-vector-icons/FontAwesome';
 import IoniconsIcon from 'react-native-vector-icons/Ionicons';
@@ -20,6 +20,7 @@ import PaletteColorGrid from './components/PaletteColorGrid';
 import ColorModeToggler from './components/ColorModeToggler';
 import ChipExamples from './components/ChipExamples';
 import SwitchExamples from './components/SwitchExamples';
+import BannerExamples from './components/BannerExamples';
 
 const styles = StyleSheet.create( {
 	container: {
@@ -102,6 +103,16 @@ const customTheme = extendThemeConfig( {
 					color: 'white'
 				}
 			}
+		},
+		Banner: {
+			variants: {
+				custom: {
+					__icon: {
+						as: UIKitIcon,
+						name: 'eye'
+					}
+				}
+			}
 		}
 	}
 } as const );
@@ -132,6 +143,7 @@ const App = () => (
 						<TextInputExamples />
 						<ChipExamples />
 						<SwitchExamples />
+						<BannerExamples />
 					</VStack>
 				</ScrollView>
 			</SafeAreaView>

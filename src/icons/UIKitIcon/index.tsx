@@ -1,11 +1,19 @@
 import React, { ElementType } from 'react';
 import {
-	CircleOutilned, CircleFilled, BoxChecked, BoxUnchecked,
-	BoxIndeterminated, AlertCircle, Eye, CloseOutlined, Check
+	CircleFilled,
+	BoxChecked,
+	BoxUnchecked,
+	BoxIndeterminated,
+	AlertCircle,
+	Eye,
+	AlertTriangleOutlined,
+	QuestionCircleOutlined,
+	CheckmarkOutlined,
+	CloseOutlined,
+	CircleOutlined
 } from './icons';
 import type { AsComponentProps } from '../../components/main/Icon/types';
 import IconNotFoundError from './IconNotFoundError';
-import QuestionMarkOutlined from './icons/QuestionMarkOutlined';
 
 interface IconsMap {
 	[key: string]: ElementType;
@@ -13,15 +21,16 @@ interface IconsMap {
 
 const PACKAGE_ICONS = Object.freeze( {
 	'alert-circle': AlertCircle,
-	'circle': CircleOutilned,
-	'circle-filled': CircleFilled,
+	'alert-triangle': AlertTriangleOutlined,
 	'box-checked': BoxChecked,
-	'box-unchecked': BoxUnchecked,
 	'box-indeterminated': BoxIndeterminated,
+	'box-unchecked': BoxUnchecked,
+	'checkmark': CheckmarkOutlined,
+	'circle': CircleOutlined,
+	'circle-filled': CircleFilled,
 	'close-outlined': CloseOutlined,
 	'eye': Eye,
-	'checkmark-outline': Check,
-	'question-circle': QuestionMarkOutlined
+	'question-circle': QuestionCircleOutlined
 } ) as IconsMap;
 
 const UIKitIcon = ( {
