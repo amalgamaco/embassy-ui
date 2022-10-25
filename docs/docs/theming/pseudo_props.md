@@ -15,7 +15,7 @@ Pseudo-props are a special kind of props that start with a double underscore (`_
 
 This kind of pseudo-props allows setting Style Props to internal components. 
 
-An example where these kind of pseudo-props are used is the [Button component](../components/button.md) that allows setting styled props for several sub-components:
+An example where these kind of pseudo-props are used is the [Button component](../components/forms/button.md) that allows setting styled props for several sub-components:
 
 <CodePreview>
 	<Button

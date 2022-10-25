@@ -8,14 +8,28 @@ This component is a wrapper for the `View` component. It provides a simple way t
 ## Example:
 
 <CodePreview>
-    <ExampleBox bg="primary.400" borderWidth="xs" padding={1}/>
+	<ExampleBox
+		paddingY="6"
+		paddingX="20"
+		rounded="sm"
+		bg="secondary.50"
+		borderColor="secondary.400"
+		borderWidth="xs"
+	/>
 </CodePreview>
 
 ```jsx
 import { Box, Text } from '@amalgama/embassy-ui';
 
-<Box bg="primary.400" borderWidth="xs" padding={1}>
-    <Text>This is a box!</Text>
+<Box
+	paddingY="6"
+	paddingX="20"
+	rounded="sm"
+	bg="secondary.50"
+	borderColor="secondary.400"
+	borderWidth="xs"
+>
+	<Text color="text-secondary">This is a box!</Text>
 </Box>
 ```
 

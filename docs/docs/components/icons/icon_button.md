@@ -116,7 +116,7 @@ The color for the icon. See [Icon - color prop documentation](./icon.md#color) f
 
 ### onPress
 
-Called when the icon button is pressed. See [Button - onPress prop documentation](./button.md#onpress) for more information.
+Called when the icon button is pressed. See [Button - onPress prop documentation](../forms/button.md#onpress) for more information.
 
 <CodePreview>
 	<IconButton

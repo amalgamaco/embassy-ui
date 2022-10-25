@@ -29,3 +29,12 @@
   --ifm-color-primary-lightest: #E6E7ED;
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
 }
+
+.component_category {
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+
+.component_category .menu__list-item-collapsible a {
+  font-weight: bold;
+}

@@ -39,11 +39,11 @@ import { Button } from '@amalgama/embassy-ui';
 The variant style to use, available values are: `primary`, `secondary`, `priority` y  `success`. You can add more variants extending the theme configuration for this component.
 
 <CodePreview alignItems="stretch">
-	<HStack space="3">
-		<Button variant="primary">Primary</Button>
-		<Button variant="secundary">Secundary</Button>
-		<Button variant="priority">High Priority</Button>
-		<Button variant="success">Success</Button>
+	<HStack space="2" justifyContent="center">
+		<Button variant="primary" marginTop="2">Primary</Button>
+		<Button variant="secondary" marginTop="2">Secondary</Button>
+		<Button variant="priority" marginTop="2">High Priority</Button>
+		<Button variant="success" marginTop="2">Success</Button>
 	</HStack>
 </CodePreview>
 

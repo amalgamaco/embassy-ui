@@ -117,7 +117,7 @@ fonts: {
 }
 ```
 
-Then if you pass to the [Text component](../components/text.md) the following props:
+Then if you pass to the [Text component](../components/typography/text.md) the following props:
 
 ```tsx
 <Text font="Epilogue" fontStyle="Italic" fontWeight="bold">
