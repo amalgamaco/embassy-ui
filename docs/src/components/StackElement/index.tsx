@@ -7,11 +7,11 @@ const StackElement = ( { color, label, width = undefined } ) => (
 		width={width}
 		borderRadius="sm"
 		padding="1"
-		margin="1"
+		margin="2"
 		alignItems="center"
-		borderWidth="xs"
+		paddingY="4"
 	>
-		<Text>{label}</Text>
+		<Text color="text-secondary">{label}</Text>
 	</Box>
 );
 

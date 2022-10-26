@@ -56,6 +56,12 @@ const config = {
 
 	plugins: [
 		'docusaurus-plugin-react-native-web',
+		[
+			require.resolve( '@cmfcmf/docusaurus-search-local' ),
+			{
+				indexDocs: true
+			}
+		],
 		'./src/plugins/docusaurus-link-library-plugin'
 	],
 

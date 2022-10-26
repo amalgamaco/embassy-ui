@@ -1,0 +1,13 @@
+diff --git a/node_modules/@cmfcmf/docusaurus-search-local/lib/server/parse.js b/node_modules/@cmfcmf/docusaurus-search-local/lib/server/parse.js
+index 3da8c4c..bf41fa2 100644
+--- a/node_modules/@cmfcmf/docusaurus-search-local/lib/server/parse.js
++++ b/node_modules/@cmfcmf/docusaurus-search-local/lib/server/parse.js
+@@ -88,7 +88,7 @@ function html2text(html, type, url = "?") {
+     }
+     if (type === "docs" || type === "blog") {
+         const HEADINGS = "h1, h2, h3";
+-        const pageTitle = $("article header h1").first().text();
++        const pageTitle = $("article h1").first().text();
+         const sections = [];
+         // Parse tags, and add them to the first section.
+         const tags = $("article footer ul[class^=tags_] li")

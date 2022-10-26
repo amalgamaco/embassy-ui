@@ -20,10 +20,10 @@ import React from 'react';
 import { VStack } from '@amalgama/embassy-ui';
 import StackElement from "./StackElement";
 
-<VStack borderWidth="xs" borderRadius="sm">
-	<StackElement color="success.500" label="First" />
-	<StackElement color="secondary.500" label="Second" />
-	<StackElement color="warning.700" label="Third" />
+<VStack borderWidth="xs" borderRadius="sm" borderColor="primary.300">
+	<StackElement color="success.300" label="First" width={300} />
+	<StackElement color="warning.300" label="Second" width={300} />
+	<StackElement color="error.300" label="Third" width={300} />
 </VStack>
 ```
 
@@ -38,10 +38,10 @@ import React from 'react';
 import { HStack } from '@amalgama/embassy-ui';
 import StackElement from "./StackElement";
 
-<HStack borderWidth="xs" borderRadius="sm">
-	<StackElement color="success.500" label="First" />
-	<StackElement color="secondary.500" label="Second" />
-	<StackElement color="warning.700" label="Third" />
+<HStack borderWidth="xs" borderRadius="sm" borderColor="primary.300">
+	<StackElement color="success.300" label="First" width={140} />
+	<StackElement color="warning.300" label="Second" width={140} />
+	<StackElement color="error.300" label="Third" width={140} />
 </HStack>
 ```
 
@@ -61,11 +61,11 @@ import React from 'react';
 import { VStack } from '@amalgama/embassy-ui';
 import StackElement from "./StackElement";
 
-<Vstack reversed borderWidth="xs" borderRadius="sm">
-	<StackElement color="success.500" label="First" />
-	<StackElement color="secondary.500" label="Second" />
-	<StackElement color="warning.700" label="Third" />
-</Vstack>
+<VStack reversed borderWidth="xs" borderRadius="sm" borderColor="primary.300">
+	<StackElement color="success.300" label="First" width={300} />
+	<StackElement color="warning.300" label="Second" width={300} />
+	<StackElement color="error.300" label="Third" width={300} />
+</VStack>
 ```
 
 ### space
@@ -73,18 +73,18 @@ import StackElement from "./StackElement";
 The spacing between the components in the stack. This space is calculated using the `layout.spacing` scale in the theme config.
 
 <CodePreview>
-    <ExampleVStack space={4}/>
+    <ExampleVStack space="4" />
 </CodePreview>
 
 ```jsx
 import React from 'react';
 import { VStack } from '@amalgama/embassy-ui';
 
-<Vstack space={4} borderWidht={"xs"} borderRadius="sm">
-	<StackElement color="success.500" label="First" />
-	<StackElement color="secondary.500" label="Second" />
-	<StackElement color="warning.700" label="Third" />
-</Vstack>
+<VStack space="4" borderWidth="xs" borderRadius="sm" borderColor="primary.300">
+	<StackElement color="success.300" label="First" width={300} />
+	<StackElement color="warning.300" label="Second" width={300} />
+	<StackElement color="error.300" label="Third" width={300} />
+</VStack>
 ```
 
 

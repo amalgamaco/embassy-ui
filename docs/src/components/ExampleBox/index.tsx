@@ -3,7 +3,7 @@ import { Box, Text } from '@amalgama/embassy-ui';
 
 const ExampleBox = props => (
 	<Box {...props}>
-		<Text>This is a box!</Text>
+		<Text color="text-secondary">This is a box!</Text>
 	</Box>
 );
 

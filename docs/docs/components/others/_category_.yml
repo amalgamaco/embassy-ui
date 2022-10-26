@@ -1,0 +1,4 @@
+label: 'Others'
+position: 10
+collapsible: false
+className: 'component_category'

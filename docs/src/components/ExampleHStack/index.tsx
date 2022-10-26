@@ -3,10 +3,10 @@ import { HStack } from '@amalgama/embassy-ui';
 import StackElement from '../StackElement';
 
 const ExampleHStack = props => (
-	<HStack {...props} borderWidth="xs" borderRadius="sm">
-		<StackElement color="success.500" label="First" width={100} />
-		<StackElement color="secondary.500" label="Second" width={100} />
-		<StackElement color="warning.700" label="Third" width={100} />
+	<HStack {...props} borderWidth="xs" borderRadius="sm" borderColor="primary.300">
+		<StackElement color="success.300" label="First" width={140} />
+		<StackElement color="warning.300" label="Second" width={140} />
+		<StackElement color="error.300" label="Third" width={140} />
 	</HStack>
 );
 

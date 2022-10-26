@@ -28,7 +28,7 @@ You need to install these peer dependencies in order to use the library:
 - [react-native-svg](https://www.npmjs.com/package/react-native-svg)
 
 :::caution
-You need to add [react-native-svg](https://www.npmjs.com/package/react-native-svg) to your project and set it up properly (see [project's README](https://github.com/react-native-svg/react-native-svg#installation)) for the default icons package to work. This package is needed by several componentes including: [TextInput](../components/text_input.md), [Radio](../components/radio.md), [Checkbox](../components/checkbox.md), etc.
+You need to add [react-native-svg](https://www.npmjs.com/package/react-native-svg) to your project and set it up properly (see [project's README](https://github.com/react-native-svg/react-native-svg#installation)) for the default icons package to work. This package is needed by several componentes including: [TextInput](../components/forms/text_input.md), [Radio](../components/forms/radio.md), [Checkbox](../components/forms/checkbox.md), etc.
 :::
 
 ## Default Fonts
@@ -105,3 +105,22 @@ const customTheme = extendThemeConfig( {
 ```
 
 For more information on how extend the default theme refer to the [Customizing Theme guide](../theming/customizing_theme.md).
+
+## Add ThemeProvider
+
+In order for the components to work correctly they need to access the current theme's configuration. You can provide this configuration using the [ThemeProvider](./theme_provider.md) component.
+
+We recommend adding this component at the top of the components hierarchy, wrapping the whole app with it.
+
+```tsx
+import React from "react";
+import { ThemeProvider } from "@amalgama/embassy-ui";
+
+const App = () => (
+	<ThemeProvider>
+		{/* Your app content goes here */}
+	</ThemeProvider>
+);
+
+export default App;
+```

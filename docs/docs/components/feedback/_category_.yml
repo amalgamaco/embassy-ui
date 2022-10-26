@@ -1,0 +1,4 @@
+label: 'Feedback'
+position: 9
+collapsible: false
+className: 'component_category'
