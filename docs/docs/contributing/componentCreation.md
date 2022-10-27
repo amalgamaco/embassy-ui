@@ -27,6 +27,9 @@ When creating your `useComponentNamePropsResolver` hook you will probably be usi
 ###  Add your component to the `src/components/index.ts` file
 You should add your component to the `src/components/index.ts` file and to `src/index.tsx` so that it can be imported from the `embassy-ui` package.
 
+###  Add your component props type to the `src/components/types.ts` file
+You should add your component props type to the `src/components/types.ts` file and to `src/index.tsx` so that it can be imported from the `embassy-ui` package.
+
 ### Make sure your component is properly documented
 You should add your component to the `docs/docs/components` folder.
 Also you should make both web and native examples of your component. 
