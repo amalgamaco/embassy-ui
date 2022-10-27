@@ -22,3 +22,26 @@ export {
 	Banner
 } from './components';
 export { UIKitIcon };
+
+export type {
+	IBoxProps,
+	IAnimatedBoxProps,
+	IButtonProps,
+	IPressableProps,
+	IHStackProps,
+	IVStackProps,
+	ITextProps,
+	IIconProps,
+	IIconButtonProps,
+	ICheckboxProps,
+	ICheckboxGroupProps,
+	IRadioProps,
+	IRadioGroupProps,
+	ITextInputProps,
+	IFormControlProps,
+	IChipProps,
+	ISwitchProps,
+	IBannerProps
+} from './components/types';
+
+export type { IThemeConfig, ICustomThemeConfig } from './core/theme/types';
