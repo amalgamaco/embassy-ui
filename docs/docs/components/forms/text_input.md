@@ -147,6 +147,60 @@ Disables the input.
 />
 ```
 
+### showPasswordIcon
+Icon to show the password, is used when the password is currently hidden.
+
+| TYPE          | REQUIRED | DEFAULT                              |
+| ------------- | -------- | ------------------------------------ |
+| `JSX.Element` | No       | `<Icon name="eye" as={UIKitIcon} />` |
+
+<CodePreview>
+	<TextInput
+		placeholder="Enter your password"
+		value="password"
+		type="password"
+		width="300px"
+		showPasswordIcon={<Icon as={Feather} name="unlock" />}
+	/>
+</CodePreview>
+
+```jsx
+<TextInput
+	placeholder="Enter your password"
+	value="password"
+	type="password"
+	width="300px"
+	showPasswordIcon={<Icon as={Feather} name="unlock" />}
+/>
+```
+
+### hidePasswordIcon
+Icon to hide the password, is used when the password is currently shown.
+
+| TYPE          | REQUIRED | DEFAULT                              |
+| ------------- | -------- | ------------------------------------ |
+| `JSX.Element` | No       |  `<Icon name="eye-off-outlined" as={UIKitIcon} />` |
+
+<CodePreview>
+	<TextInput
+		placeholder="Enter your password"
+		value="password"
+		type="password"
+		width="300px"
+		hidePasswordIcon={<Icon as={Feather} name="lock" />}
+	/>
+</CodePreview>
+
+```jsx	
+<TextInput
+	placeholder="Enter your password"
+	value="password"
+	type="password"
+	width="300px"
+	hidePasswordIcon={<Icon as={Feather} name="lock" />}
+/>
+```
+
 ### error
 Marks the input as invalid.
 
@@ -209,7 +263,7 @@ Props to be applied to the internal `IconButton` component that toggles the pass
 		placeholder="Enter your password"
 		type="password"
 		width="300px"
-		__icon={{ name: 'lock', as: Feather, size: 'sm' }}
+		__icon={{ color: 'success.500', size: 'xl' }}
 	/>
 </CodePreview>
 
@@ -218,23 +272,33 @@ Props to be applied to the internal `IconButton` component that toggles the pass
 	placeholder="Enter your password"
 	type="password"
 	width="300px"
-	__icon={{ name: 'lock', as: Feather, size: 'sm' }}
+	__icon={{ color: 'success.500', size: 'xl' }}
 />
 ```
-## Pseudo Props
 
-### __icon
+:::caution 
+The `__icon` prop has less priority than the `showPasswordIcon` and `hidePasswordIcon` props. This means that the styles applied to the `__icon` prop will be overridden by the styles applied to the `showPasswordIcon` and `hidePasswordIcon` props. For example:
+:::
 
-Props to be applied to the internal `icon` component.
+<CodePreview>
+	<TextInput
+		placeholder="Enter your password"
+		type="password"
+		width="300px"
+		showPasswordIcon={<Icon as={Feather} name="unlock" color="black" />}
+		hidePasswordIcon={<Icon as={Feather} name="lock" color="black" />}
+		__icon={{ color: 'success.500', size: 'xs' }}
+	/>
+</CodePreview>
 
-| TYPE   | REQUIRED |
-| ------ | -------- |
-| IIconProps | No  |
-
-### __textInput
-
-`Box` props to be applied to the internal `text input` component.
-
-| TYPE   | REQUIRED |
-| ------ | -------- |
-| IBoxProps | No  |
+```jsx
+<TextInput
+	placeholder="Enter your password"
+	type="password"
+	width="300px"
+	showPasswordIcon={<Icon as={Feather} name="unlock" color="black" />}
+	hidePasswordIcon={<Icon as={Feather} name="lock" color="black" />}
+	__icon={{ color: 'success.500', size: 'xs' }}
+/>
+```
+As you can see the `size` from the  `__icon` prop is beign used but the `color` is being overridden by the `showPasswordIcon` and `hidePasswordIcon` props.

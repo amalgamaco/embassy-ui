@@ -6,6 +6,7 @@ import {
 	BoxIndeterminated,
 	AlertCircle,
 	Eye,
+	EyeOffOutlined,
 	AlertTriangleOutlined,
 	QuestionCircleOutlined,
 	CheckmarkOutlined,
@@ -30,7 +31,8 @@ const PACKAGE_ICONS = Object.freeze( {
 	'circle-filled': CircleFilled,
 	'close-outlined': CloseOutlined,
 	'eye': Eye,
-	'question-circle': QuestionCircleOutlined
+	'question-circle': QuestionCircleOutlined,
+	'eye-off-outlined': EyeOffOutlined
 } ) as IconsMap;
 
 const UIKitIcon = ( {

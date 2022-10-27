@@ -9,3 +9,4 @@ export { default as CircleFilled } from './CircleFilled';
 export { default as Eye } from './Eye';
 export { default as CloseOutlined } from './CloseOutlined';
 export { default as QuestionCircleOutlined } from './QuestionCircleOutlined';
+export { default as EyeOffOutlined } from './EyeOffOutlined';
