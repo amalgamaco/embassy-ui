@@ -130,7 +130,8 @@ export default {
 		},
 		priority: {
 			bg: 'error.700',
-			borderWidth: 'error.700',
+			borderColor: 'error.700',
+			borderWidth: 'sm',
 			__label: {
 				color: 'white'
 			},

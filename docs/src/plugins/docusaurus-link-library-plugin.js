@@ -30,7 +30,10 @@ async function linkLibraryPlugin() {
 						{
 							test: /\.(js|jsx|ts|tsx)$/,
 							loader: 'babel-loader',
-							include: path.resolve( __dirname, '../../node_modules/react-native-vector-icons/' ),
+							include: [
+								path.resolve( __dirname, '../../node_modules/react-native-vector-icons/' ),
+								path.resolve( __dirname, '../../../node_modules/react-native-animatable/' )
+							],
 							options: {
 								presets: [
 									'@babel/env',
