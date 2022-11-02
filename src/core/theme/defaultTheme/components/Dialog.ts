@@ -21,7 +21,8 @@ export default {
 		},
 		__title: {
 			color: 'neutral.900',
-			fontSize: 'lg'
+			fontSize: 'lg',
+			fontWeight: 'medium'
 		},
 		__header: {
 			alignItems: 'center',
@@ -36,12 +37,12 @@ export default {
 		}
 	},
 	variants: {
-		low_priority: {
+		'low-priority': {
 			__icon: {
 				color: 'neutral.900'
 			}
 		},
-		high_priority: {
+		'high-priority': {
 			__icon: {
 				color: 'error.900'
 			}

@@ -23,7 +23,7 @@ const SecondDialogExample = () => {
 			</Box>
 
 			<Dialog
-				variant={'high_priority'}
+				variant={'high-priority'}
 				isVisible={isModalVisible}
 				onClosePress={() => setIsModalVisible( false )}
 			>

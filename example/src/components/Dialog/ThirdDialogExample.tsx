@@ -23,7 +23,7 @@ const ThirdDialogExample = () => {
 			</Box>
 
 			<Dialog
-				variant={'high_priority'}
+				variant={'high-priority'}
 				isVisible={isModalVisible}
 				icon={<Icon name="circle" as={UIKitIcon} />}
 				closeIcon={<Icon name="alert-triangle" as={UIKitIcon} color={'white'} />}

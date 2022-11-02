@@ -1,36 +1,39 @@
 import * as React from 'react';
-
-import { StyleSheet } from 'react-native';
 import {
 	VStack, Text, Box, Button, Dialog, HStack
 } from '@amalgama/embassy-ui';
 
-const styles = StyleSheet.create( {
-	container: {
-		marginBottom: 20
-	}
-} );
-
-const SecondDialogExample = () => {
+const DialogLowPriority = ( {
+	buttonText, titleText, onClosePress, ...props
+} ) => {
 	const [ isModalVisible, setIsModalVisible ] = React.useState( false );
 
 	return (
-		<VStack style={styles.container} space="2">
+		<VStack>
 			<Box flex={1} justifyContent={'center'}>
-				<Button borderWidth={'2xs'} onPress={() => setIsModalVisible( true )} textAlign={'center'}>
-				Dialog Example - High priority variant
+				<Button borderWidth={0} onPress={() => setIsModalVisible( true )} textAlign={'center'}>
+					{ buttonText || 'Dialog Example'}
 				</Button>
 			</Box>
 
 			<Dialog
-				variant={'high-priority'}
+				variant={'low-priority'}
 				isVisible={isModalVisible}
-				onClosePress={() => setIsModalVisible( false )}
+				onClosePress={() => {
+					setIsModalVisible( false );
+					// eslint-disable-next-line
+					if ( onClosePress ) onClosePress();
+				}}
+				animationIn={'swing'}
+				animationInTiming={1000}
+				animationOut={'fadeOut'}
+				animationOutTiming={500}
+				{...props}
 			>
-				<Dialog.Header title={'Title'} />
+				<Dialog.Header title={ titleText || 'Header title'} />
 
 				<Dialog.Body>
-					<Text variant={'body'} textAlign={'center'}>
+					<Text variant={'body'} textAlign={'center'} fontWeight={'medium'}>
 						Are you sure you want to leave?
 					</Text>
 					<Text variant={'body'} textAlign={'center'}>
@@ -52,7 +55,7 @@ const SecondDialogExample = () => {
 						</Button>
 
 						<Button
-							variant={'priority'}
+							variant={'primary'}
 							onPress={() => setIsModalVisible( false )}
 							width={110}
 							padding={2}
@@ -62,8 +65,7 @@ const SecondDialogExample = () => {
 					</HStack>
 				</Dialog.Footer>
 			</Dialog>
-
 		</VStack> );
 };
 
-export default SecondDialogExample;
+export default DialogLowPriority;

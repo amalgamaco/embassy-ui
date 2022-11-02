@@ -8,7 +8,6 @@ import DialogBody from './DialogBody';
 import DialogFooter from './DialogFooter';
 import useDialogPropsResolver from './hooks/useDialogPropsResolver';
 import { DialogContext } from './Context';
-import Box from '../Box/Box';
 import ConditionalRender from '../../utils/ConditionalRender';
 
 const Dialog = ( {
@@ -39,7 +38,7 @@ const Dialog = ( {
 					<ConditionalRender render={resolvedProps.showCloseIcon}>
 						<DialogCloseButton />
 					</ConditionalRender>
-					<Box>{children}</Box>
+					<>{children}</>
 				</DialogContainer>
 			</DialogContext.Provider>
 		</Modal>
