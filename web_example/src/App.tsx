@@ -20,6 +20,7 @@ import PaletteColorGrid from './components/PaletteColorGrid';
 import ChipExamples from './components/ChipExamples';
 import SwitchExamples from './components/SwitchExamples';
 import BannerExamples from './components/BannerExamples';
+import DialogExamples from './components/DialogExamples';
 
 const customTheme = extendThemeConfig( {
 	palette: {
@@ -128,6 +129,7 @@ const App = () => (
 				<ChipExamples />
 				<SwitchExamples />
 				<BannerExamples />
+				<DialogExamples />
 			</VStack>
 		</Box>
 	</ThemeProvider>

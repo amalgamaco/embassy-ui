@@ -22,7 +22,6 @@ describe( 'Dialog', () => {
 
 	const renderDialog = ( {
 		testID = 'test-dialog',
-		isVisible = true,
 		...props
 	} ) => render(
 		<Dialog testID={testID} {...props}>
