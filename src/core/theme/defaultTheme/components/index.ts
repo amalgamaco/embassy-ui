@@ -10,6 +10,7 @@ import TextInput from './TextInput';
 import Chip from './Chip';
 import Switch from './Switch';
 import Banner from './Banner';
+import Dialog from './Dialog';
 
 export default {
 	Text,
@@ -23,5 +24,6 @@ export default {
 	TextInput,
 	Chip,
 	Switch,
-	Banner
+	Banner,
+	Dialog
 };
