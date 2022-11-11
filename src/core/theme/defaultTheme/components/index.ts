@@ -1,29 +1,29 @@
-import Text from './Text';
+import Banner from './Banner';
 import Button from './Button';
+import Chip from './Chip';
+import Checkbox from './Checkbox';
+import Dialog from './Dialog';
+import FormControl from './FormControl';
 import Icon from './Icon';
 import IconButton from './IconButton';
-import Stack from './Stack';
-import Checkbox from './Checkbox';
 import Radio from './Radio';
-import FormControl from './FormControl';
-import TextInput from './TextInput';
-import Chip from './Chip';
+import Stack from './Stack';
 import Switch from './Switch';
-import Banner from './Banner';
-import Dialog from './Dialog';
+import Text from './Text';
+import TextInput from './TextInput';
 
 export default {
-	Text,
+	Banner,
+	Button,
+	Checkbox,
+	Chip,
+	Dialog,
+	FormControl,
 	Icon,
 	IconButton,
-	Button,
-	Stack,
-	Checkbox,
 	Radio,
-	FormControl,
-	TextInput,
-	Chip,
+	Stack,
 	Switch,
-	Banner,
-	Dialog
+	TextInput,
+	Text
 };

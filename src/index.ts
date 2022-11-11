@@ -6,21 +6,22 @@ export { default as extendThemeConfig } from './core/theme/extendThemeConfig';
 export { ThemeProvider, ThemeConsumer } from './core/theme/context';
 export { useTheme, useThemeColorModeSwtich } from './core/theme/hooks';
 export {
+	Banner,
 	Box,
 	Button,
+	Checkbox,
+	Chip,
+	Dialog,
+	FormControl,
 	HStack,
 	Icon,
 	IconButton,
-	VStack,
-	Text,
-	Checkbox,
+	Image,
 	Radio,
-	FormControl,
-	TextInput,
-	Chip,
 	Switch,
-	Banner,
-	Dialog
+	Text,
+	TextInput,
+	VStack
 } from './components';
 export { UIKitIcon };
 

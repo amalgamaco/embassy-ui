@@ -22,6 +22,7 @@ import ChipExamples from './components/ChipExamples';
 import SwitchExamples from './components/SwitchExamples';
 import BannerExamples from './components/BannerExamples';
 import DialogExamples from './components/DialogExamples';
+import ImageExamples from './components/ImageExamples';
 
 const styles = StyleSheet.create( {
 	container: {
@@ -146,6 +147,7 @@ const App = () => (
 						<SwitchExamples />
 						<BannerExamples />
 						<DialogExamples />
+						<ImageExamples />
 					</VStack>
 				</ScrollView>
 			</SafeAreaView>
