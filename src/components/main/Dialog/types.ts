@@ -22,16 +22,16 @@ export interface IDialogContainerProps {
 	children?: JSX.Element | JSX.Element[] | string;
 }
 
-export interface IDialogHeaderProps extends ViewProps {
+export interface IDialogHeaderProps extends ViewProps, ComponentStyledProps<'Dialog'> {
 	title?: string;
 	children?: JSX.Element | JSX.Element[] | string;
 }
 
-export interface IDialogBodyProps extends ViewProps {
+export interface IDialogBodyProps extends ViewProps, ComponentStyledProps<'Dialog'> {
 	children?: JSX.Element | JSX.Element[] | string;
 }
 
-export interface IDialogFooterProps extends ViewProps {
+export interface IDialogFooterProps extends ViewProps, ComponentStyledProps<'Dialog'> {
 	children?: JSX.Element | JSX.Element[] | string;
 }
 
