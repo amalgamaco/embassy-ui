@@ -23,6 +23,7 @@ import SwitchExamples from './components/SwitchExamples';
 import BannerExamples from './components/BannerExamples';
 import DialogExamples from './components/DialogExamples';
 import ImageExamples from './components/ImageExamples';
+import AvatarExamples from './components/AvatarExamples';
 
 const styles = StyleSheet.create( {
 	container: {
@@ -148,6 +149,7 @@ const App = () => (
 						<BannerExamples />
 						<DialogExamples />
 						<ImageExamples />
+						<AvatarExamples />
 					</VStack>
 				</ScrollView>
 			</SafeAreaView>

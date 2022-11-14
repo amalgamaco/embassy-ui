@@ -16,6 +16,11 @@
 import type { ComponentBaseStyledProps } from './styledProps';
 import type { ComponentName } from './common';
 
+// Avatar
+interface IAvatarPseudoProps {
+	__image: ComponentBaseStyledProps<'Image'>;
+}
+
 // Button pseudoprops
 interface IButtonPseudoProps {
 	__label: ComponentBaseStyledProps<'Text'>,
@@ -92,6 +97,7 @@ interface IDialogPseudoProps {
 
 // Pseudoprops config for all components
 interface ComponentsPseudoPropsConfig {
+	Avatar: IAvatarPseudoProps,
 	Button: IButtonPseudoProps,
 	Checkbox: ICheckboxPseudoProps,
 	IconButton: IIconButtonPseudoProps,

@@ -1,3 +1,4 @@
+export { default as Avatar } from './main/Avatar';
 export { Banner } from './main/Banner';
 export { default as Box } from './main/Box';
 export { default as Button } from './main/Button';

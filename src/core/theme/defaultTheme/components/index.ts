@@ -1,3 +1,4 @@
+import Avatar from './Avatar';
 import Banner from './Banner';
 import Button from './Button';
 import Chip from './Chip';
@@ -13,6 +14,7 @@ import Text from './Text';
 import TextInput from './TextInput';
 
 export default {
+	Avatar,
 	Banner,
 	Button,
 	Checkbox,

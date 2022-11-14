@@ -6,6 +6,7 @@ export { default as extendThemeConfig } from './core/theme/extendThemeConfig';
 export { ThemeProvider, ThemeConsumer } from './core/theme/context';
 export { useTheme, useThemeColorModeSwtich } from './core/theme/hooks';
 export {
+	Avatar,
 	Banner,
 	Box,
 	Button,

@@ -22,6 +22,7 @@ import SwitchExamples from './components/SwitchExamples';
 import BannerExamples from './components/BannerExamples';
 import DialogExamples from './components/DialogExamples';
 import ImageExamples from './components/ImageExamples';
+import AvatarExamples from './components/AvatarExamples';
 
 const customTheme = extendThemeConfig( {
 	palette: {
@@ -132,6 +133,7 @@ const App = () => (
 				<BannerExamples />
 				<DialogExamples />
 				<ImageExamples />
+				<AvatarExamples />
 			</VStack>
 		</Box>
 	</ThemeProvider>
