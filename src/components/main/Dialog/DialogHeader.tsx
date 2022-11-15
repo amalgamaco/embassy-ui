@@ -24,7 +24,7 @@ const DialogHeader = ( {
 		<Box {...headerProps} {...props} testID={dialogHeaderTestID}>
 			<ConditionalRender render={!!withIcon}>{icon}</ConditionalRender>
 			<Text {...titleProps}>{title}</Text>
-			<Box>{children}</Box>
+			<>{children}</>
 		</Box> );
 };
 

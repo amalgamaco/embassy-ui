@@ -12,7 +12,7 @@ import type { IIconProps } from '../Icon/types';
 export interface IDialogProps extends ViewProps, ComponentStyledProps<'Dialog'>, Partial<ModalProps> {
 	children?: JSX.Element | JSX.Element[] | string,
 	onClosePress?: IPressableProps[ 'onPress' ],
-	variant?: VariantType<'Banner'>,
+	variant?: VariantType<'Dialog'>,
 	withIcon?: boolean,
 	icon?: ReactElement<IIconProps>,
 	closeIcon?: ReactElement<IIconProps>
