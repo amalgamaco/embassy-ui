@@ -68,6 +68,14 @@ interface ISwitchPseudoProps {
 	__switchContainer: ComponentBaseStyledProps<'Box'>,
 }
 
+interface ICardHeaderPseudoProps {
+	__avatar: ComponentBaseStyledProps<'Box'>;
+	__infoContainer: ComponentBaseStyledProps<'Box'>;
+	__rightActionsContainer: ComponentBaseStyledProps<'Box'>;
+	__title: ComponentBaseStyledProps<'Text'>;
+	__subtitle: ComponentBaseStyledProps<'Text'>;
+}
+
 // CHIP pseudoprops
 interface IChipPseudoProps {
 	__stack: ComponentBaseStyledProps<'Stack'>,
@@ -98,16 +106,17 @@ interface IDialogPseudoProps {
 // Pseudoprops config for all components
 interface ComponentsPseudoPropsConfig {
 	Avatar: IAvatarPseudoProps,
+	Banner: IBannerPseudoProps
 	Button: IButtonPseudoProps,
+	CardHeader: ICardHeaderPseudoProps,
 	Checkbox: ICheckboxPseudoProps,
-	IconButton: IIconButtonPseudoProps,
-	Radio: IRadioPseudoProps
-	FormControl: IFormControlPseudoProps,
-	TextInput: ITextInputPseudoProps,
 	Chip: IChipPseudoProps,
-	Switch: ISwitchPseudoProps,
-	Banner: IBannerPseudoProps,
 	Dialog: IDialogPseudoProps,
+	IconButton: IIconButtonPseudoProps,
+	FormControl: IFormControlPseudoProps,
+	Radio: IRadioPseudoProps
+	Switch: ISwitchPseudoProps,
+	TextInput: ITextInputPseudoProps,
 }
 
 // Template type to get pseudoprops for a given component

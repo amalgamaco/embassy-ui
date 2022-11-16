@@ -15,3 +15,6 @@ export { default as Radio } from './main/Radio';
 export { default as Switch } from './main/Switch';
 export { default as Text } from './main/Text';
 export { default as TextInput } from './main/TextInput';
+export {
+	Card, CardActions, CardContent, CardHeader, CardMedia
+} from './main/Card';

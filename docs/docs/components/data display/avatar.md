@@ -14,14 +14,17 @@ import { Avatar } from '@amalgama/embassy-ui';
 ## Example
 
 <CodePreview>
-    <Avatar
-        size="md"
-        source={{uri:"https://images.unsplash.com/photo-1599566150163-29194dcaad36?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80"}}
-    />
+	<Avatar
+		size="md"
+		source={{ uri: 'https://tinyurl.com/mrkdr42d' }}
+	/>
 </CodePreview>
 
 ```tsx
-<Avatar size="md" source={{uri:"https://images.unsplash.com/photo-1599566150163-29194dcaad36?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80"}} />
+<Avatar
+	size="md"
+	source={{ uri: 'https://tinyurl.com/mrkdr42d' }}
+/>
 ```
 
 ## Props
@@ -31,7 +34,7 @@ The source of the image to display.
 
 | Type | Required | 
 | ---- | -------- |
-| string | Yes |
+| [ImageProps['source']](./image.md#source) | Yes |
 
 ### size
 The size of the avatar.
@@ -51,13 +54,13 @@ Available sizes:
 | "xl" | 160px  |
 
 <CodePreview>
-    <HStack space="4">
-        <Avatar size="xs" source={{uri:"https://images.unsplash.com/photo-1599566150163-29194dcaad36?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80"}} />
-        <Avatar size="sm" source={{uri:"https://images.unsplash.com/photo-1599566150163-29194dcaad36?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80"}} />
-        <Avatar size="md" source={{uri:"https://images.unsplash.com/photo-1599566150163-29194dcaad36?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80"}} />
-        <Avatar size="lg" source={{uri:"https://images.unsplash.com/photo-1599566150163-29194dcaad36?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80"}} />
-        <Avatar size="xl" source={{uri:"https://images.unsplash.com/photo-1599566150163-29194dcaad36?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80"}} />
-    </HStack>
+	<HStack space="4">
+		<Avatar size="xs" source={{ uri: 'https://tinyurl.com/mrkdr42d' }} />
+		<Avatar size="sm" source={{ uri: 'https://tinyurl.com/mrkdr42d' }} />
+		<Avatar size="md" source={{ uri: 'https://tinyurl.com/mrkdr42d' }} />
+		<Avatar size="lg" source={{ uri: 'https://tinyurl.com/mrkdr42d' }} />
+		<Avatar size="xl" source={{ uri: 'https://tinyurl.com/mrkdr42d' }} />
+	</HStack>
 </CodePreview>
 
 ### alt
@@ -82,24 +85,23 @@ Props to be to the internal `Image` component.
 | `IImageProps`| No       |
 
 <CodePreview>
-    <Avatar
-        source={{uri:"https://images.unsplash.com/photo-1599566150163-29194dcaad36?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80"}}
-        size="xl"
-        __image={{
-            borderWidth: "xl",
-            borderColor: "success.500",
-        }}
-    />
+	<Avatar
+		size="xl"
+		source={{ uri: 'https://tinyurl.com/mrkdr42d' }}
+		__image={{
+			borderWidth: 'xl',
+			borderColor: 'success.500',
+		}}
+	/>
 </CodePreview>
 
 ```tsx
 <Avatar
-    source={{uri:"https://images.unsplash.com/photo-1599566150163-29194dcaad36?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80"}}
-    size="xl"
-    __image={{
-        borderWidth: "xl",
-        borderColor: "success.500",
-    }}
+	size="xl"
+	source={{ uri: 'https://tinyurl.com/mrkdr42d' }}
+	__image={{
+		borderWidth: 'xl',
+		borderColor: 'success.500',
+	}}
 />
-
-
+```

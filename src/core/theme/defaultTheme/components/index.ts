@@ -1,6 +1,11 @@
 import Avatar from './Avatar';
 import Banner from './Banner';
 import Button from './Button';
+import Card from './Card';
+import CardActions from './CardActions';
+import CardContent from './CardContent';
+import CardMedia from './CardMedia';
+import CardHeader from './CardHeader';
 import Chip from './Chip';
 import Checkbox from './Checkbox';
 import Dialog from './Dialog';
@@ -17,6 +22,11 @@ export default {
 	Avatar,
 	Banner,
 	Button,
+	Card,
+	CardActions,
+	CardContent,
+	CardHeader,
+	CardMedia,
 	Checkbox,
 	Chip,
 	Dialog,

@@ -16,7 +16,12 @@ describe( 'Image', () => {
 		'aStyledSystemComponent',
 		{
 			renderComponent: props => renderImage( props ),
-			testId: 'test-image'
+			testId: 'test-image',
+			omitProps: [
+				'font', 'fontSize', 'fontWeight', 'letterSpacing', 'lineHeight',
+				'borderTopColor', 'borderBottomColor', 'borderLeftColor',
+				'borderRightColor', 'color', 'gap'
+			]
 		}
 	);
 } );

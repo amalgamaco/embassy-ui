@@ -17,11 +17,19 @@ include { Image } from "@amalgama/embassy-ui"
 
 ## Example
 <CodePreview>
-    <Image source={{uri:"https://placekitten.com/200/300"}} width={200} height={300} />
+	<Image
+		source={{uri:"https://placekitten.com/200/300"}}
+		width={200}
+		height={300}
+	/>
 </CodePreview>
 
 ```jsx
-<Image source={{uri:"https://placekitten.com/200/300"}} width={200} height={300}> />
+<Image
+	source={{uri:"https://placekitten.com/200/300"}}
+	width={200}
+	height={300}
+/>
 ```
 
 
@@ -29,28 +37,6 @@ include { Image } from "@amalgama/embassy-ui"
 :::info
 This component supports all the props of the Image component from [react-native](https://reactnative.dev/docs/image#props)
 :::
-
-### resizeMode
-
-Determines how to resize the image when the frame doesn't match the raw image dimensions. Defaults to cover.
-
-- `cover`: Scale the image uniformly (maintain the image's aspect ratio) so that 
-    - both dimensions (width and height) of the image will be equal to or larger than the corresponding dimension of the view (minus padding).
-    - at least one dimension of the image will be equal to or larger than the corresponding dimension of the view (minus padding).
-
-- `contain`: Scale the image uniformly (maintain the image's aspect ratio) so that both dimensions (width and height) of the image will be equal to or less than the corresponding dimension of the view (minus padding).
-
-- `stretch`: Scale width and height independently, This may change the aspect ratio of the src.
-
-- `repeat`: Repeat the image to cover the frame of the view. The image will keep it's size and aspect ratio. (iOS only)
-
-- `center`: Center the image in the view. The image will not be scaled.
-
-| Type                                                    | Required |
-| ------------------------------------------------------- | -------- |
-| enum('cover', 'contain', 'stretch', 'repeat', 'center') | false    |
-
-
 
 ### source
 The image source (either a remote URL or a local file resource).
@@ -63,3 +49,22 @@ The currently supported formats are png, jpg, jpeg, bmp, gif, webp, psd (iOS onl
 | ----------- | -------- | 
 | [ImageSource](https://reactnative.dev/docs/image#imagesource) | true     |
 
+### resizeMode
+
+Determines how to resize the image when the frame doesn't match the raw image dimensions. Defaults to cover.
+
+- `cover`: Scale the image uniformly (maintain the image's aspect ratio) so that 
+	- both dimensions (width and height) of the image will be equal to or larger than the corresponding dimension of the view (minus padding).
+	- at least one dimension of the image will be equal to or larger than the corresponding dimension of the view (minus padding).
+
+- `contain`: Scale the image uniformly (maintain the image's aspect ratio) so that both dimensions (width and height) of the image will be equal to or less than the corresponding dimension of the view (minus padding).
+
+- `stretch`: Scale width and height independently, This may change the aspect ratio of the src.
+
+- `repeat`: Repeat the image to cover the frame of the view. The image will keep it's size and aspect ratio. (iOS only)
+
+- `center`: Center the image in the view. The image will not be scaled.
+
+| Type                                                    | Required |
+| ------------------------------------------------------- | -------- |
+| enum('cover', 'contain', 'stretch', 'repeat', 'center') | false    |
