@@ -79,6 +79,17 @@ interface IBannerPseudoProps {
 	__deleteIcon: ComponentBaseStyledProps<'Icon'>
 }
 
+// Dialog pseudoprops
+interface IDialogPseudoProps {
+	__header: ComponentBaseStyledProps<'Box'>,
+	__body: ComponentBaseStyledProps<'Box'>,
+	__footer: ComponentBaseStyledProps<'Box'>,
+	__title: ComponentBaseStyledProps<'Text'>,
+	__closeIcon: ComponentBaseStyledProps<'Icon'>,
+	__icon: ComponentBaseStyledProps<'Icon'>,
+	__closeButtonContainer: ComponentBaseStyledProps<'Box'>
+}
+
 // Pseudoprops config for all components
 interface ComponentsPseudoPropsConfig {
 	Button: IButtonPseudoProps,
@@ -89,7 +100,8 @@ interface ComponentsPseudoPropsConfig {
 	TextInput: ITextInputPseudoProps,
 	Chip: IChipPseudoProps,
 	Switch: ISwitchPseudoProps,
-	Banner: IBannerPseudoProps
+	Banner: IBannerPseudoProps,
+	Dialog: IDialogPseudoProps,
 }
 
 // Template type to get pseudoprops for a given component

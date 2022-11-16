@@ -19,7 +19,8 @@ export {
 	TextInput,
 	Chip,
 	Switch,
-	Banner
+	Banner,
+	Dialog
 } from './components';
 export { UIKitIcon };
 

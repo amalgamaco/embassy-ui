@@ -101,6 +101,9 @@
     "coveragePathIgnorePatterns": [
       "tests/support"
     ],
+    "transformIgnorePatterns": [
+      "node_modules/(?!(jest-)?react-native|@react-native|react-native-modal)"
+    ],
     "coverageReporters": [
       "json",
       "lcov",
@@ -173,6 +176,7 @@
   "dependencies": {
     "immutable": "^4.1.0",
     "lodash": "^4.17.21",
+    "react-native-modal": "^13.0.1",
     "react-native-svg": "^13.1.0"
   }
 }

@@ -21,6 +21,7 @@ import ColorModeToggler from './components/ColorModeToggler';
 import ChipExamples from './components/ChipExamples';
 import SwitchExamples from './components/SwitchExamples';
 import BannerExamples from './components/BannerExamples';
+import DialogExamples from './components/DialogExamples';
 
 const styles = StyleSheet.create( {
 	container: {
@@ -144,6 +145,7 @@ const App = () => (
 						<ChipExamples />
 						<SwitchExamples />
 						<BannerExamples />
+						<DialogExamples />
 					</VStack>
 				</ScrollView>
 			</SafeAreaView>
