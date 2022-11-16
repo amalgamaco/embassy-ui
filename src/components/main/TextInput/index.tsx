@@ -1,17 +1,16 @@
 import React from 'react';
 import { TextInput as TextInputRN } from 'react-native';
-import UIKitIcon from '../../../icons/UIKitIcon';
+import { createIconButtonFromIcon } from '../../utils/elements';
 import { HStack } from '../Stack';
 import useTextInputPropsResolver from './hooks';
 import type { ITextInputProps } from './types';
-import IconButton from '../IconButton';
 import useTranslatePropsToStyle from '../../../hooks/useTranslatePropsToStyle';
 import ConditionalRender from '../../utils/ConditionalRender';
 import Box from '../Box';
 
 const TextInput = ( { testID, ...props }: ITextInputProps ) => {
 	const {
-		containerProps, textInputProps, iconProps, showPasswordToggleButton
+		icon, containerProps, textInputProps, iconProps, showPasswordToggleButton
 	} = useTextInputPropsResolver( props );
 
 	const [ style, restProps ] = useTranslatePropsToStyle( textInputProps );
@@ -24,12 +23,13 @@ const TextInput = ( { testID, ...props }: ITextInputProps ) => {
 					{...restProps}
 				/>
 				<ConditionalRender render={showPasswordToggleButton}>
-					<IconButton
-						name="eye"
-						as={UIKitIcon}
-						testID={testID ? `${testID}-icon` : undefined}
-						{...iconProps}
-					/>
+					{
+						createIconButtonFromIcon( {
+							icon,
+							iconProps,
+							testID
+						} )
+					}
 				</ConditionalRender>
 			</HStack>
 		</Box>

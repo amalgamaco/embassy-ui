@@ -6,6 +6,8 @@ export interface ITextInputProps extends Omit<ComponentStyledProps<'TextInput'>,
 	disabled?: boolean,
 	error?: boolean,
 	type?: 'password' | 'text',
+	showPasswordIcon?: JSX.Element,
+	hidePasswordIcon?: JSX.Element,
 
 	__icon?: IIconProps
 }

@@ -1,4 +1,6 @@
 import React, { ReactElement } from 'react';
+import IconButton from '../main/IconButton';
+import type { IIconButtonProps } from '../main/IconButton/types';
 
 export type ComponentPropTypes<PropsType> = Partial<PropsType> & React.Attributes;
 export type ComponentType<PropsType extends Partial<PropsType> & React.Attributes> = (
@@ -29,3 +31,21 @@ export const createComponent = <
 			{ ...props, ...( from?.props || {} ) } as PropsType
 		)
 	);
+
+type CreateIconButtonFromIconPropsType = {
+	icon: JSX.Element,
+	iconProps: Omit<IIconButtonProps, 'name' | 'as'>,
+	testID?: string
+}
+
+export const createIconButtonFromIcon = ( {
+	icon, iconProps, testID
+}: CreateIconButtonFromIconPropsType ) => (
+	createComponent( IconButton as ComponentType<IIconButtonProps>, {
+		from: icon,
+		props: {
+			testID: testID ? `${testID}-icon` : undefined,
+			...iconProps
+		}
+	} )
+);

@@ -5,9 +5,7 @@ import TextInput from '../../../src/components/main/TextInput';
 import FakeBaseIcon from '../../support/FakeBaseIcon';
 import WithThemeProvider from '../../support/withThemeProvider';
 
-const TestIcon = () => (
-	<Icon name="icon" testID="test-icon" as={FakeBaseIcon} />
-);
+const TestIcon = <Icon name="icon" testID="test-icon" as={FakeBaseIcon} />;
 
 describe( 'TextInput', () => {
 	const renderComponent = props => render(
@@ -17,10 +15,10 @@ describe( 'TextInput', () => {
 
 	it( 'shows the correct icon when type=\'password\' is set', () => {
 		const { getByTestId } = renderComponent( {
-			type: 'password', __icon: { name: 'icon', as: TestIcon }
+			type: 'password', showPasswordIcon: TestIcon
 		} );
 
-		expect( getByTestId( 'test-icon' ) ).toHaveTextContent( 'icon' );
+		expect( getByTestId( 'test-icon' ) ).not.toBeNull();
 	} );
 
 	it( 'applies the correct styles', () => {
