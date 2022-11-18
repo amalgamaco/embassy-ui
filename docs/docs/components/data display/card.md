@@ -19,8 +19,8 @@ In this section you will find the `Card` component and it's subcomponents:
 <Card>
 	<CardHeader
 		avatar={{ uri: 'https://tinyurl.com/mrkdr42d' }}
-		title="Header"
-		subtitle="Subheader"
+		title="Jhon Doe"
+		subtitle="Cat Influencer"
 		rightActions={[
 			<IconButton
 				as={UIKitIcon}
@@ -38,16 +38,16 @@ In this section you will find the `Card` component and it's subcomponents:
 		/>
 	</CardMedia>
 	<CardContent>
-		<Text variant="sh">Title</Text>
-		<Text variant="body">Subhead</Text>
+		<Text variant="sh">Advice for future generations</Text>
+		<Text variant="body">And for the current ones :)</Text>
 		<Text variant="body" paddingTop="2">
 			Keep smiling, because life is a beautiful thing
 			and there's so much to smile about.
 		</Text>
 	</CardContent>
 	<CardActions>
-		<Button variant="primary" py="2.5">Action 1</Button>
-		<Button variant="secondary" py="2.5">Action 2</Button>
+		<Button variant="primary" py="2.5" onPress={() => window.alert("liked")}>Like</Button>
+		<Button variant="secondary" py="2.5" onPress={() => window.alert("disliked")} >Dislike</Button>
 	</CardActions>
 </Card>
 ```
@@ -63,6 +63,58 @@ The `Card` component accepts the same props as the [`Box`](/docs/components/layo
 ## CardHeader
 
 The `CardHeader` component is a container for the header of a `Card` component. 
+### Examples
+<CodePreview>
+	<CardHeader
+		bg="bg-secondary-enabled-light"
+		width={327}
+		avatar={{ uri: 'https://placekitten.com/200/200' }}
+		title="Header with avatar"
+		subtitle="And one button"
+		rightActions={[
+			<IconButton as={UIKitIcon} name={"more-vertical-outline"} />
+		]}
+	/>
+</CodePreview>
+
+```tsx
+<CardHeader
+	bg="bg-secondary-enabled-light"
+	width={327}
+	avatar={{ uri: 'https://placekitten.com/200/200' }}
+	title="Header with avatar"
+	subtitle="And one button"
+	rightActions={[
+		<IconButton as={UIKitIcon} name={"more-vertical-outline"} />
+	]}
+/>
+```
+
+<CodePreview>
+	<CardHeader 
+		bg="bg-secondary-enabled-light"
+		width={327}
+		title="Header without avatar"
+		subtitle="And with two buttons!"
+			rightActions={[
+		<IconButton as={UIKitIcon} name={"heart-outline"} onPress={() => window.alert("comment pressed")}/>,
+		<IconButton as={UIKitIcon} name={"comment-circle-outline"} onPress={() => window.alert("comment pressed")}/>
+	]}
+	/>
+</CodePreview>
+
+```tsx
+<CardHeader 
+	bg="bg-secondary-enabled-light"
+	width={327}
+	title="Header without avatar"
+	subtitle="And with two buttons!"
+	rightActions={[
+		<IconButton as={UIKitIcon} name={"heart-outline"} onPress={() => window.alert("like pressed")} />,
+		<IconButton as={UIKitIcon} name={"comment-circle-outline"} onPress={() => window.alert("comment pressed")} />
+	]}
+/>
+```
 
 ### Props
 Besides the props accepted by the [`HStack`](/docs/components/layout/Stack) component, the `CardHeader` component accepts the following props:
