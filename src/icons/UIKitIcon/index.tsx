@@ -11,7 +11,10 @@ import {
 	QuestionCircleOutlined,
 	CheckmarkOutlined,
 	CloseOutlined,
-	CircleOutlined
+	CircleOutlined,
+	MoreVerticalOutline,
+	CommentCircleOutline,
+	HeartOutline
 } from './icons';
 import type { AsComponentProps } from '../../components/main/Icon/types';
 import IconNotFoundError from './IconNotFoundError';
@@ -30,9 +33,12 @@ const PACKAGE_ICONS = Object.freeze( {
 	'circle': CircleOutlined,
 	'circle-filled': CircleFilled,
 	'close-outlined': CloseOutlined,
+	'comment-circle-outline': CommentCircleOutline,
 	'eye': Eye,
-	'question-circle': QuestionCircleOutlined,
-	'eye-off-outlined': EyeOffOutlined
+	'eye-off-outlined': EyeOffOutlined,
+	'heart-outline': HeartOutline,
+	'more-vertical-outline': MoreVerticalOutline,
+	'question-circle': QuestionCircleOutlined
 } ) as IconsMap;
 
 const UIKitIcon = ( {

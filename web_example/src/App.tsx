@@ -21,6 +21,9 @@ import ChipExamples from './components/ChipExamples';
 import SwitchExamples from './components/SwitchExamples';
 import BannerExamples from './components/BannerExamples';
 import DialogExamples from './components/DialogExamples';
+import ImageExamples from './components/ImageExamples';
+import AvatarExamples from './components/AvatarExamples';
+import CardExample from './components/CardExample';
 
 const customTheme = extendThemeConfig( {
 	palette: {
@@ -130,6 +133,9 @@ const App = () => (
 				<SwitchExamples />
 				<BannerExamples />
 				<DialogExamples />
+				<ImageExamples />
+				<AvatarExamples />
+				<CardExample />
 			</VStack>
 		</Box>
 	</ThemeProvider>

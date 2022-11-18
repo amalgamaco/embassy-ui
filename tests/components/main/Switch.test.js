@@ -17,7 +17,8 @@ const accessibilityTest = ( {
 		renderComponent,
 		testID: 'test-switch',
 		accessibilityRole: 'switch',
-		accessibilityState: { checked, disabled }
+		accessibilityState: { checked, disabled },
+		omitProps: [ 'accessibilityLabel' ]
 	} );
 };
 
