@@ -112,6 +112,11 @@ upload_to_sonar:
 
 preview_docs:
   stage: docs
+  rules:
+    - if: $CI_PIPELINE_SOURCE == "merge_request_event"
+      changes:
+        - docs/**/*
+      allow_failure: true
   before_script:
     - apt-get update -qqy && apt-get install -qqy awscli
   script:
@@ -120,13 +125,8 @@ preview_docs:
     - yarn install
     - URL=$DOCS_PREVIEW_BASE_URL BASE_URL="/${CI_COMMIT_SHORT_SHA}/" yarn build
     - aws s3 sync build "${DOCS_PREVIEW_BUCKET_PATH}/${CI_COMMIT_SHORT_SHA}/"
-    - !reference [.commit_comment, script]
-    - commit_comment "You can see a preview of the changes made to the docs [here](${DOCS_PREVIEW_BASE_URL}/${CI_COMMIT_SHORT_SHA}/)"
-  only:
-    changes:
-      - docs/**/*
-  except:
-    - main
+    - !reference [.mr_comment, script]
+    - mr_comment "You can see a preview of the changes made to the docs [here](${DOCS_PREVIEW_BASE_URL}/${CI_COMMIT_SHORT_SHA}/)"
 
 pages:
   stage: docs
