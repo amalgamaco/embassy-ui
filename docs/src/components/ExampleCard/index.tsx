@@ -9,8 +9,8 @@ const ExampleCard = () => (
 		<Card>
 			<CardHeader
 				avatar={{ uri: 'https://tinyurl.com/mrkdr42d' }}
-				title="Header"
-				subtitle="Subheader"
+				title="Jhon Doe"
+				subtitle="Cat Influencer"
 				rightActions={[
 					<IconButton
 						as={UIKitIcon}
@@ -28,16 +28,16 @@ const ExampleCard = () => (
 				/>
 			</CardMedia>
 			<CardContent>
-				<Text variant="sh">Title</Text>
-				<Text variant="body">Subhead</Text>
+				<Text variant="sh">Advice for future generations</Text>
+				<Text variant="body">And for the current ones :)</Text>
 				<Text variant="body" paddingTop="2">
 					Keep smiling, because life is a beautiful thing
 					and there's so much to smile about.
 				</Text>
 			</CardContent>
 			<CardActions>
-				<Button variant="primary" py="2.5">Action 1</Button>
-				<Button variant="secondary" py="2.5">Action 2</Button>
+				<Button variant="primary" py="2.5" onPress={() => window.alert( 'liked' )}>Like</Button>
+				<Button variant="secondary" py="2.5" onPress={() => window.alert( 'disliked' )}>Dislike</Button>
 			</CardActions>
 		</Card>
 	</VStack>
