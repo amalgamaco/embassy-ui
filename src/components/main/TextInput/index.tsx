@@ -8,9 +8,11 @@ import useTranslatePropsToStyle from '../../../hooks/useTranslatePropsToStyle';
 import ConditionalRender from '../../utils/ConditionalRender';
 import Box from '../Box';
 
-const TextInput = ( { testID, ...props }: ITextInputProps ) => {
+const TextInput = ( {
+	testID, icon, ...props
+}: ITextInputProps ) => {
 	const {
-		icon, containerProps, textInputProps, iconProps, showPasswordToggleButton
+		containerProps, textInputProps, iconProps
 	} = useTextInputPropsResolver( props );
 
 	const [ style, restProps ] = useTranslatePropsToStyle( textInputProps );
@@ -22,10 +24,11 @@ const TextInput = ( { testID, ...props }: ITextInputProps ) => {
 					style={style}
 					{...restProps}
 				/>
-				<ConditionalRender render={showPasswordToggleButton}>
+				<ConditionalRender render={!!icon}>
 					{
 						createIconButtonFromIcon( {
-							icon,
+							// eslint-disable-next-line @typescript-eslint/no-non-null-assertion
+							icon: icon!,
 							iconProps,
 							testID
 						} )

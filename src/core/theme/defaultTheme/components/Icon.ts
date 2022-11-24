@@ -1,8 +1,7 @@
 export default {
 	defaultProps: {
 		size: 'sm',
-		textAlign: 'center' as const,
-		color: 'text-primary'
+		textAlign: 'center' as const
 	},
 	sizes: {
 		'3xs': 8,

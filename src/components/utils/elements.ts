@@ -44,7 +44,7 @@ export const createIconButtonFromIcon = ( {
 	createComponent( IconButton as ComponentType<IIconButtonProps>, {
 		from: icon,
 		props: {
-			testID: testID ? `${testID}-icon` : undefined,
+			testID: testID ? `${testID}-button` : undefined,
 			...iconProps
 		}
 	} )
