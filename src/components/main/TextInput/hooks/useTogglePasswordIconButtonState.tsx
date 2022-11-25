@@ -1,17 +1,9 @@
 import { useState } from 'react';
-import type { ITextInputProps } from '../types';
 
-type IUseTogglePasswordIconButtonStateReturnType = [
-	boolean, boolean, () => void
-];
+const useTogglePasswordIconButtonState = () => {
+	const [ isPasswordHidden, setIsPasswordHidden ] = useState( true );
+	const onIconPress = () => { setIsPasswordHidden( wasHidden => !wasHidden ); };
 
-const useTogglePasswordIconButtonState = (
-	{ type }: { type: ITextInputProps['type'] }
-): IUseTogglePasswordIconButtonStateReturnType => {
-	const isPasswordField = type === 'password';
-	const [ secureTextEntry, setSecureTextEntry ] = useState( isPasswordField );
-	const onIconPress = () => { setSecureTextEntry( !secureTextEntry ); };
-
-	return [ isPasswordField, secureTextEntry, onIconPress ];
+	return { isPasswordHidden, onIconPress };
 };
 export default useTogglePasswordIconButtonState;
