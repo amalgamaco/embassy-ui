@@ -19,3 +19,4 @@ export {
 	Card, CardActions, CardContent, CardHeader, CardMedia
 } from './main/Card';
 export { default as PasswordInput } from './main/PasswordInput';
+export { default as DateInput } from './main/DateInput';

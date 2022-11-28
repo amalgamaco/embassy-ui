@@ -1,6 +1,9 @@
 import * as React from 'react';
 
-import { SafeAreaView, ScrollView, StyleSheet } from 'react-native';
+import {
+	SafeAreaView, ScrollView, StyleSheet,
+	KeyboardAvoidingView, Platform
+} from 'react-native';
 import {
 	ThemeProvider, VStack, extendThemeConfig, UIKitIcon, Box
 } from '@amalgama/embassy-ui';
@@ -26,6 +29,7 @@ import ImageExamples from './components/ImageExamples';
 import AvatarExamples from './components/AvatarExamples';
 import CardExample from './components/CardExample';
 import PasswordInputExamples from './components/PasswordExamples';
+import DateInputExamples from './components/DateInputExamples';
 
 const styles = StyleSheet.create( {
 	container: {
@@ -132,31 +136,37 @@ declare module '@amalgama/embassy-ui' {
 const App = () => (
 	<ThemeProvider theme={customTheme}>
 		<Box flex={1} __dark={{ bg: 'neutral.700' }}>
-			<SafeAreaView style={styles.container}>
-				<ScrollView contentContainerStyle={styles.scroll} style={{ width: '100%' }}>
-					<VStack marginX="3">
-						<ColorModeToggler />
-						<PaletteColorGrid />
-						<TextExamples />
-						<BoxExamples />
-						<ButtonExamples />
-						<IconExamples />
-						<IconButtonExamples />
-						<CheckboxExamples />
-						<RadioExamples />
-						<FormControlExamples />
-						<TextInputExamples />
-						<PasswordInputExamples />
-						<ChipExamples />
-						<SwitchExamples />
-						<BannerExamples />
-						<DialogExamples />
-						<ImageExamples />
-						<AvatarExamples />
-						<CardExample />
-					</VStack>
-				</ScrollView>
-			</SafeAreaView>
+			<KeyboardAvoidingView
+				behavior={Platform.OS === 'ios' ? 'padding' : 'height'}
+				style={styles.container}
+			>
+				<SafeAreaView style={styles.container}>
+					<ScrollView contentContainerStyle={styles.scroll} style={{ width: '100%' }}>
+						<VStack marginX="3">
+							<ColorModeToggler />
+							<PaletteColorGrid />
+							<TextExamples />
+							<BoxExamples />
+							<ButtonExamples />
+							<IconExamples />
+							<IconButtonExamples />
+							<CheckboxExamples />
+							<RadioExamples />
+							<FormControlExamples />
+							<TextInputExamples />
+							<PasswordInputExamples />
+							<ChipExamples />
+							<SwitchExamples />
+							<BannerExamples />
+							<DialogExamples />
+							<ImageExamples />
+							<AvatarExamples />
+							<CardExample />
+							<DateInputExamples />
+						</VStack>
+					</ScrollView>
+				</SafeAreaView>
+			</KeyboardAvoidingView>
 		</Box>
 	</ThemeProvider>
 );

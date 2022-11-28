@@ -17,6 +17,7 @@ export {
 	CardMedia,
 	Checkbox,
 	Chip,
+	DateInput,
 	Dialog,
 	FormControl,
 	HStack,
