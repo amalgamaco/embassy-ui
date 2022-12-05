@@ -62,6 +62,13 @@ const config = {
 				indexDocs: true
 			}
 		],
+		[
+			'@docusaurus/plugin-google-gtag',
+			{
+				trackingID: 'G-92CWLXVKWL',
+				anonymizeIP: true
+			}
+		],
 		'./src/plugins/docusaurus-link-library-plugin'
 	],
 
