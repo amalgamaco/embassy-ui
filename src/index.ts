@@ -23,6 +23,7 @@ export {
 	Icon,
 	IconButton,
 	Image,
+	PasswordInput,
 	Radio,
 	Switch,
 	Text,
