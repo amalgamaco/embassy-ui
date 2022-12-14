@@ -1,0 +1,4 @@
+.date-picker-calendar {
+	position: absolute;
+	z-index: 10000;
+}

@@ -25,6 +25,7 @@ import ImageExamples from './components/ImageExamples';
 import AvatarExamples from './components/AvatarExamples';
 import CardExample from './components/CardExample';
 import PasswordInputExamples from './components/PasswordInputExamples';
+import DateInputExamples from './components/DateInputExamples';
 
 const customTheme = extendThemeConfig( {
 	palette: {
@@ -120,6 +121,7 @@ const App = () => (
 	<ThemeProvider theme={customTheme}>
 		<Box flex={1} alignItems="center">
 			<VStack width="500px">
+				<DateInputExamples />
 				<PaletteColorGrid />
 				<TextExamples />
 				<BoxExamples />

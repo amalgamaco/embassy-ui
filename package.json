@@ -65,6 +65,7 @@
     "@types/jest": "^26.0.0",
     "@types/lodash": "^4.14.182",
     "@types/react": "17.0.2",
+    "@types/react-calendar": "^3.9.0",
     "@types/react-native": "0.65",
     "@typescript-eslint/eslint-plugin": "^5.23.0",
     "@typescript-eslint/parser": "^5.23.0",
@@ -83,6 +84,8 @@
     "pod-install": "^0.1.0",
     "prettier": "^2.0.5",
     "react": "17.0.2",
+    "react-calendar": "^4.0.0",
+    "react-fit": "^1.4.0",
     "react-native": "^0.65",
     "react-native-builder-bob": "^0.18.0",
     "react-native-date-picker": "^4.2.6",
@@ -93,6 +96,8 @@
   },
   "peerDependencies": {
     "react": "*",
+    "react-calendar": "^4.0.0",
+    "react-fit": "^1.4.0",
     "react-native": "*",
     "react-native-date-picker": "^4.2.6",
     "react-native-svg": "*"

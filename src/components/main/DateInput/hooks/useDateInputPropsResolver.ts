@@ -1,11 +1,13 @@
-import { useCallback, useEffect, useState } from 'react';
-import type { DatePickerProps } from 'react-native-date-picker';
+import { useCallback, useMemo, useState } from 'react';
+import type { StyleProp, ViewStyle } from 'react-native';
 import { parse as parseDate, format as formatDate, isValid as isValidDate } from 'date-fns';
 import { useMaskedInputProps } from 'react-native-mask-input';
 import { maskForFormat } from '../utils/mask';
-import type { DateInputProps } from '../types';
+import type { DateInputProps, DatePickerProps } from '../types';
 import { getCurrentLocaleCode, getDateFormatPatternForLocale } from '../utils/locale';
 import type { ITextInputProps } from '../../TextInput/types';
+import useDateInputValue from './useDateInputValue';
+import type { IBoxProps } from '../../Box/types';
 
 const parseDateValue = ( format: string, value?: string ): Date => {
 	if ( !value ) { return new Date(); }
@@ -14,14 +16,20 @@ const parseDateValue = ( format: string, value?: string ): Date => {
 	return parsedDate;
 };
 
+interface UseDateInputPropsResolverReturnType {
+	containerProps: IBoxProps;
+	inputProps: ITextInputProps;
+	datePickerProps: DatePickerProps;
+}
+
 const useDateInputPropsResolver = ( {
 	value: initialValue,
 	locale = getCurrentLocaleCode(),
 	format: formatPattern = getDateFormatPatternForLocale( locale ),
 	onChange,
 	...props
-}: DateInputProps ) => {
-	const [ value, setValue ] = useState( initialValue );
+}: DateInputProps ): UseDateInputPropsResolverReturnType => {
+	const [ value, setValue ] = useDateInputValue( { initialValue, onChange } );
 	const [ isDatePickerOpen, setIsDatePickerOpen ] = useState( false );
 
 	const onDateSelected = useCallback( ( date?: Date ) => {
@@ -31,21 +39,12 @@ const useDateInputPropsResolver = ( {
 	}, [ formatPattern, setValue, setIsDatePickerOpen ] );
 
 	const onCalendarIconPress = useCallback( () => {
-		setIsDatePickerOpen( true );
-	}, [ setIsDatePickerOpen ] );
+		setIsDatePickerOpen( !isDatePickerOpen );
+	}, [ isDatePickerOpen, setIsDatePickerOpen ] );
 
 	const onDatePickerCancelled = useCallback( () => {
 		setIsDatePickerOpen( false );
 	}, [ setIsDatePickerOpen ] );
-
-	useEffect( () => {
-		if ( value !== undefined ) { onChange?.( value ); }
-	}, [ value, onChange ] );
-
-	useEffect(
-		() => { setValue( initialValue ); },
-		[ initialValue, setValue ]
-	);
 
 	const maskedInputProps = useMaskedInputProps( {
 		value: value || '',
@@ -53,7 +52,15 @@ const useDateInputPropsResolver = ( {
 		mask: maskForFormat( formatPattern )
 	} );
 
+	const containerStyle = useMemo<StyleProp<ViewStyle>>( () => ( {
+		position: 'relative',
+		zIndex: isDatePickerOpen ? 10000 : 1
+	} ), [ isDatePickerOpen ] );
+
 	return {
+		containerProps: {
+			style: containerStyle
+		},
 		inputProps: {
 			...props,
 			...maskedInputProps,
@@ -62,16 +69,14 @@ const useDateInputPropsResolver = ( {
 			onIconPress: onCalendarIconPress
 		},
 		datePickerProps: {
-			modal: true,
-			open: isDatePickerOpen,
-			mode: 'date',
+			isOpen: isDatePickerOpen,
 			locale,
 			testID: props.testID ? `${props.testID}-date-picker` : undefined,
-			date: parseDateValue( formatPattern, value ),
+			selectedDate: parseDateValue( formatPattern, value ),
 			onConfirm: onDateSelected,
 			onCancel: onDatePickerCancelled
 		}
-	} as { inputProps: ITextInputProps, datePickerProps: DatePickerProps };
+	};
 };
 
 export default useDateInputPropsResolver;

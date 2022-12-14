@@ -1,11 +1,7 @@
 import { fireEvent, render } from '@testing-library/react-native';
 import React from 'react';
 import DateInput from '../../../src/components/main/DateInput';
-import FakeBaseIcon from '../../support/FakeBaseIcon';
 import WithThemeProvider from '../../support/withThemeProvider';
-
-const testIconButtonTestID = 'test-text-input-button';
-const testIconTestID = `${testIconButtonTestID}-icon`;
 
 const CURRENT_LOCALE = 'en-US';
 jest.mock( '../../../src/components/main/DateInput/utils/locale', () => {
@@ -13,6 +9,22 @@ jest.mock( '../../../src/components/main/DateInput/utils/locale', () => {
 	return {
 		...actual,
 		getCurrentLocaleCode: jest.fn( () => CURRENT_LOCALE )
+	};
+} );
+
+jest.mock( '../../../src/components/main/DateInput/DatePicker', () => {
+	const RN = jest.requireActual( 'react-native' );
+	const actual = jest.requireActual( '../../../src/components/main/DateInput/DatePicker' );
+
+	const DatePicker = props => (
+		<RN.View {...props} />
+	);
+	DatePicker.displayName = 'DatePicker';
+
+	return {
+		...actual,
+		__esModule: true,
+		default: DatePicker
 	};
 } );
 
@@ -64,7 +76,7 @@ describe( 'DateInput', () => {
 		it( 'shows the date picker', () => {
 			const { getByTestId } = renderComponent();
 			fireEvent.press( getByTestId( 'test-date-input-button-icon' ) );
-			expect( getByTestId( 'test-date-input-date-picker' ) ).toHaveProp( 'open', true );
+			expect( getByTestId( 'test-date-input-date-picker' ) ).toHaveProp( 'isOpen', true );
 		} );
 	} );
 

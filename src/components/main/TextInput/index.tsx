@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { forwardRef, Ref } from 'react';
 import { TextInput as TextInputRN } from 'react-native';
 import { createIconButtonFromIcon } from '../../utils/elements';
 import { HStack } from '../Stack';
@@ -10,7 +10,7 @@ import Box from '../Box';
 
 const TextInput = ( {
 	testID, icon, ...props
-}: ITextInputProps ) => {
+}: Omit<ITextInputProps, 'ref'>, ref?: Ref<TextInputRN | undefined> ) => {
 	const {
 		containerProps, textInputProps, iconProps
 	} = useTextInputPropsResolver( props );
@@ -20,6 +20,7 @@ const TextInput = ( {
 		<Box {...containerProps} testID={testID}>
 			<HStack width="100%" height="100%" alignItems="center">
 				<TextInputRN
+					ref={ref}
 					testID={testID ? `${testID}-rn` : undefined}
 					style={style}
 					{...restProps}
@@ -39,4 +40,4 @@ const TextInput = ( {
 	);
 };
 
-export default TextInput;
+export default forwardRef( TextInput );

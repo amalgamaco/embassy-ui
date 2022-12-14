@@ -9,7 +9,7 @@ import { useFormControlContext } from '../../FormControl/context';
 import useTextInputPropsFromContainerProps from './useTextInputPropsFromContainerProps';
 
 interface IUseTextInputPropsResolverReturnType {
-	containerProps: Omit<ITextInputProps, '__icon' | '__textInput'>,
+	containerProps: Omit<ITextInputProps, '__icon' | '__textInput' | 'ref'>,
 	iconProps: Omit<IIconButtonProps, 'name' | 'as'>,
 	textInputProps: ITextInputProps['__textInput'],
 }
