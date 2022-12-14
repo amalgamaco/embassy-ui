@@ -22,26 +22,6 @@ import { TextInput } from '@amalgama/embassy-ui';
 
 ## Props
 
-### type
-The type of the input. Allowed values are:
-- `text`: A text field.
-- `password`: A password field that obscures the input text by default and has a icon button to show it.
-
-| TYPE | REQUIRED | DEFAULT |
-| ---- | -------- | ------- |
-| `text` \| `password` | No       | `text` |
-
-<CodePreview>
-	<VStack space="2">
-		<TextInput placeholder="Enter your username" width="300px" />
-		<TextInput placeholder="Enter your password" type="password" width="300px" />
-	</VStack>
-</CodePreview>
-
-```jsx
-<TextInput placeholder="Enter your text" width="300px" />
-```
-
 ### placeholder
 A placeholder text for the input.
 
@@ -250,7 +230,7 @@ Props to be applied to the internal `TextInput` component.
 ```
 
 ### __icon
-Props to be applied to the internal `IconButton` component that toggles the password visibility.
+Props to be applied to the internal `IconButton` component that is shown when the `icon` prop is set.
 
 | TYPE   | REQUIRED |
 | ------ | -------- |
@@ -258,23 +238,21 @@ Props to be applied to the internal `IconButton` component that toggles the pass
 
 <CodePreview>
 	<TextInput
-		placeholder="Enter your password"
-		type="password"
+		placeholder="Search"
 		width="300px"
-		height="80px"
-		icon={<Icon as={Feather} name="unlock" color="success.500" />}
-		__icon={{ color: 'success.500', size: 'xl' }}
+		height="60px"
+		icon={<Icon as={Feather} name="search" />}
+		__icon={{ color: 'success.500', size: 'md' }}
 	/>
 </CodePreview>
 
 ```jsx
 <TextInput
-	placeholder="Enter your password"
-	type="password"
+	placeholder="Search"
 	width="300px"
-	height="80px"
-	icon={<Icon as={Feather} name="unlock" />}
-	__icon={{ color: 'success.500', size: 'xl' }}
+	height="60px"
+	icon={<Icon as={Feather} name="search" />}
+	__icon={{ color: 'success.500', size: 'md' }}
 />
 ```
 
@@ -284,23 +262,21 @@ The `__icon` prop has less priority than the `icon` prop. This means that the st
 
 <CodePreview>
 	<TextInput
-		placeholder="Enter your password"
-		type="password"
+		placeholder="Search"
 		width="300px"
-		height="80px"
-		icon={<Icon as={Feather} name="unlock" color="black" />}
-		__icon={{ color: 'success.500', size: 'xl' }}
+		height="60px"
+		icon={<Icon as={Feather} name="search" color="black" />}
+		__icon={{ color: 'success.500', size: 'md' }}
 	/>
 </CodePreview>
 
 ```jsx
 <TextInput
-	placeholder="Enter your password"
-	type="password"
+	placeholder="Search"
 	width="300px"
-	height="80px"
-	icon={<Icon as={Feather} name="unlock" color="black" />}
-	__icon={{ color: 'success.500', size: 'xl' }}
+	height="60px"
+	icon={<Icon as={Feather} name="search" color="black" />}
+	__icon={{ color: 'success.500', size: 'md' }}
 />
 ```
-As you can see the `size` from the  `__icon` prop is beign used but the `color` is being overridden by the `icon` props.
+As you can see the `size` from the  `__icon` prop is being used but the `color` is being overridden by the `icon` props.

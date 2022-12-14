@@ -1,4 +1,11 @@
 .date-picker-calendar {
 	position: absolute;
-	z-index: 10000;
+	width: 350px;
+	max-width: 100vw;
+	min-height: 270px;
+	z-index: 100;
+}
+
+.date-picker-calendar .react-calendar {
+	border-width: thin;
 }

@@ -14,7 +14,7 @@ const DatePicker = ( {
 	onConfirm
 }: DatePickerProps ) => (
 	isOpen ? (
-		<Fit testID={testID}>
+		<Fit testID={testID} spacing={12}>
 			<Calendar
 				className="date-picker-calendar"
 				value={selectedDate}
