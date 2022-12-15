@@ -26,7 +26,7 @@ const DateInputExamples = () => {
 	const [ value, setValue ] = React.useState( '' );
 
 	return (
-		<VStack style={{ zIndex: 1000 }}>
+		<VStack style={{ zIndex: 100 }}>
 			<Text variant="headline">DateInput Component</Text>
 			<View style={styles.vspace} />
 			<Text variant="subtitle">Enabled</Text>

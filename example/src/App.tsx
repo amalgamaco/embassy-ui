@@ -155,6 +155,7 @@ const App = () => (
 							<FormControlExamples />
 							<TextInputExamples />
 							<PasswordInputExamples />
+							<DateInputExamples />
 							<ChipExamples />
 							<SwitchExamples />
 							<BannerExamples />
@@ -162,7 +163,6 @@ const App = () => (
 							<ImageExamples />
 							<AvatarExamples />
 							<CardExample />
-							<DateInputExamples />
 						</VStack>
 					</ScrollView>
 				</SafeAreaView>

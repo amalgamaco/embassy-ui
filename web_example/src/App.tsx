@@ -121,7 +121,6 @@ const App = () => (
 	<ThemeProvider theme={customTheme}>
 		<Box flex={1} alignItems="center">
 			<VStack width="500px">
-				<DateInputExamples />
 				<PaletteColorGrid />
 				<TextExamples />
 				<BoxExamples />
@@ -133,6 +132,7 @@ const App = () => (
 				<FormControlExamples />
 				<TextInputExamples />
 				<PasswordInputExamples />
+				<DateInputExamples />
 				<ChipExamples />
 				<SwitchExamples />
 				<BannerExamples />
