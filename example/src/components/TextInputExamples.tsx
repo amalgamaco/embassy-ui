@@ -1,5 +1,7 @@
 import * as React from 'react';
-import { Text, TextInput, VStack } from '@amalgama/embassy-ui';
+import {
+	Text, TextInput, VStack, UIKitIcon, Icon
+} from '@amalgama/embassy-ui';
 import { View } from 'react-native';
 
 const styles = {
@@ -19,7 +21,8 @@ const styles = {
 		backgroundColor: 'black'
 	}
 };
-
+const icon = <Icon as={UIKitIcon} name="eye" />;
+const onIconPress = () => window.alert( 'Icon pressed' );
 const TextInputExamples = () => (
 	<VStack>
 		<Text variant="headline">Text Input Component</Text>
@@ -27,18 +30,18 @@ const TextInputExamples = () => (
 		<Text variant="subtitle">Enabled</Text>
 		<View style={styles.separator} />
 		<View style={styles.vspace} />
-		<TextInput placeholder='This is an enabled text input' type='password' />
+		<TextInput placeholder='This is an enabled text input' />
 		<View style={styles.vspace} />
-		<TextInput placeholder='This is an enabled text input' type='text' />
+		<TextInput placeholder='Now with an icon!' icon={icon} onIconPress={onIconPress} />
 
 		<View style={styles.vspace} />
 
 		<Text variant="subtitle">Disabled</Text>
 		<View style={styles.separator} />
 		<View style={styles.vspace} />
-		<TextInput placeholder='This is a disabled password input' disabled type='password' />
+		<TextInput placeholder='This is a disabled text input' disabled />
 		<View style={styles.vspace} />
-		<TextInput placeholder='This is a disabled text input' disabled type='text' />
+		<TextInput placeholder='Now with an icon!' disabled icon={icon} onIconPress={onIconPress} />
 
 		<View style={styles.vspace} />
 
@@ -46,9 +49,9 @@ const TextInputExamples = () => (
 		<View style={styles.separator} />
 		<View style={styles.vspace} />
 		<View>
-			<TextInput placeholder='This is a text input that has an error' type='password' error />
+			<TextInput placeholder='This is a text input that has an error' error />
 			<View style={styles.vspace} />
-			<TextInput placeholder='This is a text input that has an error' type='text' error />
+			<TextInput placeholder='Now with an icon!' error icon={icon} onIconPress={onIconPress} />
 		</View>
 		<View style={styles.vspace} />
 	</VStack>

@@ -1,4 +1,4 @@
-import {VStack, TextInput} from '@amalgama/embassy-ui'
+import {VStack, Icon, TextInput} from '@amalgama/embassy-ui'
 import CodePreview from '@site/src/components/CodePreview'
 import Feather from 'react-native-vector-icons/Feather';
 import ExampleTextInput from '@site/src/components/ExampleTextInput'
@@ -21,26 +21,6 @@ import { TextInput } from '@amalgama/embassy-ui';
 ```
 
 ## Props
-
-### type
-The type of the input. Allowed values are:
-- `text`: A text field.
-- `password`: A password field that obscures the input text by default and has a icon button to show it.
-
-| TYPE | REQUIRED | DEFAULT |
-| ---- | -------- | ------- |
-| `text` \| `password` | No       | `text` |
-
-<CodePreview>
-	<VStack space="2">
-		<TextInput placeholder="Enter your username" width="300px" />
-		<TextInput placeholder="Enter your password" type="password" width="300px" />
-	</VStack>
-</CodePreview>
-
-```jsx
-<TextInput placeholder="Enter your text" width="300px" />
-```
 
 ### placeholder
 A placeholder text for the input.
@@ -146,58 +126,56 @@ Disables the input.
 	disabled
 />
 ```
+### icon
+An icon to show on the right side of the input.
 
-### showPasswordIcon
-Icon to show the password, is used when the password is currently hidden.
-
-| TYPE          | REQUIRED | DEFAULT                              |
-| ------------- | -------- | ------------------------------------ |
-| `JSX.Element` | No       | `<Icon name="eye" as={UIKitIcon} />` |
+| TYPE | REQUIRED | DEFAULT |
+| ---- | -------- | ------- |
+| `JSX.Element` | No    |  `null` |
 
 <CodePreview>
 	<TextInput
-		placeholder="Enter your password"
-		value="password"
-		type="password"
+		placeholder="Enter your text"
 		width="300px"
-		showPasswordIcon={<Icon as={Feather} name="unlock" />}
+		icon={<Icon as={Feather} name="search" size="xs" />}
 	/>
 </CodePreview>
 
 ```jsx
+import Feather from 'react-native-vector-icons/Feather';
+
 <TextInput
-	placeholder="Enter your password"
-	value="password"
-	type="password"
+	placeholder="Enter your text"
 	width="300px"
-	showPasswordIcon={<Icon as={Feather} name="unlock" />}
+	icon={<Icon as={Feather} name="search" size="xs" />}
 />
 ```
 
-### hidePasswordIcon
-Icon to hide the password, is used when the password is currently shown.
+### onIconPress
 
-| TYPE          | REQUIRED | DEFAULT                              |
-| ------------- | -------- | ------------------------------------ |
-| `JSX.Element` | No       |  `<Icon name="eye-off-outlined" as={UIKitIcon} />` |
+Callback that is called when the icon is pressed.
+
+| TYPE | REQUIRED | DEFAULT |
+| ---- | -------- | ------- |
+| `() => void` | No    |  `null` |
 
 <CodePreview>
 	<TextInput
-		placeholder="Enter your password"
-		value="password"
-		type="password"
+		placeholder="Enter your text"
 		width="300px"
-		hidePasswordIcon={<Icon as={Feather} name="lock" />}
+		icon={<Icon as={Feather} name="search" size="xs" />}
+		onIconPress={() => window.alert('Icon pressed')}
 	/>
 </CodePreview>
 
-```jsx	
+```jsx
+import Feather from 'react-native-vector-icons/Feather';
+
 <TextInput
-	placeholder="Enter your password"
-	value="password"
-	type="password"
+	placeholder="Enter your text"
 	width="300px"
-	hidePasswordIcon={<Icon as={Feather} name="lock" />}
+	icon={<Icon as={Feather} name="search" size="xs" />}
+	onIconPress={() => window.alert('Icon pressed')}
 />
 ```
 
@@ -252,7 +230,7 @@ Props to be applied to the internal `TextInput` component.
 ```
 
 ### __icon
-Props to be applied to the internal `IconButton` component that toggles the password visibility.
+Props to be applied to the internal `IconButton` component that is shown when the `icon` prop is set.
 
 | TYPE   | REQUIRED |
 | ------ | -------- |
@@ -260,45 +238,45 @@ Props to be applied to the internal `IconButton` component that toggles the pass
 
 <CodePreview>
 	<TextInput
-		placeholder="Enter your password"
-		type="password"
+		placeholder="Search"
 		width="300px"
-		__icon={{ color: 'success.500', size: 'xl' }}
+		height="60px"
+		icon={<Icon as={Feather} name="search" />}
+		__icon={{ color: 'success.500', size: 'md' }}
 	/>
 </CodePreview>
 
 ```jsx
 <TextInput
-	placeholder="Enter your password"
-	type="password"
+	placeholder="Search"
 	width="300px"
-	__icon={{ color: 'success.500', size: 'xl' }}
+	height="60px"
+	icon={<Icon as={Feather} name="search" />}
+	__icon={{ color: 'success.500', size: 'md' }}
 />
 ```
 
 :::caution 
-The `__icon` prop has less priority than the `showPasswordIcon` and `hidePasswordIcon` props. This means that the styles applied to the `__icon` prop will be overridden by the styles applied to the `showPasswordIcon` and `hidePasswordIcon` props. For example:
+The `__icon` prop has less priority than the `icon` prop. This means that the styles applied to the `__icon` prop will be overridden by the styles applied to the `icon` prop. For example:
 :::
 
 <CodePreview>
 	<TextInput
-		placeholder="Enter your password"
-		type="password"
+		placeholder="Search"
 		width="300px"
-		showPasswordIcon={<Icon as={Feather} name="unlock" color="black" />}
-		hidePasswordIcon={<Icon as={Feather} name="lock" color="black" />}
-		__icon={{ color: 'success.500', size: 'xs' }}
+		height="60px"
+		icon={<Icon as={Feather} name="search" color="black" />}
+		__icon={{ color: 'success.500', size: 'md' }}
 	/>
 </CodePreview>
 
 ```jsx
 <TextInput
-	placeholder="Enter your password"
-	type="password"
+	placeholder="Search"
 	width="300px"
-	showPasswordIcon={<Icon as={Feather} name="unlock" color="black" />}
-	hidePasswordIcon={<Icon as={Feather} name="lock" color="black" />}
-	__icon={{ color: 'success.500', size: 'xs' }}
+	height="60px"
+	icon={<Icon as={Feather} name="search" color="black" />}
+	__icon={{ color: 'success.500', size: 'md' }}
 />
 ```
-As you can see the `size` from the  `__icon` prop is beign used but the `color` is being overridden by the `showPasswordIcon` and `hidePasswordIcon` props.
+As you can see the `size` from the  `__icon` prop is being used but the `color` is being overridden by the `icon` props.

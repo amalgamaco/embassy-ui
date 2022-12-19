@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { forwardRef, Ref } from 'react';
 import { TextInput as TextInputRN } from 'react-native';
 import { createIconButtonFromIcon } from '../../utils/elements';
 import { HStack } from '../Stack';
@@ -8,9 +8,11 @@ import useTranslatePropsToStyle from '../../../hooks/useTranslatePropsToStyle';
 import ConditionalRender from '../../utils/ConditionalRender';
 import Box from '../Box';
 
-const TextInput = ( { testID, ...props }: ITextInputProps ) => {
+const TextInput = ( {
+	testID, icon, ...props
+}: Omit<ITextInputProps, 'ref'>, ref?: Ref<TextInputRN | undefined> ) => {
 	const {
-		icon, containerProps, textInputProps, iconProps, showPasswordToggleButton
+		containerProps, textInputProps, iconProps
 	} = useTextInputPropsResolver( props );
 
 	const [ style, restProps ] = useTranslatePropsToStyle( textInputProps );
@@ -18,14 +20,16 @@ const TextInput = ( { testID, ...props }: ITextInputProps ) => {
 		<Box {...containerProps} testID={testID}>
 			<HStack width="100%" height="100%" alignItems="center">
 				<TextInputRN
+					ref={ref}
 					testID={testID ? `${testID}-rn` : undefined}
 					style={style}
 					{...restProps}
 				/>
-				<ConditionalRender render={showPasswordToggleButton}>
+				<ConditionalRender render={!!icon}>
 					{
 						createIconButtonFromIcon( {
-							icon,
+							// eslint-disable-next-line @typescript-eslint/no-non-null-assertion
+							icon: icon!,
 							iconProps,
 							testID
 						} )
@@ -36,4 +40,4 @@ const TextInput = ( { testID, ...props }: ITextInputProps ) => {
 	);
 };
 
-export default TextInput;
+export default forwardRef( TextInput );

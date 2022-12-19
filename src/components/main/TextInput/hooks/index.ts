@@ -6,39 +6,31 @@ import { useComponentPropsResolver } from '../../../../hooks';
 import type { ITextInputProps } from '../types';
 import type { IIconButtonProps } from '../../IconButton/types';
 import { useFormControlContext } from '../../FormControl/context';
-import useTogglePasswordIconButtonState from './useTogglePasswordIconButtonState';
 import useTextInputPropsFromContainerProps from './useTextInputPropsFromContainerProps';
-import usePasswordIcon from './usePasswordIcon';
 
 interface IUseTextInputPropsResolverReturnType {
-	icon: JSX.Element,
-	containerProps: Omit<ITextInputProps, '__icon' | '__textInput'>,
+	containerProps: Omit<ITextInputProps, '__icon' | '__textInput' | 'ref'>,
 	iconProps: Omit<IIconButtonProps, 'name' | 'as'>,
 	textInputProps: ITextInputProps['__textInput'],
-	showPasswordToggleButton: boolean
 }
 
-interface ITextInputInternalProps extends Omit<ITextInputProps, '__icon'> {
+interface ITextInputInternalProps extends Omit<ITextInputProps, 'withIcon' | '__icon'> {
 	__icon: IIconButtonProps,
 }
 
+type IUseTextInputPropsResolverProps = Omit<ITextInputProps, 'withIcon' | 'icon' >
+
 const useTextInputPropsResolver = ( {
-	type = 'text',
 	disabled: disabledProp = false,
 	error: errorProp = false,
-	showPasswordIcon,
-	hidePasswordIcon,
+	onIconPress,
 	...props
-}: ITextInputProps ): IUseTextInputPropsResolverReturnType => {
+}: IUseTextInputPropsResolverProps ): IUseTextInputPropsResolverReturnType => {
 	const { isFocused, onFocus, onBlur } = useIsFocused( props );
 	const formControlState = useFormControlContext();
 
 	const disabled = formControlState?.disabled || disabledProp;
 	const error = formControlState?.hasError || errorProp;
-
-	const [
-		showPasswordToggleButton, secureTextEntry, onIconPress
-	] = useTogglePasswordIconButtonState( { type } );
 
 	const state = useMemo( () => ( {
 		isDisabled: disabled,
@@ -56,26 +48,17 @@ const useTextInputPropsResolver = ( {
 		baseTextInputProps, restProps
 	);
 
-	const icon = usePasswordIcon( {
-		showPasswordIcon,
-		hidePasswordIcon,
-		isPasswordHidden: secureTextEntry
-	} );
-
 	textInputProps.onFocus = onFocus;
 	textInputProps.onBlur = onBlur;
 	textInputProps.disabled = disabled;
 	textInputProps.editable = !disabled;
-	textInputProps.secureTextEntry = secureTextEntry;
-	iconProps.onPress = onIconPress;
 	iconProps.disabled = disabled;
+	iconProps.onPress = onIconPress;
 
 	return {
-		icon,
 		containerProps,
 		iconProps,
-		textInputProps: textInputProps as ITextInputProps,
-		showPasswordToggleButton
+		textInputProps: textInputProps as ITextInputProps
 	};
 };
 

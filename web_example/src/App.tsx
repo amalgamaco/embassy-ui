@@ -24,6 +24,8 @@ import DialogExamples from './components/DialogExamples';
 import ImageExamples from './components/ImageExamples';
 import AvatarExamples from './components/AvatarExamples';
 import CardExample from './components/CardExample';
+import PasswordInputExamples from './components/PasswordInputExamples';
+import DateInputExamples from './components/DateInputExamples';
 
 const customTheme = extendThemeConfig( {
 	palette: {
@@ -129,6 +131,8 @@ const App = () => (
 				<RadioExamples />
 				<FormControlExamples />
 				<TextInputExamples />
+				<PasswordInputExamples />
+				<DateInputExamples />
 				<ChipExamples />
 				<SwitchExamples />
 				<BannerExamples />

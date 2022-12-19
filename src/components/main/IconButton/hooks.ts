@@ -6,7 +6,7 @@ import useIsFocused from '../../hooks/useIsFocused';
 import useIsHovered from '../../hooks/useIsHovered';
 
 export const useIconButtonPropsResolver = ( props: Omit<IIconButtonProps, 'name'> ) => {
-	const { disabled } = props;
+	const { disabled, testID } = props;
 	const { isPressed, onPressIn, onPressOut } = useIsPressed( props );
 	const { isHovered, onHoverIn, onHoverOut } = useIsHovered( props );
 	const { isFocused, onFocus, onBlur } = useIsFocused( props );
@@ -26,9 +26,10 @@ export const useIconButtonPropsResolver = ( props: Omit<IIconButtonProps, 'name'
 		...containerProps
 	} = useComponentPropsResolver( 'IconButton', props, state ) as Omit<IIconButtonProps, 'name'>;
 
+	const iconTestID = testID ? `${testID}-icon` : undefined;
 	const iconProps = useMemo( () => ( {
-		as, size, color, ...iconRestProps
-	} ), [ as, size, color, iconRestProps ] );
+		as, size, color, testID: iconTestID, ...iconRestProps
+	} ), [ as, size, color, iconTestID, iconRestProps ] );
 
 	containerProps.onPressIn = onPressIn;
 	containerProps.onPressOut = onPressOut;

@@ -31,6 +31,15 @@ You need to install these peer dependencies in order to use the library:
 You need to add [react-native-svg](https://www.npmjs.com/package/react-native-svg) to your project and set it up properly (see [project's README](https://github.com/react-native-svg/react-native-svg#installation)) for the default icons package to work. This package is needed by several componentes including: [TextInput](../components/forms/text_input.md), [Radio](../components/forms/radio.md), [Checkbox](../components/forms/checkbox.md), etc.
 :::
 
+### Plataform specific
+Some peer-dependencies are platform dependent:
+
+#### For ReactNative projects
+- [react-native-date-picker](https://github.com/henninghall/react-native-date-picker) (required by the [DateInput](../components/forms/date_input.md) component)
+
+#### For ReactJS projects
+- [react-calendar](https://github.com/wojtekmaj/react-calendar) (required by the [DateInput](../components/forms/date_input.md) component)
+
 ## Default Fonts
 
 ### ReactNative

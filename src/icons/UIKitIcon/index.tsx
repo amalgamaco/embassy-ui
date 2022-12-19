@@ -1,20 +1,21 @@
 import React, { ElementType } from 'react';
 import {
-	CircleFilled,
+	AlertCircle,
+	AlertTriangleOutlined,
 	BoxChecked,
 	BoxUnchecked,
 	BoxIndeterminated,
-	AlertCircle,
-	Eye,
-	EyeOffOutlined,
-	AlertTriangleOutlined,
-	QuestionCircleOutlined,
+	CalendarOutline,
+	CircleFilled,
+	CircleOutlined,
 	CheckmarkOutlined,
 	CloseOutlined,
-	CircleOutlined,
-	MoreVerticalOutline,
 	CommentCircleOutline,
-	HeartOutline
+	Eye,
+	EyeOffOutlined,
+	HeartOutline,
+	MoreVerticalOutline,
+	QuestionCircleOutlined
 } from './icons';
 import type { AsComponentProps } from '../../components/main/Icon/types';
 import IconNotFoundError from './IconNotFoundError';
@@ -29,6 +30,7 @@ const PACKAGE_ICONS = Object.freeze( {
 	'box-checked': BoxChecked,
 	'box-indeterminated': BoxIndeterminated,
 	'box-unchecked': BoxUnchecked,
+	'calendar-outline': CalendarOutline,
 	'checkmark': CheckmarkOutlined,
 	'circle': CircleOutlined,
 	'circle-filled': CircleFilled,

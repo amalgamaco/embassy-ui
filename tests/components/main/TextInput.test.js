@@ -5,26 +5,37 @@ import TextInput from '../../../src/components/main/TextInput';
 import FakeBaseIcon from '../../support/FakeBaseIcon';
 import WithThemeProvider from '../../support/withThemeProvider';
 
-const TestIcon = <Icon name="icon" testID="test-icon" as={FakeBaseIcon} />;
+const TestIcon = <Icon name="icon" as={FakeBaseIcon} />;
+const testIconButtonTestID = 'test-text-input-button';
+const testIconTestID = `${testIconButtonTestID}-icon`;
 
 describe( 'TextInput', () => {
 	const renderComponent = props => render(
 		<TextInput testID='test-text-input' {...props} />,
 		{ wrapper: WithThemeProvider }
 	);
-
-	it( 'shows the correct icon when type=\'password\' is set', () => {
+	it( 'shows the provided icon ', () => {
 		const { getByTestId } = renderComponent( {
-			type: 'password', showPasswordIcon: TestIcon
+			icon: TestIcon
 		} );
 
-		expect( getByTestId( 'test-icon' ) ).not.toBeNull();
+		expect( getByTestId( testIconTestID ) ).not.toBeNull();
+	} );
+
+	it( 'calls the provided onIconPress function when the icon is pressed', () => {
+		const onIconPress = jest.fn();
+		const { getByTestId } = renderComponent( {
+			icon: TestIcon,
+			onIconPress
+		} );
+
+		fireEvent.press( getByTestId( testIconTestID ) );
+
+		expect( onIconPress ).toHaveBeenCalled();
 	} );
 
 	it( 'applies the correct styles', () => {
-		const { getByTestId } = renderComponent( {
-			type: 'password'
-		} );
+		const { getByTestId } = renderComponent();
 
 		expect( getByTestId( 'test-text-input' ) ).toHaveStyle( {
 			borderWidth: 1,
@@ -82,12 +93,13 @@ describe( 'TextInput', () => {
 			);
 		} );
 
-		it( 'disables the toggle password button', () => {
+		it( 'disables the IconButton', () => {
 			const { getByTestId } = renderComponent( {
-				disabled: true, type: 'password'
+				disabled: true,
+				icon: TestIcon
 			} );
 
-			expect( getByTestId( 'test-text-input-icon' ) ).toHaveProp(
+			expect( getByTestId( testIconButtonTestID ) ).toHaveProp(
 				'accessibilityState', { disabled: true }
 			);
 		} );
@@ -100,31 +112,6 @@ describe( 'TextInput', () => {
 			expect( getByTestId( 'test-text-input' ) ).toHaveStyle( {
 				borderColor: '#FD3A45'
 			} );
-		} );
-	} );
-
-	describe( 'when the type is password', () => {
-		it( 'obscures the text by default', () => {
-			const { getByTestId } = renderComponent( { type: 'password' } );
-
-			expect( getByTestId( 'test-text-input-rn' ) ).toHaveProp(
-				'secureTextEntry', true
-			);
-		} );
-
-		it( 'shows the toggle password icon button', () => {
-			const { getByTestId } = renderComponent( { type: 'password' } );
-			expect( getByTestId( 'test-text-input-icon' ) ).not.toBeNull();
-		} );
-
-		it( 'shows the text when the toggle password icon button is pressed', () => {
-			const { getByTestId } = renderComponent( { type: 'password' } );
-
-			fireEvent.press( getByTestId( 'test-text-input-icon' ) );
-
-			expect( getByTestId( 'test-text-input-rn' ) ).toHaveProp(
-				'secureTextEntry', false
-			);
 		} );
 	} );
 

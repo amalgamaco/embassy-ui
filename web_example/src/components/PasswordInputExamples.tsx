@@ -1,11 +1,12 @@
 import * as React from 'react';
 import {
-	Text, TextInput, VStack, UIKitIcon, Icon
+	Text, PasswordInput, VStack, Icon
 } from '@amalgama/embassy-ui';
 import { View } from 'react-native';
+import Feather from 'react-native-vector-icons/Feather';
 
 const styles = {
-	textInput: {
+	PasswordInput: {
 		height: 56
 	},
 	vspace: {
@@ -20,19 +21,18 @@ const styles = {
 		backgroundColor: 'black'
 	}
 };
-const icon = <Icon as={UIKitIcon} name="eye" />;
-const onIconPress = () => window.alert( 'Icon pressed' );
-const TextInputExamples = () => (
+
+const PasswordInputExamples = () => (
 	<VStack>
-		<Text variant="headline">Text Input Component</Text>
+		<Text variant="headline">Password Input Component</Text>
 		<View style={styles.vspace} />
 		<Text variant="subtitle">Enabled</Text>
 		<View style={styles.separator} />
 		<View style={styles.vspace} />
 		<View style={{ width: 327 }}>
-			<TextInput placeholder='This is an enabled text input' />
-			<View style={styles.vspace} />
-			<TextInput placeholder='Now with an icon!' icon={icon} onIconPress={onIconPress} />
+			<PasswordInput
+				placeholder='This is an enabled password input'
+			/>
 		</View>
 		<View style={styles.vspace} />
 
@@ -40,9 +40,7 @@ const TextInputExamples = () => (
 		<View style={styles.separator} />
 		<View style={styles.vspace} />
 		<View style={{ width: 327 }}>
-			<TextInput placeholder='This is a disabled text input' disabled />
-			<View style={styles.vspace} />
-			<TextInput placeholder='Now with an icon!' disabled icon={icon} onIconPress={onIconPress} />
+			<PasswordInput placeholder='This is a disabled password input' disabled />
 		</View>
 		<View style={styles.vspace} />
 
@@ -50,12 +48,27 @@ const TextInputExamples = () => (
 		<View style={styles.separator} />
 		<View style={styles.vspace} />
 		<View style={{ width: 327 }}>
-			<TextInput placeholder='This is a text input that has an error' error />
-			<View style={styles.vspace} />
-			<TextInput placeholder='Now with an icon!' error icon={icon} onIconPress={onIconPress} />
+			<PasswordInput
+				value="123456"
+				placeholder='This is a password input that has an error'
+				error
+			/>
+		</View>
+		<View style={styles.vspace} />
+
+		<Text variant="subtitle">With custom icons</Text>
+		<View style={styles.separator} />
+		<View style={styles.vspace} />
+		<View style={{ width: 327 }}>
+			<PasswordInput
+				placeholder='This is a password input '
+				showPasswordIcon={<Icon as={Feather} name="unlock" />}
+				hidePasswordIcon={<Icon as={Feather} name="lock" />}
+				value="123456"
+			/>
 		</View>
 		<View style={styles.vspace} />
 	</VStack>
 );
 
-export default TextInputExamples;
+export default PasswordInputExamples;
