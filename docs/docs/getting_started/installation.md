@@ -15,6 +15,36 @@ yarn add @amalgama/embassy-ui
 ### Web
 You can use this library in your React JS project using [react-native-web](https://necolas.github.io/react-native-web/). To learn how to install and configure `react-native-web` follow the [project's installation guide](https://necolas.github.io/react-native-web/docs/installation/).
 
+This library depends on [react-native-animatable](https://github.com/oblador/react-native-animatable) in order to perform the [Dialog component](../components/feedback/dialog) animations and there is an extra step of configuration in order for that to work on web:
+
+In your webpack configuration you will need to add a new `module.rule` as follows:
+
+```js
+module.exports = {
+  module: {
+    rules: [
+      ...,
+      {
+        test: /\.(js|jsx|ts|tsx)$/,
+        loader: 'babel-loader',
+        include: path.resolve(__dirname, 'node_modules/react-native-animatable/' )
+        options: {
+          presets: [
+            '@babel/env',
+            '@babel/preset-react'
+          ],
+          plugins: [
+            '@babel/plugin-proposal-class-properties'
+          ]
+        }
+      }
+    ]
+  }
+}
+```
+
+For more webpack configuration examples you can check the [Webpack Examples page](./webpack_examples).
+
 ### NPM Private Registry Authorization
 This package was uploaded to Amalgama's GitLab Private NPM Registry and in order to install it you need to set up the registry and an authorization token to access it.
 
@@ -38,6 +68,7 @@ Some peer-dependencies are platform dependent:
 - [react-native-date-picker](https://github.com/henninghall/react-native-date-picker) (required by the [DateInput](../components/forms/date_input.md) component)
 
 #### For ReactJS projects
+- [react-fit](https://github.com/wojtekmaj/react-fit) (required by the [DateInput](../components/forms/date_input.md) component)
 - [react-calendar](https://github.com/wojtekmaj/react-calendar) (required by the [DateInput](../components/forms/date_input.md) component)
 
 ## Default Fonts
