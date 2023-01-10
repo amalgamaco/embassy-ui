@@ -5,6 +5,7 @@
 // The components custom props are special props that we want to be availble when
 // defining the default or variant props for a component in the theme's config
 // but that are not common to all the components.
+import type { ColorType } from '../../theme/types';
 import type { ComponentName } from './common';
 
 // Icon
@@ -28,12 +29,18 @@ interface StackCustomProps {
 	reversed?: boolean
 }
 
+// TextInput
+interface TextInputCustomProps {
+	placeholderTextColor?: ColorType
+}
+
 // Pseudoprops config for all components
 interface ComponentsCustomPropsConfig {
 	Icon: IconCustomProps,
 	IconButton: IconButtonCustomProps,
 	Radio: RadioCustomProps,
-	Stack: StackCustomProps
+	Stack: StackCustomProps,
+	TextInput: TextInputCustomProps
 }
 
 // Template type to get pseudoprops for a given component

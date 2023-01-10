@@ -7,6 +7,7 @@ import type { ITextInputProps } from '../types';
 import type { IIconButtonProps } from '../../IconButton/types';
 import { useFormControlContext } from '../../FormControl/context';
 import useTextInputPropsFromContainerProps from './useTextInputPropsFromContainerProps';
+import { useTheme } from '../../../../core/theme/hooks';
 
 interface IUseTextInputPropsResolverReturnType {
 	containerProps: Omit<ITextInputProps, '__icon' | '__textInput' | 'ref'>,
@@ -26,6 +27,8 @@ const useTextInputPropsResolver = ( {
 	onIconPress,
 	...props
 }: IUseTextInputPropsResolverProps ): IUseTextInputPropsResolverReturnType => {
+	const theme = useTheme();
+
 	const { isFocused, onFocus, onBlur } = useIsFocused( props );
 	const formControlState = useFormControlContext();
 
@@ -43,6 +46,10 @@ const useTextInputPropsResolver = ( {
 		__textInput: baseTextInputProps,
 		...restProps
 	} = useComponentPropsResolver( 'TextInput', props, state ) as ITextInputInternalProps;
+
+	if ( theme && restProps.placeholderTextColor ) {
+		restProps.placeholderTextColor = theme?.color( restProps.placeholderTextColor );
+	}
 
 	const { textInputProps, containerProps } = useTextInputPropsFromContainerProps(
 		baseTextInputProps, restProps

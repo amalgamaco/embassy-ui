@@ -9,6 +9,7 @@ export default {
 		justifyContent: 'space-between',
 		alignItems: 'center',
 		padding: 0.25,
+		placeholderTextColor: 'neutral.200',
 		__textInput: {
 			flexGrow: 1,
 			padding: 4,

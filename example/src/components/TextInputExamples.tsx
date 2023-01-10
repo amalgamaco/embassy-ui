@@ -36,6 +36,12 @@ const TextInputExamples = () => (
 
 		<View style={styles.vspace} />
 
+		<Text variant="subtitle">Placeholder color</Text>
+		<View style={styles.separator} />
+		<View style={styles.vspace} />
+		<TextInput placeholder='Error color for placeholder' placeholderTextColor="error.600" />
+		<View style={styles.vspace} />
+
 		<Text variant="subtitle">Disabled</Text>
 		<View style={styles.separator} />
 		<View style={styles.vspace} />

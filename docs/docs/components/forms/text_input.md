@@ -22,21 +22,6 @@ import { TextInput } from '@amalgama/embassy-ui';
 
 ## Props
 
-### placeholder
-A placeholder text for the input.
-
-| TYPE | REQUIRED | DEFAULT |
-| ---- | -------- | ------- |
-| `string` | No       |    |
-
-<CodePreview>
-	<TextInput placeholder="Enter your text" width="300px" />
-</CodePreview>
-
-```jsx
-<TextInput placeholder="Enter your text" width="300px" />
-```
-
 ### value
 The value for the input.
 
@@ -100,6 +85,46 @@ const [ text, setText ] = useState( '' );
 	placeholder="Enter your email"
 	value={text}
 	onChange={( { text } ) => setText( text )}
+	width="300px"
+/>
+```
+
+### placeholder
+A placeholder text for the input.
+
+| TYPE | REQUIRED | DEFAULT |
+| ---- | -------- | ------- |
+| `string` | No       |    |
+
+<CodePreview>
+	<TextInput placeholder="Enter your text" width="300px" />
+</CodePreview>
+
+```jsx
+<TextInput placeholder="Enter your text" width="300px" />
+```
+
+
+
+### placeholderTextColor
+The color for the placeholder text.
+
+| TYPE | REQUIRED | DEFAULT |
+| ---- | -------- | ------- |
+| [PaletteColor](../../theming/default_theme#palette) | No       |    |
+
+<CodePreview>
+	<TextInput
+		placeholder="Enter your text"
+		placeholderTextColor="success.800"
+		width="300px"
+	/>
+</CodePreview>
+
+```jsx
+<TextInput
+	placeholder="Enter your text"
+	placeholderTextColor="success.800"
 	width="300px"
 />
 ```
