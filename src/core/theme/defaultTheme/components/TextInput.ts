@@ -4,7 +4,7 @@ export default {
 	defaultProps: {
 		height: 56,
 		borderWidth: 'xs',
-		borderRadius: 'lg',
+		borderRadius: 'md',
 		borderColor: 'neutral.600',
 		justifyContent: 'space-between',
 		alignItems: 'center',

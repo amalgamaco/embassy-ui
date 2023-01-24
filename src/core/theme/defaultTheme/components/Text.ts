@@ -32,7 +32,8 @@ export default {
 	defaultProps: {
 		font: 'Inter',
 		fontSize: 'md',
-		fontWeight: 'regular'
+		fontWeight: 'regular',
+		color: 'text-primary'
 	},
 	variants: {
 		'h1': {

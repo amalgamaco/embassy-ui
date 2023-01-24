@@ -2,8 +2,8 @@ export default {
 	defaultProps: {
 		bg: 'white',
 		borderColor: 'black',
-		borderWidth: 'md',
-		rounded: 'xl',
+		borderWidth: 'sm',
+		rounded: 'md',
 		padding: '3.5',
 		justifyContent: 'center',
 		__stack: {
@@ -52,53 +52,26 @@ export default {
 			},
 			__disabled: {
 				opacity: 1,
-				bg: 'primary.100',
-				borderColor: 'primary.100',
+				bg: 'neutral.100',
+				borderColor: 'neutral.100',
 				__label: {
-					color: 'neutral.600'
+					color: 'neutral.300'
 				},
 				__leftIcon: {
-					color: 'neutral.600'
+					color: 'neutral.300'
 				},
 				__rightIcon: {
-					color: 'neutral.600'
+					color: 'neutral.300'
 				}
 			},
-			__dark: {
-				bg: 'primary.200',
-				borderColor: 'primary.200',
-				__label: {
-					color: 'black'
-				},
-				__leftIcon: {
-					color: 'black'
-				},
-				__rightIcon: {
-					color: 'black'
-				},
-				__pressed: {
-					opacity: 1,
-					bg: 'primary.300',
-					borderColor: 'primary.300'
-				},
-				__disabled: {
-					bg: 'neutral.50',
-					borderColor: 'neutral.50',
-					__label: {
-						color: 'neutral.300'
-					},
-					__leftIcon: {
-						color: 'neutral.300'
-					},
-					__rightIcon: {
-						color: 'neutral.300'
-					}
-				}
+			__hovered: {
+				opacity: 1,
+				bg: 'primary.300',
+				borderColor: 'primary.300'
 			}
 		},
 		secondary: {
 			bg: 'white',
-			borderWidth: 'sm',
 			borderColor: 'primary.900',
 			__label: {
 				color: 'primary.900'
@@ -126,12 +99,15 @@ export default {
 				__rightIcon: {
 					color: 'neutral.300'
 				}
+			},
+			__hovered: {
+				opacity: 1,
+				bg: 'secondary.400'
 			}
 		},
 		priority: {
 			bg: 'error.700',
 			borderColor: 'error.700',
-			borderWidth: 'sm',
 			__label: {
 				color: 'white'
 			},
@@ -150,11 +126,16 @@ export default {
 				opacity: 1,
 				bg: 'error.200',
 				borderColor: 'error.200'
+			},
+			__hovered: {
+				opacity: 1,
+				bg: 'error.400',
+				borderColor: 'error.400'
 			}
 		},
 		success: {
 			bg: 'success.700',
-			borderWidth: 'success.700',
+			borderColor: 'success.700',
 			__label: {
 				color: 'white'
 			},
@@ -173,6 +154,11 @@ export default {
 				opacity: 1,
 				bg: 'success.200',
 				borderColor: 'success.200'
+			},
+			__hovered: {
+				opacity: 1,
+				bg: 'success.400',
+				borderColor: 'success.400'
 			}
 		}
 	}
