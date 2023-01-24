@@ -31,7 +31,12 @@ export {
 	TextInput,
 	VStack
 } from './components';
+
 export { UIKitIcon };
+
+export {
+	createStyledProps
+} from './helpers';
 
 export type {
 	IBoxProps,
@@ -54,4 +59,16 @@ export type {
 	IBannerProps
 } from './components/types';
 
-export type { IThemeConfig, ICustomThemeConfig } from './core/theme/types';
+export type {
+	ComponentName,
+	ComponentStyledProps,
+	ComponentSizeType,
+	ComponentColorModeProps,
+	ComponentStateProps,
+	VariantType
+} from './core/components/types/index';
+
+export type {
+	IThemeConfig,
+	ICustomThemeConfig
+} from './core/theme/types';

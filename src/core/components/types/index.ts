@@ -8,5 +8,5 @@ export type {
 export type {
 	ComponentBaseStyledProps, ComponentBaseStyledPropsWithPseudoProps,
 	ComponentStateProps, ComponentStyledProps, ComponentSizeType,
-	VariantType
+	ComponentColorModeProps, VariantType
 } from './styledProps';
