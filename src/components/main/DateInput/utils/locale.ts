@@ -1,10 +1,9 @@
 /* eslint-disable @typescript-eslint/no-unsafe-member-access */
 import { NativeModules, Platform } from 'react-native';
 
-const getCurrentLocaleCodeiOS = () => (
-	NativeModules.SettingsManager.settings.AppleLocale
-		|| NativeModules.SettingsManager.settings.AppleLanguages[ 0 ]
-) as string;
+const getCurrentLocaleCodeiOS = () => ( (
+		NativeModules.SettingsManager.settings.AppleLanguages[ 0 ]
+) as string ).replace( '_', '-' );
 
 const getCurrentLocaleCodeAndroid = () => (
 	NativeModules.I18nManager.localeIdentifier
