@@ -39,7 +39,7 @@ describe( 'TextInput', () => {
 
 		expect( getByTestId( 'test-text-input' ) ).toHaveStyle( {
 			borderWidth: 1,
-			borderRadius: 12,
+			borderRadius: 8,
 			borderColor: '#4F5C7B',
 			padding: 1
 		} );

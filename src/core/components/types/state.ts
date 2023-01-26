@@ -25,12 +25,12 @@ import type { GestureResponderEvent } from 'react-native';
 import type { ValueOf } from '../../types';
 
 export const COMPONENT_STATE_PROPS_MAP = {
-	'isPressed': '__pressed',
+	'isFocused': '__focused',
 	'isSelected': '__selected',
 	'isIndeterminated': '__indeterminated',
 	'isHovered': '__hovered',
+	'isPressed': '__pressed',
 	'isDisabled': '__disabled',
-	'isFocused': '__focused',
 	'hasError': '__error'
 } as const;
 

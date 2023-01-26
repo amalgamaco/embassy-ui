@@ -22,7 +22,8 @@ export default {
 			300: '#B9CCFF',
 			200: '#CAD9FF',
 			100: '#DCE6FF',
-			50: '#EDF2FF'
+			50: '#EDF2FF',
+			10: '#FBFCFF'
 		},
 		'neutral': {
 			900: '#1C2438',
@@ -34,7 +35,8 @@ export default {
 			300: '#8B94B2',
 			200: '#AAB2CC',
 			100: '#C8D1E7',
-			50: '#EAEBFE'
+			50: '#EAEBFE',
+			10: '#FAFAFF'
 		},
 		'error': {
 			900: '#BF0B29',

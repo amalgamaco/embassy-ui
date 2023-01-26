@@ -33,6 +33,7 @@ Here you can found the default theme values for the different scales.
 ### Secondary
 | Name | Hex | color |
 | --- | --- | --- |
+|`secondary.10`|`#FBFCFF`|<ColorPreview color="secondary.10"/>|
 |`secondary.50`|`#EDF2FF`|<ColorPreview color="secondary.50"/>|
 |`secondary.100`|`#DCE6FF`|<ColorPreview color="secondary.100"/>|
 |`secondary.200`|`#CAD9FF`|<ColorPreview color="secondary.200"/>|
@@ -47,6 +48,7 @@ Here you can found the default theme values for the different scales.
 ### Neutral
 | Name | Hex | color |
 | --- | --- | --- |
+|`neutral.10`|`#FAFAFF`|<ColorPreview color="neutral.10"/>|
 |`neutral.50`|`#EAEBFE`|<ColorPreview color="neutral.50"/>|
 |`neutral.100`|`#C8D1E7`|<ColorPreview color="neutral.100"/>|
 |`neutral.200`|`#AAB2CC`|<ColorPreview color="neutral.200"/>|
