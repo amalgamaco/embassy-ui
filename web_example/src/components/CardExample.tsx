@@ -15,6 +15,7 @@ const CardExample = () => (
 				rightActions={[
 					<IconButton
 						as={UIKitIcon}
+						key="more-button"
 						name="more-vertical-outline"
 						onPress={() => window.alert( 'more button pressed' )}
 					/>

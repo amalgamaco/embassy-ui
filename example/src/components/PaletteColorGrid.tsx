@@ -104,7 +104,7 @@ const PaletteColorGrid = () => {
 			<View style={styles.vspace} />
 			<VStack>
 				{textStyles.map( ( { color, label } ) => (
-					<Text variant="body-special" color={color}>{label}</Text>
+					<Text key={color} variant="body-special" color={color}>{label}</Text>
 				) )}
 			</VStack>
 
@@ -114,7 +114,7 @@ const PaletteColorGrid = () => {
 			<View style={styles.vspace} />
 			<HStack flexWrap='wrap'>
 				{backgroundPrimaryStyles.map( ( { color, label } ) => (
-					<Box bg={color} height={80} width={80} marginRight="2" marginBottom="2">
+					<Box key={color} bg={color} height={80} width={80} marginRight="2" marginBottom="2">
 						<Text variant="small" textAlign='center' color="white">{label}</Text>
 					</Box>
 				) )}
@@ -126,7 +126,7 @@ const PaletteColorGrid = () => {
 			<View style={styles.vspace} />
 			<HStack flexWrap='wrap'>
 				{backgroundSecondaryStyles.map( ( { color, label } ) => (
-					<Box bg={color} height={80} width={80} marginRight="2" marginBottom="2">
+					<Box key={color} bg={color} height={80} width={80} marginRight="2" marginBottom="2">
 						<Text variant="small" textAlign='center' color="text-primary">{label}</Text>
 					</Box>
 				) )}
@@ -138,7 +138,7 @@ const PaletteColorGrid = () => {
 			<View style={styles.vspace} />
 			<HStack flexWrap='wrap'>
 				{borderStyles.map( ( { color, label } ) => (
-					<Box borderColor={color} borderWidth="xs" height={80} width={80} marginRight="2" marginBottom="2">
+					<Box key={color} borderColor={color} borderWidth="xs" height={80} width={80} marginRight="2" marginBottom="2">
 						<Text variant="small" textAlign='center' color="text-primary">{label}</Text>
 					</Box>
 				) )}
