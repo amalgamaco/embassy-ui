@@ -6,7 +6,7 @@ export const TEXT_INPUT_PROP_NAMES = [
 	'onBlur', 'onChange', 'onChangeText', 'onContentSizeChange', 'onEndEditing',
 	'onPressIn', 'onPressOut', 'onFocus', 'onSelectionChange', 'onSubmitEditing',
 	'onTextInput', 'onScroll', 'onKeyPress', 'placeholder', 'placeholderTextColor',
-	'returnKeyType', 'secureTextEntry', 'selectTextOnFocus', 'selection',
+	'returnKeyType', 'scrollEnabled', 'secureTextEntry', 'selectTextOnFocus', 'selection',
 	'selectionColor', 'style', 'textAlign', 'inputAccessoryViewID',
 	'value', 'maxFontSizeMultiplier'
 ];
