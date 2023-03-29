@@ -2,6 +2,10 @@
 
 A set of UI components following the Embassy Design System.
 
+<p align="center">
+	<img src="./docs/static/img/logo.svg" alt="Embassy UI Log" width="300" />
+</p>
+
 ## Installation
 
 For installation instructions go to the [Official Docs](https://embassy-ui.amalgama.co/docs/getting_started/installation).
