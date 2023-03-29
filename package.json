@@ -34,6 +34,7 @@
     "web_example": "yarn --cwd web_example",
     "docs": "yarn --cwd docs",
     "pods": "cd example && pod-install --quiet",
+    "ci": "yarn example --frozen-lockfile && yarn web_example --frozen-lockfile && yarn docs --frozen-lockfile && yarn --frozen-lockfile && yarn pods",
     "bootstrap": "yarn example && yarn web_example && yarn docs && yarn && yarn pods"
   },
   "keywords": [
