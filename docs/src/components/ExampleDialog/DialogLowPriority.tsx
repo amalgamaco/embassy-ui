@@ -1,7 +1,7 @@
 import * as React from 'react';
 import {
 	VStack, Text, Box, Button, Dialog, HStack
-} from '@amalgama/embassy-ui';
+} from '@amalgamaco/embassy-ui';
 
 const DialogLowPriority = ( {
 	buttonText, titleText, onClosePress, ...props

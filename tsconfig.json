@@ -3,7 +3,7 @@
     "baseUrl": "./",
     "declaration": true,
     "paths": {
-      "@amalgama/embassy-ui": ["./src/index"]
+      "@amalgamaco/embassy-ui": ["./src/index"]
     },
     "allowUnreachableCode": false,
     "allowUnusedLabels": false,

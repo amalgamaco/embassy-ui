@@ -3,7 +3,7 @@ import * as React from 'react';
 import { StyleSheet } from 'react-native';
 import {
 	VStack, Text, Box, Button, Dialog, HStack, UIKitIcon, Icon
-} from '@amalgama/embassy-ui';
+} from '@amalgamaco/embassy-ui';
 
 const styles = StyleSheet.create( {
 	container: {

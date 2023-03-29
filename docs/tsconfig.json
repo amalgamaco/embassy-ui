@@ -5,7 +5,7 @@
     "baseUrl": ".",
     "types": ["node", "@docusaurus/module-type-aliases", "@docusaurus/theme-classic"],
     "paths": {
-      "@amalgama/embassy-ui": ["../src"],
+      "@amalgamaco/embassy-ui": ["../src"],
       "@site/*": ["./*"]
     }
   }

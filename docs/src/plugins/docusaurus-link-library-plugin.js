@@ -12,7 +12,7 @@ async function linkLibraryPlugin() {
 				resolve: {
 					alias: {
 						// Link embassy-ui library
-						'@amalgama/embassy-ui': path.resolve( embassyUIRoot, 'src' ),
+						'@amalgamaco/embassy-ui': path.resolve( embassyUIRoot, 'src' ),
 						// Resolve react, react-dom and react-native-web packages to the doc's project
 						// node_modules/ folder.
 						'react': path.resolve( docsRoot, 'node_modules', 'react' ),

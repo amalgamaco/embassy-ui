@@ -1,5 +1,5 @@
 import React from 'react';
-import { VStack } from '@amalgama/embassy-ui';
+import { VStack } from '@amalgamaco/embassy-ui';
 import StackElement from '../StackElement';
 
 const ExampleVStack = props => (

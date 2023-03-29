@@ -1,4 +1,4 @@
-import { HStack, Avatar } from '@amalgama/embassy-ui'
+import { HStack, Avatar } from '@amalgamaco/embassy-ui'
 import CodePreview from '@site/src/components/CodePreview';
 
 # Avatar
@@ -8,7 +8,7 @@ This component is used to display a user's profile picture.
 To add the `Avatar` component to your project you can import it as follows:
 
 ```tsx
-import { Avatar } from '@amalgama/embassy-ui';
+import { Avatar } from '@amalgamaco/embassy-ui';
 ```
 
 ## Example

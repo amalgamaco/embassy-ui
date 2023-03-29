@@ -1,4 +1,4 @@
-import { Image } from '@amalgama/embassy-ui'
+import { Image } from '@amalgamaco/embassy-ui'
 import CodePreview from '@site/src/components/CodePreview';
 
 # Image
@@ -12,7 +12,7 @@ For images to work is necessary to specify the dimensions of the image using the
 ## Include
 
 ```jsx
-include { Image } from "@amalgama/embassy-ui"
+include { Image } from "@amalgamaco/embassy-ui"
 ```
 
 ## Example

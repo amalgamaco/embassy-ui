@@ -1,4 +1,4 @@
-import { Checkbox, HStack, Icon } from '@amalgama/embassy-ui'
+import { Checkbox, HStack, Icon } from '@amalgamaco/embassy-ui'
 import Feather from 'react-native-vector-icons/Feather';
 import CodePreview from '@site/src/components/CodePreview';
 import ExampleCheckbox from '@site/src/components/ExampleCheckbox';
@@ -13,7 +13,7 @@ import { useState } from 'react'
 To add the `Checkbox` component to your project you can import it as follows:
 
 ```tsx
-import { Checkbox } from '@amalgama/embassy-ui';
+import { Checkbox } from '@amalgamaco/embassy-ui';
 ```
 
 ## Standalone
@@ -24,7 +24,7 @@ import { Checkbox } from '@amalgama/embassy-ui';
 </CodePreview>
 
 ```jsx
-import { Checkbox } from '@amalgama/embassy-ui';
+import { Checkbox } from '@amalgamaco/embassy-ui';
 import React, { useState } from 'react';
 
 const App = () => {
@@ -202,7 +202,7 @@ import EvilIcons from 'react-native-vector-icons/Feather';
 
 ```jsx
 import React, { useState } from 'react';
-import { Checkbox, Text, VStack } from '@amalgama/embassy-ui';
+import { Checkbox, Text, VStack } from '@amalgamaco/embassy-ui';
 
 const ExampleCheckboxGroup = () => {
 	const [ value, setValue ] = useState( [] );
@@ -253,7 +253,7 @@ If the checkbox group is disabled or not. When it's set to true it disables all 
 
 ```jsx
 import React, { useState } from 'react';
-import { Checkbox, Text, VStack } from '@amalgama/embassy-ui';
+import { Checkbox, Text, VStack } from '@amalgamaco/embassy-ui';
 
 const ExampleCheckboxGroup = () => {
 	const [ value, setValue ] = useState( [] );

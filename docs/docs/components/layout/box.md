@@ -19,7 +19,7 @@ This component is a wrapper for the `View` component. It provides a simple way t
 </CodePreview>
 
 ```jsx
-import { Box, Text } from '@amalgama/embassy-ui';
+import { Box, Text } from '@amalgamaco/embassy-ui';
 
 <Box
 	paddingY="6"

@@ -7,7 +7,7 @@ sidebar_position: 3
 The library provides an easy way to extend the default theme's configuration in order to customize it and adjust it to your App's Design System:
 
 ```tsx
-import { extendThemeConfig, ThemeProvider } from '@amalgama/embassy-ui';
+import { extendThemeConfig, ThemeProvider } from '@amalgamaco/embassy-ui';
 
 const customTheme = extendThemeConfig( {
 	palette: {

@@ -16,7 +16,7 @@ import SimpleLineIcons from 'react-native-vector-icons/SimpleLineIcons';
 
 import {
 	Icon, HStack, Text, VStack
-} from '@amalgama/embassy-ui';
+} from '@amalgamaco/embassy-ui';
 
 const styles = StyleSheet.create( {
 	container: {

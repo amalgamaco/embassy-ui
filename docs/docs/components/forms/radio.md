@@ -1,4 +1,4 @@
-import {Radio, HStack, Icon} from '@amalgama/embassy-ui'
+import {Radio, HStack, Icon} from '@amalgamaco/embassy-ui'
 import Feather from 'react-native-vector-icons/Feather';
 import CodePreview from '@site/src/components/CodePreview'
 import ExampleRadio from '@site/src/components/ExampleRadio'
@@ -12,7 +12,7 @@ import {useState} from 'react'
 To add the `Radio` component to your project you can import it as follows:
 
 ```tsx
-import { Radio } from '@amalgama/embassy-ui'; 
+import { Radio } from '@amalgamaco/embassy-ui'; 
 ```
 
 ## Standalone
@@ -23,7 +23,7 @@ import { Radio } from '@amalgama/embassy-ui';
 </CodePreview>
 
 ```jsx
-import { Radio } from '@amalgama/embassy-ui';
+import { Radio } from '@amalgamaco/embassy-ui';
 import React, { useState } from 'react';
 
 const ExampleRadio = () => {
@@ -167,7 +167,7 @@ import Feather from 'react-native-vector-icons/Feather';
 
 ```jsx
 import React, { useState } from 'react';
-import { Radio, Text, VStack } from '@amalgama/embassy-ui';
+import { Radio, Text, VStack } from '@amalgamaco/embassy-ui';
 
 const ExampleRadioGroup = () => {
 	const [ value, setValue ] = useState();
@@ -218,7 +218,7 @@ If the radio group is disabled or not. When it's set to true it disables all the
 
 ```jsx
 import React, { useState } from 'react';
-import { Radio, Text, VStack } from '@amalgama/embassy-ui';
+import { Radio, Text, VStack } from '@amalgamaco/embassy-ui';
 
 const ExampleRadioGroup = () => {
 	const [ value, setValue ] = useState();

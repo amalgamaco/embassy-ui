@@ -3,7 +3,7 @@ import * as React from 'react';
 import { StyleSheet, View } from 'react-native';
 import {
 	Chip, HStack, Icon, Text, VStack
-} from '@amalgama/embassy-ui';
+} from '@amalgamaco/embassy-ui';
 import MaterialCommunityIcon from 'react-native-vector-icons/MaterialCommunityIcons';
 
 const styles = StyleSheet.create( {

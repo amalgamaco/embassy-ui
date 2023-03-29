@@ -4,7 +4,7 @@ import React, { useState } from 'react';
 import { StyleSheet, View } from 'react-native';
 import {
 	Radio, VStack, Text, HStack
-} from '@amalgama/embassy-ui';
+} from '@amalgamaco/embassy-ui';
 
 const styles = StyleSheet.create( {
 	container: {

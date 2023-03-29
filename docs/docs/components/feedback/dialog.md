@@ -1,4 +1,4 @@
-import { Dialog, IconButton, Icon, Button, HStack, VStack, Box } from '@amalgama/embassy-ui'
+import { Dialog, IconButton, Icon, Button, HStack, VStack, Box } from '@amalgamaco/embassy-ui'
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import CodePreview from '@site/src/components/CodePreview';
 import { DialogHighPriority, DialogLowPriority, DialogFullyCustomizable } from '@site/src/components/ExampleDialog';
@@ -17,7 +17,7 @@ import { DialogHighPriority, DialogLowPriority, DialogFullyCustomizable } from '
 To add the `Dialog` component to your project you can import it as follows:
 
 ```tsx
-import { Dialog } from '@amalgama/embassy-ui';
+import { Dialog } from '@amalgamaco/embassy-ui';
 ```
 
 ## Example
@@ -28,7 +28,7 @@ import { Dialog } from '@amalgama/embassy-ui';
 
 ```jsx
 import { useState } from 'react';
-import { VStack, Text, Box, Button, Dialog, HStack } from '@amalgama/embassy-ui';
+import { VStack, Text, Box, Button, Dialog, HStack } from '@amalgamaco/embassy-ui';
 
 const Example = () => {
 	const [ isModalVisible, setIsModalVisible ] = useState( false );

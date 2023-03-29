@@ -1,7 +1,7 @@
 import * as React from 'react';
 import {
 	VStack, Text, Box, Button, Dialog, HStack, UIKitIcon, Icon
-} from '@amalgama/embassy-ui';
+} from '@amalgamaco/embassy-ui';
 
 const DialogFullyCustomizable = ( { buttonText, ...props } ) => {
 	const [ isModalVisible, setIsModalVisible ] = React.useState( false );

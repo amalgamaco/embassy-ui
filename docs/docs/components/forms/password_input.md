@@ -1,4 +1,4 @@
-import {VStack, Icon, PasswordInput} from '@amalgama/embassy-ui'
+import {VStack, Icon, PasswordInput} from '@amalgamaco/embassy-ui'
 import CodePreview from '@site/src/components/CodePreview'
 import Feather from 'react-native-vector-icons/Feather';
 
@@ -13,7 +13,7 @@ The `PasswordInput` is a special type of text input that hides the entered text.
 </CodePreview>
 
 ```jsx
-import { PasswordInput } from '@amalgama/embassy-ui';
+import { PasswordInput } from '@amalgamaco/embassy-ui';
 
 <PasswordInput placeholder="Enter your password" width="300px" />
 ```

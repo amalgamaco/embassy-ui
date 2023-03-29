@@ -9,7 +9,7 @@ sidebar_position: 2
 Run the following command to add the `Embassy UI` library to your project:
 
 ```sh
-yarn add @amalgama/embassy-ui
+yarn add @amalgamaco/embassy-ui
 ```
 
 ### Web
@@ -154,7 +154,7 @@ We recommend adding this component at the top of the components hierarchy, wrapp
 
 ```tsx
 import React from "react";
-import { ThemeProvider } from "@amalgama/embassy-ui";
+import { ThemeProvider } from "@amalgamaco/embassy-ui";
 
 const App = () => (
 	<ThemeProvider>

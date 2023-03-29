@@ -1,7 +1,7 @@
 import React from 'react';
 import {
 	Image, VStack, Text, HStack, Box
-} from '@amalgama/embassy-ui';
+} from '@amalgamaco/embassy-ui';
 
 const imageContainerProps = {
 	backgroundColor: 'primary.200',

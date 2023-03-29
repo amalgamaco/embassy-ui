@@ -2,7 +2,7 @@ import React from 'react';
 import {
 	Button, Card, CardActions, CardContent, CardHeader,
 	CardMedia, IconButton, Image, Text, UIKitIcon, VStack
-} from '@amalgama/embassy-ui';
+} from '@amalgamaco/embassy-ui';
 
 const CardExample = () => (
 	<VStack marginBottom="5">

@@ -1,4 +1,4 @@
-import {CardHeader, IconButton, UIKitIcon} from "@amalgama/embassy-ui";
+import {CardHeader, IconButton, UIKitIcon} from "@amalgamaco/embassy-ui";
 import CodePreview from '@site/src/components/CodePreview';
 import ExampleCard from '@site/src/components/ExampleCard';
 

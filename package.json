@@ -1,7 +1,7 @@
 {
-  "name": "@amalgama/embassy-ui",
+  "name": "@amalgamaco/embassy-ui",
   "version": "1.4.1",
-  "description": "A set of UI components following Embassy Design System.",
+  "description": "A set of UI components following Embassy Design System",
   "main": "lib/commonjs/index",
   "module": "lib/module/index",
   "types": "lib/typescript/index.d.ts",
@@ -38,15 +38,15 @@
     "ios",
     "android"
   ],
-  "repository": "https://git.amalgama.co/amalgama/packages/npm/embassy-ui.git",
+  "repository": "git@github.com:amalgamaco/embassy-ui.git",
   "author": "Mauro E. Bender <mauro@amalgama.co> (https://git.amalgama.co/mauro)",
   "license": "MIT",
   "bugs": {
-    "url": "https://git.amalgama.co/amalgama/packages/npm/embassy-ui.git/issues"
+    "url": "https://github.com/amalgamaco/embassy-ui/issues"
   },
-  "homepage": "https://git.amalgama.co/amalgama/packages/npm/embassy-ui.git#readme",
+  "homepage": "https://github.com/amalgamaco/embassy-ui#readme",
   "publishConfig": {
-    "registry": "https://git.amalgama.co/api/v4/projects/982/packages/npm/"
+    "access": "public"
   },
   "dependencies": {
     "date-fns": "^2.29.3",
@@ -153,18 +153,14 @@
       "requireCleanWorkingDir": false,
       "requireUpstream": true,
       "commitMessage": "Release v${version}",
-      "changelog": "npx auto-changelog --stdout --commit-limit false --unreleased --issue-url https://git.amalgama.co/amalgama/packages/npm/embassy-ui/-/issues/{id} --merge-url https://git.amalgama.co/amalgama/packages/npm/embassy-ui/-/merge_requests/{id} --commit-url https://git.amalgama.co/amalgama/packages/npm/embassy-ui/-/commit/{id}"
+      "changelog": "npx auto-changelog --stdout --commit-limit false --unreleased --issue-url https://github.com/amalgamaco/embassy-ui/issues/{id} --merge-url https://github.com/amalgamaco/embassy-ui/merge_requests/{id} --commit-url https://github.com/amalgamaco/embassy-ui/commit/{id}"
     },
     "hooks": {
       "after:bump": "npx auto-changelog -p"
     },
-    "gitlab": {
+    "github": {
       "release": true,
-      "publish": true,
       "releaseName": "Release v${version}"
-    },
-    "npm": {
-      "skipChecks": true
     }
   },
   "prettier": {

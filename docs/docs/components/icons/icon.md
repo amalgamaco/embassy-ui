@@ -1,4 +1,4 @@
-import { Icon, HStack } from '@amalgama/embassy-ui'
+import { Icon, HStack } from '@amalgamaco/embassy-ui'
 import EvilIcons from 'react-native-vector-icons/EvilIcons';
 import FontAwesomeIcon from 'react-native-vector-icons/FontAwesome';
 import Ionicons from 'react-native-vector-icons/Ionicons';
@@ -12,7 +12,7 @@ import ExampleCustomIcon from '@site/src/components/ExampleCustomIcon';
 To add the `Icon` component to your project you can import it as follows:
 
 ```tsx
-import { Icon } from '@amalgama/embassy-ui';
+import { Icon } from '@amalgamaco/embassy-ui';
 ```
 
 ## Examples
@@ -114,7 +114,7 @@ export default MyIconLib;
 
 
 ```tsx
-import { Icon } from '@amalgama/embassy-ui';
+import { Icon } from '@amalgamaco/embassy-ui';
 import  MyIconLib  from './MyIconLib';
 
 // Use it as any other icon library

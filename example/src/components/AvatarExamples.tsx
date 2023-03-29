@@ -4,7 +4,7 @@ import { StyleSheet, View } from 'react-native';
 
 import {
 	HStack, Text, VStack, Avatar
-} from '@amalgama/embassy-ui';
+} from '@amalgamaco/embassy-ui';
 
 const styles = StyleSheet.create( {
 	container: {

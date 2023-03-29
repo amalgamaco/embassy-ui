@@ -9,7 +9,7 @@ To enable TypeScript for custom theme tokens or variants, we'll follow two simpl
 Below, in the  `extendThemeConfig` function, we're adding a new palette color, a space token and a custom variant for the Button.
 
 ```ts
-import { extendThemeConfig } from '@amalgama/embassy-ui';
+import { extendThemeConfig } from '@amalgamaco/embassy-ui';
 
 // 1. Define your custom theme
 const customTheme = extendThemeConfig({
@@ -48,7 +48,7 @@ const customTheme = extendThemeConfig({
 type CustomThemeConfig = typeof customTheme;
 
 // 3. Extend the internal Embassy UI Theme config
-declare module '@amalgama/embassy-ui' {
+declare module '@amalgamaco/embassy-ui' {
   // eslint-disable-next-line @typescript-eslint/no-empty-interface
   interface ICustomThemeConfig extends CustomThemeConfig {}
 }

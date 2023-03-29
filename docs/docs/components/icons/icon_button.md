@@ -1,4 +1,4 @@
-import { IconButton, Button, HStack, Icon } from '@amalgama/embassy-ui'
+import { IconButton, Button, HStack, Icon } from '@amalgamaco/embassy-ui'
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import CodePreview from '@site/src/components/CodePreview';
 
@@ -9,7 +9,7 @@ import CodePreview from '@site/src/components/CodePreview';
 To add the `IconButton` component to your project you can import it as follows:
 
 ```tsx
-import { IconButton } from '@amalgama/embassy-ui';
+import { IconButton } from '@amalgamaco/embassy-ui';
 ```
 
 ## Example

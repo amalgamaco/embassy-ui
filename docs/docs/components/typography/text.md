@@ -1,6 +1,6 @@
 import CodePreview from '@site/src/components/CodePreview';
 import ExampleText from '@site/src/components/ExampleText';
-import { Text } from '@amalgama/embassy-ui';
+import { Text } from '@amalgamaco/embassy-ui';
 
 # Text
 
@@ -11,7 +11,7 @@ Text is a component that renders text. It is a wrapper around the [Text](https:/
 To add the `Text` component to your project you can import it as follows:
 
 ```tsx
-import { Text } from '@amalgama/embassy-ui';
+import { Text } from '@amalgamaco/embassy-ui';
 ```
 
 ## Example
@@ -22,7 +22,7 @@ import { Text } from '@amalgama/embassy-ui';
 
 ```tsx
 import React from 'react';
-import { Text } from '@amalgama/embassy-ui';
+import { Text } from '@amalgamaco/embassy-ui';
 
 <Text> Hello World </Text>;
 ```
@@ -68,7 +68,7 @@ The available variants are:
 
 ```tsx
 import React from 'react';
-import { Text } from '@amalgama/embassy-ui';
+import { Text } from '@amalgamaco/embassy-ui';
 
 <VStack>
 	<Text variant="h1">Headline 1</Text>

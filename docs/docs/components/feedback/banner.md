@@ -1,4 +1,4 @@
-import { Banner, IconButton, Icon, Button, HStack, VStack } from '@amalgama/embassy-ui'
+import { Banner, IconButton, Icon, Button, HStack, VStack } from '@amalgamaco/embassy-ui'
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import CodePreview from '@site/src/components/CodePreview';
 import ExampleBanner from '@site/src/components/ExampleBanner';
@@ -10,7 +10,7 @@ import ExampleBanner from '@site/src/components/ExampleBanner';
 To add the `Banner` component to your project you can import it as follows:
 
 ```tsx
-import { Banner } from '@amalgama/embassy-ui';
+import { Banner } from '@amalgamaco/embassy-ui';
 ```
 
 ## Example

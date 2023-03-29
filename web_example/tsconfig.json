@@ -1,7 +1,7 @@
 {
   "compilerOptions": {
     "paths": {
-      "@amalgama/embassy-ui": ["../src"]
+      "@amalgamaco/embassy-ui": ["../src"]
     },
     "lib": [
       "dom",

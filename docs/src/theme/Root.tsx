@@ -1,5 +1,5 @@
 import React from 'react';
-import { ThemeProvider, extendThemeConfig } from '@amalgama/embassy-ui';
+import { ThemeProvider, extendThemeConfig } from '@amalgamaco/embassy-ui';
 
 import './iconFonts';
 

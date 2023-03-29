@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { useColorScheme } from 'react-native';
-import { useThemeColorModeSwtich } from '@amalgama/embassy-ui';
+import { useThemeColorModeSwtich } from '@amalgamaco/embassy-ui';
 
 const ColorModeToggler = () => {
 	const switchColorMode = useThemeColorModeSwtich();

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Box } from '@amalgama/embassy-ui';
+import { Box } from '@amalgamaco/embassy-ui';
 
 const ColorPreview = ( { color } ) => (
 	<Box

@@ -6,7 +6,7 @@ import {
 } from 'react-native';
 import {
 	ThemeProvider, VStack, extendThemeConfig, UIKitIcon, Box
-} from '@amalgama/embassy-ui';
+} from '@amalgamaco/embassy-ui';
 import FontAwesomeIcon from 'react-native-vector-icons/FontAwesome';
 import IoniconsIcon from 'react-native-vector-icons/Ionicons';
 
@@ -128,7 +128,7 @@ const customTheme = extendThemeConfig( {
 
 type CustomThemeConfig = typeof customTheme;
 
-declare module '@amalgama/embassy-ui' {
+declare module '@amalgamaco/embassy-ui' {
   // eslint-disable-next-line @typescript-eslint/no-empty-interface
   interface ICustomThemeConfig extends CustomThemeConfig {}
 }

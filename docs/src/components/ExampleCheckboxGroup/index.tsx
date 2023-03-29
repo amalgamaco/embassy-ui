@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Checkbox, Text, VStack } from '@amalgama/embassy-ui';
+import { Checkbox, Text, VStack } from '@amalgamaco/embassy-ui';
 
 const ExampleCheckboxGroup = ( { disabled = false }: { disabled?: boolean } ) => {
 	const [ value, setValue ] = useState( [] );

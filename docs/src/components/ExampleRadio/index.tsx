@@ -1,4 +1,4 @@
-import { Radio } from '@amalgama/embassy-ui';
+import { Radio } from '@amalgamaco/embassy-ui';
 import React, { useState } from 'react';
 
 const ExampleRadio = () => {

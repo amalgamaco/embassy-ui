@@ -1,4 +1,4 @@
-import { Chip, IconButton, Icon, Button, HStack } from '@amalgama/embassy-ui'
+import { Chip, IconButton, Icon, Button, HStack } from '@amalgamaco/embassy-ui'
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import CodePreview from '@site/src/components/CodePreview';
 import ExampleChip from '@site/src/components/ExampleChip';
@@ -10,7 +10,7 @@ import ExampleChip from '@site/src/components/ExampleChip';
 To add the `Chip` component to your project you can import it as follows:
 
 ```tsx
-import { Chip } from '@amalgama/embassy-ui';
+import { Chip } from '@amalgamaco/embassy-ui';
 ```
 
 ## Example

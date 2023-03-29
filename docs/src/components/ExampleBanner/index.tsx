@@ -1,4 +1,4 @@
-import { Banner } from '@amalgama/embassy-ui';
+import { Banner } from '@amalgamaco/embassy-ui';
 import React from 'react';
 
 const ExampleBanner = () => (

@@ -1,7 +1,7 @@
 import * as React from 'react';
 import {
 	Text, DateInput, VStack
-} from '@amalgama/embassy-ui';
+} from '@amalgamaco/embassy-ui';
 import { View } from 'react-native';
 
 const styles = {

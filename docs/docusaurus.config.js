@@ -38,14 +38,14 @@ const config = {
 					// Please change this to your repo.
 					// Remove this to remove the "edit this page" links.
 					editUrl:
-						'https://git.amalgama.co/amalgama/packages/npm/embassy-ui/-/tree/docs'
+						'https://github.com/amalgamaco/embassy-ui/-/tree/docs'
 				},
 				blog: {
 					showReadingTime: true,
 					// Please change this to your repo.
 					// Remove this to remove the "edit this page" links.
 					editUrl:
-					'https://git.amalgama.co/amalgama/packages/npm/embassy-ui/-/tree/docs'
+					'https://github.com/amalgamaco/embassy-ui/-/tree/docs'
 				},
 				theme: {
 					customCss: require.resolve( './src/css/custom.css' )
@@ -94,7 +94,7 @@ const config = {
 					},
 					{
 						label: 'GitLab',
-						href: 'https://git.amalgama.co/amalgama/packages/npm/embassy-ui',
+						href: 'https://github.com/amalgamaco/embassy-ui',
 						position: 'right'
 					}
 				]

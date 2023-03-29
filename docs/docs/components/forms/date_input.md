@@ -1,4 +1,4 @@
-import {VStack, Icon, DateInput} from '@amalgama/embassy-ui'
+import {VStack, Icon, DateInput} from '@amalgamaco/embassy-ui'
 import CodePreview from '@site/src/components/CodePreview'
 import Feather from 'react-native-vector-icons/Feather';
 import ExampleTextInput from '@site/src/components/ExampleTextInput'
@@ -15,7 +15,7 @@ The `DateInput` component allows a user to provide a date by inputing it directl
 </CodePreview>
 
 ```jsx
-import { DateInput } from '@amalgama/embassy-ui';
+import { DateInput } from '@amalgamaco/embassy-ui';
 
 <DateInput width="300px" />
 ```

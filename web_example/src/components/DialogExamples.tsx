@@ -4,7 +4,7 @@ import { StyleSheet } from 'react-native';
 import {
 	Text,
 	VStack
-} from '@amalgama/embassy-ui';
+} from '@amalgamaco/embassy-ui';
 import FirstDialogExample from './Dialog/FirstDialogExample';
 import SecondDialogExample from './Dialog/SecondDialogExample';
 import ThirdDialogExample from './Dialog/ThirdDialogExample';

@@ -315,7 +315,7 @@ module.exports = function ( webpackEnv ) {
 					'node_modules',
 					'react-native-web'
 				 ),
-				 '@amalgama/embassy-ui': path.resolve(__dirname, '..', '..', 'src' ),
+				 '@amalgamaco/embassy-ui': path.resolve(__dirname, '..', '..', 'src' ),
 				 'react': path.resolve(__dirname, '..', 'node_modules', 'react'),
 				 'react-dom': path.resolve(__dirname, '..', 'node_modules', 'react-dom'),
 				 'react-native-web': path.resolve(

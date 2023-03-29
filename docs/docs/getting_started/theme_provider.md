@@ -8,7 +8,7 @@ In order for the UI Kit components to work properly they need to acces the main 
 
 ```tsx
 import React from "react";
-import { ThemeProvider } from "@amalgama/embassy-ui";
+import { ThemeProvider } from "@amalgamaco/embassy-ui";
 
 const App = () => (
 	<ThemeProvider>

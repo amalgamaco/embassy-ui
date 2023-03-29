@@ -1,4 +1,4 @@
-import { TextInput } from '@amalgama/embassy-ui';
+import { TextInput } from '@amalgamaco/embassy-ui';
 import React, { useState } from 'react';
 
 const ExampleTextInput = () => {

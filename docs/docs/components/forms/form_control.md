@@ -1,4 +1,4 @@
-import { FormControl, Checkbox, Radio, HStack, TextInput, Icon, UIKitIcon  } from '@amalgama/embassy-ui';
+import { FormControl, Checkbox, Radio, HStack, TextInput, Icon, UIKitIcon  } from '@amalgamaco/embassy-ui';
 import CodePreview from '@site/src/components/CodePreview';
 
 # FormControl

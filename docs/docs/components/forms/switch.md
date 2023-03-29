@@ -1,4 +1,4 @@
-import {Radio, HStack, Icon, Switch} from '@amalgama/embassy-ui'
+import {Radio, HStack, Icon, Switch} from '@amalgamaco/embassy-ui'
 import Feather from 'react-native-vector-icons/Feather';
 import CodePreview from "@site/src/components/CodePreview"
 
@@ -9,7 +9,7 @@ import CodePreview from "@site/src/components/CodePreview"
 To add the `Switch` component to your project you can import it as follows:
 
 ```tsx
-import {Switch} from '@amalgama/embassy-ui'; 
+import {Switch} from '@amalgamaco/embassy-ui'; 
 ```
 
 ## Standalone
@@ -20,7 +20,7 @@ import {Switch} from '@amalgama/embassy-ui';
 </CodePreview>
 
 ```jsx
-import { Switch } from '@amalgama/embassy-ui';
+import { Switch } from '@amalgamaco/embassy-ui';
 
 <Switch/>
 ```
@@ -41,7 +41,7 @@ Sets the initial value of the switch.
 </CodePreview>
 
 ```jsx
-import { Switch } from '@amalgama/embassy-ui';
+import { Switch } from '@amalgamaco/embassy-ui';
 
 <Switch/>
 <Switch initialValue={true}/>
@@ -61,7 +61,7 @@ If the Switch is disabled or not.
 </CodePreview>
 
 ```jsx
-import { Switch } from '@amalgama/embassy-ui';
+import { Switch } from '@amalgamaco/embassy-ui';
 
 <Switch disabled/>
 <Switch disabled initialValue={true}/>
@@ -80,7 +80,7 @@ Callback that is called when the value of the switch changes.
 </CodePreview>
 
 ```jsx
-import { Switch } from '@amalgama/embassy-ui';
+import { Switch } from '@amalgamaco/embassy-ui';
 
 <Switch onChange={(value) => window.alert(`The switch is ${value ? "on" : "off"}`}/>
 ```
@@ -99,7 +99,7 @@ If the switch should have an on/off icon.
 
 ```jsx
 
-import { Switch } from '@amalgama/embassy-ui';
+import { Switch } from '@amalgamaco/embassy-ui';
 
 <Switch withIcon={false}/>
 ```
@@ -117,7 +117,7 @@ The icon to be displayed when the switch is on.
 </CodePreview>
 
 ```jsx
-import { Switch, Icon } from '@amalgama/embassy-ui';
+import { Switch, Icon } from '@amalgamaco/embassy-ui';
 
 <Switch onIcon={<Icon name="star"/>} initialValue={true}/>
 ```
@@ -135,7 +135,7 @@ The icon to be displayed when the switch is off.
 </CodePreview>
 
 ```jsx
-import { Switch, Icon } from '@amalgama/embassy-ui';
+import { Switch, Icon } from '@amalgamaco/embassy-ui';
 
 <Switch offIcon={<Icon name="rocket"/>}/>
 ```
@@ -153,7 +153,7 @@ The duration of the thumb slide animation.
 </CodePreview>
 
 ```jsx
-import { Switch } from '@amalgama/embassy-ui';
+import { Switch } from '@amalgamaco/embassy-ui';
 
 <Switch animationDuration={2000}/>
 ```
