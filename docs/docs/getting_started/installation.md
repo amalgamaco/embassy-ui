@@ -8,7 +8,13 @@ sidebar_position: 2
 
 Run the following command to add the `Embassy UI` library to your project:
 
-```sh
+```shell
+npm install @amalgamaco/embassy-ui
+```
+
+Or, if you are using Yarn:
+
+```shell
 yarn add @amalgamaco/embassy-ui
 ```
 
@@ -44,11 +50,6 @@ module.exports = {
 ```
 
 For more webpack configuration examples you can check the [Webpack Examples page](./webpack_examples).
-
-### NPM Private Registry Authorization
-This package was uploaded to Amalgama's GitLab Private NPM Registry and in order to install it you need to set up the registry and an authorization token to access it.
-
-To learn how to configure Amalgama's NPM Private registry and how to generate and configure an access token you can follow this guide: [Use a package from Amalgama's private registry (Spanish)](https://amalgamaco.notion.site/Usar-un-paquete-de-NPM-de-amalgama-14c007d2e6054f78880792cc613e44da).
 
 ## Peer dependencies
 You need to install these peer dependencies in order to use the library:
@@ -90,13 +91,13 @@ To install the default fonts (`Epilogue` and `Inter`) to your ReactNative projec
 	```
 3. Link the assets:
 
-	__For `react-native` < 0.69 __ 
-	```sh
+	__For `react-native` < 0.69__ 
+	```shell
 	yarn run react-native link
 	```
 
 	__For `react-native` >= 0.69__
-	```sh
+	```shell
 	npx react-native-asset
 	```
 

@@ -109,7 +109,7 @@ module.exports = {
 :::info
 Make sure you have all the required dependencies installed for the previous configuration to work:
 
-```sh
+```shell
 yarn install react-native-web
 yarn install --dev babel-loader babel-plugin-react-native-web
 ```

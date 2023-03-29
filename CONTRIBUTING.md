@@ -6,7 +6,7 @@ We want this community to be friendly and respectful to each other. Please follo
 
 To get started with the project, run `yarn` in the root directory to install the required dependencies for each package:
 
-```sh
+```shell
 yarn
 ```
 
@@ -16,44 +16,50 @@ While developing, you can run the [example app](/example/) to test your changes.
 
 To start the packager:
 
-```sh
+```shell
 yarn example start
 ```
 
 To run the example app on Android:
 
-```sh
+```shell
 yarn example android
 ```
 
 To run the example app on iOS:
 
-```sh
+```shell
 yarn example ios
 ```
 
 To run the example app on Web:
 
-```sh
-yarn example web
+```shell
+yarn web_example start
+```
+
+To run the docs app on Web:
+
+```shell
+yarn docs start
 ```
 
 Make sure your code passes TypeScript and ESLint. Run the following to verify:
 
-```sh
+```shell
 yarn typescript
 yarn lint
 ```
 
 To fix formatting errors, run the following:
 
-```sh
+```shell
 yarn lint --fix
 ```
 
 Remember to add tests for your change if possible. Run the unit tests by:
 
-```sh
+```shell
 yarn test
 ```
 
@@ -84,7 +90,7 @@ We use [release-it](https://github.com/release-it/release-it) to make it easier 
 
 To publish new versions, run the following:
 
-```sh
+```shell
 yarn release
 ```
 
