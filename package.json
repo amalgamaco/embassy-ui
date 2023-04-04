@@ -50,6 +50,7 @@
   },
   "homepage": "https://github.com/amalgamaco/embassy-ui#readme",
   "publishConfig": {
+    "registry": "https://registry.npmjs.org",
     "access": "public"
   },
   "dependencies": {
