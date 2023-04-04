@@ -93,7 +93,7 @@ const config = {
 						position: 'right'
 					},
 					{
-						label: 'GitLab',
+						label: 'GitHub',
 						href: 'https://github.com/amalgamaco/embassy-ui',
 						position: 'right'
 					}

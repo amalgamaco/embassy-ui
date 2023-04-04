@@ -43,7 +43,7 @@
     "android"
   ],
   "repository": "git@github.com:amalgamaco/embassy-ui.git",
-  "author": "Mauro E. Bender <mauro@amalgama.co> (https://git.amalgama.co/mauro)",
+  "author": "Mauro E. Bender <mauro@amalgama.co> (https://github.com/maurobender)",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/amalgamaco/embassy-ui/issues"
@@ -157,7 +157,7 @@
       "requireCleanWorkingDir": false,
       "requireUpstream": true,
       "commitMessage": "Release v${version}",
-      "changelog": "npx auto-changelog --stdout --commit-limit false --unreleased --issue-url https://github.com/amalgamaco/embassy-ui/issues/{id} --merge-url https://github.com/amalgamaco/embassy-ui/merge_requests/{id} --commit-url https://github.com/amalgamaco/embassy-ui/commit/{id}"
+      "changelog": "npx auto-changelog --stdout --commit-limit false --unreleased --issue-url https://github.com/amalgamaco/embassy-ui/issues/{id} --merge-url https://github.com/amalgamaco/embassy-ui/pulls/{id} --commit-url https://github.com/amalgamaco/embassy-ui/commit/{id}"
     },
     "hooks": {
       "after:bump": "npx auto-changelog -p"

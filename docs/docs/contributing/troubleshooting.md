@@ -1,6 +1,6 @@
 # Troubleshooting
 
-These are some common issues you may run into while contributing to the project. If you encounter something that is not listed here, please [file an issue in GitLab](https://git.amalgama.co/amalgama/packages/npm/embassy-ui/-/issues/new).
+These are some common issues you may run into while contributing to the project. If you encounter something that is not listed here, please [file an issue in GitHub](https://github.com/amalgamaco/embassy-ui/issues/new).
 
 ## Example mobile app
 
