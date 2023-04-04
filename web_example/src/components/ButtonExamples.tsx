@@ -45,7 +45,7 @@ const ButtonExamples = () => (
 		</Button>
 		<Button
 			variant="secondary"
-			rightIcon={<Icon name="gitlab" />}
+			rightIcon={<Icon name="github" />}
 			onPress={onButtonPressed}
 		>
 			Secondary

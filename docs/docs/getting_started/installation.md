@@ -78,7 +78,7 @@ Some peer-dependencies are platform dependent:
 
 To install the default fonts (`Epilogue` and `Inter`) to your ReactNative project you need to follow the next steps:
 
-1. Download all the font files from [here](https://git.amalgama.co/amalgama/packages/npm/embassy-ui/-/tree/main/example/assets/fonts) and put them in the `assets/fonts` folder (create the folder if it doesn't exists in your project).
+1. Download all the font files from [here](https://github.com/amalgamaco/embassy-ui/tree/main/example/assets/fonts) and put them in the `assets/fonts` folder (create the folder if it doesn't exists in your project).
 2. Create a `react-native.config.js` file if you don't have already one in your project and add the following configuration:
 	```js
 	module.exports = {
