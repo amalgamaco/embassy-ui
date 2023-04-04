@@ -23,7 +23,10 @@
   ],
   "scripts": {
     "test": "NODE_ENV=test JEST_JUNIT_OUTPUT_DIR=reports TZ=UTC jest",
-    "lint": "eslint src/ tests/ example/ web_example/ docs/",
+    "lint": "yarn lint:app && yarn lint:examples && yarn lint:docs",
+    "lint:app": "eslint src/ tests/",
+    "lint:examples": "eslint example/ web_example/",
+    "lint:docs": "eslint docs/",
     "typescript": "tsc --noEmit",
     "prepare": "bob build",
     "release": "release-it",
@@ -31,6 +34,7 @@
     "web_example": "yarn --cwd web_example",
     "docs": "yarn --cwd docs",
     "pods": "cd example && pod-install --quiet",
+    "ci": "yarn example --frozen-lockfile && yarn web_example --frozen-lockfile && yarn docs --frozen-lockfile && yarn --frozen-lockfile && yarn pods",
     "bootstrap": "yarn example && yarn web_example && yarn docs && yarn && yarn pods"
   },
   "keywords": [
